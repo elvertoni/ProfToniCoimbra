@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T16:28:17.403315+00:00",
+  "updatedAt": "2026-04-03T16:28:19.121573+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -116,6 +116,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-07-construcao-de-um-modelo-para-analise-e-projeto.md",
       "status": "published",
       "publishedAt": "2026-04-03T16:28:17.403315+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 8,
+      "title": "Priorização e Validação de Requisitos",
+      "slug": "priorizacao-e-validacao-de-requisitos",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-08-priorizacao-e-validacao-de-requisitos.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T16:28:19.121573+00:00"
     }
   ]
 }
