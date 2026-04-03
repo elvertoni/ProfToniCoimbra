@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T15:48:23.881639+00:00",
+  "updatedAt": "2026-04-03T15:56:00.827548+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -76,6 +76,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-03-ciclo-de-vida-do-software.md",
       "status": "published",
       "publishedAt": "2026-04-03T15:48:23.881639+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 4,
+      "title": "Fases do Projeto de Software",
+      "slug": "fases-do-projeto-de-software",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-04-fases-do-projeto-de-software.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T15:56:00.827548+00:00"
     }
   ]
 }
