@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T16:28:34.929415+00:00",
+  "updatedAt": "2026-04-03T16:28:36.542977+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -216,6 +216,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-17-uml-diagrama-de-classes-e-diagrama-de-casos-de-uso.md",
       "status": "published",
       "publishedAt": "2026-04-03T16:28:34.929415+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 18,
+      "title": "UML — Diagrama de Atividades e Diagrama de Sequência",
+      "slug": "uml-diagrama-de-atividades-e-diagrama-de-sequencia",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-18-uml-diagrama-de-atividades-e-diagrama-de-sequencia.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T16:28:36.542977+00:00"
     }
   ]
 }
