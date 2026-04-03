@@ -1,6 +1,6 @@
 # Aula 13 — Método Ágil e Manifesto Ágil
 
-Nesta aula, a turma vai o método ágil surgiu em 2001, quando dezessete profissionais de desenvolvimento de software se reuniram em snowbird, utah, e criaram o Manifesto Ágil. A motivação era clara: os métodos tradicionais eram rígidos demais para lidar com as mudanças constantes que o mercado de tecnologia impunha. O ágil não é uma metodologia única, mas sim um conjunto de princípios que valorizam a colaboração com o cliente, a adaptabilidade às mudanças e a entrega contínua de valor. Hoje, frameworks como Scrum e Kanban são aplicados em empresas ao redor do mundo.
+Nesta aula, a turma vai compreender como o Manifesto Ágil surgiu e por que seus princípios mudaram a forma de desenvolver software em contextos sujeitos a mudanças frequentes.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ O método ágil surgiu em 2001, quando dezessete profissionais de desenvolviment
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender método ágil e manifesto ágil permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Em equipes modernas, trabalhar com agilidade significa responder rápido a mudanças sem perder o foco no valor entregue. Conhecer o Manifesto Ágil ajuda o profissional a entender por que colaboração, feedback constante e entregas incrementais ganharam tanto espaço no desenvolvimento de software.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá analisar um cenário de desenvolvimento de software e decidir qual abordagem — Waterfall ou Ágil — é mais adequada, produzindo uma comparação estruturada e uma justificativa fundamentada. A atividade treina a capacidade de análise crítica e tomada de decisão técnica.
+Na atividade prática, a turma deverá analisar um cenário de desenvolvimento de software e decidir qual abordagem — Waterfall ou ágil — é mais adequada, produzindo uma comparação estruturada e uma justificativa fundamentada.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a método ágil e manifesto ágil.
+Na próxima aula, a turma vai aprofundar o que realmente significa ser ágil no dia a dia das equipes.

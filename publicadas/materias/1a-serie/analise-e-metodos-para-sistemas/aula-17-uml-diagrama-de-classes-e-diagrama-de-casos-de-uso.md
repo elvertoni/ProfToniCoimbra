@@ -1,6 +1,6 @@
 # Aula 17 — UML — Diagrama de Classes e Diagrama de Casos de Uso
 
-Nesta aula, a turma vai o diagrama de classes é um dos pilares da modelagem orientada a objetos na uml. ele representa as classes do sistema — suas propriedades, métodos e os relacionamentos entre elas — oferecendo uma visão estática e estrutural de como o software é organizado. O Diagrama de Casos de Uso, por sua vez, concentra-se no comportamento e nas funcionalidades do sistema, mostrando como os atores interagem com ele. Juntos, fornecem uma visão completa: um mostra o que o sistema faz; o outro mostra como ele é organizado internamente.
+Nesta aula, a turma vai aprofundar a modelagem estrutural com o Diagrama de Classes e relacioná-lo aos Casos de Uso, percebendo como funcionalidades e estrutura se complementam.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ O Diagrama de Classes é um dos pilares da modelagem orientada a objetos na UML.
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender uml — diagrama de classes e diagrama de casos de uso permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Em projetos reais, o Diagrama de Classes ajuda a equipe a discutir entidades, atributos e relações antes da codificação, enquanto os Casos de Uso preservam a perspectiva do usuário. Ler os dois em conjunto melhora decisões de arquitetura e reduz interpretações divergentes sobre o sistema.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá modelar um sistema de biblioteca utilizando dois diagramas UML complementares: o Diagrama de Classes (estrutura do sistema) e o Diagrama de Casos de Uso (funcionalidades e interação com usuários). A atividade desenvolve a capacidade de representar um sistema sob diferentes perspectivas.
+Na atividade prática, a turma deverá modelar um sistema de biblioteca utilizando dois diagramas UML complementares: o Diagrama de Classes e o Diagrama de Casos de Uso.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a uml — diagrama de classes e diagrama de casos de uso.
+Na próxima aula, a turma vai modelar comportamentos dinâmicos com Diagramas de Atividades e de Sequência.

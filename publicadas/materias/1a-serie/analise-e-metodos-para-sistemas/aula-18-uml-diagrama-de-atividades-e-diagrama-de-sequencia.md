@@ -1,6 +1,6 @@
 # Aula 18 — UML — Diagrama de Atividades e Diagrama de Sequência
 
-Nesta aula, a turma vai se o diagrama de classes mostra a estrutura de um sistema e o de casos de uso mostra suas funcionalidades, o diagrama de Atividades mostra o fluxo de trabalho passo a passo — como um fluxograma sofisticado. O Diagrama de Sequência, por sua vez, foca na comunicação entre objetos ao longo do tempo, representando a ordem em que mensagens são trocadas. Esses dois diagramas são especialmente úteis para modelar processos de negócio, fluxos de usuário e comportamentos dinâmicos que outros diagramas não conseguem capturar com tanta clareza.
+Nesta aula, a turma vai modelar comportamentos dinâmicos com Diagramas de Atividades e de Sequência, representando fluxos de trabalho e interações temporais de um sistema.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Se o Diagrama de Classes mostra a estrutura de um sistema e o de Casos de Uso mo
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender uml — diagrama de atividades e diagrama de sequência permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Fluxos de atividade e sequências de interação aparecem em sistemas de inscrição, pagamentos, autenticação e atendimento digital. Esses diagramas ajudam equipes a visualizar passos, mensagens trocadas e pontos de falha antes da implementação.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá modelar um sistema de inscrição online utilizando dois diagramas: o Diagrama de Atividades para representar o fluxo do processo e o Diagrama de Sequência para mostrar a interação entre objetos, incluindo o envio automático de e-mail de confirmação.
+Na atividade prática, a turma deverá modelar um sistema de inscrição online utilizando dois diagramas: o Diagrama de Atividades para representar o fluxo do processo e o Diagrama de Sequência para mostrar a interação entre objetos.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a uml — diagrama de atividades e diagrama de sequência.
+Na próxima aula, a turma vai ampliar a modelagem para estados e componentes, observando comportamento e arquitetura.

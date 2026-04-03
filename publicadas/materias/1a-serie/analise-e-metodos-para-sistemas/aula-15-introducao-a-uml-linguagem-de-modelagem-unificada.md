@@ -1,6 +1,6 @@
 # Aula 15 — Introdução à UML — Linguagem de Modelagem Unificada
 
-Nesta aula, a turma vai a uml (unified modeling language) é uma linguagem gráfica padrão para visualizar, especificar, construir e documentar artefatos de um sistema de software. Ela não é uma metodologia de desenvolvimento, mas sim um conjunto de notações que permite representar diferentes aspectos de um sistema — desde sua estrutura estática até o comportamento dinâmico. A UML é usada por desenvolvedores e analistas em todo o mundo porque oferece uma forma padronizada e precisa de comunicar ideias dentro da equipe e com os stakeholders.
+Nesta aula, a turma vai conhecer a UML como linguagem padrão de modelagem, entendendo sua função na comunicação entre analistas, desenvolvedores e stakeholders.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ A UML (Unified Modeling Language) é uma linguagem gráfica padrão para visuali
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender introdução à uml — linguagem de modelagem unificada permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Em projetos de software, a UML ajuda equipes a documentar, discutir e revisar soluções antes e durante a implementação. Saber interpretar diagramas melhora a comunicação técnica, reduz ambiguidades e apoia decisões de análise, projeto e manutenção.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá escolher um sistema simples — como um sistema de biblioteca, aplicativo de tarefas ou loja virtual — e criar um diagrama UML representando algum aspecto desse sistema. A atividade introduz a prática da modelagem visual padronizada.
+Na atividade prática, a turma deverá escolher um sistema simples — como uma biblioteca, um aplicativo de tarefas ou uma loja virtual — e criar um diagrama UML que represente um aspecto relevante desse sistema.
 
 O estudante deverá:
 
@@ -78,7 +78,7 @@ O estudante deverá:
 
 <div class="roteiro">
  <div class="roteiro-header">🎤 Roteiro do professor</div>
- <p class="roteiro-texto">Hoje vamos conhecer uma das ferramentas mais importantes da engenharia de software: a UML. Se vocês já se perguntaram como developers mostram a estrutura de um sistema antes de programá-lo, a resposta passa por aqui. A UML não é uma metodologia — é uma linguagem, uma forma de comunicar ideias com precisão. Vamos ver os principais tipos de diagramas e, na atividade prática, vocês vão criar o primeiro diagrama de verdade, modelando um sistema simples.</p>
+ <p class="roteiro-texto">Hoje vamos conhecer uma das ferramentas mais importantes da engenharia de software: a UML. Se vocês já se perguntaram como desenvolvedores mostram a estrutura de um sistema antes de programá-lo, a resposta passa por aqui. A UML não é uma metodologia — é uma linguagem, uma forma de comunicar ideias com precisão. Vamos ver os principais tipos de diagramas e, na atividade prática, vocês vão criar o primeiro diagrama de verdade, modelando um sistema simples.</p>
 </div>
 
 ## Fechamento
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a introdução à uml — linguagem de modelagem unificada.
+Na próxima aula, a turma vai aplicar a UML ao Diagrama de Caso de Uso, focando a visão do sistema pelo ponto de vista do usuário.

@@ -1,6 +1,6 @@
 # Aula 08 — Priorização e Validação de Requisitos
 
-Nesta aula, a turma vai reunir requisitos é apenas o primeiro passo. em qualquer projeto real, o tempo e os recursos são limitados, e nem todos os requisitos podem ser desenvolvidos ao mesmo tempo. Por isso, a priorização é uma habilidade essencial: ela permite que a equipe concentre esforços nos requisitos que trazem maior valor ao cliente. Além disso, os requisitos precisam ser validados continuamente ao longo do projeto, para garantir que o produto final realmente atenda às expectativas e que todos na equipe compartilhem o mesmo entendimento sobre o que está sendo construído.
+Nesta aula, a turma vai compreender que levantar requisitos não basta: é preciso priorizar o que entrega mais valor e validar continuamente o entendimento para manter o projeto viável e alinhado ao cliente.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Reunir requisitos é apenas o primeiro passo. Em qualquer projeto real, o tempo 
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender priorização e validação de requisitos permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Em ambientes reais, tempo, orçamento e capacidade da equipe são limitados. Por isso, analistas e product owners precisam decidir o que vem primeiro, justificar escolhas e validar constantemente se os requisitos continuam corretos e relevantes para o objetivo do projeto.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá reunir, priorizar e validar requisitos a partir de um cenário proposto, organizando-os por nível de importância e justificando a priorização feita. A atividade simula uma situação real em que a clareza e a estratégia de priorização impactam diretamente a qualidade do produto final.
+Na atividade prática, a turma deverá reunir, priorizar e validar requisitos a partir de um cenário proposto, organizando-os por nível de importância e justificando a priorização feita.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a priorização e validação de requisitos.
+Na próxima aula, a turma vai iniciar a análise de requisitos em um cenário mais estruturado, começando pela identificação de stakeholders e do escopo.

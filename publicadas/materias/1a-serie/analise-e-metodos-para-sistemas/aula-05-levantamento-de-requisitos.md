@@ -1,6 +1,6 @@
 # Aula 05 — Levantamento de Requisitos
 
-Nesta aula, a turma vai o levantamento de requisitos é uma das fases mais importantes do desenvolvimento de software. é durante essa etapa que cliente e desenvolvedor definem, juntos, o que exatamente o produto deve fazer e como deve se comportar. Sem essa compreensão clara, o risco de retrabalho, falhas de comunicação e soluções desalinhadas cresce significativamente. Nesta aula, a turma vai aprender a coletar, analisar e classificar requisitos em dois grupos principais: funcionais, que descrevem o que o sistema deve fazer, e não funcionais, que descrevem como o sistema deve se comportar sob certas condições.
+Nesta aula, a turma vai compreender por que o levantamento de requisitos é uma etapa decisiva do desenvolvimento de software, distinguindo requisitos funcionais e não funcionais e percebendo como essa definição reduz retrabalho e desalinhamentos com o cliente.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ O levantamento de requisitos é uma das fases mais importantes do desenvolviment
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender levantamento de requisitos permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Em projetos reais, o levantamento de requisitos transforma demandas genéricas em combinados claros de trabalho. Saber ouvir o cliente, registrar funcionalidades, identificar restrições e validar entendimentos evita retrabalho, melhora a comunicação da equipe e aumenta as chances de o sistema resolver o problema certo.
 
 ## Questões de fixação
 
@@ -43,7 +43,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  <li class="alt" data-letra="D"><span class="alt-badge">D</span> Porque é a única fase que não pode ser adaptada ao longo do projeto.</li>
  </ul>
  <div class="gabarito">
- <span class="gab-texto">A alternativa correta é a C porque o levantamento de requisitos对齐as expectativas do cliente com o trabalho da equipe, evitando que o sistema seja construído fora do escopo e reduzindo custos com correções posteriores.</span>
+ <span class="gab-texto">A alternativa correta é a C porque o levantamento de requisitos alinha as expectativas do cliente com o trabalho da equipe, evitando que o sistema seja construído fora do escopo e reduzindo custos com correções posteriores.</span>
  </div>
 </div>
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá realizar o levantamento de requisitos para um cenário proposto pelo professor, identificando necessidades do cliente, listando requisitos funcionais e não funcionais e organizando tudo em uma lista clara e estruturada. A atividade simula uma situação real em que compreender corretamente o que o cliente precisa é essencial para o sucesso do projeto.
+Na atividade prática, a turma deverá realizar o levantamento de requisitos para um cenário proposto pelo professor, identificando necessidades do cliente, listando requisitos funcionais e não funcionais e organizando tudo em uma lista clara e estruturada.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a levantamento de requisitos.
+Na próxima aula, a turma vai transformar esses requisitos em análise e projeto, entendendo como a documentação orienta a construção da solução.

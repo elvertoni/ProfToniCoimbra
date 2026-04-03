@@ -1,6 +1,6 @@
 # Aula 20 — Framework Ágil Scrum
 
-Nesta aula, a turma vai o scrum é um framework ágil baseado em ciclos curtos de trabalho chamados sprints, que garantem revisão e aperfeiçoamento constantes do produto. Dentro dessa estrutura, existem três papéis fundamentais: o Product Owner, responsável por representar os interesses do cliente e priorize o que deve ser construído; o Scrum Master, que facilita o processo e garante que a equipe siga os princípios ágeis; e o Time de Desenvolvimento, responsável por transformar os itens priorizados em software funcional. As reuniões têm tempo fixo (time-boxes) e os prazos das Sprints são dimensionados conforme a complexidade das atividades.
+Nesta aula, a turma vai compreender como o Scrum organiza o trabalho ágil em papéis, eventos e ciclos curtos de entrega, conectando a mentalidade ágil a uma prática concreta de gestão.
 
 ## Objetivos de aprendizagem
 
@@ -10,11 +10,11 @@ Nesta aula, a turma vai o scrum é um framework ágil baseado em ciclos curtos d
 
 ## Desenvolvimento
 
-O Scrum é um framework ágil baseado em ciclos curtos de trabalho chamados Sprints, que garantem revisão e aperfeiçoamento constantes do produto. Dentro dessa estrutura, existem três papéis fundamentais: o Product Owner, responsável por representar os interesses do cliente e priorize o que deve ser construído; o Scrum Master, que facilita o processo e garante que a equipe siga os princípios ágeis; e o Time de Desenvolvimento, responsável por transformar os itens priorizados em software funcional. As reuniões têm tempo fixo (time-boxes) e os prazos das Sprints são dimensionados conforme a complexidade das atividades.
+O Scrum é um framework ágil baseado em ciclos curtos de trabalho chamados Sprints, que garantem revisão e aperfeiçoamento constantes do produto. Dentro dessa estrutura, existem três papéis fundamentais: o Product Owner, responsável por representar os interesses do cliente e priorizar o que deve ser construído; o Scrum Master, que facilita o processo e garante que a equipe siga os princípios ágeis; e o Time de Desenvolvimento, responsável por transformar os itens priorizados em software funcional. As reuniões têm tempo fixo (time-boxes) e os prazos das Sprints são dimensionados conforme a complexidade das atividades.
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender framework ágil scrum permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+No cotidiano das equipes ágeis, Scrum é usado para organizar prioridades, ciclos curtos de entrega e momentos de inspeção e adaptação. Entender papéis, eventos e artefatos ajuda o profissional a participar melhor de times que trabalham com backlog, sprint e melhoria contínua.
 
 ## Questões de fixação
 
@@ -39,7 +39,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  <ul class="alternativas">
  <li class="alt" data-letra="A"><span class="alt-badge">A</span> Gerenciar todo o processo e garantir que a equipe siga as regras do Scrum.</li>
  <li class="alt" data-letra="B"><span class="alt-badge">B</span> Escrever todo o código do sistema.</li>
- <li class="alt" data-letra="C" data-correta="true"><span class="alt-badge">C</span> Representar os interesses do cliente e priorize o Backlog do Produto.</li>
+ <li class="alt" data-letra="C" data-correta="true"><span class="alt-badge">C</span> Representar os interesses do cliente e priorizar o Backlog do Produto.</li>
  <li class="alt" data-letra="D"><span class="alt-badge">D</span> Realizar os testes finais do software a cada Sprint.</li>
  </ul>
  <div class="gabarito">
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá Os estudantes deverão simular a organização de um projeto utilizando o framework Scrum, definindo papéis (Product Owner, Scrum Master, Time), criando um Backlog de tarefas, selecionando atividades para um Sprint e organizando tudo em um quadro visual. A atividade vivencia na prática como funciona um time Scrum real.
+Na atividade prática, a turma deverá simular a organização de um projeto com Scrum, definindo papéis, criando um backlog, selecionando atividades para uma sprint e organizando tudo em um quadro visual.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a framework ágil scrum.
+Com esta aula, a turma fecha uma sequência que articulou requisitos, processos, modelagem e organização ágil para compreender o desenvolvimento de software de forma integrada.

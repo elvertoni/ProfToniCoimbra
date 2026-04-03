@@ -1,20 +1,22 @@
 # Aula 16 — UML — Diagrama de Caso de Uso e Elementos Fundamentais
 
-Nesta aula, a turma vai a uml oferece diversos tipos de diagramas, cada um focado em um aspecto diferente do sistema. os diagramas de caso de uso são especialmente úteis porque mostram como os usuários externos — os atores — interagem com o sistema, representando as principais funcionalidades do ponto de vista de quem usa. Já os diagramas de classe mostram a estrutura interna do sistema, com suas entidades, atributos e relações. Juntos, eles oferecem uma visão completa do que o sistema faz e de como ele é organizado.
+Nesta aula, a turma vai aplicar a UML para representar funcionalidades do ponto de vista do usuário por meio do Diagrama de Caso de Uso, identificando atores, casos de uso e relações básicas.
 
 ## Objetivos de aprendizagem
 
-- Compreender os elementos fundamentais da UML: classes, objetos e relacionamentos.
+- Identificar atores, casos de uso e relacionamentos básicos em diagramas UML.
 - Aplicar o Diagrama de Caso de Uso para representar funcionalidades de um sistema.
-- Representar atores e suas interações com o sistema usando UML.
+- Relacionar a visão do usuário com a modelagem inicial das funcionalidades.
 
 ## Desenvolvimento
 
-A UML oferece diversos tipos de diagramas, cada um focado em um aspecto diferente do sistema. Os diagramas de caso de uso são especialmente úteis porque mostram como os usuários externos — os atores — interagem com o sistema, representando as principais funcionalidades do ponto de vista de quem usa. Já os diagramas de classe mostram a estrutura interna do sistema, com suas entidades, atributos e relações. Juntos, eles oferecem uma visão completa do que o sistema faz e de como ele é organizado.
+Entre os diagramas da UML, o Diagrama de Caso de Uso é um dos mais acessíveis para iniciar a modelagem. Ele mostra quem interage com o sistema e quais funcionalidades precisam ser disponibilizadas, ajudando a transformar requisitos em uma visão externa organizada.
+
+Seus elementos fundamentais incluem atores, casos de uso e relacionamentos, que permitem representar de forma simples o escopo funcional de um sistema antes de detalhar sua estrutura interna. Por isso, esse diagrama costuma aparecer nas etapas iniciais de análise e conversa diretamente com o levantamento de requisitos.
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender uml — diagrama de caso de uso e elementos fundamentais permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+No cotidiano de análise de sistemas, diagramas de caso de uso ajudam a alinhar expectativas com clientes e usuários antes de decisões mais técnicas. Eles são úteis para discutir funcionalidades, delimitar escopo e tornar visível o que o sistema realmente precisa oferecer.
 
 ## Questões de fixação
 
@@ -58,7 +60,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá modelar funcionalidades básicas de um sistema de e-commerce utilizando o Diagrama de Caso de Uso, identificando o ator principal e as principais funcionalidades que ele pode realizar no sistema. A atividade treina a representação de interações usuário-sistema de forma visual e organizada.
+Na atividade prática, a turma deverá modelar funcionalidades básicas de um sistema de e-commerce utilizando o Diagrama de Caso de Uso, identificando o ator principal e as principais funcionalidades que ele pode realizar.
 
 O estudante deverá:
 
@@ -95,4 +97,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a uml — diagrama de caso de uso e elementos fundamentais.
+Na próxima aula, a turma vai complementar essa visão funcional com o Diagrama de Classes, relacionando funcionalidades e estrutura.

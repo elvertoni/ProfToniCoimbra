@@ -1,6 +1,6 @@
 # Aula 10 — Análise de Requisitos Inicial — Parte II
 
-Nesta aula, a turma vai se a primeira parte do levantamento de requisitos trata de entender com quem estamos lidando e o que o cliente deseja, esta segunda parte vai mais fundo: como o analista faz as perguntas certas para extrair os requisitos verdadeiros, como identificar as partes interessadas com precisão e, finalmente, como avaliar se o que está sendo solicitado é realmente viável. A análise de viabilidade responde perguntas essenciais: o problema está bem definido? Existe um caminhoreal para resolvê-lo com os recursos disponíveis? Sem essa checagem, projetos podem avançar em direções impraticáveis.
+Nesta aula, a turma vai aprofundar a análise de requisitos explorando técnicas de entrevista, formulação de perguntas e análise de viabilidade para verificar se a solução proposta faz sentido no contexto do projeto.
 
 ## Objetivos de aprendizagem
 
@@ -10,11 +10,11 @@ Nesta aula, a turma vai se a primeira parte do levantamento de requisitos trata 
 
 ## Desenvolvimento
 
-Se a primeira parte do levantamento de requisitos trata de entender com quem estamos lidando e o que o cliente deseja, esta segunda parte vai mais fundo: como o analista faz as perguntas certas para extrair os requisitos verdadeiros, como identificar as partes interessadas com precisão e, finalmente, como avaliar se o que está sendo solicitado é realmente viável. A análise de viabilidade responde perguntas essenciais: o problema está bem definido? Existe um caminhoreal para resolvê-lo com os recursos disponíveis? Sem essa checagem, projetos podem avançar em direções impraticáveis.
+Se a primeira parte do levantamento de requisitos trata de entender com quem estamos lidando e o que o cliente deseja, esta segunda parte vai mais fundo: como o analista faz as perguntas certas para extrair os requisitos verdadeiros, como identificar as partes interessadas com precisão e, finalmente, como avaliar se o que está sendo solicitado é realmente viável. A análise de viabilidade responde perguntas essenciais: o problema está bem definido? Existe um caminho real para resolvê-lo com os recursos disponíveis? Sem essa checagem, projetos podem avançar em direções impraticáveis.
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender análise de requisitos inicial — parte ii permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Analistas de sistemas precisam investigar antes de decidir. Formular boas perguntas, confirmar quem são as partes interessadas e testar a viabilidade técnica, econômica e operacional da solução são práticas que evitam projetos impraticáveis e melhoram a qualidade das decisões.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá aprofundar o levantamento de requisitos para um sistema de gestão de projetos, identificando stakeholders, registrando requisitos funcionais e não funcionais e realizando uma análise inicial de viabilidade. A atividade simula a segunda etapa do trabalho do analista de requisitos.
+Na atividade prática, a turma deverá aprofundar o levantamento de requisitos para um sistema de gestão de projetos, identificando stakeholders, registrando requisitos funcionais e não funcionais e realizando uma análise inicial de viabilidade.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a análise de requisitos inicial — parte ii.
+Na próxima aula, a turma vai comparar essa visão analítica com o modelo clássico de desenvolvimento de software, entendendo como as fases se organizam.

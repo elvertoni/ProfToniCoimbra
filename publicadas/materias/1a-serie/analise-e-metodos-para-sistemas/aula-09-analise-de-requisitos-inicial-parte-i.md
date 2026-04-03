@@ -1,6 +1,6 @@
 # Aula 09 — Análise de Requisitos Inicial — Parte I
 
-Nesta aula, a turma vai todo projeto de software começa com uma necessidade. mas transformar essa necessidade em algo que pode ser construído exige um processo organizado de análise de requisitos. A primeira fase desse processo envolve compreender quem são os stakeholders — todas as partes interessadas no projeto —, entender suas expectativas e começar a delimitar o escopo: o que o sistema vai incluir e, igualmente importante, o que ele não vai incluir. Sem esse trabalho inicial, o projeto perde direção e o risco de construções desalinhadas aumenta significativamente.
+Nesta aula, a turma vai iniciar a análise de requisitos identificando stakeholders, necessidades e limites de escopo, etapa essencial para dar direção ao projeto desde o começo.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Todo projeto de software começa com uma necessidade. Mas transformar essa neces
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender análise de requisitos inicial — parte i permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Na prática profissional, identificar corretamente as partes interessadas evita decisões baseadas em suposições. Quando o analista reconhece quem influencia o projeto e delimita o escopo inicial, a equipe ganha foco e reduz conflitos sobre o que será entregue.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá realizar a aplicação inicial do levantamento de requisitos para um sistema de gerenciamento de estoque, identificando stakeholders, suas necessidades e o escopo inicial do projeto. A atividade simula a primeira reunião entre analista e cliente.
+Na atividade prática, a turma deverá realizar a aplicação inicial do levantamento de requisitos para um sistema de gerenciamento de estoque, identificando stakeholders, suas necessidades e o escopo inicial do projeto.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a análise de requisitos inicial — parte i.
+Na próxima aula, a turma vai aprofundar essa análise, explorando perguntas mais precisas e critérios de viabilidade.

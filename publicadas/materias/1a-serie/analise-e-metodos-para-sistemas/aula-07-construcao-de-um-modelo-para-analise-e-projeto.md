@@ -1,6 +1,6 @@
 # Aula 07 — Construção de um Modelo para Análise e Projeto
 
-Nesta aula, a turma vai um modelo de análise e projeto é uma representação abstrata e visual de um sistema que ainda será desenvolvido. ele permite que a equipe e os stakeholders compreendam a estrutura, as funcionalidades e as interações do futuro software antes mesmo de uma única linha de código ser escrita. A construção desse modelo é um processo colaborativo e iterativo: quanto mais feedbacks são recebidos, mais preciso e útil ele se torna. Técnicas como brainstorming e prototipação são amplamente utilizadas nessa etapa.
+Nesta aula, a turma vai compreender como um modelo de análise e projeto representa um sistema antes da implementação, usando abstração, feedback e refinamento para organizar ideias com mais clareza.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Um modelo de análise e projeto é uma representação abstrata e visual de um s
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender construção de um modelo para análise e projeto permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Modelos são usados no trabalho de analistas e desenvolvedores para discutir soluções antes de programar. Quando a equipe modela o sistema com antecedência, consegue testar hipóteses, alinhar expectativas com stakeholders e corrigir problemas de entendimento mais cedo.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá construir um modelo inicial de sistema para um aplicativo de gerenciamento de tarefas, identificando usuários, funcionalidades principais e a organização lógica entre eles. A atividade desenvolve a capacidade de estruturar e representar um sistema antes da implementação.
+Na atividade prática, a turma deverá construir um modelo inicial de sistema para um aplicativo de gerenciamento de tarefas, identificando usuários, funcionalidades principais e a organização lógica entre eles.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a construção de um modelo para análise e projeto.
+Na próxima aula, a turma vai avançar para a priorização e a validação de requisitos, refinando o que realmente deve entrar na solução.

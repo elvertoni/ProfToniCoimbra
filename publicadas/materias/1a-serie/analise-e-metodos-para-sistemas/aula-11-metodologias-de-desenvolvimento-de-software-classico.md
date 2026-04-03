@@ -1,6 +1,6 @@
-# Aula 11 — Metodologias de Desenvolvimento de Software — Clássico
+# Aula 11 — Modelo Clássico de Desenvolvimento de Software
 
-Nesta aula, a turma vai o ciclo de vida clássico de desenvolvimento de software funciona como um roteiro bem definido: cada fase sucede a anterior em uma sequência lógica e necessária. Essa abordagem, também conhecida como tradicional ou cascata, foi por décadas o padrão da indústria. Cada fase contempla um conjunto de ações que vão desde o diagnóstico do problema até os testes finais antes da entrega. Compreender esse ciclo é fundamental para qualquer profissional de tecnologia, mesmo que hoje outras abordagens também coexistam no mercado.
+Nesta aula, a turma vai compreender o modelo clássico de desenvolvimento de software, em que as fases se organizam de forma sequencial e cada etapa prepara a próxima.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ O ciclo de vida clássico de desenvolvimento de software funciona como um roteir
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender metodologias de desenvolvimento de software — clássico permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Mesmo com a popularização das abordagens ágeis, o modelo clássico continua importante para entender projetos com escopo estável, forte documentação e etapas bem definidas. Conhecer essa lógica ajuda o profissional a reconhecer quando a previsibilidade e o controle são prioritários.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá aplicar o modelo de processo clássico a um sistema fictício, organizando todas as fases do ciclo de desenvolvimento — desde o levantamento até a manutenção — e descrevendo brevemente cada uma. A atividade desenvolve a compreensão da estrutura sequencial e da importância de cada etapa.
+Na atividade prática, a turma deverá aplicar o modelo de processo clássico a um sistema fictício, organizando todas as fases do ciclo de desenvolvimento — do levantamento à manutenção — e descrevendo brevemente cada uma.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a metodologias de desenvolvimento de software — clássico.
+Na próxima aula, a turma vai comparar o modelo clássico com outros modelos de processo, percebendo quando cada abordagem faz mais sentido.

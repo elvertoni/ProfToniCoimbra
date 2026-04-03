@@ -1,6 +1,6 @@
 # Aula 12 — Modelos de Processos de Software
 
-Nesta aula, a turma vai não existe um modelo de desenvolvimento de software que funcione igual para todos os projetos. a escolha da abordagem depende de fatores como a estabilidade dos requisitos, o tamanho da equipe, o prazo disponível e o nível de incerteza do projeto. O modelo cascata funciona bem quando os requisitos são claros desde o início. O desenvolvimento ágil brilha em projetos que precisam se adaptar a mudanças frequentes. Já o modelo iterativo-incremental combina elementos dos dois, permitindo entregas parciais e ajustes ao longo do tempo.
+Nesta aula, a turma vai comparar diferentes modelos de processo de software, percebendo que a escolha entre cascata, ágil e iterativo-incremental depende do contexto do projeto.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Não existe um modelo de desenvolvimento de software que funcione igual para tod
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender modelos de processos de software permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+No mercado, não existe um processo universal. Equipes escolhem modelos diferentes conforme estabilidade dos requisitos, urgência, riscos e frequência de mudanças. Saber justificar essa escolha é parte do trabalho de quem analisa, planeja e conduz projetos de software.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá analisar um cenário de projeto de software e escolher o modelo de processo mais adequado — cascata, ágil ou iterativo-incremental — justificando tecnicamente sua decisão. A atividade desenvolve a capacidade de tomada de decisão fundamentada com base nas características de cada projeto.
+Na atividade prática, a turma deverá analisar um cenário de projeto de software e escolher o modelo de processo mais adequado — cascata, ágil ou iterativo-incremental — justificando tecnicamente sua decisão.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a modelos de processos de software.
+Na próxima aula, a turma vai entrar no universo ágil estudando o Manifesto Ágil e os princípios que deram origem a essa abordagem.

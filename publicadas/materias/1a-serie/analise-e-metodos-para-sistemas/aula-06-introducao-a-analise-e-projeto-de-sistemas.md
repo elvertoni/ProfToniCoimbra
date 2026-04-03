@@ -1,6 +1,6 @@
-# Aula 06 — Introdução a Análise e Projeto de Sistemas
+# Aula 06 — Introdução à Análise e ao Projeto de Sistemas
 
-Nesta aula, a turma vai análise e projeto de sistemas é a disciplina que conecta o levantamento de requisitos à construção efetiva do software. Enquanto a análise se dedica a entender o problema e as necessidades do usuário, o projeto traduz esse entendimento em uma representação organizada da solução. Essa ponte entre necessidade e implementação é o que permite que sistemas sejam construídos com coerência, escalabilidade e qualidade. Sem ela, o risco de o produto final não refletir o que foi solicitado aumenta consideravelmente.
+Nesta aula, a turma vai compreender como a análise e o projeto de sistemas transformam requisitos em uma solução estruturada, conectando o entendimento do problema à organização técnica do software.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Análise e Projeto de Sistemas é a disciplina que conecta o levantamento de req
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender introdução a análise e projeto de sistemas permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+No contexto profissional, análise e projeto de sistemas são etapas que dão forma ao que foi levantado com o cliente. Elas ajudam a equipe a registrar decisões, alinhar entendimento e planejar a solução antes da implementação, reduzindo falhas de comunicação e retrabalho.
 
 ## Questões de fixação
 
@@ -43,7 +43,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  <li class="alt" data-letra="D"><span class="alt-badge">D</span> Porque devem ser feitos apenas após a conclusão do projeto.</li>
  </ul>
  <div class="gabarito">
- <span class="gab-texto">A alternativa correta é a C porque a documentação alinhada evita mal-entendidos entre cliente e equipe, serving como referência comum para todas as etapas do desenvolvimento.</span>
+ <span class="gab-texto">A alternativa correta é a C porque a documentação alinhada evita mal-entendidos entre cliente e equipe, servindo como referência comum para todas as etapas do desenvolvimento.</span>
  </div>
 </div>
 
@@ -53,12 +53,12 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
 <div class="callout c-violet">
  <div class="callout-icon">💡</div>
  <div class="callout-body">
- <p class="callout-title">Prática: Fluxograma do Levantamento de Requisitos</p>
- <p class="callout-text">O estudante deverá construir um fluxograma que represente o processo básico de Levantamento de Requisitos, organizando as principais etapas de forma visual e sequencial. A atividade desenvolve a habilidade de registrar e representar processos antes da implementação de um sistema.</p>
+ <p class="callout-title">Prática: Fluxograma da Análise e do Projeto de um Sistema</p>
+ <p class="callout-text">O estudante deverá construir um fluxograma que represente como um requisito percorre as etapas de análise e projeto até se transformar em uma proposta de solução organizada. A atividade desenvolve a habilidade de registrar e representar processos antes da implementação de um sistema.</p>
  </div>
 </div>
 
-A turma deverá O estudante deverá construir um fluxograma que represente o processo básico de Levantamento de Requisitos, organizando as principais etapas de forma visual e sequencial. A atividade desenvolve a habilidade de registrar e representar processos antes da implementação de um sistema.
+Na atividade prática, a turma deverá construir um fluxograma que represente como um requisito percorre as etapas de análise e projeto até se transformar em uma proposta de solução organizada.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a introdução a análise e projeto de sistemas.
+Na próxima aula, a turma vai representar esse processo por meio da construção de um modelo inicial de análise e projeto.

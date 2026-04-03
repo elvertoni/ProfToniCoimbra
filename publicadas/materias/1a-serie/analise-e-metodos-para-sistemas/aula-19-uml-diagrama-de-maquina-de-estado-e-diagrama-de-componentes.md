@@ -1,6 +1,6 @@
 # Aula 19 — UML — Diagrama de Máquina de Estado e Diagrama de Componentes
 
-Nesta aula, a turma vai nem tudo em um sistema pode ser representado por fluxos ou estruturas fixas. alguns elementos mudam de comportamento ao longo do tempo, dependendo de eventos externos — e é exatamente aí que o Diagrama de Máquina de Estado entra. Ele modela os estados possíveis de um objeto e as transições entre eles, sendo essencial para prever como um sistema reage a estímulos. O Diagrama de Componentes, por sua vez, oferece uma visão de alto nível da arquitetura de software, mostrando como os módulos e bibliotecas se organizam e se comunicam para formar o sistema completo.
+Nesta aula, a turma vai explorar diagramas voltados ao comportamento dependente de estados e à organização arquitetural, articulando o Diagrama de Máquina de Estado com o Diagrama de Componentes.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Nem tudo em um sistema pode ser representado por fluxos ou estruturas fixas. Alg
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender uml — diagrama de máquina de estado e diagrama de componentes permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+Sistemas reativos e distribuídos exigem olhar para estados internos e organização por módulos. Diagramas de máquina de estado e de componentes ajudam analistas e desenvolvedores a prever comportamentos, dependências e impactos arquiteturais.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá O estudante deverá modelar um sistema de controle (ex.: portão eletrônico ou sistema equivalente) utilizando o Diagrama de Máquina de Estado para representar os estados e transições, e o Diagrama de Componentes para mostrar a organização modular do sistema.
+Na atividade prática, a turma deverá modelar um sistema de controle utilizando o Diagrama de Máquina de Estado para representar estados e transições, e o Diagrama de Componentes para mostrar a organização modular do sistema.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a uml — diagrama de máquina de estado e diagrama de componentes.
+Na próxima aula, a turma vai retomar as abordagens ágeis estudando o Scrum como framework de organização do trabalho.

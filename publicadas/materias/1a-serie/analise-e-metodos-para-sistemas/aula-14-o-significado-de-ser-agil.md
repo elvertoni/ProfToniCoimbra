@@ -1,6 +1,6 @@
 # Aula 14 — O Significado de Ser Ágil
 
-Nesta aula, a turma vai ser ágil vai muito além de seguir uma metodologia ou usar um quadro kanban. é uma mentalidade que valoriza a entrega contínua de valor ao cliente, a capacidade de se adaptar rapidamente a mudanças e a colaboração genuína entre as pessoas envolvidas no projeto. O primeiro princípio do Manifesto Ágil é direto: nossa maior prioridade é satisfazer o cliente por meio da entrega contínua e adiantada de software com valor agregado. Ser ágil significa abraçar mudanças, mesmo quando elas chegam no meio do caminho — e transformar cada mudança em uma oportunidade de melhorar o produto.
+Nesta aula, a turma vai compreender que ser ágil é adotar uma mentalidade de colaboração, adaptação e entrega contínua de valor — e não apenas seguir rituais ou ferramentas.
 
 ## Objetivos de aprendizagem
 
@@ -14,7 +14,7 @@ Ser ágil vai muito além de seguir uma metodologia ou usar um quadro Kanban. É
 
 ## Conexão com a prática profissional
 
-No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diariamente por analistas de sistemas, desenvolvedores e engenheiros de requisitos. Compreender o significado de ser ágil permite que o profissionalcolabore de forma mais eficaz com equipes multidisciplinares, comunique ideias com clareza e participe ativamente da construção de soluções tecnológicas que atendam às necessidades reais dos usuários.
+No trabalho com produtos digitais, equipes realmente ágeis observam feedback do cliente, ajustam prioridades e aprendem com cada entrega. Essa postura exige comunicação, autonomia responsável e abertura para mudança, competências muito valorizadas em ambientes de tecnologia.
 
 ## Questões de fixação
 
@@ -58,7 +58,7 @@ No mercado de trabalho, as habilidades trabajadas nesta aula são aplicadas diar
  </div>
 </div>
 
-A turma deverá Os estudantes participarão de uma simulação prática com duas equipes: uma seguirá um plano fixo (sem mudanças permitidas) e outra seguirá uma abordagem adaptativa (com possibilidade de ajustes). A atividade permite vivenciar na prática o significado de ser ágil e sua diferença em relação a processos rígidos.
+Na atividade prática, a turma vai participar de uma simulação com duas equipes: uma seguirá um plano fixo e a outra adotará uma abordagem adaptativa com possibilidade de ajustes.
 
 O estudante deverá:
 
@@ -95,4 +95,4 @@ O estudante deverá:
  </div>
 </div>
 
-Na próxima aula, a turma poderá aprofundar os conteúdos relacionados a o significado de ser ágil.
+Na sequência do curso, a turma vai migrar da discussão sobre processos para a modelagem de sistemas com UML, conectando mentalidade de desenvolvimento e representação técnica.
