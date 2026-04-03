@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "repoName": "ProfToniCoimbra",
+  "updatedAt": null,
+  "courses": [
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "label": "1a Serie - Analise e Metodos para Sistemas",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "label": "1a Serie - Introducao a Computacao",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao"
+    },
+    {
+      "series": "2a-serie",
+      "subject": "inovacao-tecnologia-e-empreendedorismo",
+      "label": "2a Serie - Inovacao Tecnologia e Empreendedorismo",
+      "path": "publicadas/materias/2a-serie/inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
+      "series": "2a-serie",
+      "subject": "programacao-front-end",
+      "label": "2a Serie - Programacao Front-End",
+      "path": "publicadas/materias/2a-serie/programacao-front-end"
+    },
+    {
+      "series": "3a-serie",
+      "subject": "programacao-no-desenvolvimento-de-sistemas",
+      "label": "3a Serie - Programacao no Desenvolvimento de Sistemas",
+      "path": "publicadas/materias/3a-serie/programacao-no-desenvolvimento-de-sistemas"
+    },
+    {
+      "series": "3a-serie",
+      "subject": "analise-e-projeto-de-sistemas",
+      "label": "3a Serie - Analise e Projeto de Sistemas",
+      "path": "publicadas/materias/3a-serie/analise-e-projeto-de-sistemas"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "label": "Disciplinas Extras - Inteligencia Artificial",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial"
+    }
+  ],
+  "lessons": []
+}
