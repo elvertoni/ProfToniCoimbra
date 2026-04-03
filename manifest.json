@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T16:28:27.801265+00:00",
+  "updatedAt": "2026-04-03T16:28:29.482680+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -176,6 +176,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-13-metodo-agil-e-manifesto-agil.md",
       "status": "published",
       "publishedAt": "2026-04-03T16:28:27.801265+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 14,
+      "title": "O Significado de Ser Ágil",
+      "slug": "o-significado-de-ser-agil",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-14-o-significado-de-ser-agil.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T16:28:29.482680+00:00"
     }
   ]
 }
