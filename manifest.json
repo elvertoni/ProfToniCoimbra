@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T16:28:36.542977+00:00",
+  "updatedAt": "2026-04-03T16:28:38.243026+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -226,6 +226,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-18-uml-diagrama-de-atividades-e-diagrama-de-sequencia.md",
       "status": "published",
       "publishedAt": "2026-04-03T16:28:36.542977+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 19,
+      "title": "UML — Diagrama de Máquina de Estado e Diagrama de Componentes",
+      "slug": "uml-diagrama-de-maquina-de-estado-e-diagrama-de-componentes",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-19-uml-diagrama-de-maquina-de-estado-e-diagrama-de-componentes.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T16:28:38.243026+00:00"
     }
   ]
 }
