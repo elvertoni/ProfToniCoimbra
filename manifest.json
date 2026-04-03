@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-03T16:28:31.254796+00:00",
+  "updatedAt": "2026-04-03T16:28:32.996650+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -196,6 +196,16 @@
       "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-15-introducao-a-uml-linguagem-de-modelagem-unificada.md",
       "status": "published",
       "publishedAt": "2026-04-03T16:28:31.254796+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "analise-e-metodos-para-sistemas",
+      "lessonNumber": 16,
+      "title": "UML — Diagrama de Caso de Uso e Elementos Fundamentais",
+      "slug": "uml-diagrama-de-caso-de-uso-e-elementos-fundamentais",
+      "path": "publicadas/materias/1a-serie/analise-e-metodos-para-sistemas/aula-16-uml-diagrama-de-caso-de-uso-e-elementos-fundamentais.md",
+      "status": "published",
+      "publishedAt": "2026-04-03T16:28:32.996650+00:00"
     }
   ]
 }
