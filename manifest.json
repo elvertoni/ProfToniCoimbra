@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:37.825329+00:00",
+  "updatedAt": "2026-04-06T21:57:29.036712+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -456,6 +456,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-21-skills-capacidades-reutilizaveis-para-agentes.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:37.825329+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 22,
+      "title": "Ética e Responsabilidade em IA",
+      "slug": "etica-e-responsabilidade-em-ia",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-22-etica-e-responsabilidade-em-ia.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T21:57:29.036712+00:00"
     }
   ]
 }
