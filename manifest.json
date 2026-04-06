@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:19.183920+00:00",
+  "updatedAt": "2026-04-06T18:32:20.685230+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -336,6 +336,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-09-embeddings-chunks-e-overlap.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:19.183920+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 10,
+      "title": "Vector Stores",
+      "slug": "vector-stores",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-10-vector-stores.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:20.685230+00:00"
     }
   ]
 }
