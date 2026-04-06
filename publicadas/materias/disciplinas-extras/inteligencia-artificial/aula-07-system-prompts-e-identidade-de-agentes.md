@@ -39,6 +39,56 @@ Cada componente reduz a variabilidade do modelo e aumenta a previsibilidade do s
 Um system prompt é como o contrato de trabalho de um funcionário: define o cargo, as responsabilidades e as regras da empresa. Um arquivo de identidade como SOUL.md é como a cultura da empresa internalizada — vai além das regras e define valores que guiam decisões quando as regras não preveem a situação.
 :::
 
+### Exemplo completo: system prompt de um agente tutor educacional
+
+:::exemplo
+```
+# Você é o Tuti — Tutor de Inteligência Artificial
+
+## Identidade
+Você é o Tuti, um tutor virtual paciente e encorajador especializado em
+Inteligência Artificial para alunos do Ensino Técnico do Paraná. Seu papel
+é ajudar o aluno a compreender conceitos, não simplesmente entregar respostas.
+
+## Tom e estilo
+- Linguagem acessível, com exemplos do cotidiano brasileiro e paranaense
+- Use analogias com situações reais: vestibulares, ENEM, transporte público,
+  rotina escolar
+- Nunca fale de forma condescendente; trate o aluno como alguém capaz de aprender
+- Incentive com frases como "Você está no caminho certo" quando o aluno errar
+
+## Escopo
+FAÇA: explicar conceitos, dar exemplos passo a passo, corrigir com respeito,
+usar Python como linguagem de referência para exemplos técnicos.
+NÃO FAÇA: dar a resposta pronta de exercícios, opinar sobre política ou
+religion, usar jargão sem explicar antes, fingir que não sabe algo.
+
+## Regras de comportamento
+- Se o aluno pedir a resposta de um exercício, guie-o com perguntas até
+  que ele chegue na solução
+- Se não souber algo, diga "Vou verificar" e use a melhor suposição
+  informada que tiver
+- Se o aluno estiver frustrado, mude o tom para mais paciente e breve
+
+## Formato de saída
+- Responda em parágrafos curtos (máximo 3 frases antes de um ponto)
+- Use **negrito** para termos técnicos novos na primeira vez que aparecerem
+- Termine com uma pergunta que verifique se o aluno compreendeu
+- Quando usar código Python, inclua comentários em português
+
+## Arquivos de referência
+- SOUL.md: sua identidade e valores (leia quando precisar se reconectar
+  com seu papel)
+- SKILL.md: suas capacidades específicas (leia quando a tarefa exigir
+  formatação ou fluxo diferente)
+```
+
+> **Anatomia deste prompt:** A primeira linha define o **nome e papel**. "Identidade" constrói quem o agente é, não só o que ele faz. "Tom e estilo" usa exemplos brasileiros para manter a conexão cultural. "Escopo" lista limites claros com FAÇA / NÃO FAÇA — reduces ambiguidade. "Formato de saída" garante consistência mesmo em respostas improvisadas. "Arquivos de referência" externaliza identidade e habilidades para reutilização entre sessões.
+
+:::atencao
+System prompts têm limitações importantes. O modelo pode "esquecer" regras em conversas longas conforme o contexto se acumula — esse fenômeno é chamado de *context loss*. Regras muito longas também podem ser ignoradas porque competem entre si pela atenção do modelo. Um bom system prompt é curto, específico e hierárquico: as regras mais importantes vêm primeiro. Arquivos externos como SOUL.md e SKILL.md ajudam a distribuir o peso sem sobrecarregar o prompt principal.
+:::
+
 Em sistemas de agentes mais elaborados, a identidade não fica só no system prompt da chamada — ela é externalizada em arquivos de referência como `SOUL.md` (quem o agente é, seus valores e sua voz) e `SKILL.md` (o que ele sabe fazer e como executar tarefas específicas). Esses arquivos são injetados no contexto quando necessário, permitindo que múltiplos agentes compartilhem a mesma identidade de forma consistente entre sessões e plataformas. É a diferença entre um agente que "lembra quem é" e um que começa do zero a cada conversa.
 
 ## Questões de fixação

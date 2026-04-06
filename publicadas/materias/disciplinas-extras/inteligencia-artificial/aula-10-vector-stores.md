@@ -23,6 +23,27 @@ Um banco de dados relacional responde "me dê o registro onde o campo X é igual
 **Quando usar cada tipo:** Para projetos pequenos e locais, Chroma e FAISS são suficientes — rodam em memória ou em disco sem infraestrutura adicional. Para produção com volume e escala, Qdrant e Pinecone oferecem persistência, APIs e filtros avançados. Para quem já usa PostgreSQL, o pgvector adiciona busca vetorial sem trocar de banco.
 :::
 
+### Comparação direta: Chroma vs pgvector vs Pinecone
+
+| Critério | Chroma | pgvector | Pinecone |
+|---|---|---|---|
+| **Custo** | Gratuito (open source) | Gratuito (extensão PostgreSQL) | Pago a partir de ~$70/mês (plano pago) |
+| **Infraestrutura** | Local ou Docker | Seu próprio servidor PostgreSQL | Totalmente gerenciado (nuvem) |
+| **Controle** | Total — você gerencia tudo | Total — dados ficam no seu banco | Mínimo — provider gerencia |
+| **Escalabilidade** | Limitado ao servidor local | Escala com seu banco PostgreSQL | Escala automaticamente |
+| **Filtros por metadados** | Suportado | Suportado (SQL completo) | Suportado |
+| **Melhor para** | Protótipos e aprendizado | Projetos com banco PostgreSQL já existente | Produção em escala sem equipe de infra |
+
+### Custo vs controle — qual escolher?
+
+- **Chroma** é a escolha ideal para aprender, prototipar e desenvolver localmente. O custo é zero e você tem controle total, mas precisa gerenciar persistência e backups manualmente. Para um projeto de aula ou TCC, Chroma resolve.
+- **pgvector** é a escolha natural se você já usa PostgreSQL — adiciona busca vetorial ao banco que você já opera, sem novos serviços. O custo é o do seu servidor existente; o controle é total.
+- **Pinecone** é a escolha para produção em empresas onde a equipe de infraestrutura quer zero manutenção de banco vetorial. O custo é significativo, mas o gerenciamento é zero e a escala é automática.
+
+:::atencao
+Vector stores totalmente gerenciados como o Pinecone oferecem conveniência em troca de vendor lock-in: seus vetores vivem no infrastructure do provider. Se o pricing mudar ou o serviço sair do ar, a migração exige reindexar todos os documentos — o que pode levar dias em bases grandes. Para sistemas críticos, considere ao menos ter um backup offline dos documentos-fonte para reindexação de emergência.
+:::
+
 As opções mais usadas hoje:
 
 - **Chroma** — open source, fácil de usar localmente, ideal para protótipos e projetos pequenos

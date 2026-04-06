@@ -23,6 +23,54 @@ Antes do MCP, cada integração era um projeto: conectar o Claude ao Notion exig
 **Cliente vs Servidor MCP:** O cliente MCP é o agente ou ferramenta de IA — Claude Desktop, Claude Code, Cursor. O servidor MCP é qualquer sistema que expõe capacidades: um banco de dados, uma API, um sistema de arquivos, um serviço externo. A comunicação entre os dois segue o protocolo padronizado.
 :::
 
+### Diferença entre cliente e servidor na prática
+
+O **cliente MCP** é onde a IA está em execução — é quem faz perguntas e usa ferramentas. O **servidor MCP** é o sistema que fornece dados ou executa ações em nome do cliente. Pense na arquitetura como uma requisição HTTP comum: o cliente (navegador) pede algo a um servidor (API). A diferença é que aqui o "cliente" é um modelo de IA e o "servidor" pode ser qualquer sistema — um banco de dados, o filesystem, uma API de terceiros.
+
+- **Cliente**: Claude Desktop, Cursor, Claude Code, seu próprio agente via SDK
+- **Servidor**: o Notion, seu PostgreSQL, seu filesystem, uma API REST, um script Python customizado
+
+### Exemplo de configuração real: claude_desktop_config.json
+
+Para usar um servidor MCP no Claude Desktop, basta adicionar a configuração no arquivo `claude_desktop_config.json`. Exemplo com o servidor **filesystem** (acesso a arquivos locais) e **n8n** (automação de workflows):
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/usuario/projetos"]
+    },
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "@n8n/mcp-server", "https://seu-n8n.exemplo.com"]
+    }
+  }
+}
+```
+
+> **Anatomia da configuração:** `mcpServers` é o objeto raiz. Cada chave ( `"filesystem"`, `"n8n"` ) é o nome que o cliente exibe ao usuário. `command` define como iniciar o servidor — `npx` baixa e executa o pacote npm correspondente. `args` são os argumentos passados ao servidor: no caso do filesystem, o caminho da pasta que o servidor pode acessar. Essa configuração é específica do cliente — cada cliente MCP (Cursor, Claude Code) tem seu próprio arquivo de configuração.
+
+### Servidores MCP que você pode instalar hoje
+
+O ecossistema MCP já tem servidores prontos para uso imediato. Alguns dos mais populares:
+
+| Servidor | O que expõe | Quando usar |
+|---|---|---|
+| **@modelcontextprotocol/server-filesystem** | Leitura e escrita de arquivos locais | Quando o agente precisa acessar seu projeto |
+| **@modelcontextprotocol/server-github** | Repositórios, issues, PRs, código | Quando o agente desenvolve com Git |
+| **@modelcontextprotocol/server-sqlite** | Consultas em banco SQLite local | Para projetos pequenos sem PostgreSQL |
+| **@n8n/mcp-server** | Workflows de automação n8n | Para acionar automações via agente |
+| **@modelcontextprotocol/server-postgres** | Consultas PostgreSQL | Quando você já usa PostgreSQL |
+| **@modelcontextprotocol/server-brave-search** | Busca na web em tempo real | Para agentes que precisam de informações atuais |
+| **@notionhq/transport** | Páginas e databases do Notion | Para agentes que consultam sua base de notas |
+
+A lista completa está em [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — com servidores para Slack, Google Drive, S3, Redis e dezenas de outros sistemas.
+
+:::atencao
+Um servidor MCP é uma superfície de ataque: ele dá ao modelo de IA a capacidade de executar ações no sistema que expõe. Um servidor filesystem sem restrições permite que o agente leia e escreva qualquer arquivo no caminho configurado. Antes de ativar um servidor em produção, defina escopos mínimos — por exemplo, qual pasta específica o servidor pode acessar, não o filesystem inteiro. Essa configuração é sua responsabilidade, não do protocolo.
+:::
+
 Um servidor MCP pode expor três tipos de capacidade:
 
 - **Tools** — funções que o agente pode chamar para executar ações, como buscar dados, criar registros ou enviar mensagens
