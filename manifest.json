@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:14.331180+00:00",
+  "updatedAt": "2026-04-06T18:32:15.884086+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -306,6 +306,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-06-context-engineering.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:14.331180+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 7,
+      "title": "System Prompts e Identidade de Agentes",
+      "slug": "system-prompts-e-identidade-de-agentes",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-07-system-prompts-e-identidade-de-agentes.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:15.884086+00:00"
     }
   ]
 }
