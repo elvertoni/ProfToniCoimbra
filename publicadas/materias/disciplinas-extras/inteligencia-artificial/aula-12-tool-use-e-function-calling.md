@@ -39,18 +39,62 @@ Abaixo está um exemplo enxuto em Python mostrando o ciclo completo: definição
 
 ```python
 from anthropic import Anthropic
+
 client = Anthropic()
-def consultar_processo(numero): return {"status": "em andamento", "fonte": "TJPR"}
-tools = [{"name": "consultar_processo_tjpr", "description": "Busca andamento resumido no TJPR", "input_schema": {"type": "object", "properties": {"numero": {"type": "string", "description": "Número CNJ"}}, "required": ["numero"]}}]
+
+def consultar_processo(numero):
+    return {"status": "em andamento", "fonte": "TJPR"}
+
+tools = [{
+    "name": "consultar_processo_tjpr",
+    "description": "Busca andamento resumido no TJPR",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "numero": {
+                "type": "string",
+                "description": "Número CNJ"
+            }
+        },
+        "required": ["numero"]
+    }
+}]
+
 mensagem = "Consulte o processo 0001234-56.2025.8.16.0001"
+
 # 1) chama o modelo com a ferramenta disponível
-resp = client.messages.create(model="claude-3-5-sonnet-latest", max_tokens=300, tools=tools, messages=[{"role": "user", "content": mensagem}])
+resp = client.messages.create(
+    model="claude-3-5-sonnet-latest",
+    max_tokens=300,
+    tools=tools,
+    messages=[{"role": "user", "content": mensagem}]
+)
+
 # 2) captura o bloco tool_use emitido pelo modelo
 tool_use = next(bloco for bloco in resp.content if bloco.type == "tool_use")
+
 # 3) executa a função local com os parâmetros recebidos
 resultado = consultar_processo(tool_use.input["numero"])
+
 # 4) devolve o resultado para o modelo concluir a resposta
-final = client.messages.create(model="claude-3-5-sonnet-latest", max_tokens=300, tools=tools, messages=[{"role": "user", "content": mensagem}, {"role": "assistant", "content": resp.content}, {"role": "user", "content": [{"type": "tool_result", "tool_use_id": tool_use.id, "content": str(resultado)}]}])
+final = client.messages.create(
+    model="claude-3-5-sonnet-latest",
+    max_tokens=300,
+    tools=tools,
+    messages=[
+        {"role": "user", "content": mensagem},
+        {"role": "assistant", "content": resp.content},
+        {
+            "role": "user",
+            "content": [{
+                "type": "tool_result",
+                "tool_use_id": tool_use.id,
+                "content": str(resultado)
+            }]
+        }
+    ]
+)
+
 print(final.content[0].text)
 ```
 
