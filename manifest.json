@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:17.446959+00:00",
+  "updatedAt": "2026-04-06T18:32:19.183920+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -326,6 +326,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-08-rag-recuperacao-com-geracao-aumentada.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:17.446959+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 9,
+      "title": "Embeddings, Chunks e Overlap",
+      "slug": "embeddings-chunks-e-overlap",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-09-embeddings-chunks-e-overlap.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:19.183920+00:00"
     }
   ]
 }
