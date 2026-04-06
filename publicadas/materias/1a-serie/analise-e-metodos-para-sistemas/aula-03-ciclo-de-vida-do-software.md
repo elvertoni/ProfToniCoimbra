@@ -2,16 +2,17 @@
 
 Nesta aula, a turma vai compreender o que é o ciclo de vida do software, por que ele orienta decisões de desenvolvimento e como diferentes modelos podem ser escolhidos conforme critérios de tempo, custo e qualidade.
 
-## Objetivos de aprendizagem
+## Abertura
 
-- Compreender o conceito de ciclo de vida do software.
-- Identificar modelos comuns de ciclo de vida no desenvolvimento de sistemas.
-- Relacionar a escolha do modelo ao contexto do projeto.
-- Justificar decisões considerando tempo, custo e qualidade.
+:::objetivo
+Ao final da aula, a turma deverá: compreender o conceito de ciclo de vida do software; identificar modelos comuns de ciclo de vida no desenvolvimento de sistemas; relacionar a escolha do modelo ao contexto do projeto; justificar decisões considerando tempo, custo e qualidade.
+:::
 
 ## Desenvolvimento
 
+:::conceito
 O ciclo de vida do software, também chamado de SDLC (*Software Development Life Cycle*), representa o conjunto de etapas que envolve a criação, o uso, a manutenção e, em alguns casos, a descontinuação de um sistema. Ele ajuda a organizar o trabalho da equipe e dá direção para decisões técnicas e de gestão ao longo do projeto.
+:::
 
 Quando uma equipe entende o ciclo de vida do software, ela deixa de enxergar o sistema apenas como código. O software passa a ser visto como um produto que nasce de uma necessidade, é planejado, implementado, validado, implantado e evoluído com o tempo. Essa visão é importante porque reduz improvisos, melhora a comunicação da equipe e aumenta o controle sobre riscos, prazos e custos.
 
@@ -27,13 +28,9 @@ Além das etapas, existem também **modelos de ciclo de vida**, ou seja, maneira
 
 Não existe um único modelo ideal para todos os projetos. A escolha depende do contexto. Projetos com requisitos muito claros podem se beneficiar de uma estrutura mais linear. Já cenários com mudanças frequentes ou necessidade de validação rápida podem exigir abordagens mais iterativas.
 
-<div class="callout c-violet">
- <div class="callout-icon">💡</div>
- <div class="callout-body">
- <p class="callout-title">Analogia</p>
- <p class="callout-text">Escolher um modelo de ciclo de vida é parecido com escolher a melhor rota para uma viagem. Se o caminho é conhecido e estável, uma rota direta pode funcionar bem. Se há trânsito, imprevistos ou necessidade de parar e ajustar o percurso, uma rota mais flexível faz mais sentido.</p>
- </div>
-</div>
+:::exemplo
+Escolher um modelo de ciclo de vida é parecido com escolher a melhor rota para uma viagem. Se o caminho é conhecido e estável, uma rota direta pode funcionar bem. Se há trânsito, imprevistos ou necessidade de parar e ajustar o percurso, uma rota mais flexível faz mais sentido.
+:::
 
 ## Conexão com a prática profissional
 
@@ -51,37 +48,27 @@ Essas perguntas ajudam a selecionar uma abordagem mais coerente com a realidade 
 
 ## Questões de fixação
 
-<div class="questao" data-idx="q1">
- <p class="questao-num">Questão 1</p>
- <p class="questao-enunciado">O que melhor define o ciclo de vida do software?</p>
- <ul class="alternativas">
- <li class="alt" data-letra="A"><span class="alt-badge">A</span> Um conjunto de linguagens de programação usadas em um projeto.</li>
- <li class="alt" data-letra="B"><span class="alt-badge">B</span> Uma lista de computadores necessários para desenvolver um sistema.</li>
- <li class="alt" data-letra="C" data-correta="true"><span class="alt-badge">C</span> O conjunto de etapas que orienta a criação, manutenção e evolução de um software.</li>
- <li class="alt" data-letra="D"><span class="alt-badge">D</span> Um modelo único obrigatório para qualquer projeto de software.</li>
- </ul>
- <div class="gabarito">
- <span class="gab-texto">A alternativa correta é a C porque o ciclo de vida do software organiza as fases pelas quais um sistema passa ao longo de sua existência.<br>Ele não é uma linguagem, nem um equipamento, e também não se resume a um único modelo obrigatório.</span>
- </div>
-</div>
+:::questao O que melhor define o ciclo de vida do software?
+a) Um conjunto de linguagens de programação usadas em um projeto.
+b) Uma lista de computadores necessários para desenvolver um sistema.
+c) O conjunto de etapas que orienta a criação, manutenção e evolução de um software. *
+d) Um modelo único obrigatório para qualquer projeto de software.
+> A alternativa correta é a C porque o ciclo de vida do software organiza as fases pelas quais um sistema passa ao longo de sua existência. Ele não é uma linguagem, nem um equipamento, e também não se resume a um único modelo obrigatório.
+:::
 
-<div class="questao" data-idx="q2">
- <p class="questao-num">Questão 2</p>
- <p class="questao-enunciado">Assinale a alternativa que NÃO está de acordo com a escolha adequada de um modelo de ciclo de vida.</p>
- <ul class="alternativas">
- <li class="alt" data-letra="A"><span class="alt-badge">A</span> Considerar tempo, custo e qualidade antes de decidir.</li>
- <li class="alt" data-letra="B"><span class="alt-badge">B</span> Avaliar o nível de clareza dos requisitos do projeto.</li>
- <li class="alt" data-letra="C"><span class="alt-badge">C</span> Observar se o contexto exige flexibilidade ou maior controle.</li>
- <li class="alt" data-letra="D" data-correta="true"><span class="alt-badge">D</span> Escolher sempre o mesmo modelo, independentemente do tipo de projeto.</li>
- </ul>
- <div class="gabarito">
- <span class="gab-texto">A alternativa correta é a D porque não existe um modelo universalmente melhor para todos os projetos.<br>A escolha precisa levar em conta o contexto, os riscos, os requisitos e os objetivos específicos do desenvolvimento.</span>
- </div>
-</div>
+:::questao Assinale a alternativa que NÃO está de acordo com a escolha adequada de um modelo de ciclo de vida.
+a) Considerar tempo, custo e qualidade antes de decidir.
+b) Avaliar o nível de clareza dos requisitos do projeto.
+c) Observar se o contexto exige flexibilidade ou maior controle.
+d) Escolher sempre o mesmo modelo, independentemente do tipo de projeto. *
+> A alternativa correta é a D porque não existe um modelo universalmente melhor para todos os projetos. A escolha precisa levar em conta o contexto, os riscos, os requisitos e os objetivos específicos do desenvolvimento.
+:::
 
 ## Atividade prática
 
+:::exercicio
 A turma deverá analisar o seguinte cenário: uma empresa deseja desenvolver um **site de compras** com **alta qualidade**, **menor custo** e **menor tempo possível**, usando um fluxo de fases bem estruturado.
+:::
 
 Com base nesse caso, cada estudante ou dupla deverá:
 
@@ -92,31 +79,20 @@ Com base nesse caso, cada estudante ou dupla deverá:
 
 A atividade pode ser feita no caderno, em folha, no Google Docs, Google Desenhos ou ferramenta similar. O mais importante é mostrar raciocínio estruturado e coerência entre o cenário e o modelo escolhido.
 
-<div class="callout c-green">
- <div class="callout-icon">📤</div>
- <div class="callout-body">
- <p class="callout-title">Entrega</p>
- <p class="callout-text">Entregar um esquema do ciclo de vida com etapas visíveis e justificativa curta da escolha. Se for digital, usar o nome <strong>Ciclo_Vida_Software_NomeAluno</strong>. A entrega pode ser feita em sala, via Google Classroom ou Drive.</p>
- </div>
-</div>
+:::importante
+Entregar um esquema do ciclo de vida com etapas visíveis e justificativa curta da escolha. Se for digital, usar o nome **Ciclo_Vida_Software_NomeAluno**. A entrega pode ser feita em sala, via Google Classroom ou Drive.
+:::
 
-<div class="roteiro">
- <div class="roteiro-header">🎤 Roteiro do professor</div>
- <p class="roteiro-texto">Hoje nós vamos avançar dos processos de software para um conceito muito importante na prática profissional: o ciclo de vida do software. Mais do que saber que existem etapas, precisamos entender que há diferentes maneiras de organizar essas etapas conforme o tipo de projeto. Nem todo sistema deve ser desenvolvido do mesmo jeito. Em alguns casos, faz sentido uma estrutura mais linear; em outros, é melhor validar cedo, ajustar rápido e evoluir por partes. Na atividade de hoje, vocês vão analisar um cenário realista e justificar qual modelo faz mais sentido, pensando em tempo, custo e qualidade.</p>
-</div>
+:::roteiro
+Hoje nós vamos avançar dos processos de software para um conceito muito importante na prática profissional: o ciclo de vida do software. Mais do que saber que existem etapas, precisamos entender que há diferentes maneiras de organizar essas etapas conforme o tipo de projeto. Nem todo sistema deve ser desenvolvido do mesmo jeito. Em alguns casos, faz sentido uma estrutura mais linear; em outros, é melhor validar cedo, ajustar rápido e evoluir por partes. Na atividade de hoje, vocês vão analisar um cenário realista e justificar qual modelo faz mais sentido, pensando em tempo, custo e qualidade.
+:::
 
 ## Fechamento
 
-<div class="callout c-green">
- <div class="callout-icon">📋</div>
- <div class="callout-body">
- <p class="callout-title">Resumo da aula</p>
- <ul class="resumo-list">
- <li><span class="resumo-check">✔️</span> O ciclo de vida do software organiza as etapas de criação, uso e evolução de um sistema.</li>
- <li><span class="resumo-check">✔️</span> Existem diferentes modelos de ciclo de vida, e cada um atende melhor a determinados contextos.</li>
- <li><span class="resumo-check">✔️</span> Escolher bem o modelo ajuda a equilibrar tempo, custo, qualidade e risco no projeto.</li>
- </ul>
- </div>
-</div>
+:::resumo
+- O ciclo de vida do software organiza as etapas de criação, uso e evolução de um sistema.
+- Existem diferentes modelos de ciclo de vida, e cada um atende melhor a determinados contextos.
+- Escolher bem o modelo ajuda a equilibrar tempo, custo, qualidade e risco no projeto.
+:::
 
 Na próxima aula, a turma poderá aprofundar a análise de modelos, requisitos ou documentação, avançando na compreensão de como decisões de projeto impactam o resultado final do software.
