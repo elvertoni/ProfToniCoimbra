@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:07.800932+00:00",
+  "updatedAt": "2026-04-06T18:32:09.437618+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -266,6 +266,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-02-areas-da-ia-ml-deep-learning-e-ia-generativa.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:07.800932+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 3,
+      "title": "Como os LLMs Funcionam — Tokens, Transformers e Atenção",
+      "slug": "como-os-llms-funcionam-tokens-transformers-e-atencao",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-03-como-os-llms-funcionam-tokens-transformers-e-atencao.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:09.437618+00:00"
     }
   ]
 }
