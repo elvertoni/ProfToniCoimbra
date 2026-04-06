@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:23.892536+00:00",
+  "updatedAt": "2026-04-06T18:32:25.616308+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -366,6 +366,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-12-tool-use-e-function-calling.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:23.892536+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 13,
+      "title": "MCP — Model Context Protocol",
+      "slug": "mcp-model-context-protocol",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-13-mcp-model-context-protocol.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:25.616308+00:00"
     }
   ]
 }
