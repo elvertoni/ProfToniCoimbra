@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:09.437618+00:00",
+  "updatedAt": "2026-04-06T18:32:10.902554+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -276,6 +276,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-03-como-os-llms-funcionam-tokens-transformers-e-atencao.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:09.437618+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 4,
+      "title": "Tipos de Aprendizado de Máquina",
+      "slug": "tipos-de-aprendizado-de-maquina",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-04-tipos-de-aprendizado-de-maquina.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:10.902554+00:00"
     }
   ]
 }
