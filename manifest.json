@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:31.904764+00:00",
+  "updatedAt": "2026-04-06T18:32:33.344242+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -416,6 +416,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-17-vibe-coding-vs-spec-coding.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:31.904764+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 18,
+      "title": "Spec Engineering",
+      "slug": "spec-engineering",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-18-spec-engineering.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:33.344242+00:00"
     }
   ]
 }
