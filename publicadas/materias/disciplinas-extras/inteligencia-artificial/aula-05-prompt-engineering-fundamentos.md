@@ -17,6 +17,14 @@ Se o modelo de linguagem é o motor, o prompt é o volante. A qualidade da respo
 
 Um prompt mal escrito não é culpa do modelo — é um problema de comunicação. O modelo não tem acesso ao que você estava pensando, só ao que foi digitado. Por isso, a diferença entre "resuma esse texto" e "resuma esse texto em 3 tópicos objetivos, sem jargões, para alunos do 2º ano técnico" é enorme. A segunda instrução reduz ambiguidade e guia o modelo para um resultado útil.
 
+:::questao Um professor enviou o prompt "Explique inteligência artificial" para o modelo e recebeu uma resposta acadêmica, longa e cheia de termos técnicos. O que melhor explica o porquê de a resposta não ter sido útil para a turma?
+a) O modelo não sabe quem é a turma e não consegue adivinhar o nível de conhecimento *
+b) O modelo foi mal treinado em português
+c) Prompts curtos são sempre ruins para qualquer finalidade
+d) IA generativa não consegue explicar conceitos complexos
+> A alternativa A está correta. O prompt não informava o público-alvo, o nível de profundidade nem o formato esperado. Sem essa informação, o modelo usou seu padrão genérico. Um prompt que incluísse "explique para alunos do 2º ano técnico, em 4 tópicos curtos, sem termos técnicos" tenderia a ser muito mais útil.
+:::
+
 Em projetos reais, isso afeta produtividade, custo e confiança. Um prompt vago pode gerar retrabalho, respostas longas demais ou saídas inconsistentes. Um prompt estruturado aproxima o modelo do comportamento esperado e torna o uso mais reaproveitável em automações, bots e assistentes.
 
 ## As quatro partes de um prompt eficaz
@@ -72,6 +80,14 @@ Além da estrutura básica, algumas técnicas aumentam bastante a qualidade do r
 
 Essas técnicas não competem entre si. Em aplicações sérias, elas costumam ser combinadas.
 
+:::questao Um desenvolvedor quer que o modelo gere respostas em formato JSON estruturado, mas ele nunca especifica isso no prompt. O que provavelmente acontece?
+a) O modelo nunca gera JSON porque essa capacidade precisa de fine-tuning
+b) O modelo tende a devolver texto livre em vez do formato estruturado esperado *
+c) Especificar formato JSON reduz a criatividade e por isso nunca deve ser feito
+d) Few-shot prompting substitui a necessidade de especificação de formato
+> A alternativa B está correta. Se o formato não for explicitamente solicitado, o modelo retorna texto livre por padrão. Isso não é um defeito — é o comportamento esperado quando a instrução é incompleta. Especificar o formato desejado (JSON, tabela, tópicos numerados) é parte essencial de um prompt bem feito.
+:::
+
 ## Chain of Thought na prática — melhor do que a fórmula vaga
 
 Muita gente aprende Prompt Engineering ouvindo a frase "peça para o modelo pensar passo a passo". Isso é superficial demais. O que realmente ajuda é transformar um pedido confuso em uma sequência clara de ações.
@@ -92,19 +108,19 @@ Prompt Engineering melhora muito o desempenho prático de um LLM, mas não faz m
 
 Essa é a **alucinação**: uma resposta fluente, bem escrita e potencialmente errada. Em tarefas como resumo de norma, explicação jurídica, orientação institucional ou geração de conteúdo acadêmico, o prompt deve incluir instruções para admitir incerteza, citar a base usada e evitar inventar. Mesmo assim, revisão humana continua necessária.
 
+:::questao Um aluno pede ao modelo: "Com base no regulamento da SEED-PR que eu enviei, me diga se posso faltar na prova final". O modelo responde com confiança: "Não, falta não é permitida". O regulamento, na verdade, não mencionava esse cenário. Qual risco se materializou?
+a) A temperatura estava alta demais, causando resposta inventada
+b) O modelo usou informação fora do regulamento enviado — alucinação sobre norma institucional *
+c) O modelo entendeu errado porque o texto era muito longo
+d) Few-shot prompting fez o modelo inventar a resposta
+> A alternativa B está correta. Mesmo com um documento como contexto, o modelo pode gerar uma resposta confiante sobre algo que não está no texto — isso é alucinação. O risco aumenta quando a pergunta toca em cenários específicos, exceções ou casos não cobertos explicitamente pelo material enviado. Por isso, respostas em contextos institucionais sempre precisam de verificação.
+:::
+
 :::atencao
 Prompts melhores reduzem ruído, mas não eliminam alucinação. Eles guiam o modelo; não substituem validação de fatos, leitura da fonte e responsabilidade de quem usa a saída.
 :::
 
 ## Questões de fixação
-
-:::questao Um professor pede ao modelo: "Explique segurança digital" e recebe uma resposta longa, genérica e pouco útil para a turma. Qual ajuste tende a melhorar mais o resultado?
-a) Aumentar a temperatura para forçar criatividade
-b) Estruturar o prompt com papel, tarefa, contexto e formato esperado *
-c) Repetir a mesma pergunta várias vezes até sair uma resposta melhor
-d) Remover qualquer instrução adicional para deixar o modelo mais livre
-> A alternativa B está correta. Quando o prompt informa quem o modelo deve ser, o que deve fazer, para quem está explicando e em que formato responder, a saída tende a ficar muito mais adequada ao objetivo real.
-:::
 
 :::questao Sobre Prompt Engineering, qual afirmação está correta?
 a) Um bom prompt elimina completamente o risco de alucinação
@@ -112,6 +128,14 @@ b) Delimitadores só servem para prompts de programação
 c) Few-shot prompting ajuda o modelo a reproduzir padrão de tom e estrutura desejados *
 d) O formato da resposta é sempre inferido corretamente, então não precisa ser especificado
 > A alternativa C está correta. Few-shot prompting mostra exemplos do padrão esperado e aumenta a consistência da resposta. As outras alternativas exageram capacidades do modelo ou subestimam a importância da instrução explícita.
+:::
+
+:::questao Sobre técnicas de Prompt Engineering, qual alternativa NÃO representa uma prática recomendada?
+a) Usar delimitadores para separar instrução, dados e contexto
+b) Decompor tarefas complexas em etapas menores e sequenciais
+c) Usar alta temperatura para todas as tarefas, incluindo extração de dados e classificação *
+d) Fornecer exemplos com few-shot prompting para guiar o padrão de resposta
+> A alternativa C está correta. Alta temperatura aumenta a diversidade de escolhas do modelo, o que é desejável em brainstorming, mas prejudicial em tarefas que exigem precisão como extração de dados ou classificação. Usar alta temperatura sistematicamente em todas as tarefas é um erro que compromete a confiabilidade dos resultados.
 :::
 
 ## Atividade prática

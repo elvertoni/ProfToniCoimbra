@@ -19,6 +19,14 @@ O modelo nunca lê letras nem palavras inteiras diretamente — ele lê tokens. 
 
 Cada modelo tem um vocabulário fixo de tokens, geralmente entre dezenas de milhares e centenas de milhares de entradas. Isso afeta custo, velocidade e desempenho. Em português, e especialmente com nomes próprios, siglas e termos jurídicos ou técnicos, a tokenização pode ficar menos eficiente do que em inglês. Um texto sobre o **TJPR** ou sobre normas da **SEED-PR** pode ocupar mais tokens do que o aluno imagina, e isso interfere diretamente no limite de contexto e no custo por chamada de API.
 
+:::questao Um aluno tenta usar um LLM para contar quantas vezes a palavra " seed " aparece em um texto da SEED-PR. O modelo dá um número que não corresponde à contagem real. Qual característica dos LLMs melhor explica esse erro?
+a) O modelo foi mal treinado e precisa de mais dados em português
+b) O modelo processa tokens, não caracteres ou palavras isoladas como um editor de texto faria *
+c) O modelo sempre erra quando o texto tem mais de mil palavras
+d) Esse tipo de tarefa exige que o texto seja enviado como imagem, não como texto
+> A alternativa B está correta. O tokenizador divide o texto em pedaços que não correspondem necessariamente a palavras inteiras. "seed" pode aparecer como parte de um token maior ou junto com espaços, o que faz com que uma contagem literal de palavras pelo modelo possa ser imprecisa. Essa é uma limitação direta do mecanismo de tokenização.
+:::
+
 ## Transformers e atenção — o salto que mudou o campo
 
 :::importante
@@ -43,6 +51,14 @@ Uma boa analogia é pensar numa **mesa de estudos**. Se a mesa é pequena, você
 
 Na prática, isso importa muito. Se você enviar um regulamento inteiro, uma conversa longa e mais um conjunto de instruções, o modelo pode perder partes importantes do começo ou comprimir demais o conteúdo relevante. É por isso que aplicações sérias usam resumo, chunking e RAG em vez de simplesmente despejar documentos gigantes no prompt.
 
+:::questao Um advogado envia um contrato de 50 páginas para um LLM e pede um resumo de todos os pontos de atenção. O modelo resume apenas as primeiras 10 páginas e ignora o restante. Qual conceito explica esse comportamento?
+a) O modelo foi projetado para recusar documentos longos
+b) A janela de contexto tem um limite de tokens que, quando excedido, faz partes do documento ficarem de fora *
+c) Contratos jurídicos contêm palavras que o modelo não consegue processar
+d) O modelo故意mente ignora textos que menciona nomes de pessoas
+> A alternativa B está correta. A janela de contexto define a quantidade máxima de tokens que o modelo consegue considerar em uma única chamada. Quando o documento excede esse limite, as partes iniciais podem ser "empurradas" para fora da janela e simplesmente não são processadas naquela resposta. Por isso, estratégias como chunking e RAG existem — para contornar essa limitação.
+:::
+
 :::atencao
 Janela de contexto grande não significa compreensão perfeita. O modelo pode receber muitos tokens e ainda assim priorizar trechos errados, misturar contextos ou responder com confiança sobre algo mal interpretado. Esse é um dos caminhos para a **alucinação**.
 :::
@@ -57,11 +73,27 @@ Quando o modelo gera uma resposta, ele não tira texto do nada. Para cada próxi
 
 Isso ajuda a entender por que a mesma pergunta pode render respostas diferentes. Em tarefas como classificação, extração de dados ou geração de JSON, normalmente queremos temperatura baixa. Em brainstorming, slogans ou ideias de campanha, uma temperatura um pouco maior pode fazer sentido. O erro comum é usar alta criatividade em tarefas que exigem precisão factual.
 
+:::questao Um desenvolvedor configurou temperatura alta para uma chamada de API que extrai dados de uma nota fiscal e percebe que os campos estão chegando com valores incorretos ou em posições trocadas. O que a temperatura alta provavelmente está causando?
+a) Nada — temperatura só afeta o estilo da resposta, não o conteúdo factual
+b) O modelo está escolhendo tokens menos prováveis também nos campos de dados, aumentando variação e erro *
+c) O modelo está se recusando a acessar os campos da nota fiscal
+d) Temperatura alta exige mais memória e o modelo estoura o limite, causando reset
+> A alternativa B está correta. Com temperatura alta, o modelo aceita alternativas menos prováveis com maior frequência. Em tarefas que exigem precisão factual — como extração de dados — isso é prejudicial, porque o modelo pode escolher um token semanticamente próximo mas numericamente errado. Para extração, classificação e JSON, temperatura baixa é o padrão recomendado.
+:::
+
 ## Limites importantes dos LLMs
 
 LLMs impressionam porque parecem conversar, resumir e argumentar como humanos. Mas essa aparência engana. Eles não têm compreensão humana, não verificam fatos automaticamente e não possuem memória confiável fora do contexto disponível. Um modelo pode explicar muito bem um conceito de redes neurais e, na linha seguinte, inventar um artigo, uma lei ou uma referência que nunca existiu.
 
 Esse fenômeno é a **alucinação**: quando o modelo produz uma resposta plausível na forma, mas incorreta no conteúdo. Por isso, em contextos críticos — como educação, saúde, jurídico ou atendimento institucional — a saída do modelo precisa de verificação. IA generativa acelera trabalho, mas não substitui checagem.
+
+:::questao Sobre os limites e capacidades dos LLMs, qual alternativa expressa um erro conceitual comum?
+a) LLMs processam tokens convertidos em números — não "leem" palavras como humanos
+b) Alucinação acontece quando o modelo gera uma resposta bem estruturada mas com informações incorretas
+c) LLMs modernos têm compreensão profunda e intencional como um ser humano experiente *
+d) A janela de contexto funciona como uma memória de curto prazo com limite real de tokens
+> A alternativa C está correta. Achar que LLMs têm compreensão profunda, intencionalidade ou consciência é um erro conceitual importante. Eles calculam probabilidades em grandes volumes de texto e produzem resultados que parecem coerentes, mas não "entendem" no sentido humano. Essa aparência de compreensão é o que leva muitos usuários a confiar demais nas respostas.
+:::
 
 ## Questões de fixação
 

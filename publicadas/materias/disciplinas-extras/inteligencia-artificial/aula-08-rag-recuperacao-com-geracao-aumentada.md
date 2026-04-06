@@ -50,9 +50,25 @@ resposta = llm.gerar(prompt)
 print(resposta)
 ```
 
+:::questao Um cartório quer um assistente que responda dúvidas sobre procedimentos internos com base em manuais atualizados que mudam com frequência. Um desenvolvedor sugere fazer fine-tuning do modelo sempre que um manual mudar. Por que essa abordagem tende a ser um erro para esse cenário?
+a) Fine-tuning não funciona com manuais em português
+b) Fine-tuning é muito mais caro e demorado do que reindexar documentos para RAG quando a base muda *
+c) Fine-tuning impede o modelo de responder outras perguntas gerais
+d) RAG só funciona para textos curtos, não para manuais de cartório
+> A alternativa B está correta. Fine-tuning exige retreino do modelo com novos dados, o que é computacionalmente caro e lento. Quando a base de conhecimento muda com frequência — como manuais internos — reindexar os documentos para RAG é muito mais rápido e barato do que retreinar o modelo inteiro.
+:::
+
 ## Onde o RAG acerta — e onde ele ainda falha
 
 RAG melhora muito a qualidade factual porque reduz dependência da memória do modelo. Mesmo assim, ele não elimina risco. Se o documento foi indexado com chunks ruins, se a busca recuperou trechos pouco relevantes ou se o prompt final ficou mal montado, o modelo ainda pode responder de forma incompleta ou até alucinada.
+
+:::questao Um sistema RAG foi configurado para responder perguntas sobre legislação trabalhista. Após uma mudança na CLT, o sistema seguiu dando respostas baseadas na legislação antiga. Qual é a causa raiz mais provável?
+a) O modelo de embedding foi mal treinado e não entende leis
+b) A base de documentos indexada não foi atualizada após a mudança na legislação *
+c) RAG nunca funciona com textos jurídicos por serem muito longos
+d) O modelo de geração fabricou a resposta porque a pergunta era ambígua
+> A alternativa B está correta. RAG depende de uma base de documentos indexada. Se os documentos reais não são atualizados, o sistema recupera trechos desatualizados e responde com informações antigas mesmo que a pergunta seja clara. Atualizar o conhecimento em RAG significa reindexar os documentos, não retreinar o modelo.
+:::
 
 Também existe o problema de base desatualizada. Se um regulamento novo não entrou no índice, o sistema pode recuperar uma versão antiga e responder com segurança sobre algo ultrapassado. Ou seja: RAG ajuda a **reduzir** alucinação e desatualização, mas não promete eliminar totalmente nenhum dos dois problemas.
 
@@ -63,6 +79,14 @@ RAG não é mágica. Ele depende de qualidade na indexação, na busca e na mont
 ## Próximas evoluções — hybrid search e reranking
 
 **Hybrid search** combina busca semântica com busca lexical. Em vez de confiar só nos embeddings, o sistema mistura similaridade vetorial com correspondência literal de termos. Isso é útil quando a pergunta depende de palavras exatas, números de processo, siglas ou artigos específicos. Em um sistema para o TJPR, por exemplo, o usuário pode digitar um número CNJ ou um nome muito específico; nesse caso, a combinação entre busca semântica e textual tende a funcionar melhor do que apenas uma delas isoladamente.
+
+:::questao Um advogado pesquisa no sistema RAG do TJPR pela frase exata "artigo 205 do Código Civil". O sistema não retorna nenhum resultado. Por que isso pode acontecer em uma busca puramente semântica?
+a) Porque o sistema RAG nunca encontra artigos de lei
+b) Porque busca semântica pode não priorizar correspondência literal de termos específicos *
+c) Porque o modelo de geração está desativado nesse fluxo
+d) Porque hybrid search substitui a necessidade de embeddings
+> A alternativa B está correta. Busca puramente semântica encontra trechos semanticamente similares à pergunta, mas pode não priorizar correspondência exata de termos técnicos, números de artigos ou nomes próprios. Por isso, hybrid search — que combina busca vetorial com busca lexical — tende a funcionar melhor quando a pergunta depende de expressões literais específicas.
+:::
 
 **Reranking** entra depois da busca inicial. Primeiro, o sistema recupera um conjunto maior de trechos candidatos. Depois, um modelo adicional reordena esses trechos para escolher os mais úteis para aquela pergunta específica. Isso melhora precisão principalmente quando muitos trechos parecem parecidos no embedding, mas só alguns realmente respondem ao que foi perguntado. Em bases grandes, reranking costuma ser uma das melhorias com melhor custo-benefício.
 

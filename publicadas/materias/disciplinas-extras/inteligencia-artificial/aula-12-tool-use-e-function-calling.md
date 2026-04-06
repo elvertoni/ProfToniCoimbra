@@ -17,6 +17,14 @@ Agentes precisam de ferramentas — mas como o LLM sabe quando e como usá-las? 
 
 O fluxo completo tem quatro etapas. Primeiro, o desenvolvedor descreve as ferramentas disponíveis: nome, descrição e schema dos parâmetros. Depois, o modelo analisa a pergunta do usuário e decide se alguma ferramenta deve ser usada. Em seguida, a aplicação executa a função de verdade fora do modelo. Por fim, o resultado volta para o LLM, que continua o raciocínio e produz a resposta final.
 
+:::questao Um desenvolvedor novo no time pergunta: "Se o modelo consegue emitir a chamada de ferramenta, significa que ele tem acesso ao banco de dados e pode fazer consultas sozinho?" Qual resposta técnico está correta?
+a) Sim, o modelo executa tudo internamente por meio de sua camada de ferramentas
+b) Não — o modelo apenas gera a intenção da chamada; a execução real fica por conta da aplicação externa *
+c) O modelo só chama ferramentas se usar a flag `dangerouslySetAgent=true`
+d) Ferramentas são funções Python executadas dentro do próprio prompt do modelo
+> A alternativa B está correta. O modelo gera uma chamada estruturada com parâmetros, mas quem executa de verdade é a aplicação que envolve o modelo. Essa separação é fundamental para segurança, controle e confiabilidade do sistema.
+:::
+
 Essa separação é crucial: o modelo **não executa código**, não consulta o banco diretamente e não faz chamadas HTTP sozinho. Ele apenas gera uma intenção estruturada. A aplicação ao redor é que interpreta, valida, executa e devolve o retorno.
 
 ## Definindo ferramentas — o contrato entre modelo e código
@@ -30,6 +38,14 @@ Uma definição de ferramenta normalmente tem três partes essenciais:
 - **Nome** — claro e específico, como `consultar_processo_tjpr`
 - **Descrição** — explica quando usar, o que a ferramenta faz e o que retorna
 - **Input schema** — define parâmetros, tipos e campos obrigatórios em JSON Schema
+
+:::questao Uma equipe implementou uma ferramenta com nome `buscar` e descrição "faz buscas". O modelo quase nunca a utiliza. Depois reformularam com nome `consultar_processo_tjpr` e descrição "recebe número CNJ no formato string e retorna status e últimas movimentações processuais do Tribunal de Justiça do Paraná". O que mudou na prática?
+a) Nada — o nome e a descrição são apenas decorativos e não afetam o comportamento do modelo
+b) O schema ficou mais complexo, o que fez o modelo ignorar a ferramenta nos dois casos
+c) O contrato textual ficou mais preciso, permitindo ao modelo entender quando e como invocar a ferramenta *
+d) O modelo agora consegue executar SQL diretamente a partir da descrição
+> A alternativa C está correta. Ferramentas com nomes genéricos e descrições vagas não orientam bem o modelo. Quando o contrato textual deixa claro o contexto de uso, o tipo de dado de entrada e o que será retornado, o modelo consegue decidir com muito mais precisão quando e como invocar a ferramenta.
+:::
 
 Se você escrever `get_data`, o modelo sabe quase nada. Se escrever `consultar_processo_tjpr` com descrição dizendo que recebe número CNJ e retorna andamento resumido, o comportamento tende a melhorar muito. Em agentes reais, o schema é parte do design pedagógico do sistema: ele ensina o modelo a pedir a informação certa.
 
@@ -109,6 +125,14 @@ Modelos mais avançados podem trabalhar de duas formas:
 - **Sequencial** — chamam uma ferramenta, esperam o resultado e decidem a próxima ação
 - **Paralela** — emitem várias chamadas de uma vez quando elas são independentes
 
+:::questao Um agente tem duas ferramentas disponíveis: `buscar_documento` e `traduzir_texto`. O usuário pede: "Busque o regulamento da SEED-PR sobre avaliação e traduza para inglês." Qual estratégia de chamada faz mais sentido?
+a) Chamada sequencial, porque a tradução depende do texto encontrado na primeira etapa *
+b) Chamada paralela, porque as duas ferramentas são independentes entre si
+c) Apenas a busca, porque tradução não é uma ferramenta válida
+d) Apenas a tradução, porque o modelo já sabe qual é o regulamento da SEED-PR
+> A alternativa A está correta. Como a tradução precisa do texto que será recuperado, há uma dependência entre as chamadas — a segunda só pode ser feita depois que a primeira retornar o conteúdo. Isso caracteriza um fluxo sequencial.
+:::
+
 Mas aqui entra um ponto importante: mais poder exige mais controle. Se uma ferramenta envia e-mail, faz Pix, apaga arquivo ou altera cadastro, a aplicação precisa validar parâmetros, controlar permissões e registrar o que foi feito. Um LLM pode sugerir uma ação com aparência correta e ainda assim pedir algo inadequado, incompleto ou perigoso.
 
 :::atencao
@@ -116,6 +140,14 @@ Tool Use amplia capacidade, mas também amplia risco operacional. Nunca entregue
 :::
 
 ## Limitações comuns em sistemas com Function Calling
+
+:::questao Um agente com tool use está funcionando bem há semanas, mas num dia específico retorna dados errados. Após investigação, descobriu-se que a ferramenta consultada não estava retornando dados atualizados. Qual é a causa raiz mais provável desse problema?
+a) O modelo esqueceu como usar a ferramenta porque ficou sem treino
+b) O modelo decidiu não chamar a ferramenta e inventou uma resposta
+c) O contrato da ferramenta (schema) estava desatualizado em relação ao sistema real *
+d) Tool use só funciona em ambientes Linux, não em produção Windows
+> A alternativa C está correta. O modelo usa o contrato textual — nome, descrição e schema — para saber como chamar a ferramenta. Se o sistema real mudou mas o schema não foi atualizado, o modelo chama a ferramenta corretamente com base no contrato antigo, mas recebe dados desatualizados ou inesperados. Esse é um risco comum em sistemas em evolução.
+:::
 
 Mesmo quando o modelo aciona a ferramenta certa, ainda existem limitações práticas. A chamada pode vir com parâmetros incompletos, o schema pode não refletir todas as regras reais do sistema, a ferramenta pode falhar no backend ou o retorno pode ser ambíguo demais para o modelo usar bem.
 
