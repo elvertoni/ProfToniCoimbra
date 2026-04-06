@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-06T18:32:33.344242+00:00",
+  "updatedAt": "2026-04-06T18:32:34.808740+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -426,6 +426,16 @@
       "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-18-spec-engineering.md",
       "status": "published",
       "publishedAt": "2026-04-06T18:32:33.344242+00:00"
+    },
+    {
+      "series": "disciplinas-extras",
+      "subject": "inteligencia-artificial",
+      "lessonNumber": 19,
+      "title": "PRD — Product Requirements Document",
+      "slug": "prd-product-requirements-document",
+      "path": "publicadas/materias/disciplinas-extras/inteligencia-artificial/aula-19-prd-product-requirements-document.md",
+      "status": "published",
+      "publishedAt": "2026-04-06T18:32:34.808740+00:00"
     }
   ]
 }
