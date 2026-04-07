@@ -67,6 +67,8 @@ d) Faz com que qualquer sistema moderno deixe de precisar de atualização
 > A alternativa correta é a letra A porque avanço tecnológico amplia possibilidades, mas também exige avaliação crítica e responsabilidade técnica.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de sala de aula, qual pergunta ajuda melhor a ligar história da computação ao presente?
 a) “Qual foi a data exata de cada invenção, sem discutir efeito algum?”
 b) “Como esse avanço alterou a forma de estudar, trabalhar ou desenvolver sistemas hoje?” *
@@ -74,8 +76,6 @@ c) “Qual marca de celular os alunos mais gostam?”
 d) “Qual computador tem o LED mais bonito?”
 > A alternativa correta é a letra B porque ela obriga a transformar informação histórica em compreensão aplicada.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa expressa melhor a importância de estudar os avanços da computação?
 a) Eles ajudam a entender como surgiram práticas e ferramentas que usamos hoje em escola, trabalho e desenvolvimento de sistemas *

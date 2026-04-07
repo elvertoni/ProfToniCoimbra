@@ -67,6 +67,8 @@ d) As portas USB se tornam irrelevantes para qualquer projeto
 > A alternativa correta é a letra A porque o chipset faz parte da definição prática da plataforma e de seus recursos.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório que precisa expandir armazenamento e conectar vários periféricos, qual critério é mais útil?
 a) Observar apenas a estética da placa
 b) Verificar se o chipset e a placa oferecem o conjunto de portas, pistas e controladores necessários *
@@ -74,8 +76,6 @@ c) Escolher a placa mais barata sem ler especificações
 d) Presumir que toda placa aceita qualquer expansão da mesma forma
 > A alternativa correta é a letra B porque a disponibilidade real de recursos depende da plataforma adotada.
 :::
-
-## Questões de fixação
 
 :::questao O que melhor descreve o papel do chipset?
 a) Organizar funções e comunicações da plataforma entre processador, portas, armazenamento e outros recursos *

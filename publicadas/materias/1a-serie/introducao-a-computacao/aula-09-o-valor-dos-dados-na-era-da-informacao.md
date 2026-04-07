@@ -67,6 +67,8 @@ d) Faz com que toda decisão fique automaticamente correta
 > A alternativa correta é a letra B porque dado sem propósito e sem qualidade atrapalha tanto o uso técnico quanto a segurança da informação.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de desenvolvimento, qual escolha mostra uso mais responsável de dados?
 a) Pedir todos os dados possíveis do usuário, mesmo sem necessidade
 b) Coletar apenas o necessário para a função do sistema, organizar bem os campos e proteger o acesso *
@@ -74,8 +76,6 @@ c) Salvar registros sem nome padrão e sem controle de permissão
 d) Permitir que qualquer pessoa altere dados críticos sem rastreamento
 > A alternativa correta é a letra B porque um bom sistema coleta o necessário, estrutura corretamente e reduz riscos de uso indevido.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa expressa melhor o papel dos dados em sistemas digitais?
 a) São a matéria-prima que, quando organizada, pode apoiar decisões e serviços *

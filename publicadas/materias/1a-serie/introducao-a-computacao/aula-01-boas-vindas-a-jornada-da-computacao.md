@@ -67,6 +67,8 @@ d) Perceber que usuários podem cometer enganos ao usar uma plataforma
 > A alternativa correta é a letra A porque o primeiro passo técnico é investigar as camadas do problema, e não culpar o primeiro elemento visível.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de estudo bem organizado, qual atitude ajuda mais um aluno do 1º ano a aprender a disciplina com segurança?
 a) Tentar decorar todos os termos técnicos da trilha na primeira semana
 b) Entender que os conteúdos têm sequência e construir a base antes de cobrar de si mesmo tópicos avançados *
@@ -74,8 +76,6 @@ c) Pular as aulas introdutórias para ir direto à programação
 d) Tratar hardware, software e redes como assuntos sem relação entre si
 > A alternativa correta é a letra B porque a progressão do curso foi pensada para reduzir confusão e aumentar a compreensão prática ao longo do tempo.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa resume melhor o objetivo principal da aula de abertura?
 a) Fazer o aluno decorar nomes de peças antes de entender o curso

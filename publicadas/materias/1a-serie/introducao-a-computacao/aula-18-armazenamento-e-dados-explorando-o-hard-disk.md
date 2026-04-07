@@ -67,6 +67,8 @@ d) Garantia de que os arquivos nunca serão corrompidos
 > A alternativa correta é a letra A porque armazenamento sem backup deixa o usuário vulnerável a perda real de informação.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório com máquinas lentas para iniciar o sistema e abrir programas, qual decisão pode trazer ganho mais direto?
 a) Avaliar a substituição de HDD por SSD quando o restante do conjunto ainda faz sentido *
 b) Trocar apenas o adesivo do gabinete
@@ -74,8 +76,6 @@ c) Desconectar o monitor durante a inicialização
 d) Ignorar o armazenamento e culpar apenas a internet
 > A alternativa correta é a letra A porque o tipo de armazenamento influencia fortemente a leitura e gravação de dados do sistema.
 :::
-
-## Questões de fixação
 
 :::questao Qual é a função do armazenamento permanente em um computador?
 a) Guardar sistema, programas e arquivos mesmo após desligamento da máquina *

@@ -67,6 +67,8 @@ d) Fica impossível usar qualquer dispositivo móvel
 > A alternativa correta é a letra A porque a aprendizagem histórica precisa explicar consequências, e não apenas repetir rótulos.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário atual, por que a evolução dos computadores interessa a quem desenvolve sistemas?
 a) Porque hoje os usuários ainda trabalham apenas em máquinas gigantes e isoladas
 b) Porque as soluções precisam considerar dispositivos compactos, conectados e usados em muitos contextos diferentes *
@@ -74,8 +76,6 @@ c) Porque evolução tecnológica não altera forma de uso nem expectativa do us
 d) Porque somente historiadores precisam se preocupar com isso
 > A alternativa correta é a letra B porque o desenvolvimento atual depende de entender a diversidade de contextos em que a computação passou a existir.
 :::
-
-## Questões de fixação
 
 :::questao Qual fator melhor resume a evolução dos computadores ao longo do tempo?
 a) Aumento de tamanho e diminuição de acesso

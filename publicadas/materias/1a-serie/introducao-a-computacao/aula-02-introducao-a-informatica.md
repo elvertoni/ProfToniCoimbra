@@ -67,6 +67,8 @@ d) O único impacto possível é visual, sem efeito no resultado final
 > A alternativa correta é a letra B porque informática depende da qualidade dos dados de entrada para produzir informação confiável.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de atendimento escolar, qual ação mostra melhor que alguém entendeu a diferença entre dado e informação?
 a) Copiar todos os registros sem verificar para que eles servem
 b) Organizar faltas por turma e destacar quais alunos precisam de contato da coordenação *
@@ -74,8 +76,6 @@ c) Guardar arquivos em qualquer pasta sem nome padrão
 d) Imprimir telas aleatórias do sistema para parecer produtivo
 > A alternativa correta é a letra B porque os registros brutos foram organizados de modo útil para orientar uma ação concreta.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa define melhor informática no contexto do curso técnico?
 a) Conjunto de práticas para tratar informação com apoio de sistemas computacionais *

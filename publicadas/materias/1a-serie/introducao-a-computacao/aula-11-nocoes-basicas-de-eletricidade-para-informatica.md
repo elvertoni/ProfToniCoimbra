@@ -67,6 +67,8 @@ d) Ausência de ícones na área de trabalho
 > A alternativa correta é a letra A porque desligamentos podem nascer de problemas elétricos e não apenas de software.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório, qual atitude demonstra melhor noção básica de eletricidade aplicada à informática?
 a) Ligar vários equipamentos de alto consumo em qualquer extensão sem avaliar carga
 b) Verificar cabos, fonte, conexão elétrica e sinais de instabilidade antes de concluir o diagnóstico *
@@ -74,8 +76,6 @@ c) Abrir a fonte de alimentação para improvisar reparo sem supervisão
 d) Ignorar cheiro de queimado porque o computador ainda acende
 > A alternativa correta é a letra B porque uma leitura técnica segura começa pela alimentação e pelos indícios físicos do problema.
 :::
-
-## Questões de fixação
 
 :::questao Qual é o papel da eletricidade em sistemas computacionais?
 a) Alimentar componentes e permitir o funcionamento estável dos circuitos e dispositivos *

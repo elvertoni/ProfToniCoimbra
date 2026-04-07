@@ -67,6 +67,8 @@ d) Quantidade de abas abertas no navegador sem relação com vídeo
 > A alternativa correta é a letra A porque interfaces e padrões podem limitar o que é transmitido entre os dispositivos.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de montagem ou suporte, qual atitude mostra melhor compreensão sobre interfaces?
 a) Conferir tipo de porta, padrão suportado e necessidade real do dispositivo antes de conectar ou comprar adaptadores *
 b) Escolher o acessório mais barato sem ler especificação alguma
@@ -74,8 +76,6 @@ c) Ignorar diferenças entre transmissão de dados, vídeo e energia
 d) Supor que todas as portas USB oferecem o mesmo desempenho em qualquer equipamento
 > A alternativa correta é a letra A porque boas decisões dependem de leitura técnica da conexão.
 :::
-
-## Questões de fixação
 
 :::questao O que melhor define interfaces de conexão?
 a) Meios que permitem a comunicação entre dispositivos e o transporte de dados, vídeo, áudio ou energia *

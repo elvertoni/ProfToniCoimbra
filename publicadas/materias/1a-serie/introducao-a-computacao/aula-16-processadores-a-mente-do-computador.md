@@ -67,6 +67,8 @@ d) Torna todas as máquinas equivalentes
 > A alternativa correta é a letra A porque desempenho de CPU depende de vários fatores além da frequência.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de compra para uma sala de desenvolvimento, qual escolha mostra melhor leitura técnica do processador?
 a) Relacionar o perfil de CPU às tarefas reais, como navegação, programação, videoconferência e execução simultânea de aplicações *
 b) Comprar o modelo com nome mais chamativo, sem olhar uso ou orçamento
@@ -74,8 +76,6 @@ c) Ignorar completamente a geração do processador
 d) Supor que qualquer processador atende igualmente bem a qualquer laboratório
 > A alternativa correta é a letra A porque a decisão deve ser feita com base no tipo de carga de trabalho esperado.
 :::
-
-## Questões de fixação
 
 :::questao Qual é a função principal do processador?
 a) Executar instruções e coordenar operações centrais do sistema *

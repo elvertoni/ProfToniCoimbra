@@ -67,6 +67,8 @@ d) Entender que sinais do mundo físico podem ser convertidos para processamento
 > A alternativa correta é a letra A porque o conceito de digital vai além da aparência tecnológica do dispositivo.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de automação simples, qual exemplo mostra a ponte entre mundo físico e sistema digital?
 a) Um sensor mede temperatura e o controlador transforma a leitura em sinais que o sistema pode interpretar *
 b) Um caderno é guardado na mochila
@@ -74,8 +76,6 @@ c) Um aluno troca a capa do celular
 d) Um monitor desligado permanece sem energia
 > A alternativa correta é a letra A porque ela mostra um fenômeno contínuo sendo tratado em forma adequada ao processamento digital.
 :::
-
-## Questões de fixação
 
 :::questao O que caracteriza um sistema digital?
 a) Trabalhar com estados discretos usados para representar informação *

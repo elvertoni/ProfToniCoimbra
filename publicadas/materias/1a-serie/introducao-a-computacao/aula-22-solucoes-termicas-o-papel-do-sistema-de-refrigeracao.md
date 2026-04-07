@@ -67,6 +67,8 @@ d) Ausência de cabos de impressora na mesa
 > A alternativa correta é a letra A porque temperatura elevada pode provocar throttling e instabilidade.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de manutenção de laboratório, qual atitude demonstra melhor compreensão sobre soluções térmicas?
 a) Verificar limpeza, fluxo de ar, funcionamento das ventoinhas e condições de uso antes de concluir o diagnóstico *
 b) Ignorar poeira interna porque ela só afeta a estética
@@ -74,8 +76,6 @@ c) Presumir que todo aquecimento se resolve com reinicialização
 d) Bloquear saídas de ar para reduzir ruído do equipamento
 > A alternativa correta é a letra A porque refrigeração depende de manutenção e observação do conjunto físico do sistema.
 :::
-
-## Questões de fixação
 
 :::questao Qual é a função principal das soluções térmicas no computador?
 a) Dissipar calor para manter componentes operando em faixa segura *

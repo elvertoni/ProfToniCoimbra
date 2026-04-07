@@ -67,6 +67,8 @@ d) O sistema operacional se adapta sozinho a qualquer acessório
 > A alternativa correta é a letra A porque periféricos inadequados geram custo e pouco resultado prático.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório, qual decisão mostra melhor compreensão sobre periféricos?
 a) Definir quais dispositivos realmente apoiam as atividades da turma e verificar se o sistema os suporta bem *
 b) Comprar tudo que aparecer como “profissional” sem analisar uso
@@ -74,8 +76,6 @@ c) Ignorar drivers, portas e espaço físico
 d) Tratar todos os acessórios como equivalentes
 > A alternativa correta é a letra A porque periféricos precisam ser escolhidos pelo contexto de trabalho e pela compatibilidade.
 :::
-
-## Questões de fixação
 
 :::questao O que melhor define um periférico?
 a) Dispositivo conectado ao computador para ampliar ou facilitar suas funções *

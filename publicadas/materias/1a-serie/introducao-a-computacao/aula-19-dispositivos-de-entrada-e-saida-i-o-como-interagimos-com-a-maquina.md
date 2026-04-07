@@ -67,6 +67,8 @@ d) Se o gabinete está empoeirado por fora
 > A alternativa correta é a letra A porque falhas de I/O muitas vezes surgem da relação entre dispositivo, sistema e configuração.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório escolar, qual escolha mostra melhor compreensão sobre I/O?
 a) Selecionar dispositivos de entrada e saída de acordo com a atividade, verificando compatibilidade e necessidade real *
 b) Comprar qualquer periférico sem olhar tipo de uso
@@ -74,8 +76,6 @@ c) Considerar que todo problema de interação é culpa do usuário
 d) Ignorar completamente drivers e portas de conexão
 > A alternativa correta é a letra A porque dispositivos de I/O precisam ser pensados em função do contexto de uso.
 :::
-
-## Questões de fixação
 
 :::questao O que melhor define dispositivos de entrada e saída?
 a) Elementos que permitem enviar dados ao sistema e receber dele os resultados do processamento *

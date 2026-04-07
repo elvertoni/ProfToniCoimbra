@@ -67,6 +67,8 @@ d) Todo computador antigo deixa de ligar ao receber essa classificação
 > A alternativa correta é a letra B porque diagnóstico útil precisa apontar qual componente ou conjunto de componentes está causando a limitação.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de compra para a escola, qual atitude demonstra melhor compreensão inicial de hardware?
 a) Escolher máquinas apenas pela cor do gabinete
 b) Comparar processador, memória, armazenamento e conexões com base no tipo de uso esperado *
@@ -74,8 +76,6 @@ c) Comprar todos os computadores idênticos sem analisar as atividades realizada
 d) Considerar irrelevante o que existe dentro do equipamento
 > A alternativa correta é a letra B porque hardware deve ser escolhido de acordo com as tarefas que a máquina precisa cumprir.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa define melhor hardware?
 a) Conjunto de arquivos instalados no computador

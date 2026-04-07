@@ -67,6 +67,8 @@ d) Relacionar bits e bytes ao armazenamento de dados
 > A alternativa correta é a letra A porque, no sistema binário, posição muda completamente o valor representado.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório, qual explicação mostra melhor que o aluno entendeu o conceito de byte?
 a) Byte é qualquer palavra digitada no teclado
 b) Byte é um agrupamento de 8 bits muito usado para representar dados e medir capacidades digitais *
@@ -74,8 +76,6 @@ c) Byte é apenas o nome de um cabo antigo
 d) Byte é a parte física do monitor
 > A alternativa correta é a letra B porque byte é uma unidade lógica de informação, não um componente físico.
 :::
-
-## Questões de fixação
 
 :::questao O que fazemos ao converter um número binário para decimal?
 a) Somamos os valores das posições marcadas com 1, usando potências de 2 *

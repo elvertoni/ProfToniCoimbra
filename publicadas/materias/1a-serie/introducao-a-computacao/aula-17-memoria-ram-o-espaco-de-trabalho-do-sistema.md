@@ -67,6 +67,8 @@ d) Nome do arquivo salvo pelo usuário
 > A alternativa correta é a letra A porque manter várias aplicações ativas depende diretamente da disponibilidade de RAM.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório com IDE, navegador e videoconferência abertos ao mesmo tempo, qual decisão mostra melhor compreensão sobre RAM?
 a) Avaliar se a quantidade de memória atende à multitarefa antes de culpar apenas o processador *
 b) Ignorar a RAM porque ela não interfere em fluidez de uso
@@ -74,8 +76,6 @@ c) Trocar o papel de parede para tentar melhorar o desempenho
 d) Presumir que armazenamento e memória têm exatamente a mesma função
 > A alternativa correta é a letra A porque a RAM é central para manter múltiplas tarefas funcionando com estabilidade.
 :::
-
-## Questões de fixação
 
 :::questao Qual é a função principal da memória RAM?
 a) Guardar temporariamente dados e programas em uso para acesso rápido *

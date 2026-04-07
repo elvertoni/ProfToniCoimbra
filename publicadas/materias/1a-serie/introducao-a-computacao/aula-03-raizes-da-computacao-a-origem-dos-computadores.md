@@ -67,6 +67,8 @@ d) Relacionar tecnologia com necessidades econômicas e sociais
 > A alternativa correta é a letra B porque a computação tem raízes em problemas e soluções muito anteriores ao computador eletrônico.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de aula, qual pergunta ajuda melhor a conectar passado e presente?
 a) “Qual marca de notebook vocês preferem comprar?”
 b) “Que problema antigo de cálculo, registro ou controle essa tecnologia moderna resolve de forma mais rápida?” *
@@ -74,8 +76,6 @@ c) “Qual app é mais bonito visualmente?”
 d) “Qual geração tem mais redes sociais instaladas?”
 > A alternativa correta é a letra B porque ela orienta a turma a enxergar continuidade histórica, e não apenas novidade superficial.
 :::
-
-## Questões de fixação
 
 :::questao O que melhor explica o surgimento das primeiras ferramentas ligadas à computação?
 a) A vontade de criar telas coloridas para entretenimento

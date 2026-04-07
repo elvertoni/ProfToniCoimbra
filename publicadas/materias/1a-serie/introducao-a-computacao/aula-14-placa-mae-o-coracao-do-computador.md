@@ -67,6 +67,8 @@ d) Garantia de upgrade futuro em qualquer cenário
 > A alternativa correta é a letra A porque a placa-mãe impõe limites reais de padrão e suporte.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório escolar, qual decisão mostra melhor leitura prática da placa-mãe?
 a) Escolher uma placa com conexões e slots compatíveis com as necessidades atuais e com possíveis expansões futuras *
 b) Comprar a opção mais barata sem observar uso, processador ou memória
@@ -74,8 +76,6 @@ c) Ignorar completamente as portas disponíveis para monitores e dispositivos
 d) Considerar que toda placa-mãe oferece o mesmo conjunto de recursos
 > A alternativa correta é a letra A porque a placa-mãe precisa ser pensada em função do contexto de uso, não apenas do preço isolado.
 :::
-
-## Questões de fixação
 
 :::questao Qual é a principal função da placa-mãe?
 a) Integrar componentes e permitir a comunicação e a compatibilidade entre eles *

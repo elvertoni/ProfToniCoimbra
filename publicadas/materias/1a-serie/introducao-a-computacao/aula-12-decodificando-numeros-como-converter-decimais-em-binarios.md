@@ -67,6 +67,8 @@ d) Separar o número em potências de 2 quando isso ajuda a interpretar a respos
 > A alternativa correta é a letra B porque a ordem de leitura dos restos é parte decisiva do método.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de estudo, qual prática ajuda mais um aluno a aprender conversão decimal-binária de verdade?
 a) Decorar respostas prontas sem conferir o valor final
 b) Resolver a conversão e depois verificar se a soma das potências de 2 retorna ao número original *
@@ -74,8 +76,6 @@ c) Abandonar o binário porque ele parece distante da prática
 d) Trocar qualquer resultado por outro parecido para economizar tempo
 > A alternativa correta é a letra B porque a checagem consolida a compreensão e reduz erros mecânicos.
 :::
-
-## Questões de fixação
 
 :::questao O que significa converter um número decimal para binário?
 a) Escrevê-lo como combinação de potências de 2 representadas por 0 e 1 *

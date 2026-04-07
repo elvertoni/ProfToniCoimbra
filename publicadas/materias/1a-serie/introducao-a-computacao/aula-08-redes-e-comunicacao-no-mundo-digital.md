@@ -67,6 +67,8 @@ d) Se a impressora da secretaria está com papel
 > A alternativa correta é a letra A porque a comunicação de rede é requisito básico para muitos serviços digitais funcionarem.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário real, qual escolha mostra melhor compreensão sobre redes?
 a) Tratar internet e rede local como a mesma coisa em qualquer contexto
 b) Verificar se o problema está no dispositivo, na rede local ou no serviço remoto antes de concluir onde está a falha *
@@ -74,8 +76,6 @@ c) Ignorar o roteador e o Wi-Fi porque só o aplicativo importa
 d) Presumir que todo arquivo online fica salvo apenas no computador do aluno
 > A alternativa correta é a letra B porque comunicação digital depende de várias etapas e a análise técnica precisa localizá-las.
 :::
-
-## Questões de fixação
 
 :::questao O que é uma rede de computadores?
 a) Um conjunto de dispositivos conectados para trocar dados e compartilhar recursos *

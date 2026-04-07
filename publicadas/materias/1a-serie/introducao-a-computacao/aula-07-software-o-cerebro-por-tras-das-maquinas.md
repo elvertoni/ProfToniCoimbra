@@ -67,6 +67,8 @@ d) Se o monitor está com brilho alto
 > A alternativa correta é a letra A porque muitos problemas de uso surgem da relação entre software, driver e sistema operacional.
 :::
 
+## Questões de fixação
+
 :::questao Em um cenário de laboratório, por que faz sentido estudar hardware e software em sequência?
 a) Porque software pode ser entendido sem qualquer relação com recursos físicos
 b) Porque programas dependem do ambiente físico e do sistema operacional para funcionar de forma adequada *
@@ -74,8 +76,6 @@ c) Porque todo componente físico já traz sozinho todos os programas de que pre
 d) Porque o usuário nunca precisa considerar compatibilidade entre programa e máquina
 > A alternativa correta é a letra B porque a utilidade do computador nasce justamente da interação entre estrutura física e instruções lógicas.
 :::
-
-## Questões de fixação
 
 :::questao Qual alternativa descreve melhor software?
 a) Conjunto de instruções e programas que orienta o funcionamento do computador *
