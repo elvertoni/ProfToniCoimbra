@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:03:07.877215+00:00",
+  "updatedAt": "2026-04-07T01:03:09.693039+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -456,6 +456,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-21-interfaces-de-conexao-comunicacao-entre-dispositivos.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:03:07.877215+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 22,
+      "title": "Soluções Térmicas: O Papel do Sistema de Refrigeração",
+      "slug": "solucoes-termicas-o-papel-do-sistema-de-refrigeracao",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-22-solucoes-termicas-o-papel-do-sistema-de-refrigeracao.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:03:09.693039+00:00"
     },
     {
       "series": "disciplinas-extras",
