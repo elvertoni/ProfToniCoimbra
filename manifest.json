@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:55.944532+00:00",
+  "updatedAt": "2026-04-07T01:02:57.691700+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -386,6 +386,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-14-placa-mae-o-coracao-do-computador.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:55.944532+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 15,
+      "title": "Chipsets: Conexões que Fazem Tudo Funcionar",
+      "slug": "chipsets-conexoes-que-fazem-tudo-funcionar",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-15-chipsets-conexoes-que-fazem-tudo-funcionar.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:02:57.691700+00:00"
     },
     {
       "series": "disciplinas-extras",
