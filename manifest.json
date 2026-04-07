@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:52.408271+00:00",
+  "updatedAt": "2026-04-07T01:02:54.197166+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -366,6 +366,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-12-decodificando-numeros-como-converter-decimais-em-binarios.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:52.408271+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 13,
+      "title": "Jogando com Bits: De Binários a Decimais",
+      "slug": "jogando-com-bits-de-binarios-a-decimais",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-13-jogando-com-bits-de-binarios-a-decimais.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:02:54.197166+00:00"
     },
     {
       "series": "disciplinas-extras",
