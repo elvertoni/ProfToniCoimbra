@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Apostila — Blueprint de Software para TCC</title>
+ <style>
+ :root {
+ --bg: #f3ede3;
+ --surface: #fffdfa;
+ --surface2: #f8f2e8;
+ --border: rgba(37, 46, 61, 0.12);
+ --border-s: rgba(37, 46, 61, 0.18);
+ --text: #202634;
+ --muted: #566173;
+ --soft: #7c8797;
+ --primary: #8c5c23;
+ --primary-s: #aa7540;
+ --cyan: #395b7a;
+ --green: #2f6d55;
+ --amber: #8d6223;
+ --rose: #8f4f52;
+ --radius: 12px;
+ --radius-lg: 16px;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+
+ html {
+ font-size: 15px;
+ -webkit-print-color-adjust: exact;
+ print-color-adjust: exact;
+ }
+
+ @page {
+ size: A4;
+ margin: 16mm 14mm 16mm 14mm;
+ }
+
+ body {
+ font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+ line-height: 1.74;
+ color: var(--text);
+ background: var(--bg);
+ }
+
+ .book {
+ max-width: 880px;
+ margin: 0 auto;
+ padding: 28px 22px 64px;
+ }
+
+ /* ===== BREAKS ===== */
+ .page-break { page-break-before: always; break-before: page; }
+ .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+
+ /* ===== COVER ===== */
+ .cover {
+ min-height: auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ padding: 0 0 10px;
+ }
+
+ .cover-box {
+ background: linear-gradient(180deg, rgba(255,253,250,0.98), rgba(248,242,232,0.95));
+ border: 1px solid var(--border-s);
+ border-top: 4px solid var(--primary);
+ border-radius: var(--radius-lg);
+ padding: 36px 34px;
+ position: relative;
+ overflow: hidden;
+ box-shadow: none;
+ }
+
+ .cover-box::before {
+ content: "";
+ position: absolute;
+ inset: 0 auto auto 0;
+ width: 100%;
+ height: 1px;
+ background: linear-gradient(90deg, rgba(140,92,35,0.22), transparent 70%);
+ pointer-events: none;
+ }
+
+ .cover-box::after {
+ content: "";
+ position: absolute;
+ right: 34px;
+ top: 34px;
+ width: 92px;
+ height: 92px;
+ border-radius: 50%;
+ border: 1px solid rgba(140,92,35,0.10);
+ background: radial-gradient(circle, rgba(140,92,35,0.06), transparent 68%);
+ pointer-events: none;
+ }
+
+ .cover-kicker {
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: var(--primary);
+ margin-bottom: 16px;
+ position: relative; z-index: 1;
+ }
+
+ .cover-kicker::before {
+ content: "";
+ width: 42px; height: 1px;
+ background: linear-gradient(90deg, var(--primary), transparent);
+ }
+
+ .cover-tags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ margin-bottom: 22px;
+ position: relative; z-index: 1;
+ }
+
+ .tag {
+ padding: 6px 12px;
+ border-radius: 999px;
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.11em;
+ text-transform: uppercase;
+ background: rgba(37,46,61,0.04);
+ border: 1px solid rgba(37,46,61,0.10);
+ color: var(--muted);
+ }
+
+ .tag-v { color: var(--primary); background: rgba(140,92,35,0.08); border-color: rgba(140,92,35,0.18); }
+ .tag-c { color: var(--muted); }
+ .tag-g { color: var(--muted); }
+
+ h1.cover-title {
+ font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+ font-size: 3.65rem;
+ line-height: 0.96;
+ letter-spacing: -0.035em;
+ color: var(--text);
+ margin-bottom: 14px;
+ position: relative; z-index: 1;
+ }
+
+ .cover-title span { color: var(--primary); }
+
+ .cover-subtitle {
+ font-size: 1rem;
+ color: var(--muted);
+ max-width: 64ch;
+ line-height: 1.76;
+ position: relative; z-index: 1;
+ margin-bottom: 28px;
+ }
+
+ .cover-divider {
+ height: 1px;
+ background: linear-gradient(90deg, rgba(37,46,61,0.16), transparent 78%);
+ margin: 22px 0;
+ position: relative; z-index: 1;
+ }
+
+ .cover-info {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 16px 24px;
+ flex-wrap: wrap;
+ position: relative; z-index: 1;
+ }
+
+ .cover-info-item {
+ display: flex;
+ flex-direction: column;
+ gap: 2px;
+ }
+
+ .cover-info-label {
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--soft);
+ }
+
+ .cover-info-value {
+ font-size: 0.94rem;
+ color: var(--text);
+ font-weight: 600;
+ }
+
+ /* ===== SUMÁRIO ===== */
+ .toc-card {
+ background: var(--surface);
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ padding: 24px 22px;
+ margin-top: 20px;
+ }
+
+ .toc-list {
+ list-style: none;
+ padding: 0;
+ }
+
+ .toc-list li {
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ padding: 12px 0;
+ border-bottom: 1px solid var(--border);
+ color: var(--muted);
+ font-size: 0.96rem;
+ }
+
+ .toc-list li:last-child { border-bottom: none; }
+
+ .toc-num {
+ width: 32px; height: 32px;
+ border-radius: 8px;
+ background: rgba(140,92,35,0.08);
+ border: 1px solid rgba(140,92,35,0.16);
+ color: var(--primary);
+ font-size: 11px;
+ font-weight: 800;
+ display: grid;
+ place-items: center;
+ flex-shrink: 0;
+ }
+
+ .toc-final {
+ margin-top: 18px;
+ padding: 16px 18px;
+ border-radius: var(--radius);
+ background: rgba(47,109,85,0.06);
+ border: 1px solid rgba(47,109,85,0.16);
+ border-left: 4px solid var(--green);
+ font-size: 0.92rem;
+ color: var(--text);
+ }
+
+ /* ===== LESSON SHELL ===== */
+ .lesson {
+ background: var(--surface);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ padding: 28px 26px;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .lesson::before { display: none; }
+
+ .lesson-head {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ gap: 16px;
+ flex-wrap: wrap;
+ margin-bottom: 18px;
+ padding-bottom: 12px;
+ border-bottom: 1px solid var(--border);
+ position: relative; z-index: 1;
+ }
+
+ .lesson-num {
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--primary);
+ margin-bottom: 4px;
+ }
+
+ .lesson h2 {
+ font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+ font-size: 1.65rem;
+ letter-spacing: -0.025em;
+ line-height: 1.12;
+ color: var(--text);
+ }
+
+ .lesson h2::before { display: none; }
+
+ .lesson-chip {
+ padding: 6px 12px;
+ border-radius: 999px;
+ background: rgba(140,92,35,0.06);
+ border: 1px solid rgba(140,92,35,0.12);
+ color: var(--primary);
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ white-space: nowrap;
+ margin-top: 4px;
+ }
+
+ /* ===== PROSE ===== */
+ .lesson p, .lesson li {
+ position: relative; z-index: 1;
+ color: var(--muted);
+ font-size: 0.98rem;
+ }
+
+ .lesson p { margin-bottom: 12px; }
+
+ .lesson ul, .lesson ol {
+ padding-left: 1.3rem;
+ margin: 0.6rem 0 1.1rem;
+ }
+
+ .lesson li { margin-bottom: 5px; }
+
+ strong { color: var(--text); }
+
+ .lesson h3 {
+ position: relative; z-index: 1;
+ font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+ font-size: 1.18rem;
+ color: var(--text);
+ margin: 22px 0 10px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .lesson h3::before {
+ content: "";
+ width: 24px; height: 1px;
+ background: linear-gradient(90deg, var(--primary), transparent);
+ border-radius: 999px;
+ }
+
+ /* ===== CALLOUTS ===== */
+ .callout {
+ position: relative; z-index: 1;
+ display: flex;
+ gap: 14px;
+ align-items: flex-start;
+ margin: 1rem 0;
+ padding: 16px 18px;
+ border-radius: var(--radius);
+ border: 1px solid var(--border-s);
+ background: rgba(255,255,255,0.55);
+ }
+
+ .callout-icon {
+ width: 34px; height: 34px;
+ border-radius: 8px;
+ background: rgba(37,46,61,0.05);
+ font-size: 1.1rem;
+ display: grid;
+ place-items: center;
+ flex-shrink: 0;
+ }
+
+ .callout-title {
+ font-size: 11px;
+ font-weight: 800;
+ letter-spacing: 0.07em;
+ text-transform: uppercase;
+ margin-bottom: 4px;
+ }
+
+ .callout-text {
+ color: var(--text);
+ font-size: 0.94rem;
+ line-height: 1.72;
+ }
+
+ .c-v { border-left: 4px solid var(--primary-s); }
+ .c-v .callout-title, .c-v .callout-icon { color: var(--primary); }
+ .c-c { border-left: 4px solid var(--cyan); }
+ .c-c .callout-title, .c-c .callout-icon { color: var(--cyan); }
+ .c-g { border-left: 4px solid var(--green); }
+ .c-g .callout-title, .c-g .callout-icon { color: var(--green); }
+ .c-a { border-left: 4px solid var(--amber); }
+ .c-a .callout-title, .c-a .callout-icon { color: var(--amber); }
+ .c-r { border-left: 4px solid var(--rose); }
+ .c-r .callout-title, .c-r .callout-icon { color: var(--rose); }
+
+ /* ===== STEPS ===== */
+ .steps {
+ position: relative; z-index: 1;
+ display: flex;
+ flex-direction: column;
+ gap: 0;
+ margin: 1rem 0;
+ }
+
+ .step {
+ display: flex;
+ gap: 16px;
+ padding: 14px 0;
+ border-bottom: 1px solid var(--border);
+ }
+
+ .step:last-child { border-bottom: none; }
+
+ .step-num {
+ width: 34px; height: 34px;
+ border-radius: 50%;
+ background: rgba(140,92,35,0.08);
+ border: 1px solid rgba(140,92,35,0.18);
+ color: var(--primary);
+ font-size: 13px;
+ font-weight: 800;
+ display: grid;
+ place-items: center;
+ flex-shrink: 0;
+ margin-top: 1px;
+ }
+
+ .step-content { flex: 1; }
+ .step-title {
+ color: var(--text);
+ font-weight: 700;
+ font-size: 0.97rem;
+ margin-bottom: 4px;
+ }
+ .step-text { color: var(--muted); font-size: 0.92rem; }
+
+ /* ===== COMPARE TABLE ===== */
+ .compare {
+ position: relative; z-index: 1;
+ width: 100%;
+ border-collapse: collapse;
+ margin: 1rem 0;
+ font-size: 0.90rem;
+ }
+
+ .compare thead tr {
+ background: rgba(140,92,35,0.06);
+ }
+
+ .compare th {
+ padding: 10px 14px;
+ text-align: left;
+ color: var(--primary);
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.10em;
+ text-transform: uppercase;
+ border-bottom: 1px solid rgba(140,92,35,0.18);
+ }
+
+ .compare td {
+ padding: 10px 14px;
+ color: var(--muted);
+ border-bottom: 1px solid var(--border);
+ vertical-align: top;
+ }
+
+ .compare tbody tr:last-child td { border-bottom: none; }
+
+ .compare td.good { color: var(--green); }
+ .compare td.bad { color: var(--rose); }
+
+ /* ===== QUESTÕES ===== */
+ .questao {
+ position: relative; z-index: 1;
+ margin: 1.2rem 0;
+ padding: 18px 20px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.58);
+ border: 1px solid var(--border-s);
+ }
+
+ .questao-num {
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--soft);
+ margin-bottom: 8px;
+ }
+
+ .questao-enunciado {
+ color: var(--text);
+ font-weight: 600;
+ margin-bottom: 12px;
+ font-size: 0.95rem;
+ }
+
+ .alternativas {
+ list-style: none;
+ padding: 0;
+ margin: 0 0 12px;
+ }
+
+ .alternativas li {
+ display: flex;
+ gap: 10px;
+ align-items: flex-start;
+ padding: 9px 12px;
+ margin-bottom: 6px;
+ border-radius: 10px;
+ background: rgba(37,46,61,0.03);
+ border: 1px solid var(--border);
+ color: var(--muted);
+ font-size: 0.92rem;
+ }
+
+ .alt-badge {
+ width: 22px; height: 22px;
+ border-radius: 50%;
+ display: inline-grid;
+ place-items: center;
+ font-size: 10px;
+ font-weight: 800;
+ background: rgba(37,46,61,0.06);
+ color: var(--text);
+ flex-shrink: 0;
+ }
+
+ .gabarito {
+ padding: 11px 14px;
+ border-radius: 10px;
+ background: rgba(47,109,85,0.06);
+ border-left: 3px solid var(--green);
+ color: var(--text);
+ font-size: 0.90rem;
+ margin-top: 8px;
+ }
+
+ /* ===== ROTEIRO ===== */
+ .roteiro {
+ position: relative; z-index: 1;
+ margin: 1.4rem 0;
+ padding: 18px 20px;
+ border: 1px solid rgba(140,92,35,0.16);
+ border-radius: var(--radius);
+ background: rgba(140,92,35,0.04);
+ }
+
+ .roteiro-header {
+ display: inline-flex;
+ align-items: center;
+ gap: 7px;
+ padding: 6px 11px;
+ border-radius: 999px;
+ background: rgba(140,92,35,0.06);
+ color: var(--primary);
+ border: 1px solid rgba(140,92,35,0.16);
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.10em;
+ text-transform: uppercase;
+ margin-bottom: 10px;
+ }
+
+ .roteiro p {
+ color: var(--text) !important;
+ font-style: italic;
+ margin: 0 !important;
+ font-size: 0.93rem;
+ }
+
+ /* ===== ATIVIDADE ===== */
+ .atividade {
+ position: relative; z-index: 1;
+ margin: 1.2rem 0;
+ padding: 16px 18px;
+ border-radius: var(--radius);
+ background: rgba(57,91,122,0.05);
+ border: 1px solid rgba(57,91,122,0.16);
+ border-left: 3px solid var(--cyan);
+ color: var(--text);
+ font-size: 0.93rem;
+ }
+
+ /* ===== RESUMO ===== */
+ .resumo {
+ position: relative; z-index: 1;
+ margin-top: 1.4rem;
+ padding: 18px 20px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.52);
+ border: 1px solid var(--border);
+ }
+
+ .resumo strong {
+ display: block;
+ font-size: 10px;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--primary);
+ margin-bottom: 10px;
+ }
+
+ .resumo ul { padding-left: 0; list-style: none; }
+ .resumo li {
+ display: flex;
+ gap: 9px;
+ color: var(--muted) !important;
+ font-size: 0.91rem;
+ padding: 5px 0;
+ border-bottom: 1px solid var(--border);
+ }
+ .resumo li:last-child { border-bottom: none; }
+
+ .check { color: var(--green); font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+
+ /* ===== TEMPLATE SECTION ===== */
+ .template-block {
+ position: relative; z-index: 1;
+ margin: 1rem 0;
+ border-radius: var(--radius);
+ border: 1px solid var(--border-s);
+ overflow: hidden;
+ }
+
+ .template-header {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding: 11px 16px;
+ background: rgba(140,92,35,0.06);
+ border-bottom: 1px solid rgba(140,92,35,0.14);
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ color: var(--primary);
+ }
+
+ .template-body {
+ padding: 16px;
+ background: rgba(37,46,61,0.03);
+ }
+
+ .template-body p {
+ color: var(--text) !important;
+ font-size: 0.91rem;
+ margin-bottom: 6px !important;
+ }
+
+ .field-line {
+ border-bottom: 1px solid rgba(200,195,215,0.18);
+ height: 28px;
+ margin-bottom: 10px;
+ }
+
+ /* ===== RUBRICA ===== */
+ .rubrica-table {
+ position: relative; z-index: 1;
+ width: 100%;
+ border-collapse: collapse;
+ font-size: 0.88rem;
+ margin: 1rem 0;
+ }
+
+ .rubrica-table thead tr {
+ background: rgba(140,92,35,0.06);
+ }
+
+ .rubrica-table th {
+ padding: 9px 12px;
+ text-align: left;
+ color: var(--primary);
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.12em;
+ text-transform: uppercase;
+ border-bottom: 1px solid rgba(140,92,35,0.18);
+ }
+
+ .rubrica-table td {
+ padding: 9px 12px;
+ color: var(--muted);
+ border-bottom: 1px solid var(--border);
+ vertical-align: top;
+ }
+
+ .rubrica-table td.pts {
+ color: var(--amber);
+ font-weight: 700;
+ text-align: center;
+ white-space: nowrap;
+ }
+
+ .rubrica-table tbody tr:last-child td { border-bottom: none; }
+
+ .total-row td {
+ background: rgba(47,109,85,0.08);
+ color: var(--text) !important;
+ font-weight: 700;
+ border-top: 1px solid rgba(47,109,85,0.18) !important;
+ }
+
+ /* ===== TRABALHO FINAL ===== */
+ .trabalho-header {
+ background: linear-gradient(180deg, rgba(248,242,232,0.96), rgba(255,253,250,0.96));
+ border: 1px solid rgba(140,92,35,0.18);
+ border-radius: var(--radius-lg);
+ padding: 24px 24px;
+ margin-bottom: 20px;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .trabalho-header::before {
+ content: "";
+ position: absolute;
+ inset: 0 auto auto 0;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, var(--primary), transparent 78%);
+ pointer-events: none;
+ }
+
+ .trabalho-header-kicker {
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--primary);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ margin-bottom: 10px;
+ }
+
+ .trabalho-header-kicker::before {
+ content: "";
+ width: 32px; height: 1px;
+ background: var(--primary);
+ }
+
+ .trabalho-header h2 {
+ font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+ font-size: 1.85rem;
+ letter-spacing: -0.03em;
+ color: var(--text) !important;
+ margin-bottom: 8px;
+ }
+
+ .trabalho-header h2::before { display: none; }
+
+ .trabalho-header p {
+ color: var(--muted);
+ font-size: 0.95rem;
+ }
+
+ .entrega-info {
+ display: flex;
+ gap: 16px;
+ flex-wrap: wrap;
+ margin: 1.2rem 0;
+ }
+
+ .entrega-item {
+ flex: 1;
+ min-width: 140px;
+ padding: 14px 16px;
+ border-radius: var(--radius);
+ background: rgba(255,255,255,0.58);
+ border: 1px solid var(--border-s);
+ }
+
+ .entrega-item-label {
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ color: var(--soft);
+ margin-bottom: 5px;
+ }
+
+ .entrega-item-value {
+ color: var(--text);
+ font-size: 0.93rem;
+ font-weight: 600;
+ }
+
+ /* ===== TEMPLATE OFICIAL ===== */
+ .template-oficial {
+ background: var(--surface2);
+ border: 1px solid rgba(140,92,35,0.16);
+ border-radius: var(--radius-lg);
+ padding: 24px 22px;
+ margin: 1.2rem 0;
+ }
+
+ .template-title {
+ text-align: center;
+ margin-bottom: 22px;
+ padding-bottom: 14px;
+ border-bottom: 1px solid var(--border);
+ }
+
+ .template-title .t-pre {
+ font-size: 9px;
+ font-weight: 800;
+ letter-spacing: 0.16em;
+ text-transform: uppercase;
+ color: var(--primary);
+ display: block;
+ margin-bottom: 4px;
+ }
+
+ .template-title h3 {
+ font-size: 1.2rem;
+ color: var(--text);
+ letter-spacing: -0.03em;
+ }
+
+ .template-title h3::before { display: none; }
+
+ .t-section {
+ margin-bottom: 18px;
+ }
+
+ .t-label {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ font-size: 10px;
+ font-weight: 800;
+ letter-spacing: 0.10em;
+ text-transform: uppercase;
+ color: var(--primary);
+ margin-bottom: 8px;
+ }
+
+ .t-label span {
+ width: 22px; height: 22px;
+ border-radius: 8px;
+ background: rgba(140,92,35,0.08);
+ border: 1px solid rgba(140,92,35,0.16);
+ display: inline-grid;
+ place-items: center;
+ font-size: 10px;
+ font-weight: 800;
+ }
+
+ .t-line {
+ border-bottom: 1px dashed rgba(37,46,61,0.22);
+ height: 30px;
+ margin-bottom: 8px;
+ }
+
+ .t-area {
+ min-height: 70px;
+ border: 1px dashed rgba(37,46,61,0.22);
+ border-radius: 10px;
+ padding: 8px;
+ margin-bottom: 8px;
+ }
+
+ .t-note {
+ font-size: 0.82rem;
+ color: var(--soft);
+ font-style: italic;
+ display: block;
+ margin-bottom: 14px;
+ }
+
+ /* ===== FOOTER ===== */
+ .footer-note {
+ font-size: 0.82rem;
+ color: var(--soft);
+ }
+
+ /* misc */
+ .section-card {
+ background: var(--surface);
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ padding: 24px;
+ margin-top: 22px;
+ }
+
+ .section-card h2 {
+ font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+ font-size: 1.48rem;
+ letter-spacing: -0.025em;
+ margin-bottom: 14px;
+ color: var(--text);
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ }
+
+ .section-card h2::before {
+ content: "";
+ width: 28px; height: 1px;
+ background: linear-gradient(90deg, var(--primary), transparent);
+ border-radius: 999px;
+ }
+
+ .note-footer {
+ margin-top: 24px;
+ font-size: 0.80rem;
+ color: var(--soft);
+ text-align: center;
+ }
+
+ @media screen and (max-width: 760px) {
+ html { font-size: 14px; }
+ .book { padding: 14px 12px 36px; }
+ .cover-box,
+ .lesson,
+ .section-card,
+ .template-oficial { padding: 20px 18px; }
+ h1.cover-title { font-size: 2.7rem; }
+ .cover-info { grid-template-columns: 1fr; }
+ .lesson-head { flex-direction: column; align-items: flex-start; }
+ .callout,
+ .step { gap: 12px; }
+ .compare,
+ .rubrica-table { display: block; overflow-x: auto; white-space: nowrap; }
+ }
+
+ @media print {
+ body {
+ background: #ffffff;
+ color: #000000;
+ }
+
+ .book {
+ max-width: none;
+ padding: 0;
+ }
+
+ .cover-box,
+ .lesson,
+ .section-card,
+ .template-oficial,
+ .trabalho-header,
+ .entrega-item,
+ .questao,
+ .resumo,
+ .callout,
+ .atividade {
+ box-shadow: none !important;
+ }
+
+ .cover-box::after { display: none; }
+ .page-break { break-before: page; }
+ }
+ </style>
+</head>
+<body>
+<div class="book">
+
+ <!-- ==============================
+ CAPA
+ ============================== -->
+ <section class="cover">
+ <div class="cover-box">
+ <div class="cover-kicker">Caderno estratégico de aprendizagem</div>
+ <div class="cover-tags">
+ <span class="tag tag-v">Edição Premium</span>
+ <span class="tag tag-c">Blueprint de Software</span>
+ <span class="tag tag-g">TCC</span>
+ </div>
+ <h1 class="cover-title">Blueprint<br>de <span>Software</span></h1>
+ <p class="cover-subtitle">
+ Material didático de alto valor para transformar entendimento em execução.
+ Você aprende o conceito, domina a estrutura, aplica em exercícios progressivos
+ e conclui com um blueprint claro, consistente e pronto para orientar o desenvolvimento do seu TCC.
+ </p>
+ <div class="cover-divider"></div>
+ <div class="cover-info">
+ <div class="cover-info-item">
+ <span class="cover-info-label">Módulos</span>
+ <span class="cover-info-value">5 módulos + aplicação final</span>
+ </div>
+ <div class="cover-info-item">
+ <span class="cover-info-label">Foco</span>
+ <span class="cover-info-value">Aprendizado prático e orientado à entrega</span>
+ </div>
+ <div class="cover-info-item">
+ <span class="cover-info-label">Objetivo</span>
+ <span class="cover-info-value">Construir um blueprint sólido e defensável</span>
+ </div>
+ <div class="cover-info-item">
+ <span class="cover-info-label">Entregável</span>
+ <span class="cover-info-value">Blueprint completo, revisado e pronto para evolução</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- ==============================
+ SUMÁRIO
+ ============================== -->
+ <section class="section-card page-break">
+ <h2>Sumário</h2>
+ <div class="toc-card" style="padding:0;background:transparent;border:none;">
+ <ul class="toc-list">
+ <li><span class="toc-num">01</span> O que é Blueprint de Software — conceito e importância</li>
+ <li><span class="toc-num">02</span> Estrutura de um Blueprint — componentes e seções</li>
+ <li><span class="toc-num">03</span> Construindo um Blueprint na Prática — passo a passo guiado</li>
+ <li><span class="toc-num">04</span> Boas Práticas, Erros Comuns e Comparativos</li>
+ <li><span class="toc-num">05</span> Blueprint do TCC — modelo completo e orientações finais</li>
+ <li><span class="toc-num">★</span> Projeto Final — consolidação do Blueprint do TCC</li>
+ </ul>
+ </div>
+ <div class="toc-final">
+ <strong>Projeto final:</strong> Ao concluir os cinco módulos, você terá base suficiente para elaborar
+ um blueprint completo, com linguagem técnica madura e estrutura pronta para apresentação e desenvolvimento.
+ </div>
+ </section>
+
+ <!-- ==============================
+ AULA 01
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Módulo 01</div>
+ <h2>O que é Blueprint de Software</h2>
+ </div>
+ <div class="lesson-chip">Fundamentos</div>
+ </div>
+
+ <p>
+ Imagine que você vai construir uma casa. Antes de comprar tijolos ou contratar pedreiros,
+ um arquiteto produz uma <strong>planta baixa</strong>: um documento técnico que mostra
+ exatamente como a casa será, onde ficam os cômodos, como circula a fiação, onde passa
+ a hidráulica. Ninguém começa a obra sem essa planta.
+ </p>
+ <p>
+ No desenvolvimento de software, o <strong>blueprint</strong> cumpre esse mesmo papel.
+ Ele é o documento de planejamento que descreve o que será construído, por que, para quem,
+ como funcionará e com quais tecnologias — tudo isso <em>antes de escrever uma linha de código</em>.
+ </p>
+
+ <div class="callout c-v">
+ <div class="callout-icon">📖</div>
+ <div>
+ <p class="callout-title">Definição formal</p>
+ <p class="callout-text">
+ Blueprint de software é um documento estruturado de planejamento que registra:
+ o problema a resolver, o público-alvo, a solução proposta, os requisitos funcionais
+ e não funcionais, a arquitetura do sistema, as tecnologias escolhidas e o fluxo de uso.
+ É a base técnica sobre a qual o desenvolvimento se apoia.
+ </p>
+ </div>
+ </div>
+
+ <h3>Por que o blueprint importa?</h3>
+ <p>
+ Desenvolvedores que pulam o planejamento costumam enfrentar retrabalho intenso, funcionalidades
+ mal definidas e dificuldade de comunicação com a equipe. O blueprint resolve isso antecipadamente.
+ </p>
+
+ <div class="callout c-a">
+ <div class="callout-icon">⚠️</div>
+ <div>
+ <p class="callout-title">Atenção — Blueprint não é código</p>
+ <p class="callout-text">
+ Blueprint não contém código-fonte, banco de dados implementado ou telas prontas.
+ Ele descreve <em>intenções e decisões</em>. O código vem depois, guiado por ele.
+ </p>
+ </div>
+ </div>
+
+ <h3>Blueprint x Documentação tradicional</h3>
+ <table class="compare avoid-break">
+ <thead>
+ <tr>
+ <th>Característica</th>
+ <th>Blueprint</th>
+ <th>Documentação tradicional</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Quando é feito</td>
+ <td class="good">Antes do desenvolvimento</td>
+ <td>Durante ou após</td>
+ </tr>
+ <tr>
+ <td>Objetivo</td>
+ <td class="good">Planejar e orientar</td>
+ <td>Registrar o que foi feito</td>
+ </tr>
+ <tr>
+ <td>Extensão</td>
+ <td class="good">Conciso e direto</td>
+ <td>Pode ser extenso</td>
+ </tr>
+ <tr>
+ <td>Público</td>
+ <td class="good">Toda a equipe + cliente</td>
+ <td>Geralmente técnico</td>
+ </tr>
+ <tr>
+ <td>Evolui com o projeto?</td>
+ <td class="good">Sim, é documento vivo</td>
+ <td>Nem sempre</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <div class="callout c-c">
+ <div class="callout-icon">📝</div>
+ <div>
+ <p class="callout-title">Exemplo prático</p>
+ <p class="callout-text">
+ Projeto: <strong>Plataforma de Planejamento de Estudos para TCC.</strong><br>
+ O blueprint desse sistema definiria: o problema (estudantes perdem prazos e dispersam materiais),
+ quem usa (estudantes, coordenação acadêmica e administração), o que o sistema faz
+ (cronograma, checklist, alertas e registro de entregas), como foi construído
+ (Django + SQLite) e o fluxo do usuário ao organizar uma etapa do projeto.
+ Tudo em uma ou duas páginas, antes de qualquer código.
+ </p>
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 1</p>
+ <p class="questao-enunciado">Qual é a principal função de um blueprint de software?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Executar automaticamente o código do projeto</li>
+ <li><span class="alt-badge">B</span> Organizar e orientar o desenvolvimento do sistema antes da implementação</li>
+ <li><span class="alt-badge">C</span> Substituir inteiramente a equipe de programação</li>
+ <li><span class="alt-badge">D</span> Servir apenas como apresentação visual para o cliente</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — O blueprint existe para estruturar o projeto antes da construção,
+ alinhando objetivos, requisitos e decisões técnicas entre todos os envolvidos.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 2</p>
+ <p class="questao-enunciado">Qual das opções abaixo NÃO representa uma característica do blueprint?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> É feito antes do início do desenvolvimento</li>
+ <li><span class="alt-badge">B</span> Descreve o problema que o sistema pretende resolver</li>
+ <li><span class="alt-badge">C</span> Contém o código-fonte já compilado e funcional</li>
+ <li><span class="alt-badge">D</span> Define as tecnologias e a arquitetura que serão usadas</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — Blueprint é documento de planejamento. Código-fonte é produto do desenvolvimento,
+ não do blueprint.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 3</p>
+ <p class="questao-enunciado">Um desenvolvedor começa a programar sem nenhum planejamento prévio. Qual problema mais provável ele vai enfrentar?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> O sistema vai funcionar mais rápido</li>
+ <li><span class="alt-badge">B</span> Retrabalho, funcionalidades confusas e falta de alinhamento</li>
+ <li><span class="alt-badge">C</span> A documentação será produzida automaticamente</li>
+ <li><span class="alt-badge">D</span> O cliente ficará mais satisfeito</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — Sem planejamento, decisões técnicas são tomadas no calor do momento,
+ gerando inconsistências, reescrita de código e dificuldade de manutenção.
+ </div>
+ </div>
+
+ <div class="atividade avoid-break">
+ <strong>Exercício — Módulo 01:</strong> Pense na ideia de sistema para o seu TCC.
+ Escreva em 3 a 5 linhas: <em>qual problema ele resolve, quem vai usar e qual resultado o usuário espera obter.</em>
+ Não mencione tecnologia ainda — foque inteiramente no problema.
+ </div>
+
+ <div class="resumo avoid-break">
+ <strong>Síntese do módulo 01</strong>
+ <ul>
+ <li><span class="check">✔</span> Blueprint é o plano técnico do sistema, feito antes da programação.</li>
+ <li><span class="check">✔</span> Funciona como a "planta baixa" do software: orienta todas as decisões.</li>
+ <li><span class="check">✔</span> Não contém código — contém intenções, decisões e estrutura.</li>
+ <li><span class="check">✔</span> Evita retrabalho, reduz erros e melhora a comunicação no projeto.</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ==============================
+ AULA 02
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Módulo 02</div>
+ <h2>Estrutura de um Blueprint</h2>
+ </div>
+ <div class="lesson-chip">Componentes essenciais</div>
+ </div>
+
+ <p>
+ Um blueprint eficaz é dividido em seções bem definidas. Cada seção responde a uma pergunta
+ essencial do projeto. Neste módulo vamos estudar cada componente em profundidade, entender
+ o que deve conter e ver exemplos de respostas bem escritas — e mal escritas.
+ </p>
+
+ <div class="callout c-g avoid-break">
+ <div class="callout-icon">🎯</div>
+ <div>
+ <p class="callout-title">1 — Problema e Contexto</p>
+ <p class="callout-text">
+ Responde: <em>Qual dor ou necessidade o sistema vai resolver?</em><br>
+ Deve descrever a situação atual (sem o sistema) e por que ela é um problema real.
+ Quanto mais específico, melhor. Evite frases genéricas como "melhorar a produtividade".
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-c avoid-break">
+ <div class="callout-icon">👥</div>
+ <div>
+ <p class="callout-title">2 — Público-alvo</p>
+ <p class="callout-text">
+ Responde: <em>Quem vai usar o sistema? Quem se beneficia diretamente?</em><br>
+ Identifique os perfis de usuários (ex.: aluno, coordenador, administrador) e o que cada um precisa fazer
+ dentro do sistema. Isso guia as funcionalidades.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-v avoid-break">
+ <div class="callout-icon">💡</div>
+ <div>
+ <p class="callout-title">3 — Solução Proposta</p>
+ <p class="callout-text">
+ Responde: <em>Como o sistema vai resolver o problema?</em><br>
+ Descreva a solução de forma objetiva. Não é a lista de funcionalidades ainda —
+ é a ideia central da solução. Ex.: "Uma plataforma web onde estudantes acompanham
+ cronograma, materiais, pendências e entregas do TCC em um único fluxo organizado."
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-a avoid-break">
+ <div class="callout-icon">📋</div>
+ <div>
+ <p class="callout-title">4 — Requisitos Funcionais</p>
+ <p class="callout-text">
+ Responde: <em>O que o sistema deve fazer?</em><br>
+ Lista as funcionalidades obrigatórias, escritas como verbos de ação.
+ Ex.: "O sistema deve permitir o cadastro de turmas e alunos",
+ "O sistema deve gerar relatório de frequência por período".
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">⚙️</div>
+ <div>
+ <p class="callout-title">5 — Requisitos Não Funcionais</p>
+ <p class="callout-text">
+ Responde: <em>Como o sistema deve se comportar?</em><br>
+ Define restrições de qualidade: desempenho, segurança, usabilidade, disponibilidade.
+ Ex.: "O sistema deve responder em menos de 2 segundos", "Dados de alunos devem ser protegidos por autenticação".
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-g avoid-break">
+ <div class="callout-icon">🧩</div>
+ <div>
+ <p class="callout-title">6 — Arquitetura e Tecnologias</p>
+ <p class="callout-text">
+ Responde: <em>Como o sistema será estruturado e construído?</em><br>
+ Descreve o padrão arquitetural (ex.: MVC, monolítico, cliente-servidor),
+ o banco de dados, a linguagem de programação, frameworks e ferramentas.
+ Justifique as escolhas — "Escolhemos Django pois a equipe já tem familiaridade com Python."
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-c avoid-break">
+ <div class="callout-icon">🔄</div>
+ <div>
+ <p class="callout-title">7 — Fluxo Principal do Sistema</p>
+ <p class="callout-text">
+ Responde: <em>Como o usuário interage com o sistema do início ao fim?</em><br>
+ Descreve em etapas numeradas o caminho que o usuário percorre para realizar
+ a ação principal. Pode ser complementado por um diagrama ou esquema visual.
+ </p>
+ </div>
+ </div>
+
+ <h3>Bom vs. ruim — comparativo de escritas</h3>
+ <table class="compare avoid-break">
+ <thead>
+ <tr>
+ <th>Seção</th>
+ <th>Escrita fraca ✗</th>
+ <th>Escrita forte ✓</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Problema</td>
+ <td class="bad">Melhorar o processo da escola</td>
+ <td class="good">Estudantes perdem entregas parciais por falta de controle centralizado de prazos e etapas</td>
+ </tr>
+ <tr>
+ <td>Requisito</td>
+ <td class="bad">Ter cadastro de usuários</td>
+ <td class="good">O sistema deve permitir cadastro de estudantes com validação de e-mail e recuperação de senha</td>
+ </tr>
+ <tr>
+ <td>Tecnologia</td>
+ <td class="bad">Usar Python</td>
+ <td class="good">Back-end: Django 4.x + PostgreSQL; Front-end: HTML/CSS + Bootstrap 5; Deploy: VPS Ubuntu</td>
+ </tr>
+ <tr>
+ <td>Fluxo</td>
+ <td class="bad">O usuário entra e usa o sistema</td>
+ <td class="good">1. Estudante faz login → 2. Visualiza o cronograma → 3. Seleciona uma etapa → 4. Registra a entrega → 5. Recebe confirmação e próximos passos</td>
+ </tr>
+ </tbody>
+ </table>
+
+
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 1</p>
+ <p class="questao-enunciado">Qual seção do blueprint define O QUE o sistema deve fazer?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Arquitetura e tecnologias</li>
+ <li><span class="alt-badge">B</span> Fluxo do sistema</li>
+ <li><span class="alt-badge">C</span> Requisitos funcionais</li>
+ <li><span class="alt-badge">D</span> Público-alvo</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — Requisitos funcionais listam as funcionalidades obrigatórias do sistema.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 2</p>
+ <p class="questao-enunciado">O requisito "o sistema deve carregar em menos de 3 segundos" é classificado como:</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Requisito funcional</li>
+ <li><span class="alt-badge">B</span> Requisito não funcional</li>
+ <li><span class="alt-badge">C</span> Fluxo do usuário</li>
+ <li><span class="alt-badge">D</span> Arquitetura do sistema</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — Requisito não funcional define <em>como</em> o sistema deve se comportar
+ (desempenho, segurança, usabilidade), não o que ele faz.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 3</p>
+ <p class="questao-enunciado">Por que justificar a escolha de tecnologias no blueprint é importante?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Porque a banca vai reprovar se não justificar</li>
+ <li><span class="alt-badge">B</span> Porque mostra que a escolha foi consciente e adequada ao projeto</li>
+ <li><span class="alt-badge">C</span> Porque toda tecnologia precisa de autorização prévia</li>
+ <li><span class="alt-badge">D</span> Porque o sistema não funciona sem justificativa</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — Justificar demonstra maturidade técnica: a escolha foi baseada em
+ compatibilidade, conhecimento da equipe e requisitos do projeto — não foi aleatória.
+ </div>
+ </div>
+
+ <div class="atividade avoid-break">
+ <strong>Exercício — Módulo 02:</strong> Retome a ideia de sistema do módulo anterior.
+ Escreva agora: (1) 3 requisitos funcionais e (2) 2 requisitos não funcionais para o seu sistema.
+ Use a estrutura: <em>"O sistema deve [ação]..."</em>
+ </div>
+
+ <div class="resumo avoid-break">
+ <strong>Síntese do módulo 02</strong>
+ <ul>
+ <li><span class="check">✔</span> O blueprint tem 7 seções principais: problema, público, solução, req. funcionais, req. não funcionais, arquitetura e fluxo.</li>
+ <li><span class="check">✔</span> Cada seção responde a uma pergunta específica do projeto.</li>
+ <li><span class="check">✔</span> Escritas vagas geram indefinições que comprometem o desenvolvimento.</li>
+ <li><span class="check">✔</span> Requisitos funcionais = o que faz; não funcionais = como se comporta.</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ==============================
+ AULA 03
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Módulo 03</div>
+ <h2>Construindo um Blueprint na Prática</h2>
+ </div>
+ <div class="lesson-chip">Passo a passo guiado</div>
+ </div>
+
+ <p>
+ Chegou a hora de sair da teoria. Vamos construir um blueprint completo juntos,
+ seguindo cada etapa com um exemplo real de TCC. Você vai perceber que o processo
+ é mais intuitivo do que parece — a dificuldade está em ser <strong>específico</strong>, não em ser complexo.
+ </p>
+ <p>
+ O projeto de exemplo que usaremos ao longo deste módulo é:
+ <strong>Plataforma de Organização de Estudos e Entregas do TCC.</strong>
+ </p>
+
+ <div class="steps avoid-break">
+ <div class="step">
+ <div class="step-num">1</div>
+ <div class="step-content">
+ <div class="step-title">Defina o problema com precisão</div>
+ <div class="step-text">
+ Antes de qualquer coisa, responda: qual dor existe hoje sem o sistema?
+ <em>Exemplo:</em> "Estudantes em fase de TCC concentram cronogramas, materiais e entregas em
+ anotações dispersas. Como não existe um fluxo único de acompanhamento, prazos são perdidos,
+ arquivos ficam desorganizados e o avanço do projeto se torna difícil de medir."
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">2</div>
+ <div class="step-content">
+ <div class="step-title">Identifique o público-alvo com clareza</div>
+ <div class="step-text">
+ Liste quem vai usar e o que cada perfil precisa fazer.
+ <em>Exemplo:</em> (a) <strong>Estudante</strong> — organiza etapas, registra entregas e acompanha prazos;
+ (b) <strong>Coordenação acadêmica</strong> — acompanha evolução geral; (c) <strong>Administrador</strong> — gerencia usuários e parâmetros do sistema.
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">3</div>
+ <div class="step-content">
+ <div class="step-title">Escreva a solução proposta em um parágrafo</div>
+ <div class="step-text">
+ Descreva a solução como se estivesse explicando para alguém leigo.
+ <em>Exemplo:</em> "Uma plataforma web onde estudantes visualizam o cronograma do TCC, organizam materiais,
+ registram entregas parciais e acompanham o progresso do projeto em uma linha do tempo simples.
+ A coordenação acadêmica enxerga indicadores de andamento e o sistema envia alertas para etapas próximas do prazo."
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">4</div>
+ <div class="step-content">
+ <div class="step-title">Liste os requisitos funcionais (o que o sistema faz)</div>
+ <div class="step-text">
+ Escreva as funcionalidades como obrigações do sistema.
+ <em>Exemplo:</em>
+ RF01 — Permitir cadastro e login de estudantes, coordenação acadêmica e administração.<br>
+ RF02 — Exibir cronograma com etapas e prazos do TCC.<br>
+ RF03 — Permitir anexar entregas parciais e registrar status de conclusão.<br>
+ RF04 — Enviar alertas por e-mail para prazos próximos.<br>
+ RF05 — Gerar painel com visão consolidada de progresso.
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">5</div>
+ <div class="step-content">
+ <div class="step-title">Liste os requisitos não funcionais (como o sistema se comporta)</div>
+ <div class="step-text">
+ <em>Exemplo:</em>
+ RNF01 — Sistema acessível por qualquer navegador moderno e em tela mobile.<br>
+ RNF02 — Entregas e dados pessoais protegidos por autenticação e controle de perfil.<br>
+ RNF03 — Tempo de resposta inferior a 3 segundos para consultas e registros.<br>
+ RNF04 — Interface clara, legível e utilizável sem treinamento longo.
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">6</div>
+ <div class="step-content">
+ <div class="step-title">Defina arquitetura e tecnologias com justificativa</div>
+ <div class="step-text">
+ <em>Exemplo:</em>
+ Linguagem: Python — <em>equipe tem domínio prévio.</em><br>
+ Framework: Django — <em>autenticação e admin já incluídos, agiliza desenvolvimento.</em><br>
+ Banco de dados: SQLite (desenvolvimento) / PostgreSQL (produção).<br>
+ Front-end: HTML + Bootstrap 5 — <em>responsivo, rápido para prototipar e manter.</em><br>
+ Hospedagem: VPS Ubuntu ou serviço gerenciado compatível.
+ </div>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">7</div>
+ <div class="step-content">
+ <div class="step-title">Descreva o fluxo principal do usuário</div>
+ <div class="step-text">
+ <em>Exemplo — fluxo do estudante:</em><br>
+ 1. Estudante acessa o sistema e faz login com e-mail e senha.<br>
+ 2. Visualiza o cronograma completo do TCC.<br>
+ 3. Seleciona a etapa atual e consulta materiais de apoio.<br>
+ 4. Registra a entrega parcial ou marca a etapa como concluída.<br>
+ 5. Recebe confirmação e visualiza o próximo prazo recomendado.<br>
+ 6. Acompanha o percentual geral de progresso do projeto.
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 1</p>
+ <p class="questao-enunciado">Qual é o primeiro passo para construir um blueprint consistente?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Escolher o banco de dados</li>
+ <li><span class="alt-badge">B</span> Definir com precisão o problema que será resolvido</li>
+ <li><span class="alt-badge">C</span> Criar o design da interface gráfica</li>
+ <li><span class="alt-badge">D</span> Instalar o ambiente de desenvolvimento</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — Sem problema bem definido, todas as decisões seguintes perdem direção.
+ Tecnologia, requisitos e fluxo dependem de entender o problema com clareza.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 2</p>
+ <p class="questao-enunciado">No blueprint de exemplo, "Enviar notificação por e-mail após agendamento" é classificado como:</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Requisito não funcional</li>
+ <li><span class="alt-badge">B</span> Fluxo do sistema</li>
+ <li><span class="alt-badge">C</span> Requisito funcional</li>
+ <li><span class="alt-badge">D</span> Objetivo do sistema</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — É uma funcionalidade que o sistema deve executar (ação = RF).
+ Se fosse "as notificações devem chegar em até 30 segundos", seria RNF (qualidade do comportamento).
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 3</p>
+ <p class="questao-enunciado">Por que o fluxo do usuário é descrito em etapas numeradas?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Para deixar o documento mais longo e parecer mais completo</li>
+ <li><span class="alt-badge">B</span> Para mostrar a sequência lógica de ações do usuário no sistema</li>
+ <li><span class="alt-badge">C</span> Porque os computadores só entendem listas numeradas</li>
+ <li><span class="alt-badge">D</span> Para substituir o diagrama UML</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — O fluxo numerado torna a sequência de interações clara e verificável.
+ Facilita a criação de telas e a validação com o usuário real.
+ </div>
+ </div>
+
+ <div class="atividade avoid-break">
+ <strong>Exercício — Módulo 03:</strong> Usando o seu projeto de TCC, escreva o fluxo principal
+ do usuário em pelo menos 5 etapas numeradas. Depois, releia cada etapa e verifique:
+ <em>alguma ficou ambígua, pulou um passo ou pressupõe algo que o usuário não saberia fazer?</em>
+ Corrija os pontos identificados antes de avançar.
+ </div>
+
+ <div class="resumo avoid-break">
+ <strong>Síntese do módulo 03</strong>
+ <ul>
+ <li><span class="check">✔</span> O blueprint é construído em 7 etapas sequenciais e lógicas.</li>
+ <li><span class="check">✔</span> Problema vem primeiro; tecnologia vem depois.</li>
+ <li><span class="check">✔</span> Fluxo numerado garante clareza sobre o caminho do usuário.</li>
+ <li><span class="check">✔</span> Justificar escolhas técnicas é tão importante quanto listá-las.</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ==============================
+ AULA 04
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Módulo 04</div>
+ <h2>Boas Práticas, Erros Comuns e Comparativos</h2>
+ </div>
+ <div class="lesson-chip">Qualidade e revisão</div>
+ </div>
+
+ <p>
+ Saber o que é o blueprint e como construí-lo é fundamental. Mas saber o que
+ <strong>não fazer</strong> é igualmente valioso. Este módulo foca em critérios de qualidade,
+ os erros mais frequentes cometidos por estudantes e como revisar um blueprint antes da entrega.
+ </p>
+
+ <h3>O que torna um blueprint excelente?</h3>
+
+ <div class="callout c-g avoid-break">
+ <div class="callout-icon">✔</div>
+ <div>
+ <p class="callout-title">Clareza — qualquer pessoa entende sem o autor explicar</p>
+ <p class="callout-text">
+ Um blueprint de qualidade deve ser autoexplicativo. Se você precisar ficar ao lado do documento
+ para explicá-lo, ele falhou. Teste: dê para alguém que não conhece seu projeto e veja
+ se essa pessoa consegue entender do que se trata.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-c avoid-break">
+ <div class="callout-icon">✔</div>
+ <div>
+ <p class="callout-title">Coerência — problema, solução e requisitos se conectam</p>
+ <p class="callout-text">
+ O problema definido deve justificar a solução. A solução deve estar refletida nos requisitos.
+ Os requisitos devem aparecer no fluxo. Se algum elemento "flutua" sem conexão, há incoerência.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-v avoid-break">
+ <div class="callout-icon">✔</div>
+ <div>
+ <p class="callout-title">Viabilidade — escopo compatível com o tempo disponível</p>
+ <p class="callout-text">
+ Um blueprint de TCC com 40 requisitos funcionais para ser desenvolvido em 6 meses por 1 aluno
+ é inviável. O blueprint deve ser realista: menos funcionalidades bem feitas valem mais
+ que muitas funcionalidades incompletas.
+ </p>
+ </div>
+ </div>
+
+ <h3>Os 6 erros mais comuns em blueprints de TCC</h3>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 1 — Problema vago</p>
+ <p class="callout-text">
+ <strong>Errado:</strong> "Melhorar a gestão da escola."<br>
+ <strong>Certo:</strong> "A secretaria da escola gasta 3 horas diárias lançando manualmente as notas
+ de 400 alunos em planilhas sem validação, causando erros frequentes nos boletins."
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 2 — Requisitos genéricos</p>
+ <p class="callout-text">
+ <strong>Errado:</strong> "Ter login, cadastro e relatório."<br>
+ <strong>Certo:</strong> "RF01 — O sistema deve permitir o login com e-mail e senha, bloqueando
+ a conta após 5 tentativas incorretas."
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 3 — Tecnologia sem justificativa</p>
+ <p class="callout-text">
+ <strong>Errado:</strong> "Linguagem: React. Banco: MongoDB."<br>
+ <strong>Certo:</strong> "Front-end: React — justificativa: interface dinâmica com atualizações
+ em tempo real. Banco: MongoDB — justificativa: dados de sensores sem esquema fixo."
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 4 — Fluxo ausente ou resumido demais</p>
+ <p class="callout-text">
+ <strong>Errado:</strong> "O usuário acessa o sistema e realiza as operações."<br>
+ <strong>Certo:</strong> Fluxo em etapas numeradas cobrindo login, navegação, ação principal e saída.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 5 — Escopo inviável para o prazo</p>
+ <p class="callout-text">
+ Um estudante que lista 25 módulos complexos para um TCC semestral
+ provavelmente não entregará nenhum completo. O blueprint deve ter escopo honesto.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-r avoid-break">
+ <div class="callout-icon">✗</div>
+ <div>
+ <p class="callout-title">Erro 6 — Blueprint copiado de exemplos genéricos</p>
+ <p class="callout-text">
+ O blueprint deve descrever <em>o seu projeto específico</em>. Documentos copiados ou adaptados
+ superficialmente de exemplos da internet são facilmente percebidos pela incoerência
+ entre as seções.
+ </p>
+ </div>
+ </div>
+
+ <h3>Checklist de revisão antes da entrega</h3>
+ <table class="compare avoid-break">
+ <thead>
+ <tr><th>Item a verificar</th><th>OK?</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>O problema é específico e mensurável?</td><td>☐</td></tr>
+ <tr><td>O público-alvo está definido por perfis de uso?</td><td>☐</td></tr>
+ <tr><td>A solução resolve o problema descrito?</td><td>☐</td></tr>
+ <tr><td>Cada requisito começa com "O sistema deve..."?</td><td>☐</td></tr>
+ <tr><td>Há pelo menos 2 requisitos não funcionais?</td><td>☐</td></tr>
+ <tr><td>As tecnologias têm justificativa?</td><td>☐</td></tr>
+ <tr><td>O fluxo principal tem 5+ etapas numeradas?</td><td>☐</td></tr>
+ <tr><td>Outra pessoa consegue entender sem sua explicação?</td><td>☐</td></tr>
+ <tr><td>O escopo é realizável no prazo do TCC?</td><td>☐</td></tr>
+ </tbody>
+ </table>
+
+
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 1</p>
+ <p class="questao-enunciado">Um blueprint com problema vago e tecnologias sem justificativa compromete principalmente qual aspecto?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Apenas a formatação visual do documento</li>
+ <li><span class="alt-badge">B</span> A clareza e a utilidade do documento como guia de desenvolvimento</li>
+ <li><span class="alt-badge">C</span> Somente o tempo de aprovação pela banca</li>
+ <li><span class="alt-badge">D</span> Apenas o tamanho do arquivo PDF</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>B</strong> — Um blueprint vago não orienta o desenvolvimento. O programador fica sem
+ referência e toma decisões aleatórias, gerando retrabalho e inconsistências.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 2</p>
+ <p class="questao-enunciado">O que indica que o escopo de um blueprint de TCC é inviável?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Ter mais de 3 páginas</li>
+ <li><span class="alt-badge">B</span> Usar linguagem técnica</li>
+ <li><span class="alt-badge">C</span> Listar funcionalidades que excedem o tempo e os recursos disponíveis</li>
+ <li><span class="alt-badge">D</span> Não ter diagrama de banco de dados</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — Viabilidade é a compatibilidade entre o que foi planejado e os recursos
+ reais (tempo, equipe, tecnologia). Excedê-los transforma o blueprint em ficção científica.
+ </div>
+ </div>
+
+ <div class="atividade avoid-break">
+ <strong>Exercício — Módulo 04:</strong> Releia tudo o que você escreveu nos exercícios anteriores
+ e aplique o checklist deste módulo. Identifique pelo menos 2 pontos para melhorar e reescreva-os.
+ Uma dica: leia o seu blueprint como se fosse a primeira vez — sem saber nada do projeto.
+ O que ficaria confuso para você?
+ </div>
+
+ <div class="resumo avoid-break">
+ <strong>Síntese do módulo 04</strong>
+ <ul>
+ <li><span class="check">✔</span> Blueprint de qualidade é claro, coerente e viável.</li>
+ <li><span class="check">✔</span> Os 6 erros mais comuns: problema vago, requisitos genéricos, tecnologia sem justificativa, fluxo ausente, escopo inviável, cópia genérica.</li>
+ <li><span class="check">✔</span> O checklist de 9 itens é a última linha de defesa antes da entrega.</li>
+ <li><span class="check">✔</span> Reler o seu próprio blueprint como leitor externo é o teste mais eficaz de qualidade.</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ==============================
+ AULA 05
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Módulo 05</div>
+ <h2>Blueprint do TCC — Modelo e Orientações Finais</h2>
+ </div>
+ <div class="lesson-chip">Aplicação completa</div>
+ </div>
+
+ <p>
+ Chegamos ao módulo de síntese. Aqui você vai ver um blueprint de TCC completo como referência,
+ entender o que a banca avaliadora espera, conhecer variações por tipo de projeto e se preparar
+ para a consolidação final da entrega.
+ </p>
+
+ <h3>Tipos de projeto e suas particularidades</h3>
+
+ <div class="callout c-c avoid-break">
+ <div class="callout-icon">🌐</div>
+ <div>
+ <p class="callout-title">Sistema Web</p>
+ <p class="callout-text">
+ Arquitetura cliente-servidor. Definir se é monolítico (Django, Laravel) ou separado
+ (API + front-end). Descrever rotas principais, autenticação e deploy.
+ Exemplo de tecnologia: Django + PostgreSQL + Heroku ou VPS.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-v avoid-break">
+ <div class="callout-icon">📱</div>
+ <div>
+ <p class="callout-title">Aplicativo Mobile</p>
+ <p class="callout-text">
+ Definir plataforma (Android, iOS ou ambos). Escolher entre nativo (Kotlin/Swift)
+ ou multiplataforma (Flutter, React Native). Mencionar se há back-end separado (API).
+ Descrever permissões necessárias (câmera, GPS, etc.).
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-a avoid-break">
+ <div class="callout-icon">🖥️</div>
+ <div>
+ <p class="callout-title">Sistema Desktop</p>
+ <p class="callout-text">
+ Especificar sistema operacional alvo. Definir se tem banco de dados local (SQLite)
+ ou conexão com servidor. Mencionar framework: Tkinter, PyQt, Electron, etc.
+ Detalhar mecanismo de instalação e atualização.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-g avoid-break">
+ <div class="callout-icon">🔌</div>
+ <div>
+ <p class="callout-title">API / Back-end / Automação</p>
+ <p class="callout-text">
+ Documentar os endpoints principais (rotas, métodos HTTP, parâmetros esperados).
+ Definir formato de resposta (JSON). Descrever autenticação (Token, JWT, OAuth).
+ Listar integrações com serviços externos.
+ </p>
+ </div>
+ </div>
+
+ <h3>Blueprint de referência — exemplo completo</h3>
+
+ <div class="template-oficial avoid-break">
+ <div class="template-title">
+ <span class="t-pre">Exemplo de Blueprint de TCC</span>
+ <h3>Plataforma de Gestão de Cronograma e Entregas do TCC</h3>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>1</span> Problema</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ Estudantes em fase de TCC lidam com prazos, arquivos, checklists e entregas em diferentes canais.
+ Como não existe um fluxo centralizado, etapas são esquecidas, materiais ficam dispersos
+ e o andamento real do projeto se torna pouco visível.
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>2</span> Público-alvo</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ <strong>Estudante:</strong> organiza etapas, registra entregas, consulta materiais e acompanha progresso.<br>
+ <strong>Coordenação acadêmica:</strong> acompanha andamento geral e identifica atrasos.<br>
+ <strong>Administrador:</strong> gerencia usuários, parâmetros e calendários.
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>3</span> Solução</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ Plataforma web que centraliza cronograma, materiais, marcos e entregas do TCC.
+ O estudante acompanha sua jornada em uma interface simples, registra avanços e recebe alertas de prazo.
+ A coordenação visualiza indicadores consolidados de andamento sem depender de controles manuais.
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>4</span> Requisitos funcionais</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ RF01 — Permitir cadastro e autenticação de estudantes, coordenação acadêmica e administração.<br>
+ RF02 — Exibir cronograma do TCC com etapas, status e prazos.<br>
+ RF03 — Permitir anexar entregas parciais por etapa.<br>
+ RF04 — Enviar alertas de prazos próximos e pendências.<br>
+ RF05 — Gerar painel com percentual de avanço por projeto.<br>
+ RF06 — Permitir consulta rápida de materiais e histórico de entregas.
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>5</span> Requisitos não funcionais</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ RNF01 — Acesso via navegador em desktop e mobile, sem instalação adicional.<br>
+ RNF02 — Tempo de resposta menor que 2 segundos para consultas principais.<br>
+ RNF03 — Apenas perfis autorizados podem visualizar dados consolidados e alterar calendários.<br>
+ RNF04 — Interface legível, responsiva e com linguagem clara para uso recorrente.
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>6</span> Tecnologias</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:10px;">
+ Back-end: Python + Django — <em>domínio da equipe, painel admin nativo.</em><br>
+ Banco: PostgreSQL — <em>estrutura robusta para múltiplos usuários e histórico de entregas.</em><br>
+ Front-end: HTML + Bootstrap 5 — <em>agilidade de implementação com boa responsividade.</em><br>
+ Geração de PDF: WeasyPrint — <em>exportação simples de relatórios e comprovantes.</em>
+ </p>
+ </div>
+
+ <div class="t-section">
+ <div class="t-label"><span>7</span> Fluxo principal — gestão da etapa</div>
+ <p style="color:var(--text);font-size:0.92rem;margin-bottom:4px;">
+ 1. Estudante faz login com e-mail e senha.<br>
+ 2. Acessa o painel principal e visualiza o cronograma do TCC.<br>
+ 3. Seleciona a etapa atual e lê orientações e materiais relacionados.<br>
+ 4. Anexa a entrega parcial ou marca a etapa como concluída.<br>
+ 5. O sistema registra a ação, atualiza o progresso e exibe o próximo prazo.<br>
+ 6. A coordenação acompanha o status consolidado no painel administrativo.<br>
+ 7. O histórico da etapa fica disponível para consulta posterior.
+ </p>
+ </div>
+ </div>
+
+ <div class="callout c-a avoid-break">
+ <div class="callout-icon">💡</div>
+ <div>
+ <p class="callout-title">O que a banca avalia no blueprint</p>
+ <p class="callout-text">
+ Coerência entre problema e solução · Especificidade dos requisitos · Justificativa das escolhas
+ técnicas · Fluxo claro e completo · Viabilidade do projeto dentro do prazo.
+ Documentos genéricos, copiados ou com seções desconectadas são facilmente identificados.
+ </p>
+ </div>
+ </div>
+
+
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 1</p>
+ <p class="questao-enunciado">No blueprint de referência, "Dados persistentes mesmo sem internet" é classificado como:</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> Requisito funcional</li>
+ <li><span class="alt-badge">B</span> Solução proposta</li>
+ <li><span class="alt-badge">C</span> Requisito não funcional</li>
+ <li><span class="alt-badge">D</span> Fluxo do sistema</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — Descreve uma qualidade do sistema (comportamento esperado),
+ não uma funcionalidade executável. É portanto um requisito não funcional.
+ </div>
+ </div>
+
+ <div class="questao avoid-break">
+ <p class="questao-num">Questão 2</p>
+ <p class="questao-enunciado">Qual das opções representa uma justificativa técnica adequada para escolha de tecnologia?</p>
+ <ul class="alternativas">
+ <li><span class="alt-badge">A</span> "Usamos React porque é moderno."</li>
+ <li><span class="alt-badge">B</span> "Banco: MySQL — escolhido por ser gratuito."</li>
+ <li><span class="alt-badge">C</span> "Django — a equipe já tem domínio em Python e o framework tem autenticação nativa."</li>
+ <li><span class="alt-badge">D</span> "Linguagem: JavaScript — porque estava em alta."</li>
+ </ul>
+ <div class="gabarito">
+ Letra <strong>C</strong> — A justificativa cita duas razões técnicas concretas: domínio da equipe
+ e funcionalidade nativa relevante para o projeto. As outras opções são rasas ou subjetivas.
+ </div>
+ </div>
+
+ <div class="atividade avoid-break">
+ <strong>Exercício — Módulo 05:</strong> Escreva a seção de "Tecnologias" do seu projeto de TCC.
+ Para cada tecnologia escolhida, escreva uma frase de justificativa no formato:
+ <em>"Escolhi [tecnologia] porque [motivo técnico concreto]."</em>
+ </div>
+
+ <div class="resumo avoid-break">
+ <strong>Síntese do módulo 05</strong>
+ <ul>
+ <li><span class="check">✔</span> Projetos web, mobile, desktop e API têm particularidades específicas no blueprint.</li>
+ <li><span class="check">✔</span> Um blueprint de referência completo conecta todas as 7 seções de forma coerente.</li>
+ <li><span class="check">✔</span> A banca avalia coerência, especificidade, justificativa e viabilidade.</li>
+ <li><span class="check">✔</span> O template do projeto final está disponível na próxima seção deste material.</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ==============================
+ TRABALHO FINAL
+ ============================== -->
+ <section class="lesson page-break">
+
+ <div class="trabalho-header avoid-break">
+ <div class="trabalho-header-kicker">Aplicação final orientada</div>
+ <h2>Projeto Final — Blueprint do TCC</h2>
+ <p>
+ Com os conhecimentos dos cinco módulos, você vai consolidar um blueprint
+ completo do seu projeto de Trabalho de Conclusão de Curso.
+ </p>
+ </div>
+
+ <div class="entrega-info avoid-break">
+ <div class="entrega-item">
+ <div class="entrega-item-label">Formato</div>
+ <div class="entrega-item-value">Template desta apostila preenchido + entrega digital (PDF ou Docs)</div>
+ </div>
+ <div class="entrega-item">
+ <div class="entrega-item-label">Individual ou grupo</div>
+ <div class="entrega-item-value">Individual ou em grupo — conforme a organização do projeto de TCC</div>
+ </div>
+ <div class="entrega-item">
+ <div class="entrega-item-label">Pontuação total</div>
+ <div class="entrega-item-value">6,0 pontos</div>
+ </div>
+ <div class="entrega-item">
+ <div class="entrega-item-label">Prazo</div>
+ <div class="entrega-item-value">10/04/2026</div>
+ </div>
+ </div>
+
+ <h3>Enunciado oficial</h3>
+
+ <p>
+ Você deverá elaborar o <strong>Blueprint de Software do seu Projeto de TCC</strong>,
+ descrevendo com clareza e precisão todas as seções obrigatórias listadas no template.
+ O documento deve ser autoexplicativo: qualquer pessoa da área deve entender seu projeto
+ lendo apenas o blueprint, sem necessidade de explicações adicionais suas.
+ </p>
+
+ <p>
+ O blueprint produzido neste trabalho será a base formal do desenvolvimento do seu TCC.
+ Ele poderá ser apresentado à banca de pré-projeto e deve ser mantido atualizado
+ ao longo de todo o desenvolvimento — revisando-o sempre que houver mudanças de escopo ou decisões técnicas.
+ </p>
+
+ <p>
+ Quando o projeto for desenvolvido em grupo, a entrega deve representar o projeto comum da equipe,
+ com coerência entre escopo, solução, tecnologias e fluxo principal.
+ </p>
+
+ <div class="callout c-a avoid-break">
+ <div class="callout-icon">⚠️</div>
+ <div>
+ <p class="callout-title">Erros críticos a evitar</p>
+ <p class="callout-text">
+ Evite trabalhos que: (1) copiem exemplos sem adaptação real ao projeto; (2) apresentem
+ problema e solução sem conexão lógica; (3) listem tecnologias sem justificativa técnica;
+ (4) tragam requisitos vagos ou insuficientes para demonstrar viabilidade.
+ </p>
+ </div>
+ </div>
+
+ <h3>Rubrica de avaliação</h3>
+
+ <table class="rubrica-table avoid-break">
+ <thead>
+ <tr>
+ <th>Critério</th>
+ <th>Descrição</th>
+ <th>Pontos</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Problema e Contexto</strong></td>
+ <td>Problema específico, real e mensurável. Contexto claro sem o sistema.</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr>
+ <td><strong>Público-alvo</strong></td>
+ <td>Perfis de usuários identificados com o que cada um faz no sistema.</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr>
+ <td><strong>Solução proposta</strong></td>
+ <td>Solução coerente com o problema. Descreve a ideia central do sistema.</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr>
+ <td><strong>Requisitos funcionais</strong></td>
+ <td>Mínimo 5 requisitos no formato "O sistema deve...". Específicos e verificáveis.</td>
+ <td class="pts">1,0</td>
+ </tr>
+ <tr>
+ <td><strong>Requisitos não funcionais</strong></td>
+ <td>Mínimo 3 requisitos de qualidade (desempenho, segurança, usabilidade, etc.).</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr>
+ <td><strong>Arquitetura e Tecnologias</strong></td>
+ <td>Todas as tecnologias listadas com justificativa técnica para cada escolha.</td>
+ <td class="pts">1,0</td>
+ </tr>
+ <tr>
+ <td><strong>Fluxo do sistema</strong></td>
+ <td>Fluxo principal com mínimo 6 etapas numeradas, lógico e sem lacunas.</td>
+ <td class="pts">1,0</td>
+ </tr>
+ <tr>
+ <td><strong>Coerência geral</strong></td>
+ <td>Todas as seções se conectam. Problema, solução, req. e fluxo são consistentes.</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr>
+ <td><strong>Viabilidade</strong></td>
+ <td>Escopo compatível com o tempo e recursos disponíveis para o TCC.</td>
+ <td class="pts">0,5</td>
+ </tr>
+ <tr class="total-row">
+ <td colspan="2"><strong>Total</strong></td>
+ <td class="pts"><strong>6,0</strong></td>
+ </tr>
+ </tbody>
+ </table>
+
+ <h3>Orientações para cada seção</h3>
+
+ <div class="callout c-g avoid-break">
+ <div class="callout-icon">✔</div>
+ <div>
+ <p class="callout-title">Dica: use as atividades dos módulos como rascunho</p>
+ <p class="callout-text">
+ As atividades práticas dos 5 módulos foram projetadas para construir progressivamente
+ cada seção do blueprint. Se você as fez com cuidado, tem um rascunho completo.
+ Revise, refine e passe para o template oficial.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <!-- ==============================
+ TEMPLATE OFICIAL
+ ============================== -->
+ <section class="lesson page-break">
+ <div class="lesson-head">
+ <div>
+ <div class="lesson-num">Template Oficial</div>
+ <h2>Blueprint do TCC — Preenchimento</h2>
+ </div>
+ <div class="lesson-chip">Para entregar</div>
+ </div>
+
+ <div class="template-oficial">
+ <div class="template-title">
+ <span class="t-pre">Curso Técnico em Desenvolvimento de Sistemas · TCC</span>
+ <h3>Blueprint de Software — [Título do Seu Projeto]</h3>
+ </div>
+
+ <!-- Identificação -->
+ <div class="t-section">
+ <div class="t-label"><span>★</span> Identificação</div>
+ <p style="color:var(--soft);font-size:0.85rem;margin-bottom:8px;">Aluno(a) · Turma · Data</p>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ </div>
+
+ <!-- 1. Problema -->
+ <div class="t-section">
+ <div class="t-label"><span>1</span> Problema e Contexto</div>
+ <span class="t-note">Descreva a situação atual SEM o sistema. Seja específico: quem sofre com o problema, como e quanto afeta.</span>
+ <div class="t-area"></div>
+ <div class="t-area"></div>
+ </div>
+
+ <!-- 2. Público -->
+ <div class="t-section">
+ <div class="t-label"><span>2</span> Público-alvo</div>
+ <span class="t-note">Liste os perfis de usuário e o que cada um fará no sistema.</span>
+ <div class="t-area"></div>
+ </div>
+
+ <!-- 3. Solução -->
+ <div class="t-section">
+ <div class="t-label"><span>3</span> Solução Proposta</div>
+ <span class="t-note">Descreva em 3 a 5 linhas a ideia central do sistema. Não liste funcionalidades aqui — explique a solução.</span>
+ <div class="t-area"></div>
+ </div>
+
+ <!-- 4. RF -->
+ <div class="t-section">
+ <div class="t-label"><span>4</span> Requisitos Funcionais (mín. 5)</div>
+ <span class="t-note">Use o formato: RF01 — O sistema deve [ação]...</span>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ </div>
+
+ <!-- 5. RNF -->
+ <div class="t-section">
+ <div class="t-label"><span>5</span> Requisitos Não Funcionais (mín. 3)</div>
+ <span class="t-note">Defina qualidade, desempenho, segurança, usabilidade, disponibilidade...</span>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ </div>
+
+ <!-- 6. Tecnologias -->
+ <div class="t-section">
+ <div class="t-label"><span>6</span> Arquitetura e Tecnologias</div>
+ <span class="t-note">Para cada tecnologia, escreva a justificativa. Formato: [Tecnologia] — justificativa: [motivo técnico]</span>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;margin-top:8px;">Linguagem / Framework back-end:</p>
+ <div class="t-line"></div>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;">Banco de dados:</p>
+ <div class="t-line"></div>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;">Front-end / Interface:</p>
+ <div class="t-line"></div>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;">Hospedagem / Deploy:</p>
+ <div class="t-line"></div>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;">Outras ferramentas:</p>
+ <div class="t-line"></div>
+ <p style="color:var(--soft);font-size:0.82rem;margin-bottom:4px;">Padrão arquitetural (MVC, microsserviços, etc.):</p>
+ <div class="t-line"></div>
+ </div>
+
+ <!-- 7. Fluxo -->
+ <div class="t-section">
+ <div class="t-label"><span>7</span> Fluxo Principal do Usuário (mín. 6 etapas)</div>
+ <span class="t-note">Descreva o caminho completo do usuário principal, do login até o resultado esperado.</span>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ <div class="t-line"></div>
+ </div>
+
+ <!-- 8. Autoavaliação -->
+ <div class="t-section">
+ <div class="t-label"><span>8</span> Autoavaliação do Escopo</div>
+ <span class="t-note">Descreva por que você acredita que este projeto é viável dentro do prazo do TCC. Considere: tempo disponível, equipe, dificuldade técnica.</span>
+ <div class="t-area"></div>
+ </div>
+
+ <div style="margin-top:20px;padding-top:14px;border-top:1px dashed rgba(200,195,215,0.20);font-size:0.80rem;color:var(--soft);text-align:center;">
+ Este blueprint é a base do seu TCC. Mantenha-o atualizado ao longo do desenvolvimento.
+ </div>
+ </div>
+
+ </section>
+
+ <!-- ==============================
+ ENCERRAMENTO
+ ============================== -->
+ <section class="section-card page-break">
+ <h2>Encerramento do módulo</h2>
+ <p style="color:var(--muted);font-size:0.96rem;margin-bottom:14px;">
+ Ao longo de cinco módulos, você percorreu o caminho completo do blueprint: entendeu seu conceito,
+ conheceu cada componente, construiu um passo a passo com exemplo real, aprendeu a evitar os erros
+ mais comuns e aplicou tudo no contexto do seu TCC.
+ </p>
+ <p style="color:var(--muted);font-size:0.96rem;margin-bottom:18px;">
+ O blueprint que você vai entregar não é apenas um exercício acadêmico — é o documento
+ que vai orientar todo o desenvolvimento do seu projeto. Quanto mais cuidado você colocar
+ nele agora, menos retrabalho você terá durante a construção do sistema.
+ </p>
+ <div class="callout c-v avoid-break">
+ <div class="callout-icon">💡</div>
+ <div>
+ <p class="callout-title">Fechamento didático</p>
+ <p class="callout-text">
+ Planejar não é perder tempo — é ganhar tempo. Um blueprint bem feito reduz decisões
+ improvisadas, diminui retrabalho, facilita apresentações à banca e aumenta
+ a probabilidade de entregar um TCC completo e funcional.
+ <br><br>
+ <strong>Trate este documento como ativo estratégico do seu projeto. Quanto melhor o blueprint, melhor a execução.</strong>
+ </p>
+ </div>
+ </div>
+ <p class="note-footer" style="margin-top:20px;">
+ Material didático estruturado para apoiar o desenvolvimento técnico e a maturidade de projeto no TCC
+ </p>
+ </section>
+
+</div>
+</body>
+</html>
