@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T00:18:44.161933+00:00",
+  "updatedAt": "2026-04-07T00:28:27.497515+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -256,6 +256,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-01-boas-vindas-a-jornada-da-computacao.md",
       "status": "published",
       "publishedAt": "2026-04-07T00:18:44.161933+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 2,
+      "title": "Introdução à Informática",
+      "slug": "introducao-a-informatica",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-02-introducao-a-informatica.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T00:28:27.497515+00:00"
     },
     {
       "series": "disciplinas-extras",
