@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:03:06.151627+00:00",
+  "updatedAt": "2026-04-07T01:03:07.877215+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -446,6 +446,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-20-perifericos-expansao-das-funcoes-do-computador.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:03:06.151627+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 21,
+      "title": "Interfaces de Conexão: Comunicação entre Dispositivos",
+      "slug": "interfaces-de-conexao-comunicacao-entre-dispositivos",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-21-interfaces-de-conexao-comunicacao-entre-dispositivos.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:03:07.877215+00:00"
     },
     {
       "series": "disciplinas-extras",
