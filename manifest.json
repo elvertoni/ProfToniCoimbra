@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:59.365086+00:00",
+  "updatedAt": "2026-04-07T01:03:01.031845+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -406,6 +406,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-16-processadores-a-mente-do-computador.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:59.365086+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 17,
+      "title": "Memória RAM: O Espaço de Trabalho do Sistema",
+      "slug": "memoria-ram-o-espaco-de-trabalho-do-sistema",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-17-memoria-ram-o-espaco-de-trabalho-do-sistema.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:03:01.031845+00:00"
     },
     {
       "series": "disciplinas-extras",
