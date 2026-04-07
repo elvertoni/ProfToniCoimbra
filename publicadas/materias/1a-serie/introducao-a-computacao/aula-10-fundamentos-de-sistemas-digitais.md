@@ -1,117 +1,122 @@
 ---
 title: Fundamentos de Sistemas Digitais
-description: Aula sobre a lógica dos sistemas digitais, diferença entre analógico e digital e relação entre estados binários, dispositivos e informação.
+description: Aula sobre sistemas digitais, diferença entre analógico e digital, papel do bit e relação entre sinais, representação e computação.
 order: 10
 published: true
 ---
 
 # Aula 10 — Fundamentos de Sistemas Digitais
 
-Se os dados têm valor, precisamos entender como os sistemas conseguem representá-los e processá-los. É aqui que entram os sistemas digitais. Esta aula faz a ponte entre informação e máquina, mostrando por que tantos dispositivos operam com estados discretos e como isso se relaciona ao universo binário.
+Depois de estudar dados, precisamos entender como as máquinas representam e processam essas informações. É aqui que entram os sistemas digitais. Esta aula é importante porque faz a ponte entre o mundo físico, que costuma variar de forma contínua, e o computador, que precisa trabalhar com estados bem definidos para guardar, transmitir e processar dados com estabilidade.
 
 ## Abertura
 
 :::objetivo
-Compreender o que caracteriza um sistema digital, diferenciar digital e analógico e relacionar estados binários ao funcionamento de equipamentos computacionais.
+Compreender o que caracteriza um sistema digital, diferenciar sinais analógicos e digitais e relacionar essa lógica ao uso de bits e ao funcionamento dos computadores.
 :::
 
 :::dica
-Sempre que um sistema trabalha com valores discretos, como ligado/desligado ou 0/1, você está perto da lógica digital.
+Sempre que você encontrar uma situação descrita por estados bem definidos, como ligado/desligado ou 0/1, está diante de uma lógica próxima ao mundo digital.
 :::
 
 :::curiosidade
-Muitos fenômenos do mundo são analógicos, mas computadores precisam representar essas informações em estados digitais para armazenar, transmitir e processar dados com estabilidade.
+Grande parte do mundo físico é analógica, mas os computadores funcionam melhor quando transformam essa realidade em representações digitais que possam ser tratadas por circuitos eletrônicos.
 :::
 
-## Do contínuo ao discreto
+## O que diferencia o analógico do digital
 
 :::conceito
-Sistemas digitais operam com estados discretos, normalmente representados como 0 e 1, enquanto sistemas analógicos trabalham com variações contínuas.
+Um sistema digital trabalha com estados discretos, isto é, valores bem definidos, normalmente representados por 0 e 1. Já um sistema analógico lida com variações contínuas, sem saltos fixos entre um valor e outro.
 :::
 
-Uma lâmpada inteligente pode estar ligada ou desligada por comando digital. Um sensor de temperatura mede um fenômeno contínuo, mas o sistema computacional converte essa informação para representação digital quando precisa processá-la. Essa diferença ajuda a entender como máquinas “traduzem” o mundo.
+Essa diferença precisa ficar clara porque muitos alunos ouvem “digital” como sinônimo de moderno, de internet ou de aparelho eletrônico bonito. Não é isso. Digital é um jeito de representar informação. Quando um circuito interpreta algo como presença ou ausência de sinal, nível alto ou nível baixo, ligado ou desligado, ele está operando com estados discretos.
 
-O estudo de sistemas digitais é importante porque ele prepara o terreno para compreender bits, bytes, eletrônica básica, memória e processamento. Sem essa ponte, o binário parece uma abstração solta. Com ela, o tema ganha sentido físico e lógico.
+O menor elemento dessa representação é o **bit**, abreviação de *binary digit*. Um bit pode assumir dois valores básicos: 0 ou 1. Ao combinar muitos bits, o sistema consegue representar números, letras, imagens, sons e instruções. É por isso que o binário aparece tanto na computação: porque a eletrônica consegue distinguir com mais confiabilidade dois estados bem separados do que infinitas variações contínuas.
+
+:::importante
+- **Analógico:** varia continuamente, como temperatura ambiente ou volume de som no mundo físico
+- **Digital:** representa valores em estados discretos, como 0 e 1
+- **Bit:** menor unidade da informação digital, capaz de assumir dois estados básicos
+:::
 
 :::exemplo
-O botão de ligar do computador representa bem a ideia de estado: pressionado, ele inicia um fluxo eletrônico que permite ao sistema sair do desligado para o ligado. Já um microfone capta som analógico, que depois pode ser digitalizado para ser armazenado em arquivo.
+A voz humana é um fenômeno analógico: ela varia continuamente. Quando você grava áudio no celular, o aparelho converte essa variação em dados digitais para armazenar o som em arquivo, transmitir pela internet e reproduzir depois.
 :::
 
 :::questao Qual situação representa melhor a lógica de um sistema digital?
-a) Um processo que trabalha com estados discretos, como 0 e 1, para representar e tratar informações *
-b) Uma corrente de água que varia continuamente sem qualquer discretização
-c) Uma sombra mudando gradualmente ao longo do dia sem conversão
-d) Um caderno aberto sobre a carteira sem operação lógica
-> A alternativa correta é a letra A porque sistemas digitais dependem de estados definidos para representar dados de forma processável.
+a) Um sistema que representa informações por estados definidos, como 0 e 1, para poder armazenar e processar dados *
+b) A variação contínua da temperatura de uma sala sem qualquer conversão
+c) A mudança gradual de sombra ao longo do dia
+d) A posição de um caderno sobre a carteira
+> A alternativa correta é a letra A porque sistemas digitais dependem de estados discretos e bem distinguíveis.
 :::
 
-## Por que isso importa na computação
+## Por que a computação usa essa lógica
 
 :::importante
-Entender sistemas digitais ajuda a ligar o funcionamento físico dos equipamentos à forma como dados são representados, armazenados e manipulados.
+O digital não foi escolhido por acaso. Trabalhar com estados bem definidos facilita armazenamento, transmissão, correção de leitura e processamento por circuitos eletrônicos.
 :::
 
-Esse conhecimento evita que o binário pareça um código misterioso. Na prática, ele é a forma mais estável e eficiente de representar estados em circuitos eletrônicos. A partir daí, diferentes combinações de bits podem representar números, letras, imagens e instruções.
+Esse ponto é o que dá sentido ao estudo. O computador precisa operar de forma previsível. Se tudo dependesse de variações contínuas muito delicadas, o sistema seria mais difícil de interpretar com estabilidade. A lógica digital simplifica a representação e torna o processamento mais confiável.
 
-Para o estudante técnico, essa aula é estratégica porque conecta dados, hardware e eletrônica. Ela mostra que a computação depende de uma linguagem física e lógica ao mesmo tempo.
+Também é por isso que a aula de hoje prepara as próximas. Quando o aluno entende o que é estado digital e o que é bit, o estudo de eletricidade, binário, memória e processamento deixa de parecer um monte de temas soltos. Todos eles passam a conversar entre si.
 
 :::atencao
-Um erro frequente é pensar que digital significa apenas “moderno” ou “na internet”. Na verdade, digital descreve uma forma específica de representar e processar informação.
+Um erro frequente é dizer que “digital” significa apenas algo ligado à internet ou a telas. Na verdade, digital descreve uma forma de representar e tratar informação.
 :::
 
 :::questao Qual erro de compreensão precisa ser corrigido ao estudar sistemas digitais?
-a) Achar que “digital” significa somente uso de internet ou de telas modernas, ignorando a lógica de estados discretos *
-b) Relacionar sistemas digitais ao uso de bits e circuitos
-c) Perceber que computadores precisam representar dados de forma organizada
-d) Entender que sinais do mundo físico podem ser convertidos para processamento
-> A alternativa correta é a letra A porque o conceito de digital vai além da aparência tecnológica do dispositivo.
+a) Pensar que digital é apenas aquilo que usa internet ou tem aparência moderna *
+b) Entender que bits representam estados básicos
+c) Relacionar sistemas digitais ao funcionamento dos computadores
+d) Perceber que sinais do mundo físico podem ser convertidos para forma digital
+> A alternativa correta é a letra A porque o conceito de digital é técnico e está ligado à representação da informação.
 :::
 
 ## Questões de fixação
 
-:::questao Em um cenário de automação simples, qual exemplo mostra a ponte entre mundo físico e sistema digital?
-a) Um sensor mede temperatura e o controlador transforma a leitura em sinais que o sistema pode interpretar *
+:::questao Em um cenário real, qual exemplo mostra a passagem do mundo físico para a lógica digital?
+a) Um microfone capta uma voz e o sistema a transforma em dados para gravação *
 b) Um caderno é guardado na mochila
-c) Um aluno troca a capa do celular
-d) Um monitor desligado permanece sem energia
-> A alternativa correta é a letra A porque ela mostra um fenômeno contínuo sendo tratado em forma adequada ao processamento digital.
+c) Um monitor desligado permanece sem sinal
+d) Um aluno troca a capa do celular
+> A alternativa correta é a letra A porque há conversão de um fenômeno contínuo para uma representação que o computador consegue tratar.
 :::
 
-:::questao O que caracteriza um sistema digital?
-a) Trabalhar com estados discretos usados para representar informação *
-b) Depender exclusivamente de internet para funcionar
-c) Operar apenas com imagens coloridas
-d) Não ter relação com eletrônica
-> A alternativa correta é a letra A porque a base do digital está na representação discreta de estados.
+:::questao O que melhor define um bit?
+a) Unidade mínima de informação digital que pode assumir dois estados básicos *
+b) Nome de um cabo de vídeo
+c) Tipo de armazenamento permanente
+d) Parte física do gabinete
+> A alternativa correta é a letra A porque o bit é o elemento básico da representação binária.
 :::
 
 :::questao Sobre sistemas digitais, qual NÃO é verdadeira?
-a) Eles ajudam a representar dados de forma processável por máquinas
-b) Têm relação com bits, circuitos e lógica de estados
-c) O termo digital significa apenas equipamento moderno e bonito *
-d) Eles fazem ponte entre informação e funcionamento físico do computador
-> A alternativa correta é a letra C porque o conceito é técnico, e não estético.
+a) Eles trabalham com estados discretos
+b) Têm relação com bits e com representação da informação
+c) Digital significa apenas dispositivo moderno e conectado à internet *
+d) O estudo dessa lógica ajuda a entender melhor o funcionamento da computação
+> A alternativa correta é a letra C porque digital é um conceito técnico de representação e processamento.
 :::
 
 ## Atividade prática
 
 :::exercicio
-Observe cinco objetos ou sistemas do seu cotidiano e classifique cada um como predominantemente analógico, digital ou híbrido. Para pelo menos dois casos, explique onde ocorre a conversão entre mundo físico e representação digital. Exemplos possíveis: termômetro, câmera do celular, relógio, sensor, áudio gravado, botão de elevador, smart TV.
+Observe cinco objetos ou situações do cotidiano e classifique cada caso como predominantemente analógico, digital ou híbrido. Para pelo menos dois exemplos, explique onde ocorre a conversão entre mundo físico e representação digital. Você pode usar casos como áudio gravado, câmera do celular, termômetro, botão de elevador, relógio, catraca eletrônica, sensor ou smart TV.
 :::
 
 :::importante
-A atividade fica melhor quando você justifica a classificação, em vez de apenas rotular os exemplos.
+A atividade fica melhor quando você justifica a classificação, e não apenas escreve o rótulo final.
 :::
 
 :::roteiro
-Uma boa discussão é pedir que a turma compare uma gravação de voz no celular com uma conversa ao vivo. Isso ajuda a perceber a diferença entre fenômeno físico contínuo e representação digital armazenada.
+Uma boa discussão é comparar uma conversa ao vivo com um áudio enviado por aplicativo. Isso ajuda a turma a perceber a diferença entre fenômeno físico contínuo e representação digital armazenada.
 :::
 
 ## Fechamento
 
 :::resumo
 - Sistemas digitais trabalham com estados discretos, normalmente representados por 0 e 1
-- A lógica digital conecta informação, eletrônica e funcionamento computacional
-- Entender essa base prepara o estudo de eletricidade e de binário nas próximas aulas
+- Bit é a unidade mínima dessa representação
+- Entender a lógica digital prepara o estudo de binário, memória, eletricidade e processamento
 :::
-
