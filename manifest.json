@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:03:09.693039+00:00",
+  "updatedAt": "2026-04-07T13:39:10.083417+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -466,6 +466,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-22-solucoes-termicas-o-papel-do-sistema-de-refrigeracao.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:03:09.693039+00:00"
+    },
+    {
+      "series": "3a-serie",
+      "subject": "analise-e-projeto-de-sistemas",
+      "lessonNumber": 1,
+      "title": "Blueprint de Software para TCC",
+      "slug": "blueprint-de-software-para-tcc",
+      "path": "publicadas/materias/3a-serie/analise-e-projeto-de-sistemas/aula-01-blueprint-de-software-para-tcc.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T13:39:10.083417+00:00"
     },
     {
       "series": "disciplinas-extras",
