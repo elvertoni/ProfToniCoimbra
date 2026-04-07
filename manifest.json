@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:43.917570+00:00",
+  "updatedAt": "2026-04-07T01:02:45.594855+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -316,6 +316,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-07-software-o-cerebro-por-tras-das-maquinas.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:43.917570+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 8,
+      "title": "Redes e Comunicação no Mundo Digital",
+      "slug": "redes-e-comunicacao-no-mundo-digital",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-08-redes-e-comunicacao-no-mundo-digital.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:02:45.594855+00:00"
     },
     {
       "series": "disciplinas-extras",
