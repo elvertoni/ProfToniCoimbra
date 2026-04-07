@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Verificar se a rede elétrica suporta a nova carga e adotar proteção adequada, como dimensionamento correto e uso de nobreaks. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque verificar se a rede elétrica suporta a nova carga e adotar proteção adequada, como dimensionamento correto e uso de nobreaks..
+> A alternativa correta é a letra B porque verificar se a rede elétrica suporta a nova carga e adotar proteção adequada, como dimensionamento correto e uso de nobreaks.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Provocar sobrecarga, instabilidade, danos aos equipamentos e até perda de dados ou interrupção de serviços. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque provocar sobrecarga, instabilidade, danos aos equipamentos e até perda de dados ou interrupção de serviços..
+> A alternativa correta é a letra B porque provocar sobrecarga, instabilidade, danos aos equipamentos e até perda de dados ou interrupção de serviços.
 :::
 
-## Relação com a prática técnica
+## Eletricidade para informática e o trabalho técnico
 
 Em ambientes técnicos, esse conhecimento ajuda em suporte, montagem de laboratório, manutenção preventiva e planejamento de infraestrutura para empresas, escolas e servidores.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender eletricidade para informática também ajuda a desenvolver vocabulário técnico como voltagem, amperagem, potência e aterramento. Esse conhecimento permite lidar com equipamentos com mais segurança e critério.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em noções básicas de eletricidade para informática?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Organizar a evolução a partir das necessidades humanas e mostrar como uma invenção serviu de base para a seguinte. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque organizar a evolução a partir das necessidades humanas e mostrar como uma invenção serviu de base para a seguinte..
+> A alternativa correta é a letra B porque organizar a evolução a partir das necessidades humanas e mostrar como uma invenção serviu de base para a seguinte.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Ignorar que a computação evoluiu por aperfeiçoamentos sucessivos e que muitas ideias fundamentais surgiram antes da era eletrônica. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque ignorar que a computação evoluiu por aperfeiçoamentos sucessivos e que muitas ideias fundamentais surgiram antes da era eletrônica..
+> A alternativa correta é a letra B porque ignorar que a computação evoluiu por aperfeiçoamentos sucessivos e que muitas ideias fundamentais surgiram antes da era eletrônica.
 :::
 
-## Relação com a prática técnica
+## Raízes da computação e o trabalho técnico
 
 Para quem segue em Desenvolvimento de Sistemas, esse olhar histórico é valioso porque reforça a ideia de que tecnologia se constrói em camadas. Sistemas atuais também serão substituídos, combinados ou aprimorados conforme novas necessidades surgirem.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender essa evolução também ajuda a perceber que tecnologias atuais também têm raízes em necessidades simples e avanços incrementais. Isso desenvolve uma visão menos ingênua de inovação e mais realista de como soluções técnicas surgem.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em raízes da computação: a origem dos computadores?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

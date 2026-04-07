@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Considerar que o chipset pode afetar a comunicação entre componentes e influenciar recursos e desempenho da máquina. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque considerar que o chipset pode afetar a comunicação entre componentes e influenciar recursos e desempenho da máquina..
+> A alternativa correta é a letra B porque considerar que o chipset pode afetar a comunicação entre componentes e influenciar recursos e desempenho da máquina.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Ignorar limitações de conectividade, expansão e fluxo de dados que impactam o desempenho global do sistema. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque ignorar limitações de conectividade, expansão e fluxo de dados que impactam o desempenho global do sistema..
+> A alternativa correta é a letra B porque ignorar limitações de conectividade, expansão e fluxo de dados que impactam o desempenho global do sistema.
 :::
 
 ## Relação com a prática técnica
 
 Para ambientes de laboratório e montagem profissional, conhecer chipset permite escolher plataformas mais adequadas ao tipo de aplicação, à necessidade de expansão e ao perfil de uso.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender chipsets também ajuda a desenvolver vocabulário técnico como barramento, canal de comunicação e controle de roteamento. Esse conhecimento permite interpretar especificações de placas-mãe e identificar gargalos de comunicação entre componentes.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em chipsets: conexões que fazem tudo funcionar?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

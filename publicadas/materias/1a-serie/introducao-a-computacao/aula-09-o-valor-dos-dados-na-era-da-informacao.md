@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Perceber que os dados registrados e divulgados cumprem função informativa e podem ter nível de acesso público conforme o contexto. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque perceber que os dados registrados e divulgados cumprem função informativa e podem ter nível de acesso público conforme o contexto..
+> A alternativa correta é a letra B porque perceber que os dados registrados e divulgados cumprem função informativa e podem ter nível de acesso público conforme o contexto.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Expor informações, comprometer a confiança dos usuários e gerar problemas legais e operacionais para a organização. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque expor informações, comprometer a confiança dos usuários e gerar problemas legais e operacionais para a organização..
+> A alternativa correta é a letra B porque expor informações, comprometer a confiança dos usuários e gerar problemas legais e operacionais para a organização.
 :::
 
-## Relação com a prática técnica
+## Dados e o trabalho técnico
 
 Para quem trabalha com sistemas, entender dados significa pensar coleta, armazenamento, acesso, privacidade, qualidade e uso ético. Isso aproxima a disciplina de temas como banco de dados, segurança e LGPD.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender dados também ajuda a desenvolver vocabulário técnico como estrutura, metadata, backup e integridade. Esse conhecimento permite organizar informações com mais critério e compreender os riscos envolvidos no tratamento inadequado de dados.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em o valor dos dados na era da informação?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

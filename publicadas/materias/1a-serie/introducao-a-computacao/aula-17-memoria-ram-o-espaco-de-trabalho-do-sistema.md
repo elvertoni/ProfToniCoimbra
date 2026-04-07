@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Ajustar quantidade e velocidade de RAM conforme o perfil de uso, equilibrando desempenho e custo para cada equipe. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque ajustar quantidade e velocidade de RAM conforme o perfil de uso, equilibrando desempenho e custo para cada equipe..
+> A alternativa correta é a letra B porque ajustar quantidade e velocidade de RAM conforme o perfil de uso, equilibrando desempenho e custo para cada equipe.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Confundir memória principal e volátil com armazenamento permanente, o que distorce o entendimento do funcionamento do sistema. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque confundir memória principal e volátil com armazenamento permanente, o que distorce o entendimento do funcionamento do sistema..
+> A alternativa correta é a letra B porque confundir memória principal e volátil com armazenamento permanente, o que distorce o entendimento do funcionamento do sistema.
 :::
 
 ## Relação com a prática técnica
 
 No ambiente técnico, conhecer RAM é importante para montagem, upgrade, suporte e dimensionamento de máquinas para perfis variados, como escritório, programação, IA e jogos.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender RAM também ajuda a desenvolver vocabulário técnico como latência, canal dual e memória virtual. Esse conhecimento permite diagnosticar lentidão com mais critério e justificar upgrades de forma técnica.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em memória ram: o espaço de trabalho do sistema?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

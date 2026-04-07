@@ -40,16 +40,16 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Verificar fluxo de ar, estado dos coolers, aplicação de pasta térmica e outras condições de dissipação de calor do sistema. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque verificar fluxo de ar, estado dos coolers, aplicação de pasta térmica e outras condições de dissipação de calor do sistema..
+> A alternativa correta é a letra B porque verificar fluxo de ar, estado dos coolers, aplicação de pasta térmica e outras condições de dissipação de calor do sistema.
 :::
 
-## Aplicações, limites e cuidados
+## Refrigeração na prática: diagnóstico e manutenção térmica
 
 :::importante
 Estudar refrigeração ajuda a entender que desempenho não depende só de processador e memória. Sem controle térmico, a máquina perde estabilidade, reduz performance e corre risco de dano físico.
 :::
 
-Quando o estudante entende o conceito central desta aula, ele deixa de lidar com o computador apenas como usuário passivo. Passa a perceber critérios, estruturas e consequências técnicas por trás do uso cotidiano. Essa mudança de olhar é importante para qualquer formação em tecnologia, porque aproxima teoria e prática.
+Quando o estudante entende refrigeração, ele passa a reconhecer sinais que antes eram inexplicáveis: travamentos em renderização, desligamentos repentinos em jogos ou lentidão extrema em máquinas potentes. Isso aproxima diagnóstico de causa real e evita culpar software ou hardware indevidamente. Para técnicos em desenvolvimento de sistemas, saber que calor afeta desempenho também ajuda a planejar testes e implantações com mais critério.
 
 :::atencao
 Um erro comum é ignorar sinais de superaquecimento, como travamentos e desligamentos, atribuindo tudo a software ou à idade da máquina.
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Comprometer estabilidade, reduzir desempenho e até danificar componentes por superaquecimento contínuo. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque comprometer estabilidade, reduzir desempenho e até danificar componentes por superaquecimento contínuo..
+> A alternativa correta é a letra B porque comprometer estabilidade, reduzir desempenho e até danificar componentes por superaquecimento contínuo.
 :::
 
 ## Relação com a prática técnica
 
 No trabalho técnico, compreender soluções térmicas ajuda em montagem, manutenção preventiva, diagnóstico de falhas e planejamento de máquinas para alto desempenho.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender refrigeração também ajuda a desenvolver vocabulário técnico como thermal throttling, dissipação passiva e ativa, pasta térmica e fluxo de ar. Esse conhecimento permite justificar escolhas de hardware, planejar manutenções preventivas e comunicar melhor com equipes de infraestrutura.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em soluções térmicas: o papel do sistema de refrigeração?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.
@@ -111,7 +111,7 @@ Use o caso do laboratório de jogos para mostrar que potência sem controle tér
 ## Fechamento
 
 :::resumo
-- Sistemas de refrigeração controlam o calor gerado pelos componentes do computador.
-- Sem dissipação adequada, o sistema pode perder desempenho e estabilidade.
-- Conhecer soluções térmicas é importante para montagem e manutenção de máquinas.
-:::
+- Componentes como CPU e GPU geram calor que precisa ser dissipado por coolers, dissipadores, pasta térmica ou refrigeração líquida.
+- Superaquecimento pode causar thermal throttling, travamentos, reinicializações e dano permanente aos componentes.
+- Manutenção térmica regular e ventilação adequada são práticas essenciais para preservar desempenho e vida útil das máquinas.
+:::,

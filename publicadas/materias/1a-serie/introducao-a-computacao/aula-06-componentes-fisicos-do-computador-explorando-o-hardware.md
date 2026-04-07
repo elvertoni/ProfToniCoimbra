@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Escolher componentes de acordo com a necessidade de uso, considerando funções como processamento, armazenamento e memória. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque escolher componentes de acordo com a necessidade de uso, considerando funções como processamento, armazenamento e memória..
+> A alternativa correta é a letra B porque escolher componentes de acordo com a necessidade de uso, considerando funções como processamento, armazenamento e memória.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Correr o risco de pagar por uma configuração inadequada, seja insuficiente para a demanda ou exagerada para o uso real. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque correr o risco de pagar por uma configuração inadequada, seja insuficiente para a demanda ou exagerada para o uso real..
+> A alternativa correta é a letra B porque correr o risco de pagar por uma configuração inadequada, seja insuficiente para a demanda ou exagerada para o uso real.
 :::
 
-## Relação com a prática técnica
+## Hardware e o trabalho técnico
 
 No ambiente técnico, compreender hardware é importante para suporte, compra, manutenção, montagem e diagnóstico. Mesmo quem trabalha mais com software toma decisões melhores quando entende a base física do sistema.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender hardware também ajuda a desenvolver vocabulário técnico e capacidade de análise prática. Isso permite comunicar melhor com equipes técnicas e justificar escolhas de configuração com base em critérios reais.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em componentes físicos do computador: explorando o hardware?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

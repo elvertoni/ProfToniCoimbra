@@ -7,7 +7,7 @@ published: true
 
 # Aula 18 — Armazenamento e Dados: Explorando o Hard Disk
 
-Nesta aula, vamos estudar armazenamento permanente e focar no hard disk, relacionando capacidade, leitura, gravação, desgaste e comparação com tecnologias mais atuais, como SSD.
+Nesta aula, vamos estudar armazenamento permanente. O foco é entender como funciona o hard disk e compará-lo com tecnologias mais atuais, como SSD, considerando capacidade, velocidade, desgaste e critérios de escolha.
 
 ## Abertura
 
@@ -40,10 +40,10 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Avaliar não só a capacidade do disco, mas também velocidade, desgaste e adequação ao tipo de tarefa que será executada. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque avaliar não só a capacidade do disco, mas também velocidade, desgaste e adequação ao tipo de tarefa que será executada..
+> A alternativa correta é a letra B porque avaliar não só a capacidade do disco, mas também velocidade, desgaste e adequação ao tipo de tarefa que será executada.
 :::
 
-## Aplicações, limites e cuidados
+## Armazenamento na prática: critérios de escolha e diagnóstico
 
 :::importante
 Entender armazenamento ajuda a planejar espaço, diagnosticar lentidão, escolher dispositivos adequados e evitar decisões ruins sobre backup, capacidade e uso contínuo.
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Manter máquinas lentas, instáveis ou inadequadas para o uso, mesmo quando parecem ter muito espaço disponível. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque manter máquinas lentas, instáveis ou inadequadas para o uso, mesmo quando parecem ter muito espaço disponível..
+> A alternativa correta é a letra B porque manter máquinas lentas, instáveis ou inadequadas para o uso, mesmo quando parecem ter muito espaço disponível.
 :::
 
 ## Relação com a prática técnica
 
 No trabalho técnico, isso ajuda na escolha entre HD e SSD, em políticas de backup, em reaproveitamento de máquinas e no diagnóstico de falhas de leitura e gravação.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender armazenamento também ajuda a desenvolver vocabulário técnico como taxa de transferência, IOPS, TRIM e desfragmentação. Esse conhecimento permite comparar dispositivos com mais critério e planejar estratégias de backup com mais segurança.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em armazenamento e dados: explorando o hard disk?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.
@@ -111,7 +111,7 @@ Apresente máquinas com discos de capacidades semelhantes, mas condições difer
 ## Fechamento
 
 :::resumo
-- Armazenamento permanente mantém dados gravados mesmo sem energia.
-- HDs e SSDs têm características diferentes de custo, velocidade e confiabilidade.
-- Escolha e diagnóstico de armazenamento exigem olhar além da capacidade nominal.
-:::
+- Armazenamento permanente mantém dados mesmo sem energia: HDD com partes mecânicas e SSD com memória flash.
+- HDs oferecem maior capacidade por menor custo; SSDs oferecem mais velocidade e resistência a impactos.
+- Avaliar armazenamento exige olhar além da capacidade nominal: considerar velocidade, desgaste e adequação à tarefa.
+:::,

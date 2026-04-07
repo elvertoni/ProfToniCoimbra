@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Reconhecer que representações digitais facilitam processamento, armazenamento e resistência a certas interferências e ruídos. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque reconhecer que representações digitais facilitam processamento, armazenamento e resistência a certas interferências e ruídos..
+> A alternativa correta é a letra B porque reconhecer que representações digitais facilitam processamento, armazenamento e resistência a certas interferências e ruídos.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Ignorar que a conversão entre analógico e digital envolve critérios, limites e escolhas que afetam representação e uso da informação. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque ignorar que a conversão entre analógico e digital envolve critérios, limites e escolhas que afetam representação e uso da informação..
+> A alternativa correta é a letra B porque ignorar que a conversão entre analógico e digital envolve critérios, limites e escolhas que afetam representação e uso da informação.
 :::
 
-## Relação com a prática técnica
+## Sistemas digitais e o trabalho técnico
 
 No desenvolvimento de sistemas, entender digital e analógico ajuda a interpretar como dados são capturados, transformados, processados e preservados ao longo de diferentes etapas técnicas.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender sistemas digitais também ajuda a desenvolver vocabulário técnico como bit, byte, lógica booleana e amostragem. Esse conhecimento permite interpretar como a informação é representada e processada em nível fundamental.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em fundamentos de sistemas digitais?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

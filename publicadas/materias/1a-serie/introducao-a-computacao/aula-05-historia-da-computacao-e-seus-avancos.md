@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Reconhecer que ele organiza dados, executa instruções e apoia atividades de estudo, comunicação, trabalho e tomada de decisão. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque reconhecer que ele organiza dados, executa instruções e apoia atividades de estudo, comunicação, trabalho e tomada de decisão..
+> A alternativa correta é a letra B porque reconhecer que ele organiza dados, executa instruções e apoia atividades de estudo, comunicação, trabalho e tomada de decisão.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Essa redução ignora seu papel como ferramenta de processamento, organização e solução de problemas em diversos contextos sociais e profissionais. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque essa redução ignora seu papel como ferramenta de processamento, organização e solução de problemas em diversos contextos sociais e profissionais..
+> A alternativa correta é a letra B porque essa redução ignora seu papel como ferramenta de processamento, organização e solução de problemas em diversos contextos sociais e profissionais.
 :::
 
-## Relação com a prática técnica
+## História da computação e o trabalho técnico
 
 Para o futuro técnico em Desenvolvimento de Sistemas, entender o conceito de computador significa enxergá-lo como plataforma de solução de problemas. Não se trata apenas de usar a máquina, mas de compreender como ela apoia processos e serviços.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender esses avanços também ajuda a perceber que a computação atual se apoia em décadas de pesquisa e que cada geração de tecnologia carrega soluções e limitações que influenciam a seguinte.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em história da computação e seus avanços?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

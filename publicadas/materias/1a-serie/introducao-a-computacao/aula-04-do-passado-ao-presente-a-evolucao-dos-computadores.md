@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Reconhecer que as máquinas deixaram de ser enormes e restritas para se tornarem mais leves, rápidas e presentes no cotidiano. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque reconhecer que as máquinas deixaram de ser enormes e restritas para se tornarem mais leves, rápidas e presentes no cotidiano..
+> A alternativa correta é a letra B porque reconhecer que as máquinas deixaram de ser enormes e restritas para se tornarem mais leves, rápidas e presentes no cotidiano.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Desconsiderar mudanças estruturais, como novos componentes, maior processamento, novas formas de uso e surgimento de tecnologias avançadas. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque desconsiderar mudanças estruturais, como novos componentes, maior processamento, novas formas de uso e surgimento de tecnologias avançadas..
+> A alternativa correta é a letra B porque desconsiderar mudanças estruturais, como novos componentes, maior processamento, novas formas de uso e surgimento de tecnologias avançadas.
 :::
 
-## Relação com a prática técnica
+## Evolução dos computadores e o trabalho técnico
 
 No campo da computação, compreender evolução tecnológica é importante para analisar tendências, compatibilidades e decisões de projeto. Toda nova solução nasce de uma combinação entre necessidade, viabilidade e contexto.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender essa transformação também ajuda a perceber que a evolução dos computadores não é apenas uma questão de tamanho ou velocidade, mas de novos paradigmas de uso e aplicações que surgem a cada geração.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em do passado ao presente: a evolução dos computadores?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

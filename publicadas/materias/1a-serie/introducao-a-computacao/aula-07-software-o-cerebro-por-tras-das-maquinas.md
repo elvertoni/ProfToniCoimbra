@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Reconhecer que o problema pode estar na parte lógica do sistema, e não necessariamente em um defeito físico do hardware. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque reconhecer que o problema pode estar na parte lógica do sistema, e não necessariamente em um defeito físico do hardware..
+> A alternativa correta é a letra B porque reconhecer que o problema pode estar na parte lógica do sistema, e não necessariamente em um defeito físico do hardware.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Apagar a diferença entre estrutura física e instruções lógicas, o que dificulta entender funcionamento, diagnóstico e desenvolvimento de sistemas. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque apagar a diferença entre estrutura física e instruções lógicas, o que dificulta entender funcionamento, diagnóstico e desenvolvimento de sistemas..
+> A alternativa correta é a letra B porque apagar a diferença entre estrutura física e instruções lógicas, o que dificulta entender funcionamento, diagnóstico e desenvolvimento de sistemas.
 :::
 
-## Relação com a prática técnica
+## Software e o trabalho técnico
 
 Para quem vai desenvolver sistemas, software não é apenas algo que se instala: é a camada lógica que transforma necessidade em comportamento programável. Essa é a porta de entrada para programação, análise e projeto.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender software também ajuda a desenvolver vocabulário técnico como sistema operacional, driver, compilador e runtime. Esse conhecimento permite diagnosticar problemas com mais critério e compreender melhor o funcionamento dos programas.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em software: o cérebro por trás das máquinas?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

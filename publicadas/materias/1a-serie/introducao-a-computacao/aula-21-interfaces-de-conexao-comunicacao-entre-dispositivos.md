@@ -40,10 +40,10 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Escolher o padrão de conexão de acordo com mobilidade, estabilidade, segurança e necessidade de comunicação de cada dispositivo. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque escolher o padrão de conexão de acordo com mobilidade, estabilidade, segurança e necessidade de comunicação de cada dispositivo..
+> A alternativa correta é a letra B porque escolher o padrão de conexão de acordo com mobilidade, estabilidade, segurança e necessidade de comunicação de cada dispositivo.
 :::
 
-## Aplicações, limites e cuidados
+## Interfaces na prática: escolher o padrão certo para cada contexto
 
 :::importante
 Estudar interfaces é importante porque integração de hardware e software depende desses padrões. Sem isso, mesmo bons dispositivos podem não funcionar bem juntos.
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Assumir riscos de incompatibilidade, instabilidade ou desempenho inadequado para a necessidade real do sistema. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque assumir riscos de incompatibilidade, instabilidade ou desempenho inadequado para a necessidade real do sistema..
+> A alternativa correta é a letra B porque assumir riscos de incompatibilidade, instabilidade ou desempenho inadequado para a necessidade real do sistema.
 :::
 
 ## Relação com a prática técnica
 
 No desenvolvimento de sistemas e na montagem de ambientes técnicos, compreender interfaces ajuda a planejar laboratórios, robótica, redes locais e integração entre vários dispositivos.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender interfaces de conexão também ajuda a desenvolver vocabulário técnico como throughput, latência, protocolo e hot-plug. Esse conhecimento permite comparar padrões com mais critério e projetar arquiteturas de comunicação mais eficientes.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em interfaces de conexão: comunicação entre dispositivos?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

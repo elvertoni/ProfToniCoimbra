@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Verificar se o código, o canal e o contexto da mensagem estavam adequados para que o receptor pudesse compreendê-la. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque verificar se o código, o canal e o contexto da mensagem estavam adequados para que o receptor pudesse compreendê-la..
+> A alternativa correta é a letra B porque verificar se o código, o canal e o contexto da mensagem estavam adequados para que o receptor pudesse compreendê-la.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Confundir problema técnico de hardware com ruídos de comunicação, que também dependem de canal, código, mensagem e interpretação. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque confundir problema técnico de hardware com ruídos de comunicação, que também dependem de canal, código, mensagem e interpretação..
+> A alternativa correta é a letra B porque confundir problema técnico de hardware com ruídos de comunicação, que também dependem de canal, código, mensagem e interpretação.
 :::
 
-## Relação com a prática técnica
+## Redes e o trabalho técnico
 
 No desenvolvimento de sistemas, pensar comunicação é pensar interface, protocolo, usabilidade e clareza de fluxo. Sistemas digitais precisam reduzir ruído e facilitar entendimento entre pessoas e máquinas.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender redes também ajuda a desenvolver vocabulário técnico como protocolo, latência, bandwidth e topologia. Esse conhecimento permite planejar conexões com mais critério e diagnosticar problemas de comunicação com mais precisão.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em redes e comunicação no mundo digital?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

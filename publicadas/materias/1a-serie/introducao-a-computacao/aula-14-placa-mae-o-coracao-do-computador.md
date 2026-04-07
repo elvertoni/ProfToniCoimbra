@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Reconhecer que a placa-mãe define compatibilidades e que a escolha de processador e memória precisa respeitar suas especificações. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque reconhecer que a placa-mãe define compatibilidades e que a escolha de processador e memória precisa respeitar suas especificações..
+> A alternativa correta é a letra B porque reconhecer que a placa-mãe define compatibilidades e que a escolha de processador e memória precisa respeitar suas especificações.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Comprar componentes incompatíveis, gerar desperdício e comprometer o funcionamento ou a expansão do sistema. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque comprar componentes incompatíveis, gerar desperdício e comprometer o funcionamento ou a expansão do sistema..
+> A alternativa correta é a letra B porque comprar componentes incompatíveis, gerar desperdício e comprometer o funcionamento ou a expansão do sistema.
 :::
 
 ## Relação com a prática técnica
 
 No trabalho técnico, interpretar especificações de placa-mãe ajuda a diagnosticar incompatibilidades, planejar expansão e montar máquinas coerentes com a demanda do usuário.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender a placa-mãe também ajuda a desenvolver vocabulário técnico como socket, barramento, chipset e padrão DDR. Esse conhecimento permite comparar especificações, evitar compras incompatíveis e comunicar melhor com equipes técnicas.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em placa-mãe: o coração do computador?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

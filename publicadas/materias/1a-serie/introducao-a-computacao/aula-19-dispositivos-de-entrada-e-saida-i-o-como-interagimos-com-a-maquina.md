@@ -40,10 +40,10 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Selecionar dispositivos e formas de interação que permitam entrada de comandos e saída de informações de modo acessível ao usuário. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque selecionar dispositivos e formas de interação que permitam entrada de comandos e saída de informações de modo acessível ao usuário..
+> A alternativa correta é a letra B porque selecionar dispositivos e formas de interação que permitam entrada de comandos e saída de informações de modo acessível ao usuário.
 :::
 
-## Aplicações, limites e cuidados
+## Dispositivos de E/S na prática: erros comuns e impacto no uso
 
 :::importante
 Entender I/O ajuda a projetar sistemas mais adequados às pessoas. Não basta o software funcionar; ele precisa conversar com o usuário por dispositivos compatíveis com a necessidade real.
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Criar uma solução tecnicamente funcional, mas inadequada, excludente ou ineficiente para a necessidade real do usuário. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque criar uma solução tecnicamente funcional, mas inadequada, excludente ou ineficiente para a necessidade real do usuário..
+> A alternativa correta é a letra B porque criar uma solução tecnicamente funcional, mas inadequada, excludente ou ineficiente para a necessidade real do usuário.
 :::
 
 ## Relação com a prática técnica
 
 No desenvolvimento de sistemas, refletir sobre entrada e saída aproxima o aluno de temas como interface, experiência do usuário, automação e inclusão digital.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender dispositivos de E/S também ajuda a desenvolver vocabulário técnico como polling, interrupção, buffer e driver. Esse conhecimento permite compreender como o sistema operacional se comunica com periféricos e diagnosticar problemas de interação com mais precisão.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em dispositivos de entrada e saída (i/o): como interagimos com a máquina?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.
@@ -111,7 +111,7 @@ Use o caso da escola com estudantes que precisam de solução de leitura digital
 ## Fechamento
 
 :::resumo
-- Dispositivos de entrada e saída fazem a ponte entre usuário e sistema.
-- Escolhas de I/O impactam acessibilidade, usabilidade e eficiência.
-- Pensar interação é parte importante do desenvolvimento de sistemas.
-:::
+- Dispositivos de entrada e saída são a ponte entre intenção humana e resposta do sistema computacional.
+- Entrada (teclado, mouse, microfone), saída (monitor, impressora, caixas) e dispositivos mistos (tela touch) têm papéis distintos.
+- A escolha adequada de dispositivos impacta acessibilidade, eficiência e qualidade da experiência do usuário.
+:::,

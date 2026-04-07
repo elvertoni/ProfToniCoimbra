@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Mostrar o processo de divisões sucessivas por 2, registrando os restos e lendo o resultado na ordem correta. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque mostrar o processo de divisões sucessivas por 2, registrando os restos e lendo o resultado na ordem correta..
+> A alternativa correta é a letra B porque mostrar o processo de divisões sucessivas por 2, registrando os restos e lendo o resultado na ordem correta.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Ficar dependente de casos decorados e perder a capacidade de realizar a conversão corretamente em números diferentes. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque ficar dependente de casos decorados e perder a capacidade de realizar a conversão corretamente em números diferentes..
+> A alternativa correta é a letra B porque ficar dependente de casos decorados e perder a capacidade de realizar a conversão corretamente em números diferentes.
 :::
 
-## Relação com a prática técnica
+## Conversão de bases e o trabalho técnico
 
 No desenvolvimento de sistemas, o binário é fundamento conceitual para entender dados, memória, instruções e diversos mecanismos internos de hardware e software.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender conversão de bases também ajuda a desenvolver vocabulário técnico como bit mais significativo, peso posicional e overflow. Esse conhecimento permite evitar erros comuns em programação e representação numérica.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em decodificando números: como converter decimais em binários?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

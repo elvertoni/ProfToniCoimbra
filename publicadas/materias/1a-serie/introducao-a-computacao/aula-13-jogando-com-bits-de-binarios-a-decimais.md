@@ -40,7 +40,7 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Analisar o valor posicional de cada bit ativo e somar corretamente as potências de dois correspondentes. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque analisar o valor posicional de cada bit ativo e somar corretamente as potências de dois correspondentes..
+> A alternativa correta é a letra B porque analisar o valor posicional de cada bit ativo e somar corretamente as potências de dois correspondentes.
 :::
 
 ## Aplicações, limites e cuidados
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Desconsiderar que cada posição tem peso diferente e que o valor final depende da soma das potências de dois ativadas. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque desconsiderar que cada posição tem peso diferente e que o valor final depende da soma das potências de dois ativadas..
+> A alternativa correta é a letra B porque desconsiderar que cada posição tem peso diferente e que o valor final depende da soma das potências de dois ativadas.
 :::
 
-## Relação com a prática técnica
+## Binário para decimal e o trabalho técnico
 
 Essa leitura de valor posicional é importante para compreender como dados circulam em memória, bytes, redes e representações internas do sistema.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender conversão de binário para decimal também ajuda a desenvolver vocabulário técnico como valor posicional, potência de dois e extensão de sinal. Esse conhecimento é fundamental para entender como processadores representam e manipulam números.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em jogando com bits: de binários a decimais?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.

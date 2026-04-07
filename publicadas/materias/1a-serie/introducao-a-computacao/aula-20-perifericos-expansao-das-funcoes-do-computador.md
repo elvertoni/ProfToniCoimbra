@@ -40,10 +40,10 @@ a) Tomar decisões por tentativa e erro, sem analisar contexto, objetivo nem nec
 b) Selecionar dispositivos de acordo com a função prática que o sistema precisa cumprir, como leitura, impressão, pesagem e exibição de informações. *
 c) Tratar o tema apenas como detalhe teórico, sem ligação com o funcionamento ou com o uso prático da computação.
 d) Ignorar critérios técnicos e considerar suficiente qualquer solução improvisada ou superficial.
-> A alternativa correta é a letra B porque selecionar dispositivos de acordo com a função prática que o sistema precisa cumprir, como leitura, impressão, pesagem e exibição de informações..
+> A alternativa correta é a letra B porque selecionar dispositivos de acordo com a função prática que o sistema precisa cumprir, como leitura, impressão, pesagem e exibição de informações.
 :::
 
-## Aplicações, limites e cuidados
+## Periféricos na prática: integração e eficiência do sistema
 
 :::importante
 Estudar periféricos ajuda a entender que computação aplicada depende de integração entre software, hardware central e dispositivos especializados para atender demandas reais.
@@ -60,14 +60,14 @@ a) O problema não existe, porque esse tipo de decisão nunca afeta desempenho, 
 b) Criar um ambiente pouco eficiente, com dispositivos inadequados ou mal integrados ao sistema e à rotina do usuário. *
 c) Basta reiniciar o computador, porque toda falha nesse tema se resolve automaticamente sem análise técnica.
 d) A melhor saída é desconsiderar limitações e continuar usando o sistema da mesma forma, sem revisão de critérios.
-> A alternativa correta é a letra B porque criar um ambiente pouco eficiente, com dispositivos inadequados ou mal integrados ao sistema e à rotina do usuário..
+> A alternativa correta é a letra B porque criar um ambiente pouco eficiente, com dispositivos inadequados ou mal integrados ao sistema e à rotina do usuário.
 :::
 
 ## Relação com a prática técnica
 
 No desenvolvimento e implantação de sistemas, periféricos são decisivos para automação comercial, coleta de dados, impressão, acessibilidade e uso profissional de computadores.
 
-Além disso, esse conteúdo ajuda a construir vocabulário técnico e capacidade de análise. Em vez de repetir termos de forma decorada, o estudante passa a interpretar situações concretas, justificar escolhas e reconhecer como diferentes partes do sistema se relacionam em problemas reais.
+Compreender periféricos também ajuda a desenvolver vocabulário técnico como interface, protocolo de comunicação e compatibilidade. Esse conhecimento permite integrar dispositivos com mais critério e evitar soluções improvisadas que comprometem a estabilidade do sistema.
 
 :::questao Qual alternativa resume melhor o conceito central estudado em periféricos: expansão das funções do computador?
 a) Trata-se apenas de um detalhe opcional, sem impacto no funcionamento, no desempenho ou na compreensão da computação.
