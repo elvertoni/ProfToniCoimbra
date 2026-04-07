@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:03:02.743085+00:00",
+  "updatedAt": "2026-04-07T01:03:04.356087+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -426,6 +426,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-18-armazenamento-e-dados-explorando-o-hard-disk.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:03:02.743085+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 19,
+      "title": "Dispositivos de Entrada e Saída (I/O): Como Interagimos com a Máquina",
+      "slug": "dispositivos-de-entrada-e-saida-i-o-como-interagimos-com-a-maquina",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-19-dispositivos-de-entrada-e-saida-i-o-como-interagimos-com-a-maquina.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:03:04.356087+00:00"
     },
     {
       "series": "disciplinas-extras",
