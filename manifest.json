@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:38.687402+00:00",
+  "updatedAt": "2026-04-07T01:02:40.377894+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -286,6 +286,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-04-do-passado-ao-presente-a-evolucao-dos-computadores.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:38.687402+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 5,
+      "title": "História da Computação e seus Avanços",
+      "slug": "historia-da-computacao-e-seus-avancos",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-05-historia-da-computacao-e-seus-avancos.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:02:40.377894+00:00"
     },
     {
       "series": "disciplinas-extras",
