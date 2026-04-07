@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-07T01:02:48.898281+00:00",
+  "updatedAt": "2026-04-07T01:02:50.818920+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -346,6 +346,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-10-fundamentos-de-sistemas-digitais.md",
       "status": "published",
       "publishedAt": "2026-04-07T01:02:48.898281+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 11,
+      "title": "Noções Básicas de Eletricidade para Informática",
+      "slug": "nocoes-basicas-de-eletricidade-para-informatica",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-11-nocoes-basicas-de-eletricidade-para-informatica.md",
+      "status": "published",
+      "publishedAt": "2026-04-07T01:02:50.818920+00:00"
     },
     {
       "series": "disciplinas-extras",
