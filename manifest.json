@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-12T19:47:09.777397+00:00",
+  "updatedAt": "2026-04-12T19:47:14.109851+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -486,6 +486,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-24-unidades-de-armazenamento-kb-mb-gb-tb-e-outras.md",
       "status": "published",
       "publishedAt": "2026-04-12T19:47:09.777397+00:00"
+    },
+    {
+      "series": "1a-serie",
+      "subject": "introducao-a-computacao",
+      "lessonNumber": 25,
+      "title": "Conversão de Base Numérica: Decimal e Binário",
+      "slug": "conversao-de-base-numerica-decimal-e-binario",
+      "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-25-conversao-de-base-numerica-decimal-e-binario.md",
+      "status": "published",
+      "publishedAt": "2026-04-12T19:47:14.109851+00:00"
     },
     {
       "series": "3a-serie",
