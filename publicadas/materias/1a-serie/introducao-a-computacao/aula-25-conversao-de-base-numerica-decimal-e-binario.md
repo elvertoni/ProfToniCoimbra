@@ -42,7 +42,7 @@ No binário, as posições crescem em potências de 2. Por isso, 1, 2, 4, 8 e 16
 :::
 
 :::exemplo
-O número binário 1011 pode ser lido como 1×8 + 0×4 + 1×2 + 1×1. Somando os valores ativos, chegamos a 11 no sistema decimal.
+O número binário 1011 pode ser lido como 1 x 8 + 0 x 4 + 1 x 2 + 1 x 1. Somando os valores ativos, chegamos a 11 no sistema decimal.
 :::
 
 :::questao Em um cenário de estudo, qual situação mostra melhor por que entender valor posicional ajuda na conversão entre decimal e binário?
@@ -69,19 +69,19 @@ Esse raciocínio é valioso porque mostra que a conversão não depende só de s
 
 Exemplo de decimal para binário:
 
-10 ÷ 2 = 5, resto 0  
-5 ÷ 2 = 2, resto 1  
-2 ÷ 2 = 1, resto 0  
-1 ÷ 2 = 0, resto 1  
+10 / 2 = 5, resto 0  
+5 / 2 = 2, resto 1  
+2 / 2 = 1, resto 0  
+1 / 2 = 0, resto 1  
 
-Lendo os restos de baixo para cima, temos 1010₂.
+Lendo os restos de baixo para cima, temos 1010 em binario.
 
 Exemplo de binário para decimal:
 
-1011₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰  
-1011₂ = 1×8 + 0×4 + 1×2 + 1×1  
-1011₂ = 8 + 0 + 2 + 1  
-1011₂ = 11₁₀.
+1011 em binario = 1 x 2^3 + 0 x 2^2 + 1 x 2^1 + 1 x 2^0  
+1011 em binario = 1 x 8 + 0 x 4 + 1 x 2 + 1 x 1  
+1011 em binario = 8 + 0 + 2 + 1  
+1011 em binario = 11 em decimal.
 
 :::atencao
 Um erro comum é ler os restos na ordem errada ao converter decimal para binário. Outro erro frequente é esquecer que, no binário, as posições representam potências de 2, e não de 10.
@@ -110,7 +110,7 @@ a) 9 *
 b) 8
 c) 10
 d) 12
-> A alternativa correta é a letra A porque 1001₂ = 1×8 + 0×4 + 0×2 + 1×1 = 9.
+> A alternativa correta é a letra A porque 1001 em binario = 1 x 8 + 0 x 4 + 0 x 2 + 1 x 1 = 9.
 :::
 
 :::questao Qual afirmação resume corretamente a conversão entre decimal e binário?
