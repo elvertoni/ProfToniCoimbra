@@ -33,6 +33,17 @@ Essa distinção é central. Um nome digitado sozinho, uma nota isolada, um hor�
 
 Também é importante perceber que dados aparecem em vários formatos. Eles podem ser número, texto, imagem, áudio, localização, data, registro de acesso, histórico de navegação ou resposta a um formulário. Sistemas diferentes coletam tipos diferentes de dado conforme a finalidade.
 
+Quando começamos a estudar lógica e programação, alguns tipos aparecem com muita frequência e precisam ser nomeados com clareza:
+
+- **Inteiro**: valores numéricos positivos ou negativos sem casa decimal, como `-3`, `0` e `25`
+- **Real**: valores numéricos positivos ou negativos com casa decimal, como `7,5`, `3,14` e `-0,8`
+- **Lógico**: valores booleanos com apenas dois estados, como `VERDADEIRO` e `FALSO`
+- **Texto**: sequência de um ou mais caracteres, normalmente representada entre aspas, como `"Toni"` ou `"Aula 09"`
+
+:::importante
+Esses quatro tipos ajudam a entender como um sistema representa informações diferentes. Idade pode ser armazenada como inteiro, média final como real, matrícula ativa como lógico e nome do aluno como texto.
+:::
+
 :::importante
 Uma forma simples de pensar o fluxo é esta:
 - **coletar** dados
