@@ -33,6 +33,10 @@ No sistema decimal, cada posição representa uma potência de 10. No binário, 
 
 Essa mudança não é só matemática. Ela está ligada ao modo como o computador registra números internamente. Quando o estudante entende o valor de cada posição, percebe que o binário não é um código misterioso, mas uma forma organizada de representar quantidades.
 
+O sistema decimal faz sentido para nós porque contamos com dez dedos e crescemos usando essa lógica no cotidiano. Já o sistema binário faz sentido para a máquina porque circuitos eletrônicos trabalham muito bem com dois estados principais, como ligado e desligado, presença e ausência de corrente, 1 e 0.
+
+Quando essa ponte entre matemática e hardware fica clara, a conversão ganha sentido prático. O aluno deixa de enxergar o binário como uma curiosidade abstrata e passa a entendê-lo como linguagem básica de representação usada por computadores, memórias e processadores.
+
 :::importante
 No binário, as posições crescem em potências de 2. Por isso, 1, 2, 4, 8 e 16 aparecem com frequência em conversões simples.
 :::
@@ -59,6 +63,10 @@ Na conversão de decimal para binário, dividimos o número sucessivamente por 2
 
 Os dois processos se complementam. Um ajuda a construir a representação binária de um número; o outro permite conferir ou interpretar um número já escrito em base 2.
 
+Outro caminho útil para pensar decimal em binário é a decomposição em potências de 2. Por exemplo, o número 13 pode ser visto como 8 + 4 + 1. Isso significa que, nas posições 8, 4 e 1, colocamos 1; na posição 2, colocamos 0. O resultado é 1101.
+
+Esse raciocínio é valioso porque mostra que a conversão não depende só de seguir passos mecânicos. Ela depende de entender que cada casa do número binário tem um valor próprio. Quanto mais o estudante percebe isso, mais fácil fica conferir se a resposta final faz sentido.
+
 Exemplo de decimal para binário:
 
 10 ÷ 2 = 5, resto 0  
@@ -67,6 +75,13 @@ Exemplo de decimal para binário:
 1 ÷ 2 = 0, resto 1  
 
 Lendo os restos de baixo para cima, temos 1010₂.
+
+Exemplo de binário para decimal:
+
+1011₂ = 1×2³ + 0×2² + 1×2¹ + 1×2⁰  
+1011₂ = 1×8 + 0×4 + 1×2 + 1×1  
+1011₂ = 8 + 0 + 2 + 1  
+1011₂ = 11₁₀.
 
 :::atencao
 Um erro comum é ler os restos na ordem errada ao converter decimal para binário. Outro erro frequente é esquecer que, no binário, as posições representam potências de 2, e não de 10.

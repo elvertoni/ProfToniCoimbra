@@ -33,6 +33,10 @@ Na computação, tudo começa com a representação binária. Cada 0 ou 1 é um 
 
 A partir do byte, surgem unidades maiores. As mais comuns no cotidiano são kilobyte, megabyte, gigabyte e terabyte. Elas aparecem porque, na prática, os sistemas lidam com quantidades muito maiores do que um único byte.
 
+Essa ideia é importante porque o estudante costuma ouvir essas siglas sem relacioná-las ao uso real. Quando alguém vê que uma imagem tem 3 MB, que um pendrive tem 32 GB ou que um SSD oferece 1 TB, está vendo a mesma lógica de medição aplicada em escalas diferentes. O que muda é apenas a quantidade de dados envolvida.
+
+Também vale perceber que armazenamento não fala só de “quantidade”. Ele se conecta ao tipo de arquivo e ao que se pretende fazer com ele. Um texto simples ocupa pouco espaço, mas uma coleção de vídeos em alta resolução pode consumir muitos gigabytes rapidamente.
+
 :::importante
 Bit e byte não são a mesma coisa. O bit usa a letra b minúscula, enquanto o byte usa B maiúsculo.
 :::
@@ -60,6 +64,10 @@ Em abordagens introdutórias, costuma-se trabalhar com a relação 1 KB = 1024 b
 Um arquivo de texto simples pode ocupar poucos KB. Uma foto pode ocupar alguns MB. Um filme em boa resolução pode ocupar vários GB. Já um SSD ou HD moderno costuma ter capacidade anunciada em centenas de GB ou em TB.
 
 Também vale lembrar que alguns fabricantes usam valores arredondados com base em 1000 em materiais de marketing. Isso explica por que, às vezes, a capacidade exibida pelo sistema parece um pouco diferente da capacidade anunciada na embalagem.
+
+Do ponto de vista pedagógico, é útil imaginar uma escada de crescimento. Sair de byte para KB já representa um salto grande. De MB para GB, o salto é muito maior. Por isso, a troca de unidade não é mero detalhe de escrita, mas uma forma de tornar legível uma quantidade que seria difícil de interpretar se aparecesse apenas em bytes.
+
+Esse olhar ajuda em situações reais. Ao escolher um celular, instalar aplicativos, gravar aulas em vídeo ou baixar arquivos para estudo, o estudante consegue avaliar melhor se o espaço disponível faz sentido para o tipo de uso pretendido. Em outras palavras, entender unidade de armazenamento melhora até a tomada de decisão de compra e uso.
 
 :::atencao
 Um erro comum é confundir armazenamento com velocidade de rede. MB e GB indicam capacidade de dados, enquanto Mbps costuma indicar taxa de transmissão.

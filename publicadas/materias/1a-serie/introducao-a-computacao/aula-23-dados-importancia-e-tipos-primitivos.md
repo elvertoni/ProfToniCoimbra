@@ -35,6 +35,10 @@ O ponto principal é que o computador não trabalha com “ideias soltas”. Ele
 
 Também é importante notar que dado não serve só para guardar. Ele serve para permitir decisão. Em um sistema escolar, por exemplo, nome, turma, frequência e notas ajudam a coordenação a acompanhar desempenho, identificar dificuldades e agir com mais precisão.
 
+Essa distinção entre dado e informação ajuda bastante no começo do curso. Dado é o registro bruto, como uma nota 6,5 ou a presença em determinada aula. Informação é o resultado da interpretação desses registros em contexto, como perceber que um estudante caiu de rendimento ou que uma turma inteira precisa de reforço em certo conteúdo.
+
+Quando os alunos entendem isso, deixam de ver o sistema apenas como tela e botão. Eles começam a perceber que cada ação do usuário gera registros, e que esses registros precisam ter sentido, qualidade e finalidade. Um campo preenchido errado, um valor fora do padrão ou um dado faltando pode comprometer relatórios, buscas, cálculos e decisões.
+
 :::exemplo
 Em um sistema de cadastro escolar, o nome do aluno, a turma, a nota final, a quantidade de faltas e o status de matrícula são dados diferentes, mas todos precisam ser armazenados corretamente para o sistema funcionar.
 :::
@@ -58,6 +62,10 @@ Em programação, os tipos primitivos são as formas mais básicas de representa
 O tipo inteiro representa números sem parte decimal, como idade, quantidade de alunos ou número de peças. O tipo real representa números com parte decimal, como preço, altura ou média final. O tipo caractere guarda um único símbolo, como 'A' ou '%'. O tipo texto representa nomes, frases e mensagens. Já o tipo lógico, também chamado booleano, trabalha com valores de verdade, normalmente verdadeiro e falso.
 
 Quando o estudante entende isso, começa a perceber que programar não é só “guardar qualquer coisa em qualquer lugar”. É decidir como o sistema vai interpretar aquela informação. Um nome não deve ser somado como número, e uma nota com casa decimal não deve ser tratada como inteiro.
+
+Essa escolha correta também melhora a validação de dados. Se um sistema sabe que certo campo é lógico, ele espera algo como verdadeiro ou falso. Se sabe que outro campo é inteiro, passa a rejeitar letras ou símbolos indevidos. Isso reduz erro humano, melhora consistência e facilita manutenção do software.
+
+Em linguagens de programação, a forma exata de escrever cada tipo pode variar, mas a lógica central permanece. Às vezes aparece `int`, `float`, `char`, `string` e `boolean`; em outras linguagens, os nomes mudam um pouco. O importante, neste momento, é compreender a função de cada tipo e não decorar sintaxe isolada.
 
 :::atencao
 Um erro comum é achar que todo número pode ser tratado da mesma forma. Idade pode ser inteiro, mas média final com casas decimais deve ser real.
