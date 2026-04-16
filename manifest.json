@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repoName": "ProfToniCoimbra",
-  "updatedAt": "2026-04-12T19:47:14.109851+00:00",
+  "updatedAt": "2026-04-16T11:57:47.617022+00:00",
   "courses": [
     {
       "series": "1a-serie",
@@ -496,6 +496,16 @@
       "path": "publicadas/materias/1a-serie/introducao-a-computacao/aula-25-conversao-de-base-numerica-decimal-e-binario.md",
       "status": "published",
       "publishedAt": "2026-04-12T19:47:14.109851+00:00"
+    },
+    {
+      "series": "2a-serie",
+      "subject": "programacao-front-end",
+      "lessonNumber": 1,
+      "title": "Criação de Tabelas com HTML e CSS",
+      "slug": "criacao-de-tabelas-com-html-e-css",
+      "path": "publicadas/materias/2a-serie/programacao-front-end/aula-01-criacao-de-tabelas-com-html-e-css.md",
+      "status": "published",
+      "publishedAt": "2026-04-16T11:57:47.617022+00:00"
     },
     {
       "series": "3a-serie",
