@@ -1,314 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light dark" />
   <title>Aula 01 — Criação de Tabelas com HTML e CSS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --surface: #000000;
-      --surface-container-low: #0d0d0d;
-      --surface-container: #111111;
-      --surface-container-high: #1a1a1a;
-      --surface-container-highest: #222222;
+      --green: #10b981;
+      --violet: #8b5cf6;
+      --cyan: #06b6d4;
+      --coral: #f87171;
+      --amber: #fcd34d;
+      --font-body: 'Geist', system-ui, sans-serif;
+      --font-head: 'Geist', system-ui, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --max-width: 980px;
+      --shadow: 0 20px 40px rgba(0,0,0,.16);
+      --page-gap: 22px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #000000;
+      --page: #0d0d0d;
+      --surface: #111111;
+      --surface-2: #1a1a1a;
+      --surface-3: #222222;
       --text: #e5e2e1;
       --text-soft: #c0c0c8;
       --text-muted: #8e8e98;
       --border: rgba(255,255,255,.10);
       --border-strong: rgba(255,255,255,.16);
-      --green: #10b981;
-      --green-bg: rgba(16,185,129,.10);
-      --violet: #8b5cf6;
-      --violet-bg: rgba(139,92,246,.10);
-      --cyan: #06b6d4;
-      --cyan-bg: rgba(6,182,212,.10);
-      --coral: #f87171;
-      --coral-bg: rgba(248,113,113,.10);
-      --amber: #fcd34d;
-      --amber-bg: rgba(252,211,77,.10);
-      --radius: 14px;
-      --radius-lg: 18px;
-      --shadow: 0 20px 40px rgba(0,0,0,.35);
-      --font-body: 'Geist', system-ui, sans-serif;
-      --font-head: 'Geist', system-ui, sans-serif;
-      --font-mono: 'Geist Mono', ui-monospace, monospace;
-      --max-width: 1120px;
+      --hero-bg: linear-gradient(180deg, rgba(17,17,17,.96), rgba(10,10,10,.98));
+      --code-bg: #050505;
+      --code-top: #0b0b0b;
+      --table-head: rgba(139,92,246,.16);
+      --table-stripe: rgba(255,255,255,.03);
+      --selection: rgba(16,185,129,.20);
+    }
+
+    [data-theme="light"] {
+      --bg: #edf1f7;
+      --page: #ffffff;
+      --surface: #f7f9fc;
+      --surface-2: #eef2f7;
+      --surface-3: #e6ebf3;
+      --text: #1f2937;
+      --text-soft: #4b5563;
+      --text-muted: #6b7280;
+      --border: rgba(31,41,55,.10);
+      --border-strong: rgba(31,41,55,.16);
+      --hero-bg: linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,247,252,.98));
+      --code-bg: #10151d;
+      --code-top: #181f29;
+      --table-head: rgba(139,92,246,.14);
+      --table-stripe: rgba(15,23,42,.04);
+      --selection: rgba(16,185,129,.18);
+      --shadow: 0 18px 34px rgba(15,23,42,.08);
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: var(--font-body);
-      background: var(--surface);
+      background:
+        radial-gradient(circle at top right, rgba(139,92,246,.10), transparent 20%),
+        radial-gradient(circle at top left, rgba(6,182,212,.08), transparent 18%),
+        var(--bg);
       color: var(--text);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-      selection-background-color: rgba(16,185,129,.2);
     }
-
-    a { color: inherit; }
-
+    ::selection { background: var(--selection); }
     code, pre { font-family: var(--font-mono); }
-
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--surface); }
-    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
-
-    .page {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top right, rgba(139,92,246,.12), transparent 22%),
-        radial-gradient(circle at top left, rgba(6,182,212,.10), transparent 18%),
-        var(--surface);
-    }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(12px);
-      background: rgba(0,0,0,.78);
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
       border-bottom: 1px solid var(--border);
     }
-
     .topbar-inner {
-      max-width: var(--max-width);
+      max-width: calc(var(--max-width) + 80px);
       margin: 0 auto;
+      min-height: 60px;
       padding: 0 24px;
-      min-height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
     }
-
     .brand {
       font-family: var(--font-head);
-      font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -.03em;
+      font-size: 1rem;
       color: var(--text);
     }
-
     .brand small {
       display: block;
-      font-size: .65rem;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: .14em;
-      color: var(--text-muted);
+      font-size: .65rem;
       margin-top: 2px;
     }
-
-    .top-actions {
+    .toolbar {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
-      color: var(--text-soft);
-      font-size: .85rem;
     }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--surface-container-low);
+    .pill, .btn {
       border: 1px solid var(--border);
+      background: var(--surface);
       color: var(--text-soft);
-      font-size: .78rem;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: .82rem;
       font-weight: 600;
-      letter-spacing: .02em;
+    }
+    .btn {
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--border-strong);
+      color: var(--text);
     }
 
-    .layout {
+    .shell {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 28px 24px 72px;
-      display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 26px;
+      padding: 28px 18px 72px;
     }
 
-    .sidebar {
-      position: sticky;
-      top: 84px;
-      align-self: start;
+    .hero, .section {
+      background: var(--page);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface-container-low);
-      padding: 18px 16px;
       box-shadow: var(--shadow);
-    }
-
-    .sidebar-label {
-      font-size: .68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .nav-list a {
-      display: block;
-      text-decoration: none;
-      color: var(--text-soft);
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-size: .9rem;
-      line-height: 1.4;
-      transition: .2s ease;
-      border: 1px solid transparent;
-    }
-
-    .nav-list a:hover {
-      background: var(--surface-container-high);
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .content {
-      min-width: 0;
     }
 
     .hero {
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(17,17,17,.96), rgba(13,13,13,.98));
-      box-shadow: var(--shadow);
+      border-radius: 26px;
       overflow: hidden;
-      margin-bottom: 24px;
+      background: var(--hero-bg);
+      margin-bottom: var(--page-gap);
     }
-
-    .hero-inner {
-      padding: 32px 30px 30px;
-    }
-
+    .hero-inner { padding: 34px 30px 30px; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
       color: var(--green);
+      margin-bottom: 16px;
       font-size: .72rem;
       text-transform: uppercase;
       letter-spacing: .16em;
       font-weight: 800;
     }
-
     .eyebrow::before {
       content: '';
       width: 34px;
       height: 1px;
       background: linear-gradient(90deg, var(--green), transparent);
     }
-
     .hero h1 {
       margin: 0 0 14px;
       font-family: var(--font-head);
-      font-size: clamp(2.4rem, 5vw, 4.3rem);
-      line-height: .98;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: .97;
       letter-spacing: -.05em;
       max-width: 12ch;
     }
-
     .hero h1 .accent { color: var(--violet); }
-
     .hero p {
       margin: 0;
-      max-width: 70ch;
-      font-size: 1.06rem;
+      max-width: 72ch;
+      font-size: 1.05rem;
       color: var(--text-soft);
     }
-
     .meta-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 12px;
       margin-top: 22px;
     }
-
     .meta-card {
-      padding: 14px 14px 12px;
-      border-radius: 14px;
-      background: var(--surface-container-high);
+      background: var(--surface);
       border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
     }
-
     .meta-card strong {
       display: block;
       color: var(--text-muted);
+      text-transform: uppercase;
       font-size: .68rem;
       letter-spacing: .12em;
-      text-transform: uppercase;
       margin-bottom: 4px;
     }
-
-    .meta-card span {
-      color: var(--text);
-      font-size: .95rem;
-      font-weight: 600;
-    }
+    .meta-card span { font-weight: 600; }
 
     .section {
-      border: 1px solid var(--border);
       border-radius: 20px;
-      background: var(--surface-container-low);
       padding: 28px 26px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
+      margin-bottom: var(--page-gap);
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-
     .section h2 {
       margin: 0 0 14px;
       font-family: var(--font-head);
-      font-size: 1.8rem;
+      font-size: 1.82rem;
       line-height: 1.08;
       letter-spacing: -.03em;
     }
-
     .section h3 {
       margin: 20px 0 8px;
       font-family: var(--font-head);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       letter-spacing: -.02em;
     }
-
-    .section p:last-child { margin-bottom: 0; }
-
     .section p, .section li { color: var(--text-soft); }
+    .section p:last-child { margin-bottom: 0; }
 
     .callout {
       display: grid;
       grid-template-columns: 42px 1fr;
       gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
       margin: 18px 0;
-      background: var(--surface-container-high);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-
     .callout-icon {
       width: 42px;
       height: 42px;
@@ -318,44 +256,38 @@
       background: rgba(255,255,255,.04);
       font-size: 1.1rem;
     }
-
     .callout-title {
       margin: 0 0 4px;
       font-weight: 700;
       font-size: .98rem;
     }
+    .callout-text, .callout-body p:last-child { margin: 0; }
 
-    .callout-text, .callout-body p:last-child {
-      margin: 0;
-      color: var(--text-soft);
-    }
-
-    .c-green { border-color: rgba(16,185,129,.28); background: var(--green-bg); }
+    .c-green { background: color-mix(in srgb, var(--green) 10%, var(--surface)); border-color: color-mix(in srgb, var(--green) 26%, var(--border)); }
     .c-green .callout-title { color: var(--green); }
-    .c-blue { border-color: rgba(6,182,212,.28); background: var(--cyan-bg); }
+    .c-blue { background: color-mix(in srgb, var(--cyan) 10%, var(--surface)); border-color: color-mix(in srgb, var(--cyan) 26%, var(--border)); }
     .c-blue .callout-title { color: var(--cyan); }
-    .c-violet { border-color: rgba(139,92,246,.28); background: var(--violet-bg); }
+    .c-violet { background: color-mix(in srgb, var(--violet) 10%, var(--surface)); border-color: color-mix(in srgb, var(--violet) 26%, var(--border)); }
     .c-violet .callout-title { color: var(--violet); }
-    .c-amber { border-color: rgba(252,211,77,.28); background: var(--amber-bg); }
+    .c-amber { background: color-mix(in srgb, var(--amber) 10%, var(--surface)); border-color: color-mix(in srgb, var(--amber) 26%, var(--border)); }
     .c-amber .callout-title { color: var(--amber); }
-    .c-coral { border-color: rgba(248,113,113,.28); background: var(--coral-bg); }
+    .c-coral { background: color-mix(in srgb, var(--coral) 10%, var(--surface)); border-color: color-mix(in srgb, var(--coral) 26%, var(--border)); }
     .c-coral .callout-title { color: var(--coral); }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 18px 0;
-      padding: 0;
       list-style: none;
+      padding: 0;
+      margin: 18px 0;
     }
-
     .tags li {
       margin: 0;
-      border-radius: 999px;
       padding: 7px 12px;
-      background: var(--surface-container-high);
+      border-radius: 999px;
       border: 1px solid var(--border);
+      background: var(--surface);
       color: var(--text-soft);
       font-size: .82rem;
       font-weight: 600;
@@ -363,276 +295,243 @@
 
     .code-shell {
       margin: 18px 0;
-      border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
-      background: #050505;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-
     .code-top {
       display: flex;
-      align-items: center;
       gap: 8px;
+      align-items: center;
       padding: 12px 14px;
       border-bottom: 1px solid var(--border);
-      background: #0b0b0b;
+      background: var(--code-top);
     }
-
     .dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #2a2a2a;
     }
-
-    .dot.c1 { background: rgba(248,113,113,.65); }
-    .dot.c2 { background: rgba(252,211,77,.65); }
-    .dot.c3 { background: rgba(16,185,129,.65); }
-
+    .dot.c1 { background: rgba(248,113,113,.70); }
+    .dot.c2 { background: rgba(252,211,77,.70); }
+    .dot.c3 { background: rgba(16,185,129,.70); }
     pre {
       margin: 0;
-      padding: 18px 18px 20px;
       overflow-x: auto;
-      font-size: .92rem;
-      line-height: 1.7;
+      padding: 18px 18px 20px;
       color: #d7d7df;
+      line-height: 1.7;
+      font-size: .92rem;
+      white-space: pre;
     }
 
     .demo-wrap {
       margin: 18px 0;
-      border: 1px solid var(--border);
-      border-radius: 18px;
       overflow-x: auto;
-      background: var(--surface-container-high);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-
     table.demo {
       width: 100%;
-      border-collapse: collapse;
       min-width: 680px;
+      border-collapse: collapse;
     }
-
     table.demo th, table.demo td {
       padding: 13px 14px;
       border: 1px solid var(--border);
       text-align: left;
     }
-
     table.demo thead th {
-      background: rgba(139,92,246,.14);
-      color: #f4efff;
+      background: var(--table-head);
+      color: var(--text);
       font-weight: 700;
     }
-
-    table.demo tbody tr:nth-child(even) {
-      background: rgba(255,255,255,.025);
-    }
-
-    table.demo tbody th {
-      color: var(--text);
-      background: rgba(255,255,255,.02);
-    }
-
+    table.demo tbody tr:nth-child(even) { background: var(--table-stripe); }
+    table.demo tbody th { color: var(--text); }
     table.demo tfoot td {
-      background: rgba(16,185,129,.10);
+      background: color-mix(in srgb, var(--green) 10%, var(--surface));
       color: var(--green);
       font-weight: 700;
     }
 
+    .exercise-list { padding-left: 18px; }
+    .exercise-list strong { color: var(--text); }
     .checklist {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
       display: grid;
       gap: 10px;
     }
-
     .checklist li {
       position: relative;
       padding-left: 28px;
-      color: var(--text-soft);
     }
-
     .checklist li::before {
       content: '✔';
       position: absolute;
       left: 0;
       top: 0;
       color: var(--green);
-      font-weight: 700;
+      font-weight: 800;
     }
-
-    .exercise-list {
-      padding-left: 18px;
-    }
-
-    .exercise-list strong { color: var(--text); }
-
     .roteiro {
       margin-top: 18px;
       padding: 16px 18px;
       border-radius: 16px;
-      border: 1px dashed rgba(6,182,212,.30);
-      background: rgba(6,182,212,.08);
+      border: 1px dashed color-mix(in srgb, var(--cyan) 36%, var(--border));
+      background: color-mix(in srgb, var(--cyan) 8%, var(--surface));
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
-
     .roteiro-header {
       color: var(--cyan);
       font-weight: 700;
       margin-bottom: 8px;
     }
-
-    .roteiro-texto {
-      margin: 0;
-      color: var(--text-soft);
-    }
-
+    .roteiro-texto { margin: 0; }
     .footer-note {
       margin-top: 16px;
       color: var(--text-muted);
       font-size: .92rem;
     }
 
-    @media (max-width: 920px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-        order: 2;
-      }
-
-      .content {
-        order: 1;
-      }
+    @media (max-width: 720px) {
+      .topbar-inner, .shell { padding-left: 14px; padding-right: 14px; }
+      .hero-inner, .section { padding: 22px 18px; }
+      .hero h1 { max-width: none; }
+      .toolbar { justify-content: flex-end; }
     }
 
-    @media (max-width: 640px) {
-      .topbar-inner,
-      .layout {
-        padding-left: 16px;
-        padding-right: 16px;
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      html, body { background: #ffffff !important; }
+      body { color: #111827 !important; }
+      .topbar { position: static; backdrop-filter: none; background: transparent; border-bottom: none; }
+      .toolbar .btn { display: none !important; }
+      .shell { max-width: none; padding: 0; }
+      .hero, .section, .meta-card, .callout, .code-shell, .demo-wrap {
+        box-shadow: none !important;
+        background: #ffffff !important;
+        border-color: rgba(17,24,39,.14) !important;
+        color: #111827 !important;
       }
-
-      .hero-inner,
-      .section {
-        padding: 22px 18px;
+      .hero { border-radius: 0; }
+      .hero h1, .section h2, .section h3, .brand { color: #111827 !important; }
+      .hero p, .section p, .section li, .footer-note, .brand small, .meta-card strong, .pill { color: #374151 !important; }
+      .pill { background: #f3f4f6 !important; }
+      .code-shell { background: #111827 !important; }
+      .code-top { background: #1f2937 !important; }
+      pre { color: #f9fafb !important; }
+      table.demo thead th {
+        background: rgba(139,92,246,.12) !important;
+        color: #111827 !important;
       }
-
-      .hero h1 {
-        max-width: none;
+      table.demo tbody tr:nth-child(even) { background: #f9fafb !important; }
+      table.demo tfoot td {
+        background: rgba(16,185,129,.10) !important;
+        color: #065f46 !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <div class="brand">
-          ProfessorDash
-          <small>Programação Front-End</small>
-        </div>
-        <div class="top-actions">
-          <span class="pill">Aula estática</span>
-          <span class="pill">HTML + CSS</span>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        ProfessorDash
+        <small>Apostila estática • Programação Front-End</small>
+      </div>
+      <div class="toolbar">
+        <span class="pill">HTML estático</span>
+        <button class="btn" id="theme-toggle" type="button">Alternar tema</button>
+        <button class="btn" onclick="window.print()" type="button">Imprimir / PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Aula 01 • Estruturas visuais de dados</div>
+        <h1>Criação de <span class="accent">Tabelas</span><br>com HTML e CSS</h1>
+        <p>Organizar informações de forma clara é uma das habilidades mais importantes no desenvolvimento front-end. As tabelas HTML existem justamente para isso: exibir dados relacionados em linhas e colunas, da mesma forma que você vê em planilhas, relatórios, boletins ou cadastros de sistemas. Esta versão foi pensada como apostila: funciona bem na tela, imprime bem e pode ser usada em diferentes contextos.</p>
+        <div class="meta-grid">
+          <div class="meta-card"><strong>Disciplina</strong><span>Programação Front-End</span></div>
+          <div class="meta-card"><strong>Formato</strong><span>Apostila HTML estática</span></div>
+          <div class="meta-card"><strong>Tema</strong><span>Claro e escuro</span></div>
+          <div class="meta-card"><strong>Entrega final</strong><span>1 atividade prática</span></div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="sidebar-label">Nesta aula</div>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="#sec-1">O que é uma tabela</a></li>
-            <li><a href="#sec-2">Anatomia da tabela</a></li>
-            <li><a href="#sec-3">Linhas e colunas</a></li>
-            <li><a href="#sec-4">Atributos importantes</a></li>
-            <li><a href="#sec-5">CSS básico</a></li>
-            <li><a href="#sec-6">Atividade prática</a></li>
-            <li><a href="#sec-7">Fechamento</a></li>
-          </ul>
-        </nav>
-      </aside>
+    <section class="section" id="sec-1">
+      <h2>O que é uma tabela e quando usar</h2>
 
-      <main class="content">
-        <section class="hero">
-          <div class="hero-inner">
-            <div class="eyebrow">Aula 01 • Estruturas visuais de dados</div>
-            <h1>Criação de <span class="accent">Tabelas</span><br>com HTML e CSS</h1>
-            <p>Organizar informações de forma clara é uma das habilidades mais importantes no desenvolvimento front-end. As tabelas HTML existem justamente para isso: exibir dados relacionados em linhas e colunas, da mesma forma que você vê em planilhas, relatórios, boletins ou cadastros de sistemas.</p>
-            <div class="meta-grid">
-              <div class="meta-card"><strong>Disciplina</strong><span>Programação Front-End</span></div>
-              <div class="meta-card"><strong>Foco</strong><span>Estrutura, semântica e estilização</span></div>
-              <div class="meta-card"><strong>Tecnologias</strong><span>HTML e CSS</span></div>
-              <div class="meta-card"><strong>Entrega</strong><span>1 exercício prático final</span></div>
-            </div>
-          </div>
-        </section>
+      <div class="callout c-blue">
+        <div class="callout-icon">🧠</div>
+        <div class="callout-body">
+          <p class="callout-title">Tabela HTML</p>
+          <p class="callout-text">É uma estrutura que organiza dados em formato de grade — linhas e colunas — para facilitar a leitura e comparação de informações.</p>
+        </div>
+      </div>
 
-        <section class="section" id="sec-1">
-          <h2>O que é uma tabela e quando usar</h2>
+      <p>Tabelas são ideais para exibir dados estruturados como listas de alunos, produtos, notas, horários ou qualquer informação que tenha relação entre categorias. Quando o usuário precisa comparar valores e entender registros de forma organizada, a tabela continua sendo uma das melhores soluções visuais e semânticas.</p>
+      <p>O erro mais comum dos iniciantes é usar tabelas para criar layout de página. Isso era uma prática antiga da web, mas hoje é considerado má prática. Tabelas devem ser usadas apenas para dados tabulares. Para layout, o correto é usar Flexbox ou CSS Grid.</p>
 
-          <div class="callout c-blue">
-            <div class="callout-icon">🧠</div>
-            <div class="callout-body">
-              <p class="callout-title">Tabela HTML</p>
-              <p class="callout-text">É uma estrutura que organiza dados em formato de grade — linhas e colunas — para facilitar a leitura e comparação de informações.</p>
-            </div>
-          </div>
+      <div class="callout c-amber">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <p class="callout-title">Tabela ≠ Layout</p>
+          <p class="callout-text">Tabela organiza dados, não páginas. Usar tabela para layout prejudica acessibilidade, manutenção e semântica.</p>
+        </div>
+      </div>
+    </section>
 
-          <p>Tabelas são ideais para exibir dados estruturados como listas de alunos, produtos, notas, horários ou qualquer informação que tenha relação entre categorias. Quando o usuário precisa comparar dados lado a lado, a tabela continua sendo uma das melhores soluções da interface.</p>
-          <p>O erro mais comum dos iniciantes é usar tabelas para montar layout de página. Isso era uma prática antiga da web e hoje é considerado má prática. Tabelas devem ser usadas apenas para dados tabulares. Para layout, o caminho certo é CSS com Flexbox ou Grid.</p>
+    <section class="section" id="sec-2">
+      <h2>Anatomia da tabela — cada tag explicada</h2>
+      <p>A tabela HTML é formada por um conjunto de tags que trabalham juntas. Entender o papel de cada uma evita código confuso e ajuda a escrever interfaces mais claras.</p>
 
-          <div class="callout c-amber">
-            <div class="callout-icon">⚠️</div>
-            <div class="callout-body">
-              <p class="callout-title">Tabela ≠ Layout</p>
-              <p class="callout-text">Tabela organiza dados, não páginas. Usar tabela para layout prejudica acessibilidade, manutenção e semântica.</p>
-            </div>
-          </div>
-        </section>
+      <ul class="tags">
+        <li>&lt;table&gt; — contêiner principal</li>
+        <li>&lt;thead&gt; — cabeçalho</li>
+        <li>&lt;tbody&gt; — corpo da tabela</li>
+        <li>&lt;tfoot&gt; — rodapé</li>
+        <li>&lt;tr&gt; — linha</li>
+        <li>&lt;th&gt; — cabeçalho</li>
+        <li>&lt;td&gt; — dado</li>
+      </ul>
 
-        <section class="section" id="sec-2">
-          <h2>Anatomia da tabela — cada tag explicada</h2>
-          <p>A tabela HTML é formada por um conjunto de tags que trabalham juntas. Entender o papel de cada uma deixa o código mais limpo e melhora a estrutura semântica da página.</p>
+      <h3>&lt;table&gt;</h3>
+      <p>É o contêiner principal. Tudo que pertence à tabela fica dentro dele.</p>
 
-          <ul class="tags">
-            <li>&lt;table&gt; — contêiner principal</li>
-            <li>&lt;thead&gt; — cabeçalho</li>
-            <li>&lt;tbody&gt; — corpo da tabela</li>
-            <li>&lt;tfoot&gt; — rodapé</li>
-            <li>&lt;tr&gt; — linha</li>
-            <li>&lt;th&gt; — cabeçalho</li>
-            <li>&lt;td&gt; — dado</li>
-          </ul>
+      <h3>&lt;thead&gt;</h3>
+      <p>Define o cabeçalho da tabela. Agrupa as linhas que apresentam os títulos das colunas e melhora a semântica do documento.</p>
 
-          <h3>&lt;table&gt;</h3>
-          <p>É o contêiner principal. Tudo que pertence à tabela fica dentro dele.</p>
+      <h3>&lt;tbody&gt;</h3>
+      <p>Agrupa o corpo da tabela, onde ficam os dados reais. Isso separa semanticamente o cabeçalho da parte principal do conteúdo.</p>
 
-          <h3>&lt;thead&gt;</h3>
-          <p>Define o cabeçalho da tabela. Agrupa os títulos das colunas e ajuda o navegador e leitores de tela a entenderem a estrutura.</p>
+      <h3>&lt;tfoot&gt;</h3>
+      <p>Define o rodapé da tabela. É útil para totais, médias, observações finais ou informações consolidadas.</p>
 
-          <h3>&lt;tbody&gt;</h3>
-          <p>Agrupa o corpo da tabela, onde ficam os dados reais. Isso separa semanticamente a área de títulos da área de conteúdo.</p>
+      <h3>&lt;tr&gt;</h3>
+      <p>Representa uma linha inteira da tabela. Cada linha reúne células do mesmo registro.</p>
 
-          <h3>&lt;tfoot&gt;</h3>
-          <p>Define o rodapé da tabela. É útil para totais, médias, observações ou informações consolidadas.</p>
+      <h3>&lt;th&gt;</h3>
+      <p>É a célula de cabeçalho. Pode identificar título de coluna ou de linha. Além do visual, traz significado semântico para a estrutura.</p>
 
-          <h3>&lt;tr&gt;</h3>
-          <p>Representa uma linha inteira da tabela. Cada linha reúne células do mesmo registro.</p>
+      <h3>&lt;td&gt;</h3>
+      <p>É a célula de dado comum. É nela que ficam os valores efetivamente mostrados ao usuário.</p>
 
-          <h3>&lt;th&gt;</h3>
-          <p>É a célula de cabeçalho. Pode indicar título de coluna ou de linha. Além do visual, ela carrega significado semântico.</p>
-
-          <h3>&lt;td&gt;</h3>
-          <p>É a célula de dado comum. É nela que ficam os valores efetivos mostrados para o usuário.</p>
-
-          <div class="code-shell">
-            <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
-            <pre><code>&lt;table&gt;
+      <div class="code-shell">
+        <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
+        <pre><code>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Nome&lt;/th&gt;
@@ -658,71 +557,71 @@
     &lt;/tr&gt;
   &lt;/tfoot&gt;
 &lt;/table&gt;</code></pre>
-          </div>
+      </div>
 
-          <div class="demo-wrap">
-            <table class="demo" aria-label="Exemplo de tabela de notas">
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>Nota</th>
-                  <th>Situação</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ana Paula</td>
-                  <td>8,5</td>
-                  <td>Aprovada</td>
-                </tr>
-                <tr>
-                  <td>Carlos Silva</td>
-                  <td>6,0</td>
-                  <td>Aprovado</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3">Total de alunos: 2</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-        </section>
+      <div class="demo-wrap">
+        <table class="demo" aria-label="Exemplo de tabela de notas">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Nota</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana Paula</td>
+              <td>8,5</td>
+              <td>Aprovada</td>
+            </tr>
+            <tr>
+              <td>Carlos Silva</td>
+              <td>6,0</td>
+              <td>Aprovado</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total de alunos: 2</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
 
-        <section class="section" id="sec-3">
-          <h2>Linhas e colunas — a dúvida mais comum</h2>
-          <p>Uma <strong>linha</strong> é o conjunto horizontal de células que representa um registro completo. Uma <strong>coluna</strong> é o agrupamento vertical de células da mesma categoria de informação.</p>
-          <p>Em uma tabela de boletim, por exemplo, cada linha pode representar uma disciplina. Já as colunas representam categorias fixas que se repetem em todas as linhas, como 1º bimestre, 2º bimestre, 3º bimestre, 4º bimestre e média.</p>
-          <p>O melhor jeito de pensar uma tabela é definir primeiro quais são as colunas. Depois disso, cada nova linha apenas preenche esse padrão. Quando essa lógica é ignorada, a tabela vira um agrupamento confuso de dados sem consistência.</p>
+    <section class="section" id="sec-3">
+      <h2>Linhas e colunas — a dúvida mais comum</h2>
+      <p>Uma <strong>linha</strong> é o conjunto horizontal de células que representa um registro completo. Uma <strong>coluna</strong> é o agrupamento vertical de células da mesma categoria de informação.</p>
+      <p>Em uma tabela de boletim, por exemplo, cada linha pode representar uma disciplina. Já as colunas representam categorias fixas que se repetem em todas as linhas, como 1º bimestre, 2º bimestre, 3º bimestre, 4º bimestre e média.</p>
+      <p>O melhor jeito de pensar uma tabela é definir primeiro quais são as colunas. Depois disso, cada nova linha apenas preenche esse padrão. Quando essa lógica é ignorada, a tabela vira uma mistura de dados sem organização.</p>
 
-          <div class="callout c-green">
-            <div class="callout-icon">📌</div>
-            <div class="callout-body">
-              <p class="callout-title">Regra prática</p>
-              <p class="callout-text">Se o cabeçalho tem 6 colunas, o restante da tabela precisa seguir esse mesmo padrão, salvo casos específicos de mesclagem com <code>colspan</code> ou <code>rowspan</code>.</p>
-            </div>
-          </div>
-        </section>
+      <div class="callout c-green">
+        <div class="callout-icon">📌</div>
+        <div class="callout-body">
+          <p class="callout-title">Regra prática</p>
+          <p class="callout-text">Se o cabeçalho tem 6 colunas, o restante da tabela precisa seguir esse mesmo padrão, salvo casos específicos de mesclagem com <code>colspan</code> ou <code>rowspan</code>.</p>
+        </div>
+      </div>
+    </section>
 
-        <section class="section" id="sec-4">
-          <h2>Atributos importantes</h2>
+    <section class="section" id="sec-4">
+      <h2>Atributos importantes</h2>
 
-          <div class="callout c-violet">
-            <div class="callout-icon">💡</div>
-            <div class="callout-body">
-              <p class="callout-title">Mesclando células</p>
-              <p class="callout-text">Assim como em uma planilha, no HTML isso é feito com os atributos <code>colspan</code> e <code>rowspan</code>.</p>
-            </div>
-          </div>
+      <div class="callout c-violet">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <p class="callout-title">Mesclando células</p>
+          <p class="callout-text">Assim como em uma planilha, no HTML isso é feito com os atributos <code>colspan</code> e <code>rowspan</code>.</p>
+        </div>
+      </div>
 
-          <p><strong>colspan="N"</strong> faz uma célula ocupar N colunas horizontalmente.</p>
-          <p><strong>rowspan="N"</strong> faz uma célula ocupar N linhas verticalmente.</p>
-          <p><strong>scope</strong> é usado em <code>&lt;th&gt;</code> para indicar se o cabeçalho pertence a uma coluna (<code>scope="col"</code>) ou a uma linha (<code>scope="row"</code>). Isso melhora bastante a acessibilidade.</p>
+      <p><strong>colspan="N"</strong> faz uma célula ocupar N colunas horizontalmente.</p>
+      <p><strong>rowspan="N"</strong> faz uma célula ocupar N linhas verticalmente.</p>
+      <p><strong>scope</strong> é usado em <code>&lt;th&gt;</code> para indicar se o cabeçalho pertence a uma coluna (<code>scope="col"</code>) ou a uma linha (<code>scope="row"</code>). Isso melhora bastante a acessibilidade.</p>
 
-          <div class="code-shell">
-            <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
-            <pre><code>&lt;table&gt;
+      <div class="code-shell">
+        <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
+        <pre><code>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th scope="col"&gt;Disciplina&lt;/th&gt;
@@ -743,17 +642,17 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-          </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="section" id="sec-5">
-          <h2>CSS básico para uma tabela bem apresentada</h2>
-          <p>No HTML, a estrutura precisa estar correta. No CSS, o objetivo é melhorar a leitura. Não precisa exagerar nos efeitos: o ideal é resolver legibilidade com poucas regras e um resultado limpo.</p>
-          <p>As propriedades mais úteis para começar são <code>border</code>, <code>padding</code>, <code>background-color</code> e <code>border-collapse: collapse;</code>. Também vale usar alternância de cor nas linhas para facilitar a leitura.</p>
+    <section class="section" id="sec-5">
+      <h2>CSS básico para uma tabela bem apresentada</h2>
+      <p>No HTML, a estrutura precisa estar correta. No CSS, o objetivo é melhorar a leitura. Não é necessário exagerar: o ideal é resolver legibilidade com poucas regras e um resultado limpo.</p>
+      <p>As propriedades mais úteis para começar são <code>border</code>, <code>padding</code>, <code>background-color</code> e <code>border-collapse: collapse;</code>. Também vale usar alternância de cor nas linhas para facilitar a leitura.</p>
 
-          <div class="code-shell">
-            <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
-            <pre><code>table {
+      <div class="code-shell">
+        <div class="code-top"><span class="dot c1"></span><span class="dot c2"></span><span class="dot c3"></span></div>
+        <pre><code>table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -771,55 +670,78 @@ thead {
 tbody tr:nth-child(even) {
   background-color: #1a1a1a;
 }</code></pre>
-          </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="section" id="sec-6">
-          <h2>Atividade prática — Avaliativa (1,0 ponto)</h2>
-          <p>Agora é hora de aplicar o conteúdo em uma situação próxima da realidade de sistemas escolares.</p>
+    <section class="section" id="sec-6">
+      <h2>Atividade prática — Avaliativa (1,0 ponto)</h2>
+      <p>Agora é hora de aplicar o conteúdo em uma situação próxima da realidade de sistemas escolares.</p>
 
-          <ol class="exercise-list">
-            <li>Crie uma página HTML completa com uma tabela de <strong>boletim escolar</strong>.</li>
-            <li>A tabela deve ter pelo menos <strong>4 disciplinas</strong> nas linhas.</li>
-            <li>As colunas devem ser: <strong>Disciplina</strong>, <strong>1º Bimestre</strong>, <strong>2º Bimestre</strong>, <strong>3º Bimestre</strong>, <strong>4º Bimestre</strong> e <strong>Média</strong>.</li>
-            <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;tfoot&gt;</code> corretamente.</li>
-            <li>O <code>&lt;tfoot&gt;</code> deve conter uma linha com <code>colspan</code> exibindo o texto <strong>Ano letivo: 2025</strong>.</li>
-            <li>Use <code>&lt;th&gt;</code> nos cabeçalhos e <code>scope</code> nas células de título das linhas.</li>
-            <li>Aplique pelo menos um estilo CSS básico na tabela, como borda, fundo no cabeçalho ou alternância de cores nas linhas.</li>
-          </ol>
+      <ol class="exercise-list">
+        <li>Crie uma página HTML completa com uma tabela de <strong>boletim escolar</strong>.</li>
+        <li>A tabela deve ter pelo menos <strong>4 disciplinas</strong> nas linhas.</li>
+        <li>As colunas devem ser: <strong>Disciplina</strong>, <strong>1º Bimestre</strong>, <strong>2º Bimestre</strong>, <strong>3º Bimestre</strong>, <strong>4º Bimestre</strong> e <strong>Média</strong>.</li>
+        <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;tfoot&gt;</code> corretamente.</li>
+        <li>O <code>&lt;tfoot&gt;</code> deve conter uma linha com <code>colspan</code> exibindo o texto <strong>Ano letivo: 2025</strong>.</li>
+        <li>Use <code>&lt;th&gt;</code> nos cabeçalhos e <code>scope</code> nas células de título das linhas.</li>
+        <li>Aplique pelo menos um estilo CSS básico na tabela, como borda, fundo no cabeçalho ou alternância de cores nas linhas.</li>
+      </ol>
 
-          <div class="callout c-green">
-            <div class="callout-icon">📤</div>
-            <div class="callout-body">
-              <p class="callout-title">Entrega</p>
-              <p class="callout-text">Enviar o arquivo <strong>index.html</strong> pelo Classroom até a data definida pelo professor. O arquivo deve abrir corretamente no navegador, sem erros visíveis.</p>
-            </div>
-          </div>
+      <div class="callout c-green">
+        <div class="callout-icon">📤</div>
+        <div class="callout-body">
+          <p class="callout-title">Entrega</p>
+          <p class="callout-text">Enviar o arquivo <strong>index.html</strong> pelo Classroom até a data definida pelo professor. O arquivo deve abrir corretamente no navegador, sem erros visíveis.</p>
+        </div>
+      </div>
 
-          <div class="roteiro">
-            <div class="roteiro-header">🎤 Roteiro do professor</div>
-            <p class="roteiro-texto">Pessoal, a atividade vale 1,0 ponto e é individual. Vocês vão criar um boletim escolar em HTML — algo que qualquer sistema de escola real precisa mostrar. Antes de entregar, abram o arquivo no navegador e verifiquem se a tabela aparece corretamente, se o <code>colspan</code> do rodapé está funcionando e se há pelo menos um estilo CSS aplicado.</p>
-          </div>
-        </section>
+      <div class="roteiro">
+        <div class="roteiro-header">🎤 Roteiro do professor</div>
+        <p class="roteiro-texto">Pessoal, a atividade vale 1,0 ponto e é individual. Vocês vão criar um boletim escolar em HTML — algo que qualquer sistema de escola real precisa mostrar. Antes de entregar, abram o arquivo no navegador e verifiquem se a tabela aparece corretamente, se o <code>colspan</code> do rodapé está funcionando e se há pelo menos um estilo CSS aplicado.</p>
+      </div>
+    </section>
 
-        <section class="section" id="sec-7">
-          <h2>Fechamento</h2>
-          <div class="callout c-green">
-            <div class="callout-icon">📋</div>
-            <div class="callout-body">
-              <p class="callout-title">Resumo da aula</p>
-              <ul class="checklist">
-                <li>Tabelas organizam dados tabulares — nunca layouts de página</li>
-                <li>As tags <code>thead</code>, <code>tbody</code> e <code>tfoot</code> dão semântica e organização à estrutura</li>
-                <li><code>colspan</code> e <code>rowspan</code> permitem mesclar células como em planilhas</li>
-                <li>O atributo <code>scope</code> melhora a acessibilidade da tabela</li>
-              </ul>
-            </div>
-          </div>
-          <p class="footer-note">Versão estática alinhada ao visual real do ProfessorDash: dark theme, tipografia Geist, superfícies escuras, contraste alto e paleta principal do sistema.</p>
-        </section>
-      </main>
-    </div>
-  </div>
+    <section class="section" id="sec-7">
+      <h2>Fechamento</h2>
+      <div class="callout c-green">
+        <div class="callout-icon">📋</div>
+        <div class="callout-body">
+          <p class="callout-title">Resumo da aula</p>
+          <ul class="checklist">
+            <li>Tabelas organizam dados tabulares — nunca layouts de página</li>
+            <li>As tags <code>thead</code>, <code>tbody</code> e <code>tfoot</code> dão semântica e organização à estrutura</li>
+            <li><code>colspan</code> e <code>rowspan</code> permitem mesclar células como em planilhas</li>
+            <li>O atributo <code>scope</code> melhora a acessibilidade da tabela</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Versão de apostila estática com suporte a tema claro/escuro, impressão em A4 e linguagem visual alinhada ao ProfessorDash.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      const stored = localStorage.getItem('apostila-theme');
+      const initial = stored || root.getAttribute('data-theme') || 'dark';
+      root.setAttribute('data-theme', initial);
+
+      function syncLabel() {
+        btn.textContent = root.getAttribute('data-theme') === 'dark'
+          ? 'Tema claro'
+          : 'Tema escuro';
+      }
+
+      btn.addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('apostila-theme', next);
+        syncLabel();
+      });
+
+      syncLabel();
+    })();
+  </script>
 </body>
 </html>
