@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aula 01 — Criação de Tabelas com HTML e CSS</title>
+  <style>
+    :root {
+      --bg: #f3ede3;
+      --surface: #fffdfa;
+      --surface-2: #f8f2e8;
+      --text: #202634;
+      --muted: #566173;
+      --border: rgba(37, 46, 61, 0.12);
+      --border-strong: rgba(37, 46, 61, 0.18);
+      --primary: #8c5c23;
+      --blue: #395b7a;
+      --green: #2f6d55;
+      --amber: #8d6223;
+      --violet: #6e4d8f;
+      --radius: 14px;
+      --radius-lg: 18px;
+      --shadow: 0 10px 30px rgba(32, 38, 52, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    code, pre {
+      font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+    }
+
+    .book {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+    }
+
+    .cover {
+      background: linear-gradient(180deg, rgba(255,253,250,0.98), rgba(248,242,232,0.96));
+      border: 1px solid var(--border-strong);
+      border-top: 5px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 34px 32px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      right: -32px;
+      top: -32px;
+      background: radial-gradient(circle, rgba(140,92,35,0.10), transparent 68%);
+      pointer-events: none;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .cover h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    }
+
+    .cover h1 span { color: var(--primary); }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 66ch;
+      margin: 0 0 20px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .meta-card {
+      background: rgba(255,255,255,0.58);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      line-height: 1.15;
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 1.16rem;
+      margin: 24px 0 10px;
+      color: var(--text);
+    }
+
+    p { margin: 0 0 14px; }
+
+    ul, ol {
+      margin: 0 0 16px 22px;
+      padding: 0;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: start;
+      border: 1px solid var(--border);
+      border-left-width: 5px;
+      border-radius: 12px;
+      padding: 16px 16px 16px 14px;
+      margin: 18px 0;
+      background: var(--surface-2);
+    }
+
+    .callout-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      font-size: 1.2rem;
+    }
+
+    .callout-title {
+      margin: 0 0 4px;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .callout-text,
+    .callout-body p:last-child {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .c-blue { border-left-color: var(--blue); }
+    .c-blue .callout-title { color: var(--blue); }
+    .c-amber { border-left-color: var(--amber); }
+    .c-amber .callout-title { color: var(--amber); }
+    .c-violet { border-left-color: var(--violet); }
+    .c-violet .callout-title { color: var(--violet); }
+    .c-green { border-left-color: var(--green); }
+    .c-green .callout-title { color: var(--green); }
+
+    .code-block {
+      background: #1f2430;
+      color: #edf2f7;
+      border-radius: 14px;
+      padding: 18px;
+      overflow-x: auto;
+      margin: 18px 0;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .code-block code { font-size: 0.95rem; }
+
+    .demo-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    table.demo {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    table.demo th,
+    table.demo td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    table.demo thead th {
+      background: #243244;
+      color: white;
+    }
+
+    table.demo tbody tr:nth-child(even) {
+      background: #faf6f0;
+    }
+
+    table.demo tfoot td {
+      background: #efe6d7;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .tag-list {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      margin: 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(37,46,61,0.06);
+      color: var(--muted);
+      border: 1px solid rgba(37,46,61,0.08);
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .checklist li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .roteiro {
+      margin-top: 18px;
+      border-radius: 14px;
+      border: 1px dashed rgba(57,91,122,0.35);
+      background: rgba(57,91,122,0.06);
+      padding: 16px 18px;
+    }
+
+    .roteiro-header {
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .roteiro-texto {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media print {
+      body { background: white; }
+      .book { max-width: none; padding: 0; }
+      .cover, .section-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="book">
+    <section class="cover">
+      <div class="kicker">Programação Front-End • Aula estática</div>
+      <h1>Criação de <span>Tabelas</span><br>com HTML e CSS</h1>
+      <p class="lead">Organizar informações de forma clara é uma das habilidades mais importantes no desenvolvimento front-end. Tabelas HTML existem para isso: exibir dados relacionados em linhas e colunas, da mesma forma que vemos em planilhas, boletins, relatórios e sistemas administrativos.</p>
+      <div class="meta">
+        <div class="meta-card">
+          <strong>Disciplina</strong>
+          Programação Front-End
+        </div>
+        <div class="meta-card">
+          <strong>Tema</strong>
+          Estrutura de tabelas, cabeçalhos e atributos semânticos
+        </div>
+        <div class="meta-card">
+          <strong>Tecnologias</strong>
+          HTML e CSS
+        </div>
+        <div class="meta-card">
+          <strong>Entrega final</strong>
+          1 exercício prático
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>O que é uma tabela e quando usar</h2>
+
+      <div class="callout c-blue">
+        <div class="callout-icon">🧠</div>
+        <div class="callout-body">
+          <p class="callout-title">Tabela HTML</p>
+          <p class="callout-text">É uma estrutura que organiza dados em formato de grade — linhas e colunas — para facilitar a leitura e a comparação de informações.</p>
+        </div>
+      </div>
+
+      <p>Tabelas são ideais para exibir dados estruturados como listas de alunos, produtos, notas, horários, resultados ou qualquer informação que tenha relação entre categorias fixas. Em outras palavras: quando o usuário precisa comparar valores, identificar padrões e entender registros de forma organizada, a tabela costuma ser uma solução excelente.</p>
+      <p>O erro mais comum dos iniciantes é usar tabela para criar layout de página. Isso já foi prática antiga da web, mas hoje é considerado má prática. Layout deve ser resolvido com CSS moderno, especialmente com Flexbox e Grid. Tabela deve ser usada apenas para dados tabulares.</p>
+
+      <div class="callout c-amber">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <p class="callout-title">Tabela ≠ Layout</p>
+          <p class="callout-text">Tabelas organizam dados, não páginas. Para layout, use Flexbox ou Grid. Usar tabela como estrutura da tela prejudica acessibilidade, manutenção e semântica.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Anatomia da tabela — cada tag explicada</h2>
+      <p>A tabela HTML é formada por um conjunto de tags que trabalham juntas. Entender o papel de cada uma evita código confuso e facilita a leitura da estrutura.</p>
+
+      <ul class="tag-list">
+        <li>&lt;table&gt; — contêiner principal</li>
+        <li>&lt;thead&gt; — cabeçalho</li>
+        <li>&lt;tbody&gt; — corpo da tabela</li>
+        <li>&lt;tfoot&gt; — rodapé</li>
+        <li>&lt;tr&gt; — linha</li>
+        <li>&lt;th&gt; — cabeçalho de linha ou coluna</li>
+        <li>&lt;td&gt; — dado comum</li>
+      </ul>
+
+      <h3>&lt;table&gt;</h3>
+      <p>É o contêiner principal. Tudo que pertence à tabela fica dentro dele.</p>
+
+      <h3>&lt;thead&gt;</h3>
+      <p>Define o cabeçalho da tabela. Agrupa as linhas de título das colunas e melhora a semântica do documento.</p>
+
+      <h3>&lt;tbody&gt;</h3>
+      <p>Agrupa o corpo da tabela, onde ficam os dados reais. Ajuda a separar visualmente e semanticamente o cabeçalho do conteúdo.</p>
+
+      <h3>&lt;tfoot&gt;</h3>
+      <p>Define o rodapé da tabela. É útil para totais, médias, observações finais ou informações consolidadas.</p>
+
+      <h3>&lt;tr&gt;</h3>
+      <p>Representa uma linha inteira da tabela. Cada linha reúne células que pertencem ao mesmo registro.</p>
+
+      <h3>&lt;th&gt;</h3>
+      <p>É a célula de cabeçalho. Costuma aparecer em negrito por padrão, mas o mais importante é seu valor semântico: ela identifica títulos de colunas ou linhas.</p>
+
+      <h3>&lt;td&gt;</h3>
+      <p>É a célula de dado comum. É nela que ficam os valores reais exibidos para o usuário.</p>
+
+      <div class="code-block"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nome&lt;/th&gt;
+      &lt;th&gt;Nota&lt;/th&gt;
+      &lt;th&gt;Situação&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana Paula&lt;/td&gt;
+      &lt;td&gt;8,5&lt;/td&gt;
+      &lt;td&gt;Aprovada&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Carlos Silva&lt;/td&gt;
+      &lt;td&gt;6,0&lt;/td&gt;
+      &lt;td&gt;Aprovado&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;Total de alunos: 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></div>
+
+      <div class="demo-table-wrap">
+        <table class="demo" aria-label="Exemplo de tabela de notas">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Nota</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana Paula</td>
+              <td>8,5</td>
+              <td>Aprovada</td>
+            </tr>
+            <tr>
+              <td>Carlos Silva</td>
+              <td>6,0</td>
+              <td>Aprovado</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total de alunos: 2</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Linhas e colunas — o ponto que mais gera dúvida</h2>
+      <p>Uma <strong>linha</strong> é o conjunto horizontal de células que representa um registro completo. Uma <strong>coluna</strong> é o agrupamento vertical de células da mesma categoria de informação.</p>
+      <p>Em uma tabela de boletim, por exemplo, cada linha pode representar uma disciplina. Já as colunas representam categorias que se repetem para todas as disciplinas, como 1º bimestre, 2º bimestre, 3º bimestre, 4º bimestre e média.</p>
+      <p>O segredo para não se perder é pensar primeiro nas colunas. Quando as colunas estão bem definidas, as linhas passam a ser apenas o preenchimento ordenado daquele padrão. Quando isso não é feito, a tabela vira uma mistura de dados sem organização lógica.</p>
+
+      <div class="callout c-green">
+        <div class="callout-icon">📌</div>
+        <div class="callout-body">
+          <p class="callout-title">Regra prática</p>
+          <p class="callout-text">Se o cabeçalho tem 6 colunas, o corpo da tabela precisa seguir esse mesmo padrão, salvo casos específicos de mesclagem com <code>colspan</code> ou <code>rowspan</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Atributos importantes</h2>
+
+      <div class="callout c-violet">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <p class="callout-title">Mesclando células</p>
+          <p class="callout-text">Assim como em uma planilha, no HTML podemos unir células com <code>colspan</code> e <code>rowspan</code>.</p>
+        </div>
+      </div>
+
+      <p><strong>colspan="N"</strong> faz uma célula ocupar N colunas horizontalmente.</p>
+      <p><strong>rowspan="N"</strong> faz uma célula ocupar N linhas verticalmente.</p>
+      <p><strong>scope</strong> é usado em <code>&lt;th&gt;</code> para indicar se o cabeçalho pertence a uma coluna (<code>scope="col"</code>) ou a uma linha (<code>scope="row"</code>). Isso melhora bastante a acessibilidade, principalmente para leitores de tela.</p>
+
+      <div class="code-block"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Disciplina&lt;/th&gt;
+      &lt;th scope="col"&gt;1º Bimestre&lt;/th&gt;
+      &lt;th scope="col"&gt;2º Bimestre&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Programação&lt;/th&gt;
+      &lt;td&gt;7,0&lt;/td&gt;
+      &lt;td&gt;8,5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Banco de Dados&lt;/th&gt;
+      &lt;td&gt;9,0&lt;/td&gt;
+      &lt;td&gt;6,5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></div>
+    </section>
+
+    <section class="section-card">
+      <h2>CSS básico para uma tabela bem apresentada</h2>
+      <p>No HTML, a estrutura precisa estar correta. No CSS, o objetivo é melhorar a leitura. Não é necessário fazer algo visualmente exagerado. O ideal é resolver legibilidade com poucas regras e um resultado limpo.</p>
+      <p>As propriedades mais úteis para começar são:</p>
+      <ul>
+        <li><strong>border</strong> para delimitar as células</li>
+        <li><strong>padding</strong> para dar espaço interno ao conteúdo</li>
+        <li><strong>background-color</strong> para destacar o cabeçalho</li>
+        <li><strong>border-collapse: collapse;</strong> para evitar bordas duplicadas</li>
+        <li><strong>nth-child(even)</strong> para alternar cores de linha e melhorar leitura</li>
+      </ul>
+
+      <div class="code-block"><code>table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+thead {
+  background-color: #243244;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}</code></div>
+    </section>
+
+    <section class="section-card">
+      <h2>Atividade prática — Avaliativa (1,0 ponto)</h2>
+      <p>Agora é hora de aplicar o conteúdo em uma situação muito próxima da realidade de sistemas escolares.</p>
+
+      <ol>
+        <li>Crie uma página HTML completa com uma tabela de <strong>boletim escolar</strong>.</li>
+        <li>A tabela deve ter pelo menos <strong>4 disciplinas</strong> nas linhas.</li>
+        <li>As colunas devem ser: <strong>Disciplina</strong>, <strong>1º Bimestre</strong>, <strong>2º Bimestre</strong>, <strong>3º Bimestre</strong>, <strong>4º Bimestre</strong> e <strong>Média</strong>.</li>
+        <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e <code>&lt;tfoot&gt;</code> corretamente.</li>
+        <li>O <code>&lt;tfoot&gt;</code> deve conter uma linha com <code>colspan</code> exibindo o texto <strong>Ano letivo: 2025</strong>.</li>
+        <li>Use <code>&lt;th&gt;</code> nos cabeçalhos e <code>scope</code> nas células de título das linhas.</li>
+        <li>Aplique pelo menos um estilo CSS básico na tabela, como borda, fundo no cabeçalho ou alternância de cores nas linhas.</li>
+      </ol>
+
+      <div class="callout c-green">
+        <div class="callout-icon">📤</div>
+        <div class="callout-body">
+          <p class="callout-title">Entrega</p>
+          <p class="callout-text">Enviar o arquivo <strong>index.html</strong> pelo Classroom até a data definida pelo professor. O arquivo deve abrir corretamente no navegador, sem erros visíveis e com a tabela bem estruturada.</p>
+        </div>
+      </div>
+
+      <div class="roteiro">
+        <div class="roteiro-header">🎤 Roteiro do professor</div>
+        <p class="roteiro-texto">Pessoal, a atividade vale 1,0 ponto e é individual. Vocês vão criar um boletim escolar em HTML — algo que qualquer sistema de escola real precisa mostrar. Antes de entregar, abram o arquivo no navegador e verifiquem se a tabela está aparecendo corretamente, se o colspan do rodapé está funcionando e se há pelo menos um estilo CSS aplicado.</p>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Fechamento</h2>
+      <div class="callout c-green">
+        <div class="callout-icon">📋</div>
+        <div class="callout-body">
+          <p class="callout-title">Resumo da aula</p>
+          <ul class="checklist">
+            <li>Tabelas organizam dados tabulares — nunca layouts de página</li>
+            <li>As tags <code>thead</code>, <code>tbody</code> e <code>tfoot</code> dão semântica e organização à estrutura</li>
+            <li><code>colspan</code> e <code>rowspan</code> permitem mesclar células como em planilhas</li>
+            <li>O atributo <code>scope</code> melhora a acessibilidade da tabela</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">Esta versão foi refatorada com base na explicação enviada pelo professor, mantendo o foco em HTML/CSS puro e encerrando com apenas uma atividade prática ao final.</p>
+    </section>
+  </main>
+</body>
+</html>
