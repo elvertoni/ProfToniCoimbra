@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  APOSTILA · PROFESSORDASH — TEMPLATE
+  ==========================================================================
+  Este arquivo é um esqueleto para novas apostilas. Alinhado à identidade
+  visual de aulas.tonicoimbra.com (Geist + tokens #10b981/#8b5cf6/#06b6d4,
+  tema escuro, painéis rounded-[1.35rem]).
+
+  Como usar
+  ---------
+  1. Duplicar este arquivo: `aula-02-nome-da-aula.html`.
+  2. Preencher os blocos marcados com <!-- [EDIT] -->.
+  3. Conteúdo estruturado por <section class="section">. Copie os blocos
+     de exemplo abaixo (hero, meta, callout, código, tabela demo, tags,
+     checklist, roteiro) e reaproveite.
+
+  Blocos prontos
+  --------------
+  .hero                 → capa da apostila
+  .section              → seção principal (H2)
+  .callout + variants   → .c-primary .c-secondary .c-tertiary .c-warning .c-error
+  .code-shell           → bloco de código estilizado
+  .demo-wrap            → demonstração de UI (tabela, formulário, etc.)
+  .roteiro              → fala guiada do professor
+  .checklist            → lista com check verde
+  .tags                 → pílulas para tags de conteúdo
+
+  Impressão
+  ---------
+  O botão "Salvar PDF" usa window.print(). O CSS @media print reduz efeitos
+  pesados e ajusta cores para tinta economizada em A4.
+  ==========================================================================
+-->
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Apostila · Prof Toni Coimbra</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="apostila.css">
+</head>
+<body class="apostila-shell">
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="favicon.svg" alt="" width="40" height="40">
+        </span>
+        <span class="brand-text">
+          <strong>Prof Toni Coimbra</strong>
+          <small>Apostila · <!-- [EDIT] disciplina --></small>
+        </span>
+      </a>
+      <nav class="toolbar">
+        <a class="pill pill-ghost" href="#sumario">Sumário</a>
+        <button class="btn btn-secondary" id="theme-toggle" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span id="theme-label">Tema claro</span>
+        </button>
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          Salvar PDF
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          Aula 00 · <!-- [EDIT] tema curto -->
+        </div>
+        <h1 class="hero-title">
+          <!-- [EDIT] Título da <span class="accent">apostila</span> -->
+        </h1>
+        <p class="hero-lead">
+          <!-- [EDIT] Parágrafo de abertura: o que o aluno vai aprender e em que contexto. -->
+        </p>
+
+        <dl class="meta-grid">
+          <div class="meta-card">
+            <dt>Disciplina</dt>
+            <dd><!-- [EDIT] --></dd>
+          </div>
+          <div class="meta-card">
+            <dt>Ano letivo</dt>
+            <dd><!-- [EDIT] --></dd>
+          </div>
+          <div class="meta-card">
+            <dt>Duração estimada</dt>
+            <dd><!-- [EDIT] 45 min --></dd>
+          </div>
+          <div class="meta-card">
+            <dt>Entrega</dt>
+            <dd><!-- [EDIT] 1 atividade prática --></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= SUMÁRIO ================= -->
+    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
+      <p class="sumario-title">Nesta aula</p>
+      <ol class="sumario-list">
+        <li><a href="#sec-1"><span class="sumario-num">01</span><span><!-- [EDIT] Título da seção --></span></a></li>
+        <li><a href="#sec-2"><span class="sumario-num">02</span><span><!-- [EDIT] --></span></a></li>
+        <li><a href="#sec-3"><span class="sumario-num">03</span><span><!-- [EDIT] --></span></a></li>
+      </ol>
+    </nav>
+
+    <!-- ================= SEÇÕES ================= -->
+    <section class="section" id="sec-1">
+      <header class="section-head">
+        <span class="section-index">Seção 01</span>
+        <h2><!-- [EDIT] Título --></h2>
+      </header>
+      <p><!-- [EDIT] parágrafo de abertura. --></p>
+
+      <!-- Callout primary -->
+      <aside class="callout c-primary">
+        <div class="callout-mark" aria-hidden="true">✓</div>
+        <div class="callout-body">
+          <p class="callout-title">Definição</p>
+          <p class="callout-text"><!-- [EDIT] --></p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ================= REFERÊNCIA RÁPIDA DE BLOCOS =================
+         Copie e cole os blocos abaixo onde precisar, dentro de <section>.
+
+    <h3>Subtítulo</h3>
+    <ul><li>item</li></ul>
+
+    <ul class="tags">
+      <li>tag-1</li><li>tag-2</li>
+    </ul>
+
+    <aside class="callout c-secondary">
+      <div class="callout-mark">i</div>
+      <div class="callout-body">
+        <p class="callout-title">Título</p>
+        <p class="callout-text">Texto</p>
+      </div>
+    </aside>
+
+    <div class="code-shell">
+      <header class="code-top">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="code-lang">html</span>
+      </header>
+      <pre><code>... código ...</code></pre>
+    </div>
+
+    <div class="demo-wrap">
+      <div class="demo-label">Demonstração</div>
+      <div class="demo-body">
+        ... HTML renderizado ...
+      </div>
+    </div>
+
+    <aside class="roteiro">
+      <header class="roteiro-head">
+        <span class="roteiro-chip">Roteiro do professor</span>
+      </header>
+      <p>Fala guiada…</p>
+    </aside>
+
+    <ul class="checklist">
+      <li>Item concluído</li>
+    </ul>
+
+    ================================================================ -->
+
+    <!-- ================= FECHAMENTO ================= -->
+    <section class="section section-close">
+      <header class="section-head">
+        <span class="section-index">Fechamento</span>
+        <h2>O que levamos desta aula</h2>
+      </header>
+      <ul class="checklist">
+        <li><!-- [EDIT] --></li>
+      </ul>
+      <p class="footer-note">
+        Material produzido pelo Prof. Toni Coimbra · <span class="mono">tonicoimbra.com</span>
+      </p>
+    </section>
+  </main>
+
+  <footer class="page-foot">
+    <div class="page-foot-inner">
+      <span>© <span id="year"></span> Prof Toni Coimbra</span>
+      <span class="dotsep">·</span>
+      <span>Apostila estática</span>
+      <span class="dotsep">·</span>
+      <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
+    </div>
+  </footer>
+
+  <script src="apostila.js"></script>
+</body>
+</html>
