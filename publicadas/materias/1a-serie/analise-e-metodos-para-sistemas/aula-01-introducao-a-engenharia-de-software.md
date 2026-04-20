@@ -1,89 +1,109 @@
 # Aula 01 — Introdução à Engenharia de Software
 
-Nesta aula, a turma vai compreender o que é Engenharia de Software, por que ela surgiu e como o trabalho do analista e do desenvolvedor de sistemas depende de métodos, requisitos e organização para gerar soluções úteis no mundo real.
+Nesta aula, a turma vai entender por que a Engenharia de Software surgiu, quais problemas ela procura resolver e como esse campo organiza a criação de sistemas de forma mais segura, útil e profissional. A ideia central é sair da visão de que desenvolver software é apenas programar e perceber que analisar, planejar, validar e evoluir também fazem parte do trabalho técnico.
 
 ## Abertura
 
 :::objetivo
-Ao final da aula, a turma deverá: compreender o conceito de Engenharia de Software; diferenciar Ciência da Computação de Engenharia de Software; identificar responsabilidades do analista e do desenvolvedor de sistemas; relacionar requisitos, processos e qualidade no desenvolvimento de software.
+Ao final da aula, o estudante será capaz de explicar o que é Engenharia de Software, por que ela surgiu, diferenciar programação isolada de desenvolvimento orientado por processos e reconhecer onde isso aparece na rotina de um técnico em Desenvolvimento de Sistemas.
+:::
+
+:::curiosidade
+A expressão “crise do software” ficou famosa no fim da década de 1960, quando projetos computacionais começaram a ficar maiores, mais caros e mais difíceis de manter. O problema não era falta de computadores, mas falta de método para construir software confiável.
+:::
+
+:::dica
+Sempre que ouvir sobre uma falha grave em sistema, tente perguntar três coisas: qual era o problema real, que requisito foi ignorado e em qual etapa isso poderia ter sido evitado. Esse raciocínio ajuda a pensar como analista desde o começo.
 :::
 
 ## Desenvolvimento
 
 :::conceito
-A Engenharia de Software é a área da Computação dedicada à criação, manutenção e evolução de softwares por meio de processos organizados, disciplina técnica e preocupação com qualidade. Ela surgiu como resposta a problemas recorrentes em projetos de software, como atrasos, custos altos, falhas de funcionamento e dificuldade de manutenção.
+Engenharia de Software é a área da Computação que aplica processos, métodos, organização e critérios de qualidade para criar, testar, implantar e evoluir sistemas. Ela existe para reduzir improviso, retrabalho, falhas e desperdício no desenvolvimento de software.
 :::
 
-Na prática, programar é apenas uma parte do processo. Antes do código, existe a necessidade de entender o problema, levantar requisitos, modelar a solução, planejar etapas e testar o que foi construído. Por isso, a Engenharia de Software se preocupa com a produção de software de forma confiável, escalável e economicamente viável.
+Quando os sistemas eram pequenos, muitas vezes uma única pessoa conseguia entender tudo e programar sozinha. Mas, à medida que empresas, governos e serviços passaram a depender de software, os projetos ficaram maiores, envolveram equipes e passaram a exigir prazo, custo, documentação, testes e manutenção. Foi nesse contexto que a Engenharia de Software ganhou força.
 
-A Ciência da Computação costuma focar mais em teoria, algoritmos, estruturas e fundamentos. Já a Engenharia de Software volta o olhar para a aplicação desses conhecimentos em projetos reais. Em outras palavras: uma ajuda a explicar como a computação funciona; a outra organiza como transformar isso em software útil para pessoas, empresas e serviços.
-
-No contexto do curso técnico, isso aparece de forma bem concreta. O analista e o desenvolvedor de sistemas precisam entender necessidades do usuário, levantar requisitos, mapear processos, propor soluções e participar da implementação. Quando esse trabalho é feito com método, o sistema atende melhor ao problema que motivou sua criação.
+Na prática, isso significa que o desenvolvimento não começa no código. Antes, é preciso entender o problema, levantar requisitos, conversar com usuários, definir o que será entregue, avaliar riscos e organizar como a solução será construída. Programar continua sendo essencial, mas sem método o sistema pode até funcionar por alguns dias e ainda assim fracassar como produto.
 
 :::exemplo
-Criar software sem Engenharia de Software é como construir uma casa sem planta, sem orçamento e sem combinar o que o morador precisa. Pode até ficar de pé por algum tempo, mas as chances de retrabalho, desperdício e erro aumentam muito.
+Um sistema de matrícula escolar pode ter telas bonitas e até salvar dados corretamente, mas ainda ser ruim se não considerar regras da escola, prazos, perfis de usuário, segurança e relatórios necessários para a secretaria. A Engenharia de Software entra justamente para evitar esse tipo de solução “aparentemente pronta”, mas inadequada ao uso real.
 :::
 
-## Conexão com a prática profissional
+Para o estudante do curso técnico, essa área aparece muito cedo: no projeto integrador, no estágio, no atendimento a um cliente pequeno e até na organização de um sistema simples para uma escola, loja ou laboratório. Quem entende Engenharia de Software aprende a transformar necessidade em solução viável, e não apenas a escrever comandos.
 
-No mercado, um sistema não é avaliado apenas por “funcionar no meu computador”. Ele precisa resolver um problema real, respeitar requisitos, ser compreensível para a equipe e permitir evolução ao longo do tempo. É por isso que profissionais de Análise e Métodos para Sistemas atuam como ponte entre necessidade de negócio e solução tecnológica.
+:::questao Um estudante recebeu a tarefa de criar um sistema para uma biblioteca escolar. Antes de começar a programar, ele conversa com a bibliotecária para entender empréstimos, multas e relatórios. Essa atitude representa qual princípio da Engenharia de Software?
+a) Começar pelo layout para impressionar o usuário.
+b) Levantar requisitos antes da implementação. *
+c) Evitar contato com usuários para ganhar tempo.
+d) Substituir testes por entrevistas.
+> A alternativa correta é a B porque a Engenharia de Software começa pela compreensão do problema real e das necessidades do usuário. Conversar com quem usa o sistema ajuda a definir requisitos e reduz o risco de construir algo bonito, mas inútil na prática.
+:::
 
-Entre as responsabilidades mais comuns desses profissionais estão:
+:::importante
+Software de qualidade não é apenas software que “roda”. Ele precisa resolver o problema certo, ser compreensível para a equipe, permitir manutenção e funcionar com consistência no contexto em que será usado.
+:::
 
-- levantar requisitos com clareza;
-- entender o processo de negócio envolvido;
-- propor soluções coerentes com o problema;
-- apoiar a modelagem do sistema;
-- colaborar com testes, documentação e melhoria contínua.
+:::atencao
+Um erro comum de iniciantes é confundir velocidade com qualidade. Entregar código rápido sem entender regras, restrições e objetivos do sistema costuma gerar retrabalho, bugs e soluções que precisam ser refeitas quase do zero.
+:::
+
+:::questao Em qual situação o uso incorreto da Engenharia de Software tende a causar um problema real no projeto?
+a) Quando a equipe entende os requisitos antes de dividir tarefas.
+b) Quando o sistema é testado antes da entrega final.
+c) Quando os desenvolvedores pulam a análise e implementam com base em suposições. *
+d) Quando o time registra decisões importantes ao longo do projeto.
+> A alternativa correta é a C porque pular análise e trabalhar com suposições aumenta a chance de erro, desperdício e desalinhamento com o problema real. As demais alternativas fortalecem o processo e reduzem riscos no desenvolvimento.
+:::
+
+:::roteiro
+Abra a aula perguntando: “se programar bem bastasse, por que tantos sistemas falham mesmo quando o código compila?”. Use essa pergunta para levar a turma da ideia de programação isolada para a noção de processo. Ao longo da explicação, reforce que o técnico não trabalha só com código: ele observa contexto, conversa com pessoas, identifica regras, organiza etapas e ajuda a evitar erro antes que ele apareça na entrega.
+:::
 
 ## Questões de fixação
 
-:::questao Qual alternativa representa melhor a finalidade da Engenharia de Software no desenvolvimento de sistemas?
-a) Escrever código rapidamente, sem necessidade de planejamento.
-b) Aplicar processos e métodos para desenvolver software com qualidade, organização e aderência aos requisitos. *
-c) Substituir completamente a programação por documentação.
-d) Restringir o desenvolvimento de software apenas a grandes empresas.
-> A alternativa correta é a B porque a Engenharia de Software organiza o desenvolvimento com abordagem sistemática, disciplinada e orientada a requisitos. Ela não elimina a programação, mas garante que o software seja construído com mais qualidade, controle e utilidade prática.
+:::questao Qual alternativa resume melhor a finalidade da Engenharia de Software?
+a) Criar software sem documentação para ganhar velocidade.
+b) Aplicar métodos e processos para desenvolver sistemas com qualidade e aderência ao problema real. *
+c) Substituir totalmente a programação por reuniões e relatórios.
+d) Limitar o desenvolvimento de software a projetos de grande porte.
+> A alternativa correta é a B porque a Engenharia de Software organiza o desenvolvimento com método, qualidade e foco no problema que precisa ser resolvido. Ela não elimina a programação, mas dá estrutura para que o software tenha utilidade e possa evoluir.
 :::
 
-:::questao Assinale a alternativa que NÃO representa uma atribuição típica do analista ou desenvolvedor de sistemas.
-a) Levantar requisitos e compreender necessidades do usuário.
-b) Mapear processos e apoiar a definição de soluções.
-c) Ignorar padrões e documentações para acelerar entregas sem análise. *
-d) Participar da construção e evolução de sistemas.
-> A alternativa correta é a C porque desconsiderar padrões, requisitos e documentação enfraquece a qualidade do processo e aumenta erros futuros. As demais opções descrevem ações coerentes com a atuação de profissionais da área de sistemas.
+:::questao Uma pequena clínica contratou um ex-aluno para desenvolver um sistema de agendamento. Qual ação mostra uma aplicação correta da Engenharia de Software nesse cenário real?
+a) Levantar como funcionam cancelamentos, encaixes e perfis de acesso antes de modelar a solução. *
+b) Escrever o código completo no primeiro dia e descobrir depois o que faltou.
+c) Criar apenas a tela inicial e considerar o projeto pronto.
+d) Ignorar o fluxo real da clínica para usar um modelo genérico qualquer.
+> A alternativa correta é a A porque um cenário real exige compreensão do processo de negócio antes da construção. Conhecer cancelamentos, encaixes e perfis de acesso ajuda a definir requisitos coerentes e evita entregar um sistema desconectado da rotina da clínica.
+:::
+
+:::questao Sobre a Engenharia de Software, qual afirmação NÃO é verdadeira?
+a) Ela busca reduzir improviso e retrabalho em projetos.
+b) Ela envolve análise, planejamento, testes e manutenção.
+c) Ela serve apenas para grandes empresas e não faz sentido em projetos pequenos. *
+d) Ela ajuda a conectar necessidades do usuário com soluções tecnológicas.
+> A alternativa correta é a C porque a Engenharia de Software também faz diferença em projetos pequenos. Mesmo um sistema simples se beneficia de requisitos claros, organização e testes. As demais afirmativas descrevem funções reais desse campo.
 :::
 
 ## Atividade prática
 
 :::exercicio
-A proposta da aula prática é criar um infográfico digital com o tema **“O que faz um Analista e Desenvolvedor de Sistemas?”**. O objetivo é transformar os conceitos estudados em uma comunicação visual clara, curta e organizada.
+Em dupla, a turma deverá analisar um problema cotidiano da escola e preencher um quadro simples com três colunas: problema observado, requisitos que o sistema precisaria atender e risco de desenvolver sem planejamento. Exemplos de contexto: biblioteca, cantina, secretaria, laboratório ou controle de presença.
 :::
 
-O estudante deverá escolher uma ferramenta como Canva, Piktochart ou Infogram e produzir um material com:
-
-- um título objetivo;
-- de 4 a 6 responsabilidades do profissional;
-- linguagem simples e correta;
-- elementos visuais que ajudem a compreender o conteúdo;
-- organização visual que facilite a leitura.
-
-A atividade pode ser feita individualmente ou em dupla, conforme a dinâmica definida pelo professor. Durante a produção, o foco deve estar menos no enfeite e mais na capacidade de sintetizar o papel profissional estudado na aula.
+O grupo deve registrar pelo menos um problema real, três requisitos e dois riscos de construir a solução no improviso. A produção pode ser feita em Google Docs, Canva, papel fotografado ou outro formato combinado pelo professor, desde que fique legível e organizado para apresentação rápida em sala.
 
 :::importante
-Entregar um infográfico em PDF, imagem ou link compartilhável com nome no padrão **Infografico_Analise_Sistemas_NomeAluno**. A entrega pode ser feita no Google Classroom, Drive ou outro ambiente definido pelo professor.
-:::
-
-:::roteiro
-Hoje nós vamos entender por que desenvolver software não é apenas sentar e programar. Todo sistema nasce de uma necessidade real, e alguém precisa compreender essa necessidade, transformar isso em requisitos e organizar a solução. É exatamente aí que entra a Engenharia de Software. Ao longo da aula, quero que vocês percebam que analista e desenvolvedor não trabalham só com código: eles observam processos, identificam problemas, estruturam soluções e comunicam ideias com clareza. Na atividade prática, vocês vão transformar esse entendimento em um infográfico, mostrando de forma visual quais são as responsabilidades desse profissional no mundo do trabalho.
+A entrega deve mostrar raciocínio de análise, não desenho bonito. O foco é provar que a dupla entendeu a diferença entre “ter uma ideia de sistema” e “estruturar uma solução com método”.
 :::
 
 ## Fechamento
 
 :::resumo
-- Engenharia de Software organiza o desenvolvimento de sistemas com método, qualidade e foco em requisitos.
-- Ciência da Computação e Engenharia de Software se relacionam, mas têm focos diferentes.
-- Analistas e desenvolvedores conectam necessidades reais a soluções tecnológicas viáveis.
+- Engenharia de Software surgiu para enfrentar falhas, atrasos, retrabalho e desorganização em projetos.
+- Desenvolver software bem exige entender problema, requisitos, contexto de uso e qualidade.
+- O técnico em sistemas usa essa lógica em estágio, projeto integrador, freelas e no primeiro emprego.
 :::
 
-Na próxima aula, a turma poderá aprofundar a discussão sobre requisitos, processos e etapas do ciclo de desenvolvimento de software, conectando ainda mais teoria e prática profissional.
+Na próxima aula, a turma pode aprofundar como os processos de Engenharia de Software organizam etapas de trabalho e ajudam a transformar uma necessidade real em um fluxo de desenvolvimento mais claro.
