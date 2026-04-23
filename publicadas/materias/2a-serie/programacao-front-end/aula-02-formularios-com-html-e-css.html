@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulários em HTML e CSS — Programação Front-End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-surface: #111111;
+      --bg-elevated: #1a1a1a;
+      --bg-card: #141414;
+      --border-subtle: #222222;
+      --border-default: #2a2a2a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-green: #10b981;
+      --accent-violet: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-coral: #f87171;
+      --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Geist Mono', 'Fira Code', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== CAPA ===== */
+    .cover {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 24px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 100%, rgba(139,92,246,0.06) 0%, transparent 50%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: var(--accent-green);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .cover-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
+    .cover h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 60%, var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cover-meta {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .cover-meta span { color: var(--accent-violet); font-weight: 500; }
+
+    .cover-info {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .cover-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-info-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent-cyan);
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--accent-violet);
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 36px 0 14px;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      border-radius: 14px;
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .card-green {
+      border-color: rgba(16,185,129,0.2);
+      background: linear-gradient(135deg, rgba(16,185,129,0.04), var(--bg-card));
+    }
+
+    .card-violet {
+      border-color: rgba(139,92,246,0.2);
+      background: linear-gradient(135deg, rgba(139,92,246,0.04), var(--bg-card));
+    }
+
+    .card-cyan {
+      border-color: rgba(6,182,212,0.2);
+      background: linear-gradient(135deg, rgba(6,182,212,0.04), var(--bg-card));
+    }
+
+    /* ===== LISTAS ===== */
+    ul, ol {
+      margin: 16px 0 16px 20px;
+      color: var(--text-secondary);
+    }
+
+    li { margin-bottom: 10px; }
+
+    li strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ===== CÓDIGO ===== */
+    pre {
+      background: #0d0d0d;
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin: 20px 0;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.05);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.88em;
+      color: var(--accent-cyan);
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: #d4d4d8;
+      font-size: inherit;
+    }
+
+    .tag { color: var(--accent-coral); }
+    .attr { color: var(--accent-violet); }
+    .val { color: var(--accent-green); }
+    .com { color: var(--text-muted); font-style: italic; }
+
+    /* ===== DESTAQUES ===== */
+    .highlight-box {
+      border-left: 3px solid var(--accent-green);
+      padding: 16px 20px;
+      background: rgba(16,185,129,0.05);
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+    }
+
+    .highlight-box p { margin: 0; color: var(--text-secondary); }
+    .highlight-box strong { color: var(--accent-green); }
+
+    .warning-box {
+      border-left: 3px solid var(--accent-coral);
+      padding: 16px 20px;
+      background: rgba(248,113,113,0.05);
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+    }
+
+    .warning-box p { margin: 0; }
+    .warning-box strong { color: var(--accent-coral); }
+
+    /* ===== TABELA ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 16px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ===== ATIVIDADE ===== */
+    .atividade { background: var(--bg-surface); }
+
+    .questao {
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      border-radius: 14px;
+      padding: 28px;
+      margin: 28px 0;
+    }
+
+    .questao-numero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-violet);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      margin-bottom: 14px;
+    }
+
+    .questao h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .alternativas {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .alternativas li {
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-default);
+      background: var(--bg-elevated);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .alternativas li:hover {
+      border-color: var(--accent-green);
+      background: rgba(16,185,129,0.06);
+    }
+
+    .alternativas li::before {
+      content: attr(data-letra);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .alternativas li:hover::before {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    .gabarito {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+
+    .gabarito.revelado { display: block; }
+
+    .gabarito p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+    .gabarito strong { color: var(--accent-green); }
+
+    .btn-revelar {
+      margin-top: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-revelar:hover {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      background: rgba(16,185,129,0.08);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 640px) {
+      .cover { padding: 48px 20px; min-height: auto; }
+      .cover h1 { font-size: 2rem; }
+      section { padding: 40px 0; }
+      .card { padding: 20px; }
+      pre { padding: 16px; font-size: 0.82rem; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== CAPA ===== -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-badge">Aula Prática</div>
+    <h1>Formulários em HTML e CSS</h1>
+    <p class="cover-meta">Programação Front-End <span>•</span> 3º Ano <span>•</span> Técnico em Desenvolvimento de Sistemas</p>
+    <div class="cover-info">
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        50 minutos
+      </div>
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        2 questões
+      </div>
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        HTML + CSS
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBJETIVOS ===== -->
+<section>
+  <div class="container">
+    <h2><span class="num">01</span>Objetivos</h2>
+    <div class="card card-green">
+      <ul>
+        <li>Compreender a estrutura e os principais elementos de um <strong>formulário HTML</strong>.</li>
+        <li>Diferenciar os tipos de <code>&lt;input&gt;</code> e suas aplicações práticas.</li>
+        <li>Aplicar estilos CSS para tornar formulários acessíveis e visualmente organizados.</li>
+        <li>Relacionar o uso de formulários com a coleta de dados em aplicações reais.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTEÚDO ===== -->
+<section>
+  <div class="container">
+    <h2><span class="num">02</span>O que é um formulário?</h2>
+    <p>Um formulário é a ponte entre o usuário e a aplicação. É por meio dele que o visitante envia dados — como nome, e-mail, senha, preferências — para serem processados pelo sistema. No front-end, o formulário é construído com HTML; no back-end, esses dados são recebidos e tratados.</p>
+
+    <div class="highlight-box">
+      <p><strong>Regra prática:</strong> todo formulário deve ter um propósito claro. Se o usuário não entender o que está preenchendo e por quê, a conversão cai.</p>
+    </div>
+
+    <h3>Estrutura básica</h3>
+    <p>A tag <code>&lt;form&gt;</code> envolve todos os campos. Dentro dela, usamos <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code> e <code>&lt;button&gt;</code>:</p>
+
+<pre><code><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="val">"/enviar"</span> <span class="attr">method</span>=<span class="val">"POST"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"email"</span><span class="tag">&gt;</span>E-mail:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"email"</span> <span class="attr">id</span>=<span class="val">"email"</span> <span class="attr">name</span>=<span class="val">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"senha"</span><span class="tag">&gt;</span>Senha:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"password"</span> <span class="attr">id</span>=<span class="val">"senha"</span> <span class="attr">name</span>=<span class="val">"senha"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="val">"submit"</span><span class="tag">&gt;</span>Entrar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre>
+
+    <div class="warning-box">
+      <p><strong>Importante:</strong> o atributo <code>name</code> é o identificador enviado ao servidor. Sem ele, o campo não é transmitido.</p>
+    </div>
+
+    <h3>Tipos de input mais comuns</h3>
+    <table>
+      <thead>
+        <tr><th>Tipo</th><th>Uso</th><th>Exemplo visual</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>text</code></td><td>Texto livre curto</td><td>Nome, cidade, assunto</td></tr>
+        <tr><td><code>email</code></td><td>Endereço de e-mail</td><td>Valida formato automaticamente</td></tr>
+        <tr><td><code>password</code></td><td>Senha</td><td>Oculta caracteres digitados</td></tr>
+        <tr><td><code>number</code></td><td>Valores numéricos</td><td>Idade, quantidade</td></tr>
+        <tr><td><code>date</code></td><td>Data</td><td>Mostra seletor de calendário</td></tr>
+        <tr><td><code>checkbox</code></td><td>Múltipla escolha</td><td>"Aceito os termos"</td></tr>
+        <tr><td><code>radio</code></td><td>Escolha única</td><td>"Masculino / Feminino"</td></tr>
+        <tr><td><code>file</code></td><td>Upload de arquivo</td><td>Enviar documento ou imagem</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Associando label ao input</h3>
+    <p>A acessibilidade exige que cada campo tenha uma <code>&lt;label&gt;</code> vinculada via atributo <code>for</code> (igual ao <code>id</code> do input). Isso permite que leitores de tela identifiquem o campo e que o usuário clique no texto para focar o input.</p>
+
+<pre><code><span class="com">&lt;!-- Correto: label associada --&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"nome"</span><span class="tag">&gt;</span>Nome completo<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"nome"</span> <span class="attr">name</span>=<span class="val">"nome"</span><span class="tag">&gt;</span>
+
+<span class="com">&lt;!-- Incorreto: label solta --&gt;</span>
+<span class="tag">&lt;label&gt;</span>Nome completo<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">name</span>=<span class="val">"nome"</span><span class="tag">&gt;</span></code></pre>
+
+    <h3>Validação com HTML5</h3>
+    <p>O próprio HTML oferece validação sem JavaScript:</p>
+
+    <div class="card card-cyan">
+      <ul>
+        <li><code>required</code> — campo obrigatório</li>
+        <li><code>minlength="8"</code> / <code>maxlength="20"</code> — limita caracteres</li>
+        <li><code>min="0"</code> / <code>max="100"</code> — limita valores numéricos</li>
+        <li><code>pattern="[A-Za-z]{3,}"</code> — valida com expressão regular</li>
+      </ul>
+    </div>
+
+<pre><code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">name</span>=<span class="val">"usuario"</span>
+       <span class="attr">minlength</span>=<span class="val">"3"</span> <span class="attr">maxlength</span>=<span class="val">"15"</span>
+       <span class="attr">pattern</span>=<span class="val">"[a-zA-Z0-9_]+"</span>
+       <span class="attr">required</span><span class="tag">&gt;</span></code></pre>
+
+    <h3>Estilizando com CSS</h3>
+    <p>Um formulário bem estilizado transmite confiança. Veja um exemplo mínimo e funcional:</p>
+
+<pre><code><span class="tag">form</span> {
+  <span class="attr">display</span>: <span class="val">flex</span>;
+  <span class="attr">flex-direction</span>: <span class="val">column</span>;
+  <span class="attr">gap</span>: <span class="val">16px</span>;
+  <span class="attr">max-width</span>: <span class="val">400px</span>;
+}
+
+<span class="tag">label</span> {
+  <span class="attr">font-weight</span>: <span class="val">500</span>;
+  <span class="attr">color</span>: <span class="val">#e4e4e7</span>;
+}
+
+<span class="tag">input</span>, <span class="tag">textarea</span>, <span class="tag">select</span> {
+  <span class="attr">padding</span>: <span class="val">12px 14px</span>;
+  <span class="attr">border</span>: <span class="val">1px solid #27272a</span>;
+  <span class="attr">border-radius</span>: <span class="val">8px</span>;
+  <span class="attr">background</span>: <span class="val">#18181b</span>;
+  <span class="attr">color</span>: <span class="val">#fafafa</span>;
+  <span class="attr">font-size</span>: <span class="val">1rem</span>;
+}
+
+<span class="tag">input:focus</span> {
+  <span class="attr">outline</span>: <span class="val">none</span>;
+  <span class="attr">border-color</span>: <span class="val">#10b981</span>;
+  <span class="attr">box-shadow</span>: <span class="val">0 0 0 3px rgba(16,185,129,0.15)</span>;
+}
+
+<span class="tag">button</span> {
+  <span class="attr">padding</span>: <span class="val">12px 20px</span>;
+  <span class="attr">border</span>: <span class="val">none</span>;
+  <span class="attr">border-radius</span>: <span class="val">8px</span>;
+  <span class="attr">background</span>: <span class="val">#10b981</span>;
+  <span class="attr">color</span>: <span class="val">#0a0a0a</span>;
+  <span class="attr">font-weight</span>: <span class="val">600</span>;
+  <span class="attr">cursor</span>: <span class="val">pointer</span>;
+}
+
+<span class="tag">button:hover</span> {
+  <span class="attr">background</span>: <span class="val">#059669</span>;
+}</code></pre>
+
+    <div class="highlight-box">
+      <p><strong>Dica:</strong> use <code>focus</code> para mostrar visualmente qual campo está ativo. Isso melhora a usabilidade e a acessibilidade do formulário.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ATIVIDADE ===== -->
+<section class="atividade">
+  <div class="container">
+    <h2><span class="num">03</span>Atividade</h2>
+    <p>Responda as questões abaixo com base no conteúdo estudado. Clique em "Revelar gabarito" para conferir a resposta correta.</p>
+
+    <div class="questao">
+      <div class="questao-numero">1</div>
+      <h4>Qual a função do atributo <code>name</code> em um campo de formulário?</h4>
+      <ul class="alternativas">
+        <li data-letra="A">Definir o tipo de dado que o campo aceita (texto, número, e-mail).</li>
+        <li data-letra="B">Vincular o <code>&lt;label&gt;</code> ao <code>&lt;input&gt;</code> para acessibilidade.</li>
+        <li data-letra="C">Identificar o campo no envio dos dados ao servidor.</li>
+        <li data-letra="D">Aplicar estilos CSS diretamente ao elemento.</li>
+      </ul>
+      <button class="btn-revelar" onclick="this.nextElementSibling.classList.toggle('revelado')">Revelar gabarito</button>
+      <div class="gabarito">
+        <p><strong>Resposta correta: C</strong> — O atributo <code>name</code> é o identificador enviado ao servidor. Sem ele, o valor do campo não é transmitido no <code>POST</code> ou <code>GET</code>. O <code>type</code> define o formato (A), o <code>for</code> vincula ao label (B) e CSS usa classes ou IDs (D).</p>
+      </div>
+    </div>
+
+    <div class="questao">
+      <div class="questao-numero">2</div>
+      <h4>Em um grupo de opções onde o usuário deve escolher apenas uma alternativa, qual elemento HTML é o correto?</h4>
+      <ul class="alternativas">
+        <li data-letra="A"><code>&lt;input type="checkbox"&gt;</code></li>
+        <li data-letra="B"><code>&lt;input type="radio"&gt;</code></li>
+        <li data-letra="C"><code>&lt;input type="select"&gt;</code></li>
+        <li data-letra="D"><code>&lt;textarea&gt;</code></li>
+      </ul>
+      <button class="btn-revelar" onclick="this.nextElementSibling.classList.toggle('revelado')">Revelar gabarito</button>
+      <div class="gabarito">
+        <p><strong>Resposta correta: B</strong> — O <code>type="radio"</code> é projetado para escolha única em um grupo. O <code>checkbox</code> (A) permite múltiplas seleções. <code>select</code> (C) não é um valor válido de <code>type</code> — usa-se a tag <code>&lt;select&gt;</code> separadamente. <code>textarea</code> (D) é para texto longo livre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="container">
+    <p>ProfessorDash · Programação Front-End · EPT Paraná</p>
+  </div>
+</div>
+
+</body>
+</html>
