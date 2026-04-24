@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes e Comunicação no Mundo Digital — Introdução à Computação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-surface: #111111;
+      --bg-elevated: #1a1a1a;
+      --bg-card: #141414;
+      --border-subtle: #222222;
+      --border-default: #2a2a2a;
+      --text-primary: #f5f5f5;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-green: #10b981;
+      --accent-violet: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-coral: #f87171;
+      --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Geist Mono', 'Fira Code', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== CAPA ===== */
+    .cover {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 24px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 100%, rgba(139,92,246,0.06) 0%, transparent 50%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid rgba(16,185,129,0.25);
+      color: var(--accent-green);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .cover-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
+    .cover h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 60%, var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cover-meta {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .cover-meta span { color: var(--accent-violet); font-weight: 500; }
+
+    .cover-info {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .cover-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-info-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent-cyan);
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--accent-violet);
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 36px 0 14px;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      border-radius: 14px;
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .card-green {
+      border-color: rgba(16,185,129,0.2);
+      background: linear-gradient(135deg, rgba(16,185,129,0.04), var(--bg-card));
+    }
+
+    .card-violet {
+      border-color: rgba(139,92,246,0.2);
+      background: linear-gradient(135deg, rgba(139,92,246,0.04), var(--bg-card));
+    }
+
+    .card-cyan {
+      border-color: rgba(6,182,212,0.2);
+      background: linear-gradient(135deg, rgba(6,182,212,0.04), var(--bg-card));
+    }
+
+    /* ===== LISTAS ===== */
+    ul, ol {
+      margin: 16px 0 16px 20px;
+      color: var(--text-secondary);
+    }
+
+    li { margin-bottom: 10px; }
+
+    li strong { color: var(--text-primary); font-weight: 500; }
+
+    /* ===== CÓDIGO ===== */
+    pre {
+      background: #0d0d0d;
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin: 20px 0;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.05);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 0.88em;
+      color: var(--accent-cyan);
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: #d4d4d8;
+      font-size: inherit;
+    }
+
+    .tag { color: var(--accent-coral); }
+    .attr { color: var(--accent-violet); }
+    .val { color: var(--accent-green); }
+    .com { color: var(--text-muted); font-style: italic; }
+
+    /* ===== DESTAQUES ===== */
+    .highlight-box {
+      border-left: 3px solid var(--accent-green);
+      padding: 16px 20px;
+      background: rgba(16,185,129,0.05);
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+    }
+
+    .highlight-box p { margin: 0; color: var(--text-secondary); }
+    .highlight-box strong { color: var(--accent-green); }
+
+    .warning-box {
+      border-left: 3px solid var(--accent-coral);
+      padding: 16px 20px;
+      background: rgba(248,113,113,0.05);
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+    }
+
+    .warning-box p { margin: 0; }
+    .warning-box strong { color: var(--accent-coral); }
+
+    /* ===== TABELA ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 16px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ===== ATIVIDADE ===== */
+    .atividade { background: var(--bg-surface); }
+
+    .questao {
+      background: var(--bg-card);
+      border: 1px solid var(--border-default);
+      border-radius: 14px;
+      padding: 28px;
+      margin: 28px 0;
+    }
+
+    .questao-numero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent-violet);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      margin-bottom: 14px;
+    }
+
+    .questao h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .alternativas {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .alternativas li {
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-default);
+      background: var(--bg-elevated);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .alternativas li:hover {
+      border-color: var(--accent-green);
+      background: rgba(16,185,129,0.06);
+    }
+
+    .alternativas li::before {
+      content: attr(data-letra);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .alternativas li:hover::before {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    .gabarito {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+
+    .gabarito.revelado { display: block; }
+
+    .gabarito p { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+    .gabarito strong { color: var(--accent-green); }
+
+    .btn-revelar {
+      margin-top: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-default);
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-revelar:hover {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      background: rgba(16,185,129,0.08);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 640px) {
+      .cover { padding: 48px 20px; min-height: auto; }
+      .cover h1 { font-size: 2rem; }
+      section { padding: 40px 0; }
+      .card { padding: 20px; }
+      pre { padding: 16px; font-size: 0.82rem; }
+      table { font-size: 0.85rem; }
+      th, td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== CAPA ===== -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-badge">Aula Prática</div>
+    <h1>Redes e Comunicação no Mundo Digital</h1>
+    <p class="cover-meta">Introdução à Computação <span>•</span> 1º Ano <span>•</span> Técnico em Desenvolvimento de Sistemas</p>
+    <div class="cover-info">
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        50 minutos
+      </div>
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        2 questões
+      </div>
+      <div class="cover-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Redes
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBJETIVOS ===== -->
+<section>
+  <div class="container">
+    <h2><span class="num">01</span>Objetivos</h2>
+    <div class="card card-green">
+      <ul>
+        <li>Compreender o que é uma <strong>rede de computadores</strong> e como ela funciona.</li>
+        <li>Diferenciar <strong>rede local (LAN)</strong> de <strong>internet</strong> e reconhecer o papel de cada elemento.</li>
+        <li>Identificar <strong>roteador, switch, Wi-Fi, IP e protocolo</strong> dentro do fluxo de comunicação.</li>
+        <li>Diagnosticar falhas de conexão observando o caminho dos dados, não apenas a tela.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTEÚDO ===== -->
+<section>
+  <div class="container">
+    <h2><span class="num">02</span>O que é uma rede?</h2>
+    <p>Uma <strong>rede de computadores</strong> é o conjunto de dispositivos conectados para trocar dados e compartilhar recursos: arquivos, impressoras, internet e serviços digitais. Quando você acessa a plataforma da escola, envia uma atividade ou assiste a um vídeo, há uma infraestrutura de comunicação funcionando por trás da tela.</p>
+
+    <div class="highlight-box">
+      <p><strong>Regra prática:</strong> toda vez que um serviço depende de envio ou recebimento de informação entre dispositivos, imagine o caminho que os dados percorrem até chegar ao destino.</p>
+    </div>
+
+    <h3>Elementos básicos da comunicação</h3>
+    <table>
+      <thead>
+        <tr><th>Elemento</th><th>Função</th><th>Exemplo prático</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Rede local (LAN)</strong></td><td>Conecta dispositivos próximos num espaço físico</td><td>Computadores do laboratório da escola</td></tr>
+        <tr><td><strong>Internet</strong></td><td>Interliga milhões de redes em escala global</td><td>Acessar um site hospedado em outro país</td></tr>
+        <tr><td><strong>Roteador</strong></td><td>Organiza o tráfego entre a rede local e a internet</td><td>Caixa com antenas na parede da escola</td></tr>
+        <tr><td><strong>Switch</strong></td><td>Conecta vários equipamentos por cabo na mesma rede</td><td>Caixa com várias portas de rede no laboratório</td></tr>
+        <tr><td><strong>Wi-Fi</strong></td><td>Permite acesso sem fio à rede</td><td>Celular conectado ao Wi-Fi da escola</td></tr>
+      </tbody>
+    </table>
+
+    <h3>IP e Protocolo</h3>
+    <p>Dois termos fundamentais que todo técnico precisa conhecer:</p>
+
+    <div class="card card-cyan">
+      <ul>
+        <li><strong>Endereço IP</strong> — é o identificador numérico usado para localizar um dispositivo na rede. Funciona como o "endereço da casa" do equipamento no mundo digital.</li>
+        <li><strong>Protocolo</strong> — é o conjunto de regras que define como a comunicação acontece. Sem protocolo, os dispositivos até estariam conectados, mas não "falariam a mesma língua".</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>Erro comum:</strong> usar palavras como roteador, IP e protocolo sem realmente entender o que elas explicam. Não é preciso decorar todos os detalhes agora, mas é essencial saber o <strong>papel de cada elemento</strong> dentro do fluxo de comunicação.</p>
+    </div>
+
+    <h3>O caminho dos dados</h3>
+    <p>Quando um aluno envia uma atividade para a plataforma da escola, o arquivo percorre um caminho real:</p>
+
+    <ol>
+      <li><strong>Dispositivo</strong> (notebook ou celular) cria a requisição</li>
+      <li><strong>Rede local ou móvel</strong> (Wi-Fi ou 4G/5G) transporta os dados até o ponto de saída</li>
+      <li><strong>Roteador/ISP</strong> encaminha os pacotes pela internet</li>
+      <li><strong>Servidor remoto</strong> recebe, processa e armazena a informação</li>
+    </ol>
+
+    <div class="highlight-box">
+      <p><strong>Observação:</strong> se uma etapa falha, o envio pode atrasar, travar ou não acontecer. O diagnóstico correto exige identificar <strong>onde</strong> no caminho ocorreu a falha.</p>
+    </div>
+
+    <h3>Diagnosticando problemas de rede</h3>
+    <p>Em ambiente escolar, é comum ouvir frases como <em>"o sistema caiu"</em> ou <em>"a internet não presta"</em> antes de qualquer verificação. Mas a falha pode estar em pontos diferentes:</p>
+
+    <ul>
+      <li><strong>Dispositivo:</strong> Wi-Fi desligado, modo avião ativo, senha errada</li>
+      <li><strong>Rede local:</strong> cabo desconectado, roteador com problema, IP não atribuído</li>
+      <li><strong>Provedor/ISP:</strong> instabilidade na conexão com a internet</li>
+      <li><strong>Serviço remoto:</strong> o próprio site ou aplicativo está fora do ar</li>
+    </ul>
+
+    <div class="card card-violet">
+      <p><strong>Raciocínio técnico em ordem:</strong></p>
+      <ol>
+        <li>O dispositivo está conectado à rede?</li>
+        <li>Outros equipamentos têm o mesmo problema?</li>
+        <li>A dificuldade é só naquele site ou em tudo?</li>
+        <li>O erro aparece por cabo, por Wi-Fi ou pelos dois?</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>Confusão frequente:</strong> <strong>rede local ≠ internet</strong>. Um computador pode estar conectado ao Wi-Fi da escola e, ainda assim, não conseguir acessar a internet se a saída da rede estiver com problema.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ATIVIDADE ===== -->
+<section class="atividade">
+  <div class="container">
+    <h2><span class="num">03</span>Atividade</h2>
+    <p>Responda as questões abaixo com base no conteúdo estudado. Clique em "Revelar gabarito" para conferir a resposta correta.</p>
+
+    <div class="questao">
+      <div class="questao-numero">1</div>
+      <h4>Um computador mostra que está conectado ao Wi-Fi, mas nenhum site abre. Qual problema deve ser investigado primeiro?</h4>
+      <ul class="alternativas">
+        <li data-letra="A">A possibilidade de a rede local estar funcionando, mas a conexão dessa rede com a internet estar indisponível.</li>
+        <li data-letra="B">A cor da área de trabalho do usuário.</li>
+        <li data-letra="C">A quantidade de pastas salvas no desktop.</li>
+        <li data-letra="D">O brilho do monitor.</li>
+      </ul>
+      <button class="btn-revelar" onclick="this.nextElementSibling.classList.toggle('revelado')">Revelar gabarito</button>
+      <div class="gabarito">
+        <p><strong>Resposta correta: A</strong> — Estar conectado ao Wi-Fi significa apenas que o dispositivo alcançou a rede local. Se essa rede não consegue sair para a internet, nenhum site abre. As alternativas B, C e D não têm relação com conectividade de rede.</p>
+      </div>
+    </div>
+
+    <div class="questao">
+      <div class="questao-numero">2</div>
+      <h4>O que melhor define um <strong>protocolo</strong> de rede?</h4>
+      <ul class="alternativas">
+        <li data-letra="A">Um cabo específico de conexão.</li>
+        <li data-letra="B">Um conjunto de regras que permite a comunicação organizada entre dispositivos e serviços.</li>
+        <li data-letra="C">Um aplicativo de mensagens.</li>
+        <li data-letra="D">Uma peça física da placa-mãe.</li>
+      </ul>
+      <button class="btn-revelar" onclick="this.nextElementSibling.classList.toggle('revelado')">Revelar gabarito</button>
+      <div class="gabarito">
+        <p><strong>Resposta correta: B</strong> — Protocolo é o conjunto de regras e convenções que permite a comunicação entre dispositivos. Sem protocolo, não há como trocar dados de forma organizada. Não é cabo (A), aplicativo (C) nem peça física (D).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="container">
+    <p>ProfessorDash · Introdução à Computação · EPT Paraná</p>
+  </div>
+</div>
+
+</body>
+</html>
