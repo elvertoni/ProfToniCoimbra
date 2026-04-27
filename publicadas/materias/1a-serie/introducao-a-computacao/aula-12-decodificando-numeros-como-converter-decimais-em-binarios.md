@@ -1,129 +1,203 @@
 ---
-title: Decodificando Números: Como Converter Decimais em Binários
-description: Aula prática sobre conversão de decimal para binário, conectando valor posicional, potências de 2 e representação de números na computação.
+title: Decodificando Números — Como Converter Decimais em Binários
+description: Aula prática sobre conversão de decimal para binário. Do transistor à tabela de potências de 2 — entenda por que o computador trabalha com binário e como transformar qualquer número decimal nessa linguagem.
 order: 12
 published: true
 ---
 
 # Aula 12 — Decodificando Números: Como Converter Decimais em Binários
 
-Depois de compreender que sistemas digitais trabalham com 0 e 1, chegou a hora de ver como os números entram nesse universo. Converter decimal em binário não é uma conta solta para decorar. É uma forma de entender como a máquina representa quantidades usando combinações de bits.
+Nas últimas aulas você conheceu os fundamentos dos sistemas digitais e deu os
+primeiros passos na eletricidade básica. Agora chegou a hora de juntar as duas
+pontas: entender **por que** o computador trabalha com dois estados (0 e 1) e
+**como** transformar os números que usamos no dia a dia nessa linguagem binária.
+Converter decimal em binário não é decoreba — é enxergar a lógica que existe
+dentro de cada chip.
 
 ## Abertura
 
 :::objetivo
-Aprender a converter números do sistema decimal para o sistema binário e relacionar esse processo à lógica de representação usada pelos computadores.
-:::
-
-:::dica
-Ao converter, não pense apenas na regra. Pergunte a si mesmo que valor cada posição representa e por que a base 2 faz sentido para a eletrônica digital.
+Ao final desta aula, o estudante será capaz de explicar por que computadores
+usam sistema binário e converter números decimais para binário usando os
+métodos de decomposição por potências de 2 e divisões sucessivas.
 :::
 
 :::curiosidade
-Sempre que um computador precisa guardar um número, ele o representa internamente com combinações de bits. Por trás de valores que parecem simples na tela, existe uma codificação binária sendo usada.
+O filósofo Gottfried Leibniz estudava números binários em **1679** — quase 300
+anos antes do primeiro computador eletrônico. Ele se inspirou no I Ching, livro
+chinês milenar que representava ideias com linhas contínuas e quebradas, uma
+espécie de "binário filosófico". Leibniz sonhava com uma máquina que pensasse
+usando esse sistema, mas faltava a tecnologia. Hoje, o processador do seu
+celular tem mais de **10 bilhões de transistores** — cada um deles um
+interruptor binário microscópico.
 :::
 
-## O que muda do decimal para o binário
+:::dica
+Ao converter, não pense apenas na regra. Pergunte a si mesmo: que valor cada
+posição representa? Por que a base 2 faz sentido para a eletrônica digital?
+Se você entende o **porquê**, o **como** fica muito mais fácil.
+:::
+
+## Por que o computador usa binário?
 
 :::conceito
-Converter um número decimal para binário significa reescrevê-lo usando a base 2, isto é, como combinação de potências de 2 representadas por dígitos 0 e 1.
+**Bit** (binary digit) é a menor unidade de informação em computação. Um bit
+só pode assumir dois valores: **0** ou **1**. Toda informação digital — textos,
+imagens, sons, vídeos — é armazenada e processada como sequências de bits.
 :::
 
-No sistema decimal, cada posição representa uma potência de 10. No sistema binário, cada posição representa uma potência de 2. Isso significa que, em vez de trabalhar com casas como unidades, dezenas e centenas, passamos a trabalhar com valores como 1, 2, 4, 8, 16, 32 e assim por diante.
-
-Essa leitura ajuda a evitar o ensino mecânico. Quando o aluno entende o valor de cada posição, percebe que o número binário não é um código misterioso, mas outra forma organizada de representar a mesma quantidade.
-
-:::importante
-As primeiras posições do binário valem:
-- 1
-- 2
-- 4
-- 8
-- 16
-- 32
-- 64
-:::
-
-Um jeito de converter é verificar quais potências de 2 somadas formam o número desejado. Por exemplo, 13 pode ser pensado como 8 + 4 + 1. Isso gera o binário 1101, porque as posições 8, 4 e 1 estão ligadas, e a posição 2 está desligada.
+A resposta para "por que binário?" está dentro do **transistor**, o componente
+eletrônico que forma os chips de silício. Um transistor funciona como um
+interruptor controlado por eletricidade: ele pode estar **conduzindo**
+(passando corrente) ou **cortado** (bloqueando a corrente). Esses dois estados
+físicos são a origem do 0 e do 1.
 
 :::exemplo
-Se o sistema precisa representar o número 26, podemos decompor assim: 16 + 8 + 2. Em binário, isso vira 11010. As posições correspondentes a 16, 8 e 2 recebem 1; as demais, 0.
+Pense no interruptor de luz do seu quarto. Ele só tem duas posições: ligado
+(luz acesa) ou desligado (luz apagada). Não existe "meio ligado" — o circuito
+ou está fechado ou está aberto. O computador funciona com bilhões desses
+"interruptores" microscópicos dentro de um chip menor que sua unha. Cada
+transistor é um bit em potencial.
 :::
 
-:::questao Qual situação mostra melhor por que converter decimal para binário faz sentido na computação?
-a) Entender como a máquina representa valores usando combinações de bits ligadas à lógica dos circuitos digitais *
-b) Trocar números por letras apenas para enfeitar a tela
-c) Resolver uma conta sem relação com armazenamento e processamento
-d) Eliminar a utilidade do sistema decimal no cotidiano humano
-> A alternativa correta é a letra A porque a conversão liga o número que usamos no dia a dia à forma como o computador representa informação internamente.
-:::
-
-## Dois caminhos úteis: decomposição e divisões sucessivas
+Mas por que não usar 10 níveis de voltagem, representando os dígitos de 0 a 9?
+Seria um pesadelo na prática. Qualquer variação mínima de voltagem — ruído
+elétrico, aquecimento, interferência — corromperia o valor. O sistema binário
+é **robusto**: o circuito só precisa decidir se a voltagem está "baixa" (0) ou
+"alta" (1). A margem de tolerância é enorme.
 
 :::importante
-Há mais de um jeito correto de converter. O importante é entender a lógica e saber verificar se o resultado realmente representa o número original.
+O computador **não escolheu** o binário por limitação — foi uma **decisão de
+engenharia**. Dois estados bem separados tornam os circuitos mais simples, mais
+rápidos e muito mais confiáveis do que qualquer alternativa com múltiplos níveis.
 :::
 
-Além da decomposição em potências de 2, existe o método das divisões sucessivas por 2. Nele, você divide o número por 2 várias vezes, anota os restos e, no final, lê esses restos de baixo para cima. Esse método é muito usado porque funciona bem mesmo com números maiores.
+## Do decimal ao binário: dois caminhos
 
-Os dois caminhos chegam ao mesmo resultado. A vantagem da decomposição é fortalecer a interpretação do valor posicional. A vantagem das divisões é oferecer um procedimento mais direto. Em ambos os casos, a checagem final é essencial: some as potências de 2 marcadas com 1 e veja se volta ao número decimal original.
+:::conceito
+Converter um número decimal para binário significa reescrevê-lo na **base 2**,
+isto é, como uma combinação de potências de 2 representadas pelos dígitos 0 e 1.
+:::
+
+No sistema decimal (base 10), cada posição vale uma potência de 10: unidades
+(10⁰), dezenas (10¹), centenas (10²). No binário (base 2), cada posição vale
+uma potência de 2. Em vez de casas como 1, 10, 100, trabalhamos com 1, 2, 4, 8,
+16, 32, 64, 128…
+
+:::importante
+As primeiras posições do binário (da direita para a esquerda):
+| Posição | 8ª | 7ª | 6ª | 5ª | 4ª | 3ª | 2ª | 1ª |
+|---------|-----|-----|-----|----|----|----|----|----|
+| Potência | 2⁷ | 2⁶ | 2⁵ | 2⁴ | 2³ | 2² | 2¹ | 2⁰ |
+| Valor | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+:::
+
+### Método 1 — Decomposição por potências de 2
+
+Encontre as maiores potências de 2 que somadas formam o número desejado.
+Cada potência usada vira um bit **1** naquela posição; as não usadas viram **0**.
+
+**Exemplo: converter 13 para binário.**
+- 13 = 8 + 4 + 1
+- Posições: 8 (1), 4 (1), 2 (0), 1 (1)
+- Resultado: **1101**
+
+:::exemplo
+Para representar o número **26**: 16 + 8 + 2 = 26.
+Posições: 16 (1), 8 (1), 4 (0), 2 (1), 1 (0).
+Resultado: **11010**.
+:::
+
+### Método 2 — Divisões sucessivas por 2
+
+Divida o número por 2 repetidamente, anotando o resto de cada divisão.
+Quando o quociente chegar a zero, leia os restos **de baixo para cima**.
+
+**Exemplo: converter 13 para binário.**
+```
+13 ÷ 2 = 6, resto 1
+ 6 ÷ 2 = 3, resto 0
+ 3 ÷ 2 = 1, resto 1
+ 1 ÷ 2 = 0, resto 1
+```
+Lendo de baixo para cima: **1101**. Mesmo resultado!
+
+Esse método funciona bem para qualquer tamanho de número e é o preferido em
+provas e exercícios por ser sistemático.
 
 :::atencao
-Um erro comum é anotar os restos corretamente, mas lê-los na ordem errada. Ler de cima para baixo costuma gerar um binário incorreto.
+O erro mais comum nas divisões sucessivas é ler os restos na **ordem errada** —
+de cima para baixo. Isso inverte o número binário. Confira sempre: some as
+potências de 2 marcadas com 1 e veja se volta ao valor original.
 :::
 
-:::questao Qual erro aparece com frequência na conversão de decimal para binário?
-a) Conferir o resultado pela soma das potências de 2
-b) Ler os restos das divisões na ordem errada e chegar a um número binário incorreto *
-c) Relacionar o binário ao funcionamento de sistemas digitais
-d) Decompor o número em potências de 2
-> A alternativa correta é a letra B porque a ordem de leitura dos restos faz parte essencial do método.
+:::roteiro
+Perguntas para conduzir a turma durante a explicação dos métodos:
+- "Se eu errar a ordem dos restos, o número fica completamente diferente. Alguém
+consegue mostrar com um exemplo?"
+- "Qual método vocês acharam mais intuitivo? Por quê?"
+- "Com 8 bits, qual o maior número que conseguimos representar?" (Resposta: 255)
 :::
 
 ## Questões de fixação
 
-:::questao Em um cenário de estudo, qual prática ajuda mais o aluno a aprender a conversão de verdade?
-a) Resolver a conta e depois conferir se a soma das potências de 2 retorna ao valor original *
-b) Decorar respostas prontas sem verificar nada
-c) Ignorar o valor posicional de cada bit
-d) Tratar qualquer sequência de 0 e 1 como equivalente
-> A alternativa correta é a letra A porque a checagem torna o raciocínio visível e reduz erros mecânicos.
+:::questao Um estagiário de TI precisa explicar por que um pendrive de 16 GB
+não consegue salvar um arquivo de 17 GB. Pensando no que aprendemos sobre
+representação binária, qual a explicação mais correta?
+a) O sistema operacional do cliente está desatualizado
+b) O arquivo de 17 GB contém mais bits do que o pendrive comporta *
+c) O pendrive está com defeito de fábrica
+d) O computador não suporta arquivos maiores que 10 GB
+> Arquivos digitais são sequências de bits. O arquivo de 17 GB precisa de mais
+bits do que o dispositivo pode armazenar. A capacidade de armazenamento é
+literalmente "quantos bits cabem aqui" — não há compressão que resolva um
+arquivo maior que o espaço físico disponível.
 :::
 
-:::questao O que significa converter um número decimal para binário?
-a) Reescrever esse número na base 2, usando posições que representam potências de 2 *
-b) Transformar o número em texto
-c) Apagar o valor numérico da informação
-d) Escolher uma sequência aleatória de bits
-> A alternativa correta é a letra A porque o sistema binário usa base 2 para representar quantidades.
-:::
-
-:::questao Sobre conversão decimal para binário, qual NÃO é verdadeira?
-a) É possível usar divisões sucessivas por 2
-b) Pensar em potências de 2 ajuda a interpretar o resultado
-c) A ordem dos restos não interfere no resultado final *
-d) O tema se relaciona com a representação de números em computadores
-> A alternativa correta é a letra C porque inverter a ordem dos restos altera o número binário obtido.
+:::questao Converta o número decimal 45 para binário usando o método das divisões
+sucessivas. Qual é o resultado correto?
+a) 101101 *
+b) 110110
+c) 101110
+d) 100101
+> 45 ÷ 2 = 22 (r1), 22 ÷ 2 = 11 (r0), 11 ÷ 2 = 5 (r1), 5 ÷ 2 = 2 (r1),
+2 ÷ 2 = 1 (r0), 1 ÷ 2 = 0 (r1). Lendo de baixo para cima: 101101.
+Conferindo: 32 + 8 + 4 + 1 = 45. ✓
 :::
 
 ## Atividade prática
 
 :::exercicio
-Converta cinco números decimais para binário. Escolha pelo menos um número menor que 10, dois entre 10 e 31 e um acima de 31. Para cada caso, mostre o procedimento usado e faça a checagem final pela soma das potências de 2. Em pelo menos dois números, tente resolver de duas maneiras: por decomposição e por divisões sucessivas.
-:::
+**Desafio de conversão em dupla** (15 minutos)
 
-:::importante
-Não entregue só o resultado final. O objetivo é deixar claro como você pensou e como verificou que a resposta está correta.
-:::
+Cada dupla recebe 5 números decimais para converter:
+- Nível 1: 7, 10 (até 4 bits)
+- Nível 2: 25, 42 (até 6 bits)
+- Nível 3: 100 (7 bits)
 
-:::roteiro
-Uma boa variação é dividir a turma em dois grupos: um usa decomposição, outro usa divisões sucessivas. Depois os grupos comparam os resultados e explicam por que os dois métodos chegam ao mesmo binário.
+Regras:
+1. Um aluno resolve por **decomposição**, o outro por **divisões sucessivas**
+2. Comparam os resultados — precisam ser idênticos
+3. Para cada número, mostrem: o procedimento, os restos (se for divisão) e a
+conferência pela soma das potências de 2
+4. A dupla que terminar primeiro e com todos corretos ajuda as demais
+
+Bônus para quem resolver primeiro: qual o maior número que dá para representar
+com 8 bits? E com 10 bits? (Respostas: 255 e 1023)
 :::
 
 ## Fechamento
 
 :::resumo
-- Converter decimal para binário é representar números na base 2
-- Potências de 2 ajudam a interpretar o valor de cada posição
-- A aprendizagem fica mais sólida quando o aluno entende a lógica e confere o resultado, em vez de decorar passos isolados
+- Computadores usam binário porque **transistores** só têm dois estados físicos
+estáveis — uma decisão de engenharia, não uma limitação
+- O sistema binário é confiável porque dois níveis de voltagem bem separados
+resistem a ruído e interferência elétrica
+- Converter decimal → binário é reescrever o número na base 2 usando potências
+de 2 como valores posicionais
+- Dois métodos: **decomposição** (identificar potências de 2) e **divisões
+sucessivas** (restos lidos de baixo para cima)
+- Sempre confira: some as potências de 2 e veja se volta ao decimal original
+- Na próxima aula: o caminho inverso — ler um número binário e descobrir qual
+valor decimal ele representa
 :::
