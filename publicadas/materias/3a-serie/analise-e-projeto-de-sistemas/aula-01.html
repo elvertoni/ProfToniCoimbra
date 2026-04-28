@@ -1,0 +1,406 @@
+<!DOCTYPE html><!--
+  ==========================================================================
+  APOSTILA · PROFESSORDASH — Resumo: Blueprint de Software para TCC
+  ==========================================================================
+-->
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Resumo — Blueprint de Software para TCC</title>
+  <link rel="icon" type="image/svg+xml" href="../../../../_design-system/apostila/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../_design-system/apostila/apostila.css">
+</head>
+<body class="apostila-shell">
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="../../../../_design-system/apostila/favicon.svg" alt="" width="40" height="40">
+        </span>
+        <span class="brand-text">
+          <strong>Prof Toni Coimbra</strong>
+          <small>Apostila · Análise e Projeto de Sistemas</small>
+        </span>
+      </a>
+      <nav class="toolbar">
+        <a class="pill pill-ghost" href="#sumario">Sumário</a>
+        <button class="btn btn-secondary" id="theme-toggle" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span id="theme-label">Tema claro</span>
+        </button>
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          Salvar PDF
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          Resumo — Blueprint de Software
+        </div>
+        <h1 class="hero-title">
+          <span class="accent">Blueprint</span> de Software para TCC
+        </h1>
+        <p class="hero-lead">
+          Resumo completo dos 5 módulos da apostila sobre Blueprint de Software.
+          Aqui você encontra os conceitos essenciais, a estrutura das 7 seções,
+          o passo a passo de construção, os erros mais comuns e um modelo pronto
+          para uso no seu TCC — sem questões, apenas o conteúdo.
+        </p>
+
+        <dl class="meta-grid">
+          <div class="meta-card">
+            <dt>Disciplina</dt>
+            <dd>Análise e Projeto de Sistemas</dd>
+          </div>
+          <div class="meta-card">
+            <dt>Ano letivo</dt>
+            <dd>3º Ano — 2026</dd>
+          </div>
+          <div class="meta-card">
+            <dt>Duração estimada</dt>
+            <dd>Leitura: 20 min</dd>
+          </div>
+          <div class="meta-card">
+            <dt>Entrega</dt>
+            <dd>Atividade 017 — Google Forms</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= SUMÁRIO ================= -->
+    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
+      <p class="sumario-title">Neste resumo</p>
+      <ol class="sumario-list">
+        <li><a href="#sec-1"><span class="sumario-num">01</span><span>O que é Blueprint de Software</span></a></li>
+        <li><a href="#sec-2"><span class="sumario-num">02</span><span>Estrutura — as 7 seções</span></a></li>
+        <li><a href="#sec-3"><span class="sumario-num">03</span><span>Construindo na prática</span></a></li>
+        <li><a href="#sec-4"><span class="sumario-num">04</span><span>Erros comuns e checklist</span></a></li>
+        <li><a href="#sec-5"><span class="sumario-num">05</span><span>Modelo completo para TCC</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- ================= SEÇÃO 01 ================= -->
+    <section class="section" id="sec-1">
+      <header class="section-head">
+        <span class="section-index">Seção 01</span>
+        <h2>O que é Blueprint de Software</h2>
+      </header>
+
+      <p>Imagine que você vai construir uma casa. Antes de comprar tijolos, um arquiteto produz uma <strong>planta baixa</strong>: um documento técnico que mostra exatamente como a casa será, onde ficam os cômodos, como circula a fiação. Ninguém começa a obra sem essa planta. No desenvolvimento de software, o <strong>blueprint</strong> cumpre esse mesmo papel.</p>
+
+      <aside class="callout c-primary">
+        <div class="callout-mark" aria-hidden="true">✓</div>
+        <div class="callout-body">
+          <p class="callout-title">Definição formal</p>
+          <p class="callout-text">Blueprint de software é um documento estruturado de planejamento que registra: o problema a resolver, o público-alvo, a solução proposta, os requisitos funcionais e não funcionais, a arquitetura do sistema, as tecnologias escolhidas e o fluxo de uso. É a base técnica sobre a qual o desenvolvimento se apoia.</p>
+        </div>
+      </aside>
+
+      <h3>Por que o blueprint importa?</h3>
+      <p>Desenvolvedores que pulam o planejamento costumam enfrentar retrabalho intenso, funcionalidades mal definidas e dificuldade de comunicação com a equipe. O blueprint resolve isso antecipadamente.</p>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">⚠</div>
+        <div class="callout-body">
+          <p class="callout-title">Blueprint não é código</p>
+          <p class="callout-text">Blueprint não contém código-fonte, banco de dados implementado ou telas prontas. Ele descreve <em>intenções e decisões</em>. O código vem depois, guiado por ele.</p>
+        </div>
+      </aside>
+
+      <h3>Blueprint × Documentação tradicional</h3>
+      <table>
+        <thead>
+          <tr><th>Característica</th><th>Blueprint</th><th>Documentação tradicional</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Quando é feito</td><td>Antes do desenvolvimento</td><td>Durante ou após</td></tr>
+          <tr><td>Objetivo</td><td>Planejar e orientar</td><td>Registrar o que foi feito</td></tr>
+          <tr><td>Extensão</td><td>Conciso e direto</td><td>Pode ser extenso</td></tr>
+          <tr><td>Público</td><td>Toda a equipe + cliente</td><td>Geralmente técnico</td></tr>
+          <tr><td>Evolui com o projeto?</td><td>Sim, é documento vivo</td><td>Nem sempre</td></tr>
+        </tbody>
+      </table>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">📝</div>
+        <div class="callout-body">
+          <p class="callout-title">Exemplo prático</p>
+          <p class="callout-text"><strong>Projeto:</strong> Plataforma de Planejamento de Estudos para TCC. O blueprint definiria: o problema (estudantes perdem prazos e dispersam materiais), quem usa (estudantes, coordenação acadêmica e administração), o que o sistema faz (cronograma, checklist, alertas e registro de entregas), como foi construído (Django + SQLite) e o fluxo do usuário. Tudo em uma ou duas páginas, antes de qualquer código.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ================= SEÇÃO 02 ================= -->
+    <section class="section" id="sec-2">
+      <header class="section-head">
+        <span class="section-index">Seção 02</span>
+        <h2>Estrutura — as 7 seções do Blueprint</h2>
+      </header>
+
+      <p>Um blueprint eficaz é dividido em 7 seções. Cada seção responde a uma pergunta essencial do projeto.</p>
+
+      <h3>1 — Problema e Contexto</h3>
+      <p><strong>Responde:</strong> Qual dor ou necessidade o sistema vai resolver? Deve descrever a situação atual (sem o sistema) e por que ela é um problema real. Quanto mais específico, melhor. Evite frases genéricas como "melhorar a produtividade".</p>
+
+      <h3>2 — Público-alvo</h3>
+      <p><strong>Responde:</strong> Quem vai usar o sistema? Identifique os perfis de usuários (ex.: aluno, coordenador, administrador) e o que cada um precisa fazer dentro do sistema.</p>
+
+      <h3>3 — Solução Proposta</h3>
+      <p><strong>Responde:</strong> Como o sistema vai resolver o problema? Descreva a solução de forma objetiva. Não é a lista de funcionalidades ainda — é a ideia central da solução.</p>
+
+      <h3>4 — Requisitos Funcionais</h3>
+      <p><strong>Responde:</strong> O que o sistema deve fazer? Lista as funcionalidades obrigatórias, escritas como verbos de ação. Ex.: "O sistema deve permitir o cadastro de turmas e alunos".</p>
+
+      <h3>5 — Requisitos Não Funcionais</h3>
+      <p><strong>Responde:</strong> Como o sistema deve se comportar? Define restrições de qualidade: desempenho, segurança, usabilidade, disponibilidade. Ex.: "O sistema deve responder em menos de 2 segundos".</p>
+
+      <h3>6 — Arquitetura e Tecnologias</h3>
+      <p><strong>Responde:</strong> Como o sistema será estruturado e construído? Descreve o padrão arquitetural (MVC, monolítico, cliente-servidor), banco de dados, linguagem, frameworks. <strong>Justifique as escolhas.</strong></p>
+
+      <h3>7 — Fluxo Principal do Sistema</h3>
+      <p><strong>Responde:</strong> Como o usuário interage com o sistema do início ao fim? Descreva em etapas numeradas o caminho que o usuário percorre para realizar a ação principal.</p>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">⇄</div>
+        <div class="callout-body">
+          <p class="callout-title">Bom vs. ruim — comparativo de escritas</p>
+          <p class="callout-text"><strong>Problema fraco:</strong> "Melhorar o processo da escola."<br><strong>Problema forte:</strong> "Estudantes perdem entregas parciais por falta de controle centralizado de prazos e etapas."<br><br><strong>Requisito fraco:</strong> "Ter cadastro de usuários."<br><strong>Requisito forte:</strong> "O sistema deve permitir cadastro de estudantes com validação de e-mail e recuperação de senha."</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ================= SEÇÃO 03 ================= -->
+    <section class="section" id="sec-3">
+      <header class="section-head">
+        <span class="section-index">Seção 03</span>
+        <h2>Construindo na prática — passo a passo</h2>
+      </header>
+
+      <p>Chegou a hora de sair da teoria. Vamos construir um blueprint completo seguindo cada etapa com um exemplo real de TCC. O projeto de exemplo: <strong>Plataforma de Organização de Estudos e Entregas do TCC.</strong></p>
+
+      <h3>Passo 1 — Defina o problema com precisão</h3>
+      <p>Antes de qualquer coisa, responda: qual dor existe hoje sem o sistema?</p>
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">📝</div>
+        <div class="callout-body">
+          <p class="callout-text">"Estudantes em fase de TCC concentram cronogramas, materiais e entregas em anotações dispersas. Como não existe um fluxo único de acompanhamento, prazos são perdidos, arquivos ficam desorganizados e o avanço do projeto se torna difícil de medir."</p>
+        </div>
+      </aside>
+
+      <h3>Passo 2 — Identifique o público-alvo</h3>
+      <p>Liste quem vai usar e o que cada perfil precisa fazer. Exemplo: <strong>(a)</strong> Estudante — organiza etapas, registra entregas e acompanha prazos; <strong>(b)</strong> Coordenação acadêmica — acompanha evolução geral; <strong>(c)</strong> Administrador — gerencia usuários e parâmetros.</p>
+
+      <h3>Passo 3 — Escreva a solução proposta</h3>
+      <p>Descreva a solução como se estivesse explicando para alguém leigo. Exemplo: "Uma plataforma web onde estudantes visualizam o cronograma do TCC, organizam materiais, registram entregas parciais e acompanham o progresso em uma linha do tempo simples."</p>
+
+      <h3>Passo 4 — Liste os requisitos funcionais</h3>
+      <p>Escreva as funcionalidades como obrigações do sistema:</p>
+      <ul>
+        <li><strong>RF01</strong> — Permitir cadastro e login de estudantes, coordenação e administração.</li>
+        <li><strong>RF02</strong> — Exibir cronograma com etapas e prazos do TCC.</li>
+        <li><strong>RF03</strong> — Permitir anexar entregas parciais e registrar status de conclusão.</li>
+        <li><strong>RF04</strong> — Enviar alertas por e-mail para prazos próximos.</li>
+        <li><strong>RF05</strong> — Gerar painel com visão consolidada de progresso.</li>
+      </ul>
+
+      <h3>Passo 5 — Liste os requisitos não funcionais</h3>
+      <ul>
+        <li><strong>RNF01</strong> — Sistema acessível por qualquer navegador moderno e em tela mobile.</li>
+        <li><strong>RNF02</strong> — Entregas e dados pessoais protegidos por autenticação e controle de perfil.</li>
+        <li><strong>RNF03</strong> — Tempo de resposta inferior a 3 segundos para consultas e registros.</li>
+        <li><strong>RNF04</strong> — Interface clara, legível e utilizável sem treinamento longo.</li>
+      </ul>
+
+      <h3>Passo 6 — Defina arquitetura e tecnologias com justificativa</h3>
+      <ul>
+        <li><strong>Linguagem:</strong> Python — equipe tem domínio prévio.</li>
+        <li><strong>Framework:</strong> Django — autenticação e admin já incluídos, agiliza desenvolvimento.</li>
+        <li><strong>Banco:</strong> SQLite (dev) / PostgreSQL (produção).</li>
+        <li><strong>Front-end:</strong> HTML + Bootstrap 5 — responsivo, rápido para prototipar.</li>
+        <li><strong>Hospedagem:</strong> VPS Ubuntu ou serviço gerenciado compatível.</li>
+      </ul>
+
+      <h3>Passo 7 — Descreva o fluxo principal do usuário</h3>
+      <ol>
+        <li>Estudante acessa o sistema e faz login com e-mail e senha.</li>
+        <li>Visualiza o cronograma completo do TCC.</li>
+        <li>Seleciona a etapa atual e consulta materiais de apoio.</li>
+        <li>Registra a entrega parcial ou marca a etapa como concluída.</li>
+        <li>Recebe confirmação e visualiza os próximos passos.</li>
+      </ol>
+    </section>
+
+    <!-- ================= SEÇÃO 04 ================= -->
+    <section class="section" id="sec-4">
+      <header class="section-head">
+        <span class="section-index">Seção 04</span>
+        <h2>Erros comuns e checklist de revisão</h2>
+      </header>
+
+      <p>Saber o que é o blueprint e como construí-lo é fundamental. Mas saber o que <strong>não fazer</strong> é igualmente valioso.</p>
+
+      <h3>O que torna um blueprint excelente?</h3>
+      <ul>
+        <li><strong>Clareza</strong> — qualquer pessoa entende sem o autor explicar.</li>
+        <li><strong>Coerência</strong> — problema, solução e requisitos se conectam.</li>
+        <li><strong>Viabilidade</strong> — escopo compatível com o tempo disponível.</li>
+      </ul>
+
+      <h3>Os 6 erros mais comuns</h3>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Erro</th><th>Exemplo errado</th><th>Exemplo correto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Problema vago</td><td>"Melhorar a gestão da escola."</td><td>"A secretaria gasta 3 horas diárias lançando notas manualmente em planilhas sem validação."</td></tr>
+          <tr><td>2</td><td>Requisitos genéricos</td><td>"Ter login, cadastro e relatório."</td><td>"RF01 — O sistema deve permitir login com e-mail e senha, bloqueando após 5 tentativas incorretas."</td></tr>
+          <tr><td>3</td><td>Tecnologia sem justificativa</td><td>"Linguagem: React. Banco: MongoDB."</td><td>"Front-end: React — interface dinâmica com atualizações em tempo real."</td></tr>
+          <tr><td>4</td><td>Fluxo ausente ou resumido</td><td>"O usuário acessa e realiza operações."</td><td>Fluxo em etapas numeradas cobrindo login, navegação, ação principal e saída.</td></tr>
+          <tr><td>5</td><td>Escopo inviável</td><td>25 módulos complexos para TCC semestral.</td><td>Funcionalidades essenciais bem feitas > muitas incompletas.</td></tr>
+          <tr><td>6</td><td>Blueprint copiado</td><td>Documento genérico da internet.</td><td>Descrever o seu projeto específico, com detalhes reais.</td></tr>
+        </tbody>
+      </table>
+
+      <aside class="callout c-primary">
+        <div class="callout-mark" aria-hidden="true">✓</div>
+        <div class="callout-body">
+          <p class="callout-title">Checklist de revisão antes da entrega</p>
+          <p class="callout-text">
+            ☐ O problema é específico e mensurável?<br>
+            ☐ O público-alvo está definido por perfis de uso?<br>
+            ☐ A solução resolve o problema descrito?<br>
+            ☐ Cada requisito começa com "O sistema deve..."?<br>
+            ☐ Há pelo menos 2 requisitos não funcionais?<br>
+            ☐ As tecnologias têm justificativa?<br>
+            ☐ O fluxo principal tem 5+ etapas numeradas?<br>
+            ☐ Outra pessoa consegue entender sem sua explicação?<br>
+            ☐ O escopo é realizável no prazo do TCC?
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ================= SEÇÃO 05 ================= -->
+    <section class="section" id="sec-5">
+      <header class="section-head">
+        <span class="section-index">Seção 05</span>
+        <h2>Modelo completo para TCC</h2>
+      </header>
+
+      <p>Chegamos ao módulo de síntese. Abaixo, um blueprint de TCC completo como referência — copie, adapte ao seu projeto.</p>
+
+      <h3>Tipos de projeto e suas particularidades</h3>
+      <table>
+        <thead>
+          <tr><th>Tipo</th><th>O que definir</th><th>Exemplo de stack</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🌐 Sistema Web</td><td>Monolítico ou API + front-end. Rotas, autenticação, deploy.</td><td>Django + PostgreSQL + VPS</td></tr>
+          <tr><td>📱 App Mobile</td><td>Plataforma (Android/iOS), nativo ou multiplataforma, permissões.</td><td>Flutter + Firebase</td></tr>
+          <tr><td>🖥️ Desktop</td><td>SO alvo, banco local ou remoto, framework, instalação.</td><td>Python + Tkinter + SQLite</td></tr>
+          <tr><td>🔌 API / Automação</td><td>Endpoints, métodos HTTP, formato de resposta, autenticação.</td><td>FastAPI + JWT + PostgreSQL</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Blueprint de referência — exemplo completo</h3>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">📋</div>
+        <div class="callout-body">
+          <p class="callout-title">Plataforma de Gestão de Cronograma e Entregas do TCC</p>
+        </div>
+      </aside>
+
+      <p><strong>1 — Problema:</strong> Estudantes em fase de TCC lidam com prazos, arquivos, checklists e entregas em diferentes canais. Como não existe um fluxo centralizado, etapas são esquecidas, materiais ficam dispersos e o andamento real do projeto se torna pouco visível.</p>
+
+      <p><strong>2 — Público-alvo:</strong> Estudante (organiza etapas, registra entregas, acompanha progresso), Coordenação acadêmica (acompanha andamento geral, identifica atrasos), Administrador (gerencia usuários, parâmetros e calendários).</p>
+
+      <p><strong>3 — Solução:</strong> Plataforma web que centraliza cronograma, materiais, marcos e entregas do TCC. O estudante acompanha sua jornada em uma interface simples, registra avanços e recebe alertas de prazo. A coordenação visualiza indicadores consolidados sem depender de controles manuais.</p>
+
+      <p><strong>4 — Requisitos funcionais:</strong></p>
+      <ul>
+        <li>RF01 — Permitir cadastro e autenticação de estudantes, coordenação e administração.</li>
+        <li>RF02 — Exibir cronograma do TCC com etapas, status e prazos.</li>
+        <li>RF03 — Permitir anexar entregas parciais por etapa.</li>
+        <li>RF04 — Enviar alertas de prazos próximos e pendências.</li>
+        <li>RF05 — Gerar painel com percentual de avanço por projeto.</li>
+        <li>RF06 — Permitir consulta rápida de materiais e histórico de entregas.</li>
+      </ul>
+
+      <p><strong>5 — Requisitos não funcionais:</strong></p>
+      <ul>
+        <li>RNF01 — Acesso via navegador em desktop e mobile, sem instalação adicional.</li>
+        <li>RNF02 — Tempo de resposta menor que 2 segundos para consultas principais.</li>
+        <li>RNF03 — Apenas perfis autorizados podem visualizar dados consolidados.</li>
+        <li>RNF04 — Interface legível, responsiva e com linguagem clara para uso recorrente.</li>
+      </ul>
+
+      <p><strong>6 — Tecnologias:</strong></p>
+      <ul>
+        <li><strong>Back-end:</strong> Python + Django — domínio da equipe, painel admin nativo.</li>
+        <li><strong>Banco:</strong> PostgreSQL — estrutura robusta para múltiplos usuários e histórico.</li>
+        <li><strong>Front-end:</strong> HTML + Bootstrap 5 — agilidade de implementação com boa responsividade.</li>
+        <li><strong>Geração de PDF:</strong> WeasyPrint — exportação simples de relatórios e comprovantes.</li>
+      </ul>
+
+      <p><strong>7 — Fluxo principal:</strong></p>
+      <ol>
+        <li>Estudante faz login com e-mail e senha.</li>
+        <li>Acessa o painel principal e visualiza o cronograma do TCC.</li>
+        <li>Seleciona a etapa atual e lê orientações e materiais relacionados.</li>
+        <li>Registra a entrega parcial ou marca a etapa como concluída.</li>
+        <li>Recebe confirmação e visualiza os próximos passos do cronograma.</li>
+      </ol>
+    </section>
+
+    <!-- ================= FECHAMENTO ================= -->
+    <section class="section section-close">
+      <header class="section-head">
+        <span class="section-index">Fechamento</span>
+        <h2>O que levamos deste resumo</h2>
+      </header>
+      <ul class="checklist">
+        <li>Blueprint é o plano técnico do sistema, feito antes da programação.</li>
+        <li>Funciona como a "planta baixa" do software: orienta todas as decisões.</li>
+        <li>Tem 7 seções essenciais: problema, público, solução, RF, RNF, arquitetura e fluxo.</li>
+        <li>Requisitos funcionais = o que faz; não funcionais = como se comporta.</li>
+        <li>Tecnologias devem ser justificadas, nunca escolhidas por moda.</li>
+        <li>Os 6 erros mais comuns: problema vago, requisitos genéricos, tecnologia sem justificativa, fluxo ausente, escopo inviável, cópia genérica.</li>
+        <li>O checklist de 9 itens é a última linha de defesa antes da entrega.</li>
+      </ul>
+      <p class="footer-note">
+        Material produzido pelo Prof. Toni Coimbra · <span class="mono">tonicoimbra.com</span>
+      </p>
+    </section>
+  </main>
+
+  <footer class="page-foot">
+    <div class="page-foot-inner">
+      <span>© <span id="year"></span> Prof Toni Coimbra</span>
+      <span class="dotsep">·</span>
+      <span>Apostila estática</span>
+      <span class="dotsep">·</span>
+      <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
+    </div>
+  </footer>
+
+  <script src="../../../../_design-system/apostila/apostila.js"></script>
+</body>
+</html>
