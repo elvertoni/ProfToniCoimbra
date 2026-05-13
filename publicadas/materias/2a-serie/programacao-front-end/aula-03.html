@@ -1,49 +1,462 @@
 <!DOCTYPE html>
-<!--
-  ==========================================================================
-  APOSTILA · PROFESSORDASH — AULA 03 · PROGRAMAÇÃO FRONT-END
-  ==========================================================================
-  Persistência de Dados no Front-End: Formulários, JavaScript e LocalStorage
-  Gerada por Hermes para Prof. Toni Coimbra
-  ==========================================================================
--->
 <html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light dark" />
   <title>Aula 03 — Persistência de Dados no Front-End</title>
-  <link rel="icon" type="image/svg+xml" href="../../../../_design-system/apostila/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../../_design-system/apostila/apostila.css">
+  
+  <style>
+    :root {
+      --green: #10b981;
+      --violet: #8b5cf6;
+      --cyan: #06b6d4;
+      --coral: #f87171;
+      --amber: #fcd34d;
+      --font-body: 'Geist', system-ui, sans-serif;
+      --font-head: 'Geist', system-ui, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --max-width: 980px;
+      --shadow: 0 20px 40px rgba(0,0,0,.16);
+      --page-gap: 22px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #000000;
+      --page: #0d0d0d;
+      --surface: #111111;
+      --surface-2: #1a1a1a;
+      --surface-3: #222222;
+      --text: #e5e2e1;
+      --text-soft: #c0c0c8;
+      --text-muted: #8e8e98;
+      --border: rgba(255,255,255,.10);
+      --border-strong: rgba(255,255,255,.16);
+      --hero-bg: linear-gradient(180deg, rgba(17,17,17,.96), rgba(10,10,10,.98));
+      --code-bg: #050505;
+      --code-top: #0b0b0b;
+      --table-head: rgba(139,92,246,.16);
+      --table-stripe: rgba(255,255,255,.03);
+      --selection: rgba(16,185,129,.20);
+    }
+
+    [data-theme="light"] {
+      --bg: #edf1f7;
+      --page: #ffffff;
+      --surface: #f7f9fc;
+      --surface-2: #eef2f7;
+      --surface-3: #e6ebf3;
+      --text: #1f2937;
+      --text-soft: #4b5563;
+      --text-muted: #6b7280;
+      --border: rgba(31,41,55,.10);
+      --border-strong: rgba(31,41,55,.16);
+      --hero-bg: linear-gradient(180deg, rgba(255,255,255,.98), rgba(244,247,252,.98));
+      --code-bg: #10151d;
+      --code-top: #181f29;
+      --table-head: rgba(139,92,246,.14);
+      --table-stripe: rgba(15,23,42,.04);
+      --selection: rgba(16,185,129,.18);
+      --shadow: 0 18px 34px rgba(15,23,42,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background:
+        radial-gradient(circle at top right, rgba(139,92,246,.10), transparent 20%),
+        radial-gradient(circle at top left, rgba(6,182,212,.08), transparent 18%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    ::selection { background: var(--selection); }
+    code, pre { font-family: var(--font-mono); }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: calc(var(--max-width) + 80px);
+      margin: 0 auto;
+      min-height: 60px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand {
+      font-family: var(--font-head);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .brand small {
+      display: block;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .65rem;
+      margin-top: 2px;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .pill, .btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-soft);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .btn {
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+
+    .hero, .section {
+      background: var(--page);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      border-radius: 26px;
+      overflow: hidden;
+      background: var(--hero-bg);
+      margin-bottom: var(--page-gap);
+    }
+    .hero-inner { padding: 34px 30px 30px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      margin-bottom: 16px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--green), transparent);
+    }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-family: var(--font-head);
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      line-height: .97;
+      letter-spacing: -.05em;
+      max-width: 12ch;
+    }
+    .hero h1 .accent { color: var(--violet); }
+    .hero p {
+      margin: 0;
+      max-width: 72ch;
+      font-size: 1.05rem;
+      color: var(--text-soft);
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .meta-card strong {
+      display: block;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      margin-bottom: 4px;
+    }
+    .meta-card span { font-weight: 600; }
+
+    .section {
+      border-radius: 20px;
+      padding: 28px 26px;
+      margin-bottom: var(--page-gap);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .section h2 {
+      margin: 0 0 14px;
+      font-family: var(--font-head);
+      font-size: 1.82rem;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .section h3 {
+      margin: 20px 0 8px;
+      font-family: var(--font-head);
+      font-size: 1.08rem;
+      letter-spacing: -.02em;
+    }
+    .section p, .section li { color: var(--text-soft); }
+    .section p:last-child { margin-bottom: 0; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      margin: 18px 0;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .callout-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      font-size: 1.1rem;
+    }
+    .callout-title {
+      margin: 0 0 4px;
+      font-weight: 700;
+      font-size: .98rem;
+    }
+    .callout-text, .callout-body p:last-child { margin: 0; }
+
+    .c-green { background: color-mix(in srgb, var(--green) 10%, var(--surface)); border-color: color-mix(in srgb, var(--green) 26%, var(--border)); }
+    .c-green .callout-title { color: var(--green); }
+    .c-blue { background: color-mix(in srgb, var(--cyan) 10%, var(--surface)); border-color: color-mix(in srgb, var(--cyan) 26%, var(--border)); }
+    .c-blue .callout-title { color: var(--cyan); }
+    .c-violet { background: color-mix(in srgb, var(--violet) 10%, var(--surface)); border-color: color-mix(in srgb, var(--violet) 26%, var(--border)); }
+    .c-violet .callout-title { color: var(--violet); }
+    .c-amber { background: color-mix(in srgb, var(--amber) 10%, var(--surface)); border-color: color-mix(in srgb, var(--amber) 26%, var(--border)); }
+    .c-amber .callout-title { color: var(--amber); }
+    .c-coral { background: color-mix(in srgb, var(--coral) 10%, var(--surface)); border-color: color-mix(in srgb, var(--coral) 26%, var(--border)); }
+    .c-coral .callout-title { color: var(--coral); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0;
+    }
+    .tags li {
+      margin: 0;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-soft);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .code-shell {
+      margin: 18px 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .code-top {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--code-top);
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot.c1 { background: rgba(248,113,113,.70); }
+    .dot.c2 { background: rgba(252,211,77,.70); }
+    .dot.c3 { background: rgba(16,185,129,.70); }
+    pre {
+      margin: 0;
+      overflow-x: auto;
+      padding: 18px 18px 20px;
+      color: #d7d7df;
+      line-height: 1.7;
+      font-size: .92rem;
+      white-space: pre;
+    }
+
+    .demo-wrap {
+      margin: 18px 0;
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    table.demo {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+    table.demo th, table.demo td {
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    table.demo thead th {
+      background: var(--table-head);
+      color: var(--text);
+      font-weight: 700;
+    }
+    table.demo tbody tr:nth-child(even) { background: var(--table-stripe); }
+    table.demo tbody th { color: var(--text); }
+    table.demo tfoot td {
+      background: color-mix(in srgb, var(--green) 10%, var(--surface));
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .exercise-list { padding-left: 18px; }
+    .exercise-list strong { color: var(--text); }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+    }
+    .checklist li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 800;
+    }
+    .roteiro {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px dashed color-mix(in srgb, var(--cyan) 36%, var(--border));
+      background: color-mix(in srgb, var(--cyan) 8%, var(--surface));
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .roteiro-header {
+      color: var(--cyan);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .roteiro-texto { margin: 0; }
+    .footer-note {
+      margin-top: 16px;
+      color: var(--text-muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner, .shell { padding-left: 14px; padding-right: 14px; }
+      .hero-inner, .section { padding: 22px 18px; }
+      .hero h1 { max-width: none; }
+      .toolbar { justify-content: flex-end; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      html, body { background: #ffffff !important; }
+      body { color: #111827 !important; }
+      .topbar { position: static; backdrop-filter: none; background: transparent; border-bottom: none; }
+      .toolbar .btn { display: none !important; }
+      .shell { max-width: none; padding: 0; }
+      .hero, .section, .meta-card, .callout, .code-shell, .demo-wrap {
+        box-shadow: none !important;
+        background: #ffffff !important;
+        border-color: rgba(17,24,39,.14) !important;
+        color: #111827 !important;
+      }
+      .hero { border-radius: 0; }
+      .hero h1, .section h2, .section h3, .brand { color: #111827 !important; }
+      .hero p, .section p, .section li, .footer-note, .brand small, .meta-card strong, .pill { color: #374151 !important; }
+      .pill { background: #f3f4f6 !important; }
+      .code-shell { background: #111827 !important; }
+      .code-top { background: #1f2937 !important; }
+      pre { color: #f9fafb !important; }
+      table.demo thead th {
+        background: rgba(139,92,246,.12) !important;
+        color: #111827 !important;
+      }
+      table.demo tbody tr:nth-child(even) { background: #f9fafb !important; }
+      table.demo tfoot td {
+        background: rgba(16,185,129,.10) !important;
+        color: #065f46 !important;
+      }
+    }
+  
+  </style>
 </head>
-<body class="apostila-shell">
+<body>
 
   <!-- ================= TOPBAR ================= -->
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true">
-          <img src="../../../../_design-system/apostila/favicon.svg" alt="" width="40" height="40">
-        </span>
-        <span class="brand-text">
-          <strong>Prof Toni Coimbra</strong>
-          <small>Apostila · Programação Front-End</small>
-        </span>
-      </a>
-      <nav class="toolbar">
-        <a class="pill pill-ghost" href="#sumario">Sumário</a>
-        <button class="btn btn-secondary" id="theme-toggle" type="button">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <span id="theme-label">Tema claro</span>
-        </button>
-        <button class="btn btn-primary" onclick="window.print()" type="button">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
-          Salvar PDF
-        </button>
-      </nav>
+      <div class="brand">
+        ProfessorDash
+        <small>Apostila estatica · Programacao Front-End</small>
+      </div>
+      <div class="toolbar">
+        <span class="pill">HTML estatico</span>
+        <button class="btn" id="theme-toggle" type="button">Alternar tema</button>
+        <button class="btn" onclick="window.print()" type="button">Imprimir / PDF</button>
+      </div>
     </div>
   </header>
 
@@ -51,85 +464,54 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero">
-      <div class="hero-gradient" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="eyebrow">
-          <span class="eyebrow-line"></span>
           Aula 03 · Persistência no navegador
         </div>
-        <h1 class="hero-title">
+        <h1 >
           Dados que <span class="accent">sobrevivem</span> ao F5
         </h1>
-        <p class="hero-lead">
+        <p >
           Todo formulário coleta dados — mas o que acontece quando o usuário recarrega a página? Nesta aula você vai dominar o LocalStorage, transformando dados de formulários em registros persistentes que ficam salvos no próprio navegador, sem backend, sem banco de dados e sem servidor.
         </p>
 
-        <dl class="meta-grid">
-          <div class="meta-card">
-            <dt>Disciplina</dt>
-            <dd>Programação Front-End</dd>
-          </div>
-          <div class="meta-card">
-            <dt>Ano letivo</dt>
-            <dd>2ª Série · Curso Técnico</dd>
-          </div>
-          <div class="meta-card">
-            <dt>Duração estimada</dt>
-            <dd>2 aulas · 90 min</dd>
-          </div>
-          <div class="meta-card">
-            <dt>Entrega</dt>
-            <dd>Sistema de cadastro funcional</dd>
-          </div>
-        </dl>
+        <div class="meta-grid">
+          <div class="meta-card"><strong>Disciplina</strong><span>Programacao Front-End</span></div>
+          <div class="meta-card"><strong>Ano letivo</strong><span>2 Serie · Curso Tecnico</span></div>
+          <div class="meta-card"><strong>Duracao estimada</strong><span>2 aulas · 90 min</span></div>
+          <div class="meta-card"><strong>Entrega</strong><span>Sistema de cadastro funcional</span></div>
+        </div>
       </div>
     </section>
-
-    <!-- ================= SUMÁRIO ================= -->
-    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
-      <p class="sumario-title">Nesta aula</p>
-      <ol class="sumario-list">
-        <li><a href="#sec-1"><span class="sumario-num">01</span><span>O problema da memória curta</span></a></li>
-        <li><a href="#sec-2"><span class="sumario-num">02</span><span>Formulários: a porta de entrada</span></a></li>
-        <li><a href="#sec-3"><span class="sumario-num">03</span><span>JavaScript no comando: DOM, eventos e dados</span></a></li>
-        <li><a href="#sec-4"><span class="sumario-num">04</span><span>LocalStorage: o banco de dados do navegador</span></a></li>
-        <li><a href="#sec-5"><span class="sumario-num">05</span><span>JSON: a ponte entre JS e armazenamento</span></a></li>
-        <li><a href="#sec-6"><span class="sumario-num">06</span><span>Mão na massa: sistema de cadastro completo</span></a></li>
-        <li><a href="#sec-7"><span class="sumario-num">07</span><span>Além do LocalStorage: próximos passos</span></a></li>
-      </ol>
-    </nav>
 
     <!-- ================================================================
          SEÇÃO 1 — O PROBLEMA DA MEMÓRIA CURTA
          ================================================================ -->
     <section class="section" id="sec-1">
-      <header class="section-head">
-        <span class="section-index">Seção 01</span>
-        <h2>O problema da memória curta</h2>
-      </header>
+      <h2>O problema da memória curta</h2>
 
       <p>Pense em um site de compras. Você passa 20 minutos escolhendo produtos, adiciona cinco itens ao carrinho, vai até a página de pagamento... e, por acidente, aperta F5. <strong>Tudo desaparece.</strong></p>
 
       <p>Isso acontece porque, por padrão, as páginas web nascem com <strong>amnésia total</strong>. Cada vez que você entra, é como se fosse a primeira vez. Nenhuma informação da visita anterior sobrevive. Esse comportamento não é um defeito — é uma característica fundamental da web: o <strong>protocolo HTTP é stateless</strong> (sem estado).</p>
 
-      <aside class="callout c-primary">
-        <div class="callout-mark" aria-hidden="true">✓</div>
+      <aside class="callout c-green">
+        <div class="callout-icon" aria-hidden="true">✓</div>
         <div class="callout-body">
           <p class="callout-title">Conceito-chave</p>
           <p class="callout-text"><strong>Persistência de dados</strong> é a capacidade de um sistema manter informações entre diferentes execuções, recarregamentos de página ou reinicializações. No front-end, a ferramenta nativa para isso é o <strong>LocalStorage</strong>.</p>
         </div>
       </aside>
 
-      <aside class="callout c-secondary">
-        <div class="callout-mark" aria-hidden="true">i</div>
+      <aside class="callout c-blue">
+        <div class="callout-icon" aria-hidden="true">i</div>
         <div class="callout-body">
           <p class="callout-title">Curiosidade</p>
           <p class="callout-text">Em 1994, a Netscape criou os <strong>cookies</strong> — o primeiro mecanismo de persistência no navegador — para que um site de compras pudesse lembrar o que o usuário colocou no carrinho. A ideia deu tão certo que 30 anos depois ainda usamos cookies (e agora LocalStorage e IndexedDB) para a mesma finalidade.</p>
         </div>
       </aside>
 
-      <aside class="callout c-warning">
-        <div class="callout-mark" aria-hidden="true">!</div>
+      <aside class="callout c-amber">
+        <div class="callout-icon" aria-hidden="true">!</div>
         <div class="callout-body">
           <p class="callout-title">Atenção</p>
           <p class="callout-text">O LocalStorage <strong>não substitui um banco de dados real</strong>. Ele armazena dados apenas no navegador do usuário. Se o usuário trocar de computador, limpar os dados do navegador ou usar uma aba anônima, os dados somem. Para persistência real entre dispositivos, você precisa de um backend.</p>
@@ -147,10 +529,7 @@
          SEÇÃO 2 — FORMULÁRIOS: A PORTA DE ENTRADA
          ================================================================ -->
     <section class="section" id="sec-2">
-      <header class="section-head">
-        <span class="section-index">Seção 02</span>
-        <h2>Formulários: a porta de entrada dos dados</h2>
-      </header>
+      <h2>Formulários: a porta de entrada dos dados</h2>
 
       <p>Antes de salvar qualquer coisa, você precisa <strong>capturar</strong> os dados. E a ferramenta universal para isso na web é o formulário HTML.</p>
 
@@ -160,10 +539,9 @@
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">html</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>&lt;form id="formAluno"&gt;
   &lt;label for="nome"&gt;Nome completo:&lt;/label&gt;
@@ -188,8 +566,8 @@
         <li><code>&lt;button type="submit"&gt;</code> — dispara o evento de envio do formulário</li>
       </ul>
 
-      <aside class="callout c-tertiary">
-        <div class="callout-mark" aria-hidden="true">💡</div>
+      <aside class="callout c-violet">
+        <div class="callout-icon" aria-hidden="true">💡</div>
         <div class="callout-body">
           <p class="callout-title">Por que usar label + for?</p>
           <p class="callout-text">Além de acessibilidade (leitores de tela), clicar no <code>&lt;label&gt;</code> automaticamente foca o campo vinculado. Isso melhora a experiência em dispositivos móveis, onde acertar um input pequeno com o dedo é difícil.</p>
@@ -205,8 +583,8 @@
         <li><strong>Recarrega a página</strong> (comportamento padrão do HTTP)</li>
       </ol>
 
-      <aside class="callout c-warning">
-        <div class="callout-mark" aria-hidden="true">!</div>
+      <aside class="callout c-amber">
+        <div class="callout-icon" aria-hidden="true">!</div>
         <div class="callout-body">
           <p class="callout-title">Cilada comum</p>
           <p class="callout-text">Se você esquecer o <code>event.preventDefault()</code> dentro do listener do submit, o formulário vai recarregar a página e <strong>você perde todos os dados não salvos</strong>. Esse é o erro nº 1 de quem está começando com JavaScript + formulários.</p>
@@ -217,10 +595,9 @@
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>formAluno.addEventListener('submit', function(event) {
   event.preventDefault();   // 🛑 impede o recarregamento
@@ -228,12 +605,10 @@
 });</code></pre>
       </div>
 
-      <aside class="roteiro">
-        <header class="roteiro-head">
-          <span class="roteiro-chip">Roteiro do professor</span>
-        </header>
-        <p>"Pessoal, façam um teste mental: imaginem um site de cadastro que, ao clicar em 'Enviar', recarrega a página inteira e apaga tudo que vocês preencheram. Péssimo, né? Nosso trabalho como devs front-end é impedir exatamente isso. O <code>preventDefault()</code> é o superpoder que nos permite controlar o que acontece depois do clique, sem depender do comportamento padrão do navegador."</p>
-      </aside>
+      <div class="roteiro">
+        <p class="roteiro-header">Roteiro do professor</p>
+        <p class="roteiro-texto">"Pessoal, façam um teste mental: imaginem um site de cadastro que, ao clicar em 'Enviar', recarrega a página inteira e apaga tudo que vocês preencheram. Péssimo, né? Nosso trabalho como devs front-end é impedir exatamente isso. O <code>preventDefault()</code> é o superpoder que nos permite controlar o que acontece depois do clique, sem depender do comportamento padrão do navegador."</p>
+      </div>
 
       <ul class="tags">
         <li>form</li><li>input</li><li>submit</li><li>preventDefault</li><li>acessibilidade</li>
@@ -244,10 +619,7 @@
          SEÇÃO 3 — JAVASCRIPT NO COMANDO
          ================================================================ -->
     <section class="section" id="sec-3">
-      <header class="section-head">
-        <span class="section-index">Seção 03</span>
-        <h2>JavaScript no comando: DOM, eventos e dados</h2>
-      </header>
+      <h2>JavaScript no comando: DOM, eventos e dados</h2>
 
       <p>Com o formulário pronto e o evento submit sob controle, o próximo passo é <strong>ler os dados</strong> que o usuário digitou e organizá-los de forma estruturada.</p>
 
@@ -257,10 +629,9 @@
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>// Seleciona elementos pelo ID
 const formAluno = document.getElementById('formAluno');
@@ -279,10 +650,9 @@ const email = document.getElementById('email').value.trim();</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>const novoAluno = {
   nome:  "João da Silva",
@@ -301,10 +671,9 @@ console.log(novoAluno.turma);  // "3DS"</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>const alunos = [];           // array vazio
 alunos.push(novoAluno);      // adiciona no final
@@ -314,21 +683,21 @@ console.log(alunos.length);  // 2
 console.log(alunos[0].nome); // "João da Silva"</code></pre>
       </div>
 
-      <aside class="callout c-primary">
-        <div class="callout-mark" aria-hidden="true">✓</div>
+      <aside class="callout c-green">
+        <div class="callout-icon" aria-hidden="true">✓</div>
         <div class="callout-body">
           <p class="callout-title">Modelo mental</p>
           <p class="callout-text">Pense no array como uma <strong>gaveta de fichas</strong>. Cada ficha é um objeto (com nome, turma, e-mail). Você pode adicionar novas fichas (<code>push</code>), remover (<code>splice</code>), ou consultar (<code>alunos[0]</code>).</p>
         </div>
       </aside>
 
-      <aside class="callout c-secondary">
-        <div class="callout-mark" aria-hidden="true">i</div>
+      <aside class="callout c-blue">
+        <div class="callout-icon" aria-hidden="true">i</div>
         <div class="callout-body">
           <p class="callout-title">Conexão profissional</p>
           <p class="callout-text">A estrutura "array de objetos" é o formato padrão de dados no front-end moderno. Frameworks como React, Vue e Angular trabalham exatamente assim: você recebe um array de objetos de uma API, renderiza na tela, e qualquer alteração nesse array atualiza a interface automaticamente. Entender objetos e arrays é pré-requisito para qualquer framework.</p>
         </div>
-      </aside>
+      </div>
 
       <ul class="tags">
         <li>DOM</li><li>getElementById</li><li>objetos</li><li>arrays</li><li>push</li><li>trim</li>
@@ -339,15 +708,12 @@ console.log(alunos[0].nome); // "João da Silva"</code></pre>
          SEÇÃO 4 — LOCALSTORAGE
          ================================================================ -->
     <section class="section" id="sec-4">
-      <header class="section-head">
-        <span class="section-index">Seção 04</span>
-        <h2>LocalStorage: o banco de dados do navegador</h2>
-      </header>
+      <h2>LocalStorage: o banco de dados do navegador</h2>
 
       <p>Agora que sabemos capturar e organizar dados, precisamos de um lugar para <strong>guardá-los</strong>. O LocalStorage resolve isso com uma API extremamente simples.</p>
 
-      <aside class="callout c-primary">
-        <div class="callout-mark" aria-hidden="true">✓</div>
+      <aside class="callout c-green">
+        <div class="callout-icon" aria-hidden="true">✓</div>
         <div class="callout-body">
           <p class="callout-title">Definição</p>
           <p class="callout-text">O <strong>LocalStorage</strong> é um mecanismo de armazenamento chave-valor embutido em todos os navegadores modernos. Ele guarda strings de até ~5 MB por domínio. Os dados <strong>persistem após fechar a aba, reiniciar o navegador e até desligar o computador</strong> — só somem se o usuário limpar os dados do navegador manualmente.</p>
@@ -358,10 +724,9 @@ console.log(alunos[0].nome); // "João da Silva"</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>// 1. SALVAR — guarda um valor associado a uma chave
 localStorage.setItem("nome", "João");
@@ -377,10 +742,9 @@ localStorage.removeItem("nome");</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>const aluno = { nome: "João", turma: "3DS" };
 
@@ -389,8 +753,8 @@ localStorage.setItem("aluno", aluno);
 // Resultado: "[object Object]" ← perdeu os dados!</code></pre>
       </div>
 
-      <aside class="callout c-warning">
-        <div class="callout-mark" aria-hidden="true">!</div>
+      <aside class="callout c-amber">
+        <div class="callout-icon" aria-hidden="true">!</div>
         <div class="callout-body">
           <p class="callout-title">Por que "[object Object]"?</p>
           <p class="callout-text">Quando o JavaScript tenta converter um objeto para string de forma implícita, ele chama <code>.toString()</code>, que retorna a string genérica <code>"[object Object]"</code>. Nenhum dado real sobrevive a essa conversão. É por isso que precisamos do JSON.</p>
@@ -402,9 +766,7 @@ localStorage.setItem("aluno", aluno);
       <p>Abra o DevTools (F12), vá na aba <strong>Application</strong> → <strong>Local Storage</strong> → selecione o domínio. Você verá todas as chaves e valores armazenados, podendo editar ou remover manualmente.</p>
 
       <div class="demo-wrap">
-        <div class="demo-label">Visualização no DevTools</div>
-        <div class="demo-body">
-          <table style="width:100%; border-collapse:collapse; font-size:13px;">
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
             <thead>
               <tr style="background:rgba(139,92,246,.16);">
                 <th style="padding:8px 12px;text-align:left;">Chave</th>
@@ -419,13 +781,13 @@ localStorage.setItem("aluno", aluno);
         </div>
       </div>
 
-      <aside class="callout c-tertiary">
-        <div class="callout-mark" aria-hidden="true">💡</div>
+      <aside class="callout c-violet">
+        <div class="callout-icon" aria-hidden="true">💡</div>
         <div class="callout-body">
           <p class="callout-title">LocalStorage vs SessionStorage</p>
           <p class="callout-text">Existe também o <strong>SessionStorage</strong> (<code>sessionStorage.setItem()</code>), que funciona igual mas <strong>apaga tudo quando a aba é fechada</strong>. Use LocalStorage para dados permanentes e SessionStorage para dados temporários de uma sessão.</p>
         </div>
-      </aside>
+      </div>
 
       <ul class="tags">
         <li>LocalStorage</li><li>setItem</li><li>getItem</li><li>removeItem</li><li>DevTools</li><li>SessionStorage</li>
@@ -436,15 +798,12 @@ localStorage.setItem("aluno", aluno);
          SEÇÃO 5 — JSON
          ================================================================ -->
     <section class="section" id="sec-5">
-      <header class="section-head">
-        <span class="section-index">Seção 05</span>
-        <h2>JSON: a ponte entre JavaScript e armazenamento</h2>
-      </header>
+      <h2>JSON: a ponte entre JavaScript e armazenamento</h2>
 
       <p>Vimos que o LocalStorage só aceita strings, mas nossos dados estão em objetos e arrays. A solução é o <strong>JSON (JavaScript Object Notation)</strong> — um formato de texto para representar dados estruturados.</p>
 
-      <aside class="callout c-secondary">
-        <div class="callout-mark" aria-hidden="true">i</div>
+      <aside class="callout c-blue">
+        <div class="callout-icon" aria-hidden="true">i</div>
         <div class="callout-body">
           <p class="callout-title">Contexto histórico</p>
           <p class="callout-text">O JSON foi criado por Douglas Crockford em 2001 como um subconjunto da sintaxe de objetos do JavaScript. A ideia era simples: um formato que humanos conseguem ler, máquinas conseguem processar, e que já era nativo no JavaScript. Hoje, o JSON é o <strong>formato universal de troca de dados na web</strong> — toda API REST usa JSON.</p>
@@ -455,10 +814,9 @@ localStorage.setItem("aluno", aluno);
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>const alunos = [
   { nome: "João",  turma: "3DS", email: "joao@email.com" },
@@ -475,8 +833,8 @@ const dadosRestaurados = JSON.parse(jsonString);
 console.log(dadosRestaurados[0].nome);  // "João"</code></pre>
       </div>
 
-      <aside class="callout c-primary">
-        <div class="callout-mark" aria-hidden="true">✓</div>
+      <aside class="callout c-green">
+        <div class="callout-icon" aria-hidden="true">✓</div>
         <div class="callout-body">
           <p class="callout-title">Regra de ouro</p>
           <p class="callout-text"><strong>stringify</strong> quando for salvar (JS → texto) · <strong>parse</strong> quando for ler (texto → JS). Pense assim: <code>stringify</code> transforma em string, <code>parse</code> interpreta a string de volta.</p>
@@ -489,10 +847,9 @@ console.log(dadosRestaurados[0].nome);  // "João"</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>// Função que carrega alunos do LocalStorage
 // Se não existir nada, retorna array vazio
@@ -512,20 +869,18 @@ alunos.push(novoAluno);              // 2. adiciona o novo
 salvarAlunos(alunos);                // 3. salva tudo de volta</code></pre>
       </div>
 
-      <aside class="callout c-warning">
-        <div class="callout-mark" aria-hidden="true">!</div>
+      <aside class="callout c-amber">
+        <div class="callout-icon" aria-hidden="true">!</div>
         <div class="callout-body">
           <p class="callout-title">Erro clássico</p>
           <p class="callout-text">Não fazer <code>JSON.parse()</code> ao ler. Se você usar <code>localStorage.getItem()</code> sem parse, recebe uma string JSON, não um array. Tentar dar <code>.push()</code> em uma string causa erro: <em>"push is not a function"</em>.</p>
         </div>
       </aside>
 
-      <aside class="roteiro">
-        <header class="roteiro-head">
-          <span class="roteiro-chip">Roteiro do professor</span>
-        </header>
-        <p>"Decorar <code>stringify</code> na hora de salvar e <code>parse</code> na hora de ler é a chave. Vou repetir isso várias vezes hoje. Se vocês saírem daqui sabendo só isso — stringify salva, parse lê — já valeu a aula inteira. O resto é detalhe."</p>
-      </aside>
+      <div class="roteiro">
+        <p class="roteiro-header">Roteiro do professor</p>
+        <p class="roteiro-texto">"Decorar <code>stringify</code> na hora de salvar e <code>parse</code> na hora de ler é a chave. Vou repetir isso várias vezes hoje. Se vocês saírem daqui sabendo só isso — stringify salva, parse lê — já valeu a aula inteira. O resto é detalhe."</p>
+      </div>
 
       <ul class="tags">
         <li>JSON</li><li>stringify</li><li>parse</li><li>serialização</li><li>REST API</li>
@@ -536,10 +891,7 @@ salvarAlunos(alunos);                // 3. salva tudo de volta</code></pre>
          SEÇÃO 6 — MÃO NA MASSA
          ================================================================ -->
     <section class="section" id="sec-6">
-      <header class="section-head">
-        <span class="section-index">Seção 06</span>
-        <h2>Mão na massa: sistema de cadastro completo</h2>
-      </header>
+      <h2>Mão na massa: sistema de cadastro completo</h2>
 
       <p>Chegou a hora de juntar <strong>todos os conceitos</strong> em um sistema que realmente funciona. Você vai construir um cadastro de alunos com:</p>
       <ul>
@@ -555,10 +907,9 @@ salvarAlunos(alunos);                // 3. salva tudo de volta</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">bash</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>aula03/
 ├── index.html
@@ -574,10 +925,9 @@ salvarAlunos(alunos);                // 3. salva tudo de volta</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">html</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="pt-br"&gt;
@@ -629,10 +979,9 @@ salvarAlunos(alunos);                // 3. salva tudo de volta</code></pre>
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">css</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>* { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -711,10 +1060,9 @@ tr:nth-child(even) { background-color: #f9f9f9; }
 
       <div class="code-shell">
         <header class="code-top">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="code-lang">javascript</span>
+          <span class="dot c1"></span>
+          <span class="dot c2"></span>
+          <span class="dot c3"></span>
         </header>
         <pre><code>// Seleciona os elementos da página
 const formAluno = document.getElementById('formAluno');
@@ -816,9 +1164,7 @@ renderizarTabela();</code></pre>
       <h3>Fluxo completo do sistema</h3>
 
       <div class="demo-wrap">
-        <div class="demo-label">Fluxo de dados</div>
-        <div class="demo-body">
-          <div style="font-family:var(--font-mono,monospace);font-size:12px;line-height:2;padding:8px;">
+        <div style="font-family:var(--font-mono,monospace);font-size:12px;line-height:2;padding:8px;">
             <span style="color:var(--green,#10b981);">[Usuário]</span> preenche nome, turma, e-mail<br>
             &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
             <span style="color:var(--cyan,#06b6d4);">[submit]</span> evento disparado<br>
@@ -832,9 +1178,7 @@ renderizarTabela();</code></pre>
             <span style="color:var(--cyan,#06b6d4);">[salvarAlunos]</span> stringify + setItem no localStorage<br>
             &nbsp;&nbsp;&nbsp;&nbsp;↓<br>
             <span style="color:var(--violet,#8b5cf6);">[renderizarTabela]</span> tabela HTML atualizada<br>
-          </div>
         </div>
-      </div>
 
       <h3>Como testar</h3>
 
@@ -847,8 +1191,8 @@ renderizarTabela();</code></pre>
         <li>Abra o DevTools (F12) → Application → Local Storage → veja os dados salvos</li>
       </ol>
 
-      <aside class="callout c-warning">
-        <div class="callout-mark" aria-hidden="true">!</div>
+      <aside class="callout c-amber">
+        <div class="callout-icon" aria-hidden="true">!</div>
         <div class="callout-body">
           <p class="callout-title">O que pode dar errado</p>
           <p class="callout-text"><strong>1.</strong> Esquecer <code>event.preventDefault()</code> — o formulário recarrega a página e você perde os dados. <strong>2.</strong> Não usar <code>JSON.parse()</code> ao ler — tenta dar <code>.push()</code> numa string. <strong>3.</strong> Não chamar <code>renderizarTabela()</code> ao carregar a página — a tabela aparece vazia mesmo com dados salvos. <strong>4.</strong> Caminho errado no <code>&lt;script src&gt;</code> — se não carregar o JS, nada funciona.</p>
@@ -865,12 +1209,10 @@ renderizarTabela();</code></pre>
         <li>Exibir o <strong>total de alunos</strong> cadastrados acima da tabela</li>
       </ul>
 
-      <aside class="roteiro">
-        <header class="roteiro-head">
-          <span class="roteiro-chip">Roteiro do professor</span>
-        </header>
-        <p>"Copiem os três arquivos, testem, e depois modifiquem. Não decorem código — entendam o fluxo. O mais importante é a sequência: carregar → adicionar → salvar → renderizar. Esse padrão se repete em todo sistema web, com ou sem backend."</p>
-      </aside>
+      <div class="roteiro">
+        <p class="roteiro-header">Roteiro do professor</p>
+        <p class="roteiro-texto">"Copiem os três arquivos, testem, e depois modifiquem. Não decorem código — entendam o fluxo. O mais importante é a sequência: carregar → adicionar → salvar → renderizar. Esse padrão se repete em todo sistema web, com ou sem backend."</p>
+      </div>
 
       <ul class="tags">
         <li>prática</li><li>sistema completo</li><li>CRUD</li><li>LocalStorage</li><li>renderização</li>
@@ -881,10 +1223,7 @@ renderizarTabela();</code></pre>
          SEÇÃO 7 — ALÉM DO LOCALSTORAGE
          ================================================================ -->
     <section class="section" id="sec-7">
-      <header class="section-head">
-        <span class="section-index">Seção 07</span>
-        <h2>Além do LocalStorage: próximos passos</h2>
-      </header>
+      <h2>Além do LocalStorage: próximos passos</h2>
 
       <p>O LocalStorage é o ponto de partida, não o destino final. Vamos entender onde ele se encaixa no panorama completo de persistência de dados na web.</p>
 
@@ -955,21 +1294,21 @@ renderizarTabela();</code></pre>
         <li><strong>Backup e sincronização</strong> — se o usuário trocar de máquina, perde tudo</li>
       </ul>
 
-      <aside class="callout c-primary">
-        <div class="callout-mark" aria-hidden="true">✓</div>
+      <aside class="callout c-green">
+        <div class="callout-icon" aria-hidden="true">✓</div>
         <div class="callout-body">
           <p class="callout-title">O caminho natural</p>
           <p class="callout-text">Na próxima etapa, você vai aprender a substituir o LocalStorage por um <strong>servidor Node.js com banco de dados SQLite</strong>, mantendo exatamente a mesma estrutura de código no front-end. O <code>fetch()</code> substitui o <code>localStorage.getItem()</code>, e seus dados passam a ser acessíveis de qualquer dispositivo. A lógica de array, objetos e renderização que você aprendeu aqui <strong>continua idêntica</strong>.</p>
         </div>
       </aside>
 
-      <aside class="callout c-secondary">
-        <div class="callout-mark" aria-hidden="true">i</div>
+      <aside class="callout c-blue">
+        <div class="callout-icon" aria-hidden="true">i</div>
         <div class="callout-body">
           <p class="callout-title">Caso real</p>
           <p class="callout-text">O Google Docs usa uma combinação de IndexedDB (para edição offline) + servidor (para sincronização). Você pode digitar um documento inteiro sem internet, e quando a conexão volta, tudo é enviado para o servidor automaticamente. O padrão "salvar local primeiro, sincronizar depois" é usado por WhatsApp Web, Trello, Notion e dezenas de apps modernos.</p>
         </div>
-      </aside>
+      </div>
 
       <ul class="tags">
         <li>IndexedDB</li><li>SessionStorage</li><li>backend</li><li>SQLite</li><li>Node.js</li><li>fetch API</li>
@@ -977,11 +1316,8 @@ renderizarTabela();</code></pre>
     </section>
 
     <!-- ================= FECHAMENTO ================= -->
-    <section class="section section-close">
-      <header class="section-head">
-        <span class="section-index">Fechamento</span>
-        <h2>O que levamos desta aula</h2>
-      </header>
+    <section class="section">
+      <h2>O que levamos desta aula</h2>
       <ul class="checklist">
         <li>Entendi que páginas web, por padrão, não guardam dados entre recarregamentos (HTTP stateless)</li>
         <li>Sei estruturar formulários HTML com label, input e button type="submit"</li>
@@ -995,21 +1331,38 @@ renderizarTabela();</code></pre>
         <li>Conheço as limitações do LocalStorage e quando partir para um backend</li>
       </ul>
       <p class="footer-note">
-        Material produzido pelo Prof. Toni Coimbra · <span class="mono">tonicoimbra.com</span>
+        Material produzido pelo Prof. Toni Coimbra · <code>tonicoimbra.com</code>
       </p>
     </section>
   </main>
 
-  <footer class="page-foot">
-    <div class="page-foot-inner">
-      <span>© <span id="year"></span> Prof Toni Coimbra</span>
-      <span class="dotsep">·</span>
-      <span>Apostila estática</span>
-      <span class="dotsep">·</span>
-      <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
-    </div>
-  </footer>
 
-  <script src="../../../../_design-system/apostila/apostila.js"></script>
+
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      const stored = localStorage.getItem('apostila-theme');
+      const initial = stored || root.getAttribute('data-theme') || 'dark';
+      root.setAttribute('data-theme', initial);
+
+      function syncLabel() {
+        btn.textContent = root.getAttribute('data-theme') === 'dark'
+          ? 'Tema claro'
+          : 'Tema escuro';
+      }
+
+      btn.addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('apostila-theme', next);
+        syncLabel();
+      });
+
+      syncLabel();
+    })();
+  
+  </script>
 </body>
 </html>
