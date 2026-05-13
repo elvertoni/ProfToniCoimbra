@@ -518,6 +518,16 @@
       "publishedAt": "2026-04-23T15:24:00.000000+00:00"
     },
     {
+      "series": "2a-serie",
+      "subject": "programacao-front-end",
+      "lessonNumber": 3,
+      "title": "Persistência de Dados no Front-End: Formulários, JavaScript e LocalStorage",
+      "slug": "persistencia-de-dados-no-front-end",
+      "path": "publicadas/materias/2a-serie/programacao-front-end/aula-03.md",
+      "status": "published",
+      "publishedAt": "2026-05-13T11:00:00.000000+00:00"
+    },
+    {
       "series": "3a-serie",
       "subject": "analise-e-projeto-de-sistemas",
       "lessonNumber": 1,
